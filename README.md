@@ -7,6 +7,14 @@
 
 [https://dev.coderplex.org](https://dev.coderplex.org)
 
+- [x] Login/Registration with Github and Linked
+- [x] Collecting additional profile details after Registration
+- [x] Allow all users to view created jobs
+- [x] Allow loggedIn users to post new job opening
+- [ ] Allow users to search/filter jobs
+- [ ] Allow users to edit their profile
+- [ ] Complete all navigation pages present in navbar
+
 ## Running Locally
 1. Make sure you have [NodeJS](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
 2. We also need backend API so follow instructions here to setup and start backend server [here](https://github.com/coderplex/coderplex-backend)
