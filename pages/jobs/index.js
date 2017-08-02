@@ -6,7 +6,7 @@ import FaLocation from 'react-icons/lib/fa/map-marker';
 // Import FaArrowRight from 'react-icons/lib/fa/angle-right'
 
 import publicPage from '../../hocs/public-page';
-import { client as feathersClient } from '../../lib/feathers-client';
+import { client as feathersClient } from '../../utils/feathers-client';
 import truncateString from '../../utils';
 
 const _jobTypes = ['FullTime', 'PartTime', 'Remote', 'Consulting', 'Freelance'];

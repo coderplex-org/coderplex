@@ -12,7 +12,7 @@ import {
 } from 'semantic-ui-react';
 
 import secretPage from '../../hocs/secret-page';
-import { client as feathersClient } from '../../lib/feathers-client';
+import { client as feathersClient } from '../../utils/feathers-client';
 
 const _jobTypes = ['FullTime', 'PartTime', 'Remote', 'Consulting', 'Freelance'];
 

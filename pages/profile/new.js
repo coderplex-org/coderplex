@@ -11,7 +11,7 @@ import {
   Grid,
 } from 'semantic-ui-react';
 
-import feathersClient from '../../lib/feathers';
+import { client as feathersClient } from '../../utils/feathers-client';
 import secretPage from '../../hocs/secret-page';
 
 const technologies = [

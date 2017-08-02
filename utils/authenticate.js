@@ -1,6 +1,6 @@
 import Cookie from 'js-cookie';
 
-import { client as feathersClient, baseUrl } from '../lib/feathers-client';
+import { client as feathersClient, baseUrl } from './feathers-client';
 
 export function login(service, url) {
   let href;
