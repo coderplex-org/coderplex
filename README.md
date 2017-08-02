@@ -8,12 +8,13 @@
 [https://dev.coderplex.org](https://dev.coderplex.org)
 
 ## Running Locally
-- clone this repo
+1. Make sure you have [NodeJS](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
+2. We also need backend API so follow instructions here to setup and start backend server [here](https://github.com/coderplex/coderplex-backend)
+3. Then clone this repo
 ```
 git clone git@github.com:coderplex/coderplex-website.git
 ```
-- `cd coderplex-website`
-- `npm install`
-- `npm run dev:with-api` to start local development server
-- Open app at `localhost:3000`
-- Edit files and see results in browser (no need to refresh browser as it support HotModuleReplacement).
+4. `cd coderplex-website`
+5. `npm install`
+5. `npm run dev` to start local development server
+6. Open app at `localhost:3000`
