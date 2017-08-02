@@ -8,7 +8,7 @@ const auth = require('feathers-authentication-client');
 const rest = require('feathers-rest/client');
 
 const baseUrl =
-  process.env.NODE_ENV === 'production'
+  process.env.NODE_ENV === 'production' || process.env.WITH_API
     ? `https://api.coderplex.org`
     : 'http://localhost:4000';
 

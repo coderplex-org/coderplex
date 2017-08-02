@@ -9,30 +9,22 @@
     "precommit": "lint-staged",
     "analyze": "cross-env ANALYZE=1 next build",
     "dev": "cross-env NODE_ENV=development nodemon server.js -w server.js",
+    "dev:with-api": "cross-env WITH_API=1 nodemon server.js -w server.js",
     "start": "cross-env NODE_ENV=production node server",
     "build": "next build",
     "heroku-postbuild": "next build"
   },
   "xo": {
     "parser": "babel-eslint",
-    "extends": [
-      "prettier",
-      "prettier/react",
-      "plugin:react/recommended"
-    ],
-    "env": [
-      "browser",
-      "node"
-    ],
+    "extends": ["prettier", "prettier/react", "plugin:react/recommended"],
+    "env": ["browser", "node"],
     "rules": {
       "linebreak-style": 0,
       "react/display-name": 0,
       "react/prop-types": 0
     },
     "space:": 2,
-    "ignores": [
-      "next.config.js"
-    ]
+    "ignores": ["next.config.js"]
   },
   "lint-staged": {
     "*.js": [
