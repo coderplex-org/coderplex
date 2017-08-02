@@ -68,7 +68,7 @@ export default props => {
         <div className="header__container">
           <nav>
             <div className="nav__logo">
-              <img src="/static/favicons/favicon-32x32.png" alt="" />
+              <img src="/static/favicons/android-chrome-192x192.png" alt="" />
             </div>
             <ul className="nav__links">
               {navItems.map(item => {
@@ -119,7 +119,6 @@ export default props => {
           padding: 5px 20px;
           width: 100%;
           background: #fff;
-          border-bottom: 2px solid #eee;
         }
         .header__container {
           max-width: 1280px;
@@ -127,7 +126,7 @@ export default props => {
         }
         nav {
           display: flex;
-          height: 56px;
+          height: 70px;
           align-items: center;
         }
         .nav__logo {
@@ -136,6 +135,8 @@ export default props => {
           align-items: center;
         }
         .nav__logo img {
+          width: 72px;
+          height: 72px;
           margin-right: 5px;
         }
         .nav__links {
