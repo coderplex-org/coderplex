@@ -2,13 +2,17 @@
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 # About
-**Work In Progress** new Coderplex website
+[**Work In Progress**] Coderplex website
+
+This project mainly uses
+- [Next.js](https://github.com/zeit/next.js/)
+- [Semantic UI React](http://react.semantic-ui.com/introduction)
 
 ## Demo
 
 [https://dev.coderplex.org](https://dev.coderplex.org)
 
-- [x] Login/Registration with Github and Linked
+- [x] Login/Registration with Github and LinkedIn
 - [x] Collecting additional profile details after Registration
 - [x] Allow all users to view created jobs
 - [x] Allow loggedIn users to post new job opening
