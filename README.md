@@ -18,6 +18,7 @@
 
 ## Running Locally
 1. Make sure you have [NodeJS](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
+    > Make sure you install node version 8 or above check node version by running `node -v`
 2. We also need backend API so follow instructions [here](https://github.com/coderplex/coderplex-backend) to setup and start backend server 
 3. Then clone this repo
     ```
