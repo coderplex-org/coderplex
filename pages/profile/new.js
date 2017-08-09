@@ -113,7 +113,7 @@ class Profile extends React.Component {
       });
       return;
     }
-    if (!company) {
+    if (profession=='working' && !company) {
       this.setState({
         errors: ['company'],
       });
@@ -207,7 +207,7 @@ class Profile extends React.Component {
                     <Form.Group widths="equal">
                       <Form.Field
                         control={Select}
-                        label="Profression"
+                        label="Profession"
                         options={professionOptions}
                         placeholder={`${this.state.errors.includes('profession')
                           ? ''
