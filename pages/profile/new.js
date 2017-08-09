@@ -113,7 +113,7 @@ class Profile extends React.Component {
       });
       return;
     }
-    if (profession=='working' && !company) {
+    if (profession === 'working' && !company) {
       this.setState({
         errors: ['company'],
       });
