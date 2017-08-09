@@ -30,6 +30,10 @@ const technologies = [
   { key: 'ruby', text: 'Ruby', value: 'ruby' },
   { key: 'ui', text: 'UI Design', value: 'ui' },
   { key: 'ux', text: 'User Experience', value: 'ux' },
+  { key: 'django', text: 'django', value: 'django' },
+  { key: 'php', text: 'PHP', value: 'php' },
+  { key: 'swift', text: 'Swift', value: 'swift' },
+  { key: 'java', text: 'Java', value: 'java' },
 ];
 
 const professionOptions = [
