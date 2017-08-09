@@ -30,6 +30,10 @@ const technologies = [
   { key: 'ruby', text: 'Ruby', value: 'ruby' },
   { key: 'ui', text: 'UI Design', value: 'ui' },
   { key: 'ux', text: 'User Experience', value: 'ux' },
+  { key: 'django', text: 'django', value: 'django' },
+  { key: 'php', text: 'PHP', value: 'php' },
+  { key: 'swift', text: 'Swift', value: 'swift' },
+  { key: 'java', text: 'Java', value: 'java' },
 ];
 
 const professionOptions = [
@@ -113,7 +117,7 @@ class Profile extends React.Component {
       });
       return;
     }
-    if (!company) {
+    if (profession=='working' && !company) {
       this.setState({
         errors: ['company'],
       });
@@ -207,7 +211,7 @@ class Profile extends React.Component {
                     <Form.Group widths="equal">
                       <Form.Field
                         control={Select}
-                        label="Profression"
+                        label="Profession"
                         options={professionOptions}
                         placeholder={`${this.state.errors.includes('profession')
                           ? ''
