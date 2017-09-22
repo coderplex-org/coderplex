@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default () =>
+export default () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
     <path
       fill="#6B4841"
@@ -45,4 +45,5 @@ export default () =>
         height: 200px;
       }
     `}</style>
-  </svg>;
+  </svg>
+);

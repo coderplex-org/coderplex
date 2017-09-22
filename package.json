@@ -16,15 +16,24 @@
   },
   "xo": {
     "parser": "babel-eslint",
-    "extends": ["prettier", "prettier/react", "plugin:react/recommended"],
-    "env": ["browser", "node"],
+    "extends": [
+      "prettier",
+      "prettier/react",
+      "plugin:react/recommended"
+    ],
+    "env": [
+      "browser",
+      "node"
+    ],
     "rules": {
       "linebreak-style": 0,
       "react/display-name": 0,
       "react/prop-types": 0
     },
     "space:": 2,
-    "ignores": ["next.config.js"]
+    "ignores": [
+      "next.config.js"
+    ]
   },
   "lint-staged": {
     "*.js": [
@@ -71,7 +80,7 @@
     "husky": "^0.14.3",
     "lint-staged": "^4.0.2",
     "nodemon": "^1.11.0",
-    "prettier": "^1.5.3",
+    "prettier": "^1.7.0",
     "webpack-bundle-analyzer": "^2.8.3",
     "xo": "^0.18.2"
   }
