@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card } from 'semantic-ui-react';
+import axios from 'axios';
 
 import publicPage from '../hocs/public-page';
 import pastEventsMeetupURL from '../common/urls';
@@ -13,17 +14,12 @@ export default publicPage(
 
     async componentDidMount() {
       try {
-        const request = await fetch(pastEventsMeetupURL);
-        if (request.ok) {
-          const response = await request.json();
-          this.setState({
-            pastEvents: response,
-          });
-        } else {
-          console.log('server responded with ', request.status);
-        }
+        const request = await axios.get(pastEventsMeetupURL);
+        this.setState({
+          pastEvents: request.data,
+        });
       } catch (err) {
-        console.log('error in fetch');
+        console.log(err);
       }
     }
 
