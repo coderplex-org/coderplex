@@ -117,3 +117,6 @@ $RECYCLE.BIN/
 # Others
 data/
 .next/
+
+# generate lock files
+package-lock.json

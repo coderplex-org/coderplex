@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "xo",
-    "lint": "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write --single-quote --print-width='80' --trailing-comma='all' && xo --fix",
+    "lint":
+      "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write --single-quote --print-width='80' --trailing-comma='all' && xo --fix",
     "precommit": "lint-staged",
     "analyze": "cross-env ANALYZE=1 next build",
     "dev": "cross-env NODE_ENV=development nodemon server.js -w server.js",
@@ -16,24 +17,15 @@
   },
   "xo": {
     "parser": "babel-eslint",
-    "extends": [
-      "prettier",
-      "prettier/react",
-      "plugin:react/recommended"
-    ],
-    "env": [
-      "browser",
-      "node"
-    ],
+    "extends": ["prettier", "prettier/react", "plugin:react/recommended"],
+    "env": ["browser", "node"],
     "rules": {
       "linebreak-style": 0,
       "react/display-name": 0,
       "react/prop-types": 0
     },
     "space:": 2,
-    "ignores": [
-      "next.config.js"
-    ]
+    "ignores": ["next.config.js"]
   },
   "lint-staged": {
     "*.js": [
