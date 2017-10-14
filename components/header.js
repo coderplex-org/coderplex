@@ -1,31 +1,31 @@
-import React from 'react';
-import Headroom from 'react-headroom';
-import NProgress from 'nprogress';
-import Router from 'next/router';
-import Link from 'next/link';
-import { Dropdown } from 'semantic-ui-react';
+import React from 'react'
+import Headroom from 'react-headroom'
+import NProgress from 'nprogress'
+import Router from 'next/router'
+import Link from 'next/link'
+import { Dropdown } from 'semantic-ui-react'
 
-import { logout } from '../utils/authenticate';
-import GlobalStyles from './global-styles';
-import Head from './head';
+import { logout } from '../utils/authenticate'
+import GlobalStyles from './global-styles'
+import Head from './head'
 
 Router.onRouteChangeStart = () => {
-  NProgress.start();
-};
+  NProgress.start()
+}
 
 Router.onRouteChangeComplete = () => {
-  NProgress.done();
-};
+  NProgress.done()
+}
 
 Router.onRouteChangeError = () => {
-  NProgress.done();
-};
+  NProgress.done()
+}
 
 export default props => {
   const title =
     props.url.pathname === '/'
       ? 'Home'
-      : props.url.pathname.split('/')[1].toUpperCase();
+      : props.url.pathname.split('/')[1].toUpperCase()
   const navItems = [
     {
       title: 'Home',
@@ -59,7 +59,7 @@ export default props => {
       title: 'Login/Register',
       path: '/login',
     },
-  ].filter(item => (props.username ? item.path !== '/login' : true));
+  ].filter(item => (props.username ? item.path !== '/login' : true))
   return (
     <Headroom>
       <header>
@@ -89,9 +89,9 @@ export default props => {
                       </a>
                     </Link>
                   </li>
-                );
+                )
               })}
-              {props.username &&
+              {props.username && (
                 <li className="nav__linkItem">
                   <img src={props.avatarUrl} alt="avatar_img" />
                   <Dropdown
@@ -109,7 +109,8 @@ export default props => {
                       </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
-                </li>}
+                </li>
+              )}
             </ul>
           </nav>
         </div>
@@ -205,5 +206,5 @@ export default props => {
         }
       `}</style>
     </Headroom>
-  );
-};
+  )
+}

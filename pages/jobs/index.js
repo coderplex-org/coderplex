@@ -1,21 +1,21 @@
-import React from 'react';
-import Link from 'next/link';
-import { Input, Dropdown, Button, Header, Icon } from 'semantic-ui-react';
-import FaBuilding from 'react-icons/lib/fa/building';
-import FaLocation from 'react-icons/lib/fa/map-marker';
+import React from 'react'
+import Link from 'next/link'
+import { Input, Dropdown, Button, Header, Icon } from 'semantic-ui-react'
+import FaBuilding from 'react-icons/lib/fa/building'
+import FaLocation from 'react-icons/lib/fa/map-marker'
 // Import FaArrowRight from 'react-icons/lib/fa/angle-right'
 
-import publicPage from '../../hocs/public-page';
-import { client as feathersClient } from '../../utils/feathers-client';
-import truncateString from '../../utils';
+import publicPage from '../../hocs/public-page'
+import { client as feathersClient } from '../../utils/feathers-client'
+import truncateString from '../../utils'
 
-const _jobTypes = ['FullTime', 'PartTime', 'Remote', 'Consulting', 'Freelance'];
+const _jobTypes = ['FullTime', 'PartTime', 'Remote', 'Consulting', 'Freelance']
 
 const jobTypes = _jobTypes.map(type => ({
   key: type,
   text: type,
   value: type,
-}));
+}))
 
 const technologies = [
   { key: 'all', text: 'All', value: 'all' },
@@ -34,9 +34,9 @@ const technologies = [
   { key: 'ruby', text: 'Ruby', value: 'ruby' },
   { key: 'ui', text: 'UI Design', value: 'ui' },
   { key: 'ux', text: 'User Experience', value: 'ux' },
-];
+]
 
-const Jobs = props =>
+const Jobs = props => (
   <div>
     <main>
       <div className="header">
@@ -86,9 +86,7 @@ const Jobs = props =>
               {props.jobs.map(job => {
                 return (
                   <div key={job.id} className="job">
-                    <h3 className="job__title">
-                      {job.title}
-                    </h3>
+                    <h3 className="job__title">{job.title}</h3>
                     <div className="job__meta">
                       <a target="_blank" href={job.companyDetails.website}>
                         <FaBuilding size={15} />
@@ -108,16 +106,12 @@ const Jobs = props =>
                       {truncateString(job.description, 100)}
                     </div>
                     <ul className="job__skils">
-                      {job.requiredTechnologies.map(skill =>
-                        <li key={skill}>
-                          {skill}
-                        </li>,
-                      )}
+                      {job.requiredTechnologies.map(skill => (
+                        <li key={skill}>{skill}</li>
+                      ))}
                     </ul>
                     <div className="job__cta">
-                      <div className="job__type">
-                        {job.jobType}
-                      </div>
+                      <div className="job__type">{job.jobType}</div>
                       <div className="job__salary">
                         {typeof job.payScale === 'string'
                           ? `${job.payScale}`
@@ -130,7 +124,7 @@ const Jobs = props =>
                       </Link>
                     </div>
                   </div>
-                );
+                )
               })}
             </div>
             {/* <div className="jobs__more">
@@ -161,14 +155,14 @@ const Jobs = props =>
       }
       .header h1 {
         font-size: 5rem;
-        margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
         font-family: inherit;
         font-weight: 500;
         line-height: 1.1;
       }
       .header h4 {
         font-size: 1.5rem;
-        margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
         font-family: inherit;
         font-weight: 500;
         line-height: 1.1;
@@ -296,7 +290,7 @@ const Jobs = props =>
         text-transform: uppercase;
         background: #00df90;
         border-radius: 4px;
-        box-shadow: 0 2px 4px rgba(61, 71, 82, .1);
+        box-shadow: 0 2px 4px rgba(61, 71, 82, 0.1);
         cursor: pointer;
       }
       .job__cta a:hover {
@@ -369,7 +363,8 @@ const Jobs = props =>
         }
       }
     `}</style>
-  </div>;
+  </div>
+)
 
 Jobs.getInitialProps = async () => {
   const jobs = await feathersClient
@@ -381,8 +376,8 @@ Jobs.getInitialProps = async () => {
         },
       },
     })
-    .then(res => res.data);
-  return { jobs };
-};
+    .then(res => res.data)
+  return { jobs }
+}
 
-export default publicPage(Jobs);
+export default publicPage(Jobs)

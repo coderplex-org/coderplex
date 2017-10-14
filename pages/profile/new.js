@@ -1,5 +1,5 @@
-import React from 'react';
-import Router from 'next/router';
+import React from 'react'
+import Router from 'next/router'
 import {
   Container,
   Message,
@@ -9,10 +9,10 @@ import {
   TextArea,
   Select,
   Grid,
-} from 'semantic-ui-react';
+} from 'semantic-ui-react'
 
-import { client as feathersClient } from '../../utils/feathers-client';
-import secretPage from '../../hocs/secret-page';
+import { client as feathersClient } from '../../utils/feathers-client'
+import secretPage from '../../hocs/secret-page'
 
 const technologies = [
   { key: 'angular', text: 'Angular', value: 'angular' },
@@ -30,13 +30,13 @@ const technologies = [
   { key: 'ruby', text: 'Ruby', value: 'ruby' },
   { key: 'ui', text: 'UI Design', value: 'ui' },
   { key: 'ux', text: 'User Experience', value: 'ux' },
-];
+]
 
 const professionOptions = [
   { key: 's', text: 'Student', value: 'student' },
   { key: 'w', text: 'Working', value: 'working' },
   { key: 'h', text: 'Available For Hire', value: 'hirable' },
-];
+]
 
 class Profile extends React.Component {
   state = {
@@ -57,7 +57,7 @@ class Profile extends React.Component {
     discord: '',
     errors: [],
     loading: false,
-  };
+  }
   componentDidMount() {
     this.setState({
       displayName: this.props.displayName || '',
@@ -74,10 +74,10 @@ class Profile extends React.Component {
       twitter: this.props.socialLinks.twitter || '',
       blog: this.props.socialLinks.blog || '',
       discord: this.props.socialLinks.discord || '',
-    });
+    })
   }
   handelForm = e => {
-    e.preventDefault();
+    e.preventDefault()
     const {
       displayName,
       contactNumber,
@@ -93,39 +93,39 @@ class Profile extends React.Component {
       twitter,
       blog,
       discord,
-    } = this.state;
-    console.log(this.state);
+    } = this.state
+    console.log(this.state)
     if (!displayName) {
       this.setState({
         errors: ['displayName'],
-      });
-      return;
+      })
+      return
     }
     if (!bio) {
       this.setState({
         errors: ['bio'],
-      });
-      return;
+      })
+      return
     }
     if (!profession) {
       this.setState({
         errors: ['profession'],
-      });
-      return;
+      })
+      return
     }
     if (profession === 'working' && !company) {
       this.setState({
         errors: ['company'],
-      });
-      return;
+      })
+      return
     }
     if (interestedTechnologies.length === 0) {
       this.setState({
         errors: ['interestedTechnologies'],
-      });
-      return;
+      })
+      return
     }
-    this.setState({ loading: true });
+    this.setState({ loading: true })
     feathersClient
       .service('users')
       .patch(this.props._id, {
@@ -147,25 +147,23 @@ class Profile extends React.Component {
         },
       })
       .then(user => {
-        this.setState({ loading: false });
-        console.log(user);
-        Router.push('/profile');
+        this.setState({ loading: false })
+        console.log(user)
+        Router.push('/profile')
       })
       .catch(err => {
-        console.log(err);
-        this.setState({ loading: false });
-      });
-    console.log('all don');
-  };
+        console.log(err)
+        this.setState({ loading: false })
+      })
+    console.log('all don')
+  }
   render() {
     return (
       <div>
         <main>
           <Container text>
             <Message info>
-              <Message.Header>
-                Welcome {this.props.username} :)
-              </Message.Header>
+              <Message.Header>Welcome {this.props.username} :)</Message.Header>
               <p>Complete rest of your profile details</p>
             </Message>
             <Form
@@ -219,7 +217,7 @@ class Profile extends React.Component {
                           this.setState({ profession: data.value })}
                       />
                     </Form.Group>
-                    {this.state.profession === 'working' &&
+                    {this.state.profession === 'working' && (
                       <Form.Group widths="equal">
                         <Form.Field
                           required
@@ -231,7 +229,8 @@ class Profile extends React.Component {
                           onChange={e =>
                             this.setState({ company: e.target.value })}
                         />
-                      </Form.Group>}
+                      </Form.Group>
+                    )}
                     <Form.Group widths="equal">
                       <Form.Field
                         required
@@ -390,17 +389,19 @@ class Profile extends React.Component {
                   </Grid.Column>
                 </Grid.Row>
               </Grid>
-              {this.state.errors.length
-                ? <Message error>
-                    <Message.Header>
-                      Error: Fill the required * fields
-                    </Message.Header>
-                    <p>
-                      <strong>{this.state.errors.join(',')}</strong> is/are
-                      required fields
-                    </p>
-                  </Message>
-                : ''}
+              {this.state.errors.length ? (
+                <Message error>
+                  <Message.Header>
+                    Error: Fill the required * fields
+                  </Message.Header>
+                  <p>
+                    <strong>{this.state.errors.join(',')}</strong> is/are
+                    required fields
+                  </p>
+                </Message>
+              ) : (
+                ''
+              )}
               <Form.Group widths="equal">
                 <Form.Button
                   loading={this.state.loading}
@@ -427,7 +428,7 @@ class Profile extends React.Component {
           }
         `}</style>
       </div>
-    );
+    )
   }
 }
-export default secretPage(Profile);
+export default secretPage(Profile)

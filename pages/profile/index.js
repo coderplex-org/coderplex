@@ -1,14 +1,14 @@
-import React from 'react';
-import Link from 'next/link';
-import { Grid, Button, Image, Divider, Tab } from 'semantic-ui-react';
+import React from 'react'
+import Link from 'next/link'
+import { Grid, Button, Image, Divider, Tab } from 'semantic-ui-react'
 
-import secretPage from '../../hocs/secret-page';
-import Icon from '../../components/icon';
+import secretPage from '../../hocs/secret-page'
+import Icon from '../../components/icon'
 
 const TabsContent = [
   {
     menuItem: 'Jobs',
-    render: () =>
+    render: () => (
       <Tab.Pane attached={false}>
         <div className="projects">
           <h3>No Jobs Posted By You</h3>
@@ -29,11 +29,12 @@ const TabsContent = [
             align-items: center;
           }
         `}</style>
-      </Tab.Pane>,
+      </Tab.Pane>
+    ),
   },
   {
     menuItem: 'Projects',
-    render: () =>
+    render: () => (
       <Tab.Pane attached={false}>
         <div className="projects">
           <h3>No Projects Found</h3>
@@ -54,11 +55,12 @@ const TabsContent = [
             align-items: center;
           }
         `}</style>
-      </Tab.Pane>,
+      </Tab.Pane>
+    ),
   },
-];
+]
 
-const Profile = props =>
+const Profile = props => (
   <div>
     <main>
       <Grid container>
@@ -67,16 +69,10 @@ const Profile = props =>
             <Image src={props.avatarUrl} size="medium" shape="circular" />
           </Grid.Column>
           <Grid.Column width={9}>
-            <h1>
-              {props.displayName}
-            </h1>
+            <h1>{props.displayName}</h1>
+            <p>{props.bio}</p>
             <p>
-              {props.bio}
-            </p>
-            <p>
-              <strong>
-                {props.profession} :{' '}
-              </strong>
+              <strong>{props.profession} : </strong>
               {props.company || 'Yes'}
             </p>
             <p>
@@ -194,6 +190,7 @@ const Profile = props =>
         align-items: center;
       }
     `}</style>
-  </div>;
+  </div>
+)
 
-export default secretPage(Profile);
+export default secretPage(Profile)
