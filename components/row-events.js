@@ -4,12 +4,15 @@ import moment from 'moment'
 
 const RowEvent = props => {
   return (
-    <div>
+    <cardhead onClick={() => window.open(props.link)}>
       {/* <div style={{ display: 'inline-block' }}>Picture goes here</div> */}
       <Card
-        style={{ marginTop: '15px', display: 'inline-block', width: '600' }}
+        style={{
+          marginTop: '15px',
+          width: '800px',
+          backgroundColor: '#fafafa',
+        }}
       >
-        {/* {props.venue} */}
         <Card.Content>
           <Card.Header>{props.name}</Card.Header>
           <Card.Meta style={{ marginTop: '15px' }}>
@@ -28,7 +31,12 @@ const RowEvent = props => {
           {props.venue === undefined ? 'Free session' : 'Free entry'}
         </Card.Content>
       </Card>
-    </div>
+      <style jsx>{`
+        cardhead :hover {
+          cursor: pointer;
+        }
+      `}</style>
+    </cardhead>
   )
 }
 

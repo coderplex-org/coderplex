@@ -32,6 +32,27 @@ export default publicPage(
     render() {
       return (
         <div>
+          <div
+            style={{
+              backgroundColor: '#f4f7fb',
+              minHeight: '200px',
+            }}
+          >
+            <h1
+              style={{
+                textAlign: 'center',
+                paddingTop: '20px',
+                fontSize: '4em',
+                color: '#DF1CB5',
+                fontWeight: '900',
+              }}
+            >
+              Events
+            </h1>
+            <h2 style={{ textAlign: 'center' }}>
+              Because you cannot change the world alone
+            </h2>
+          </div>
           <main>
             {this.state.pastEvents.length !== 0 &&
             this.state.futureEvents.length !== 0 ? (
@@ -43,9 +64,9 @@ export default publicPage(
                       key={event.id}
                       name={event.name}
                       yesCount={event.yes_rsvp_count}
-                      description={event.description}
                       time={event.time}
                       venue={event.venue}
+                      link={event.link}
                     />
                   ))}
                 </div>
@@ -56,9 +77,9 @@ export default publicPage(
                       key={event.id}
                       name={event.name}
                       yesCount={event.yes_rsvp_count}
-                      description={event.description}
                       time={event.time}
                       venue={event.venue}
+                      link={event.link}
                     />
                   ))}
                 </div>
@@ -69,10 +90,11 @@ export default publicPage(
           </main>
           <style jsx>{`
             main {
+              background-color :#FFFFFF
+              padding-top: 30px;
+              padding-bottom:30px;
               min-height: calc(100vh - 70px);
-              background: #f4f7fb;
               padding-left: 40;
-              color: #314159;
               display: flex;
               justify-content: center;
               align-items: center;
