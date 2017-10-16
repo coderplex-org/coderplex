@@ -6,7 +6,7 @@ import rest from 'feathers-rest/client';
 
 const baseUrl =
   process.env.NODE_ENV === 'production' || process.env.WITH_API
-    ? `https://api.coderplex.org`
+    ? `https://coderplex.org/api`
     : 'http://localhost:4000';
 
 const client = feathers();

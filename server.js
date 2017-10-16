@@ -9,7 +9,7 @@ const rest = require('feathers-rest/client');
 
 const baseUrl =
   process.env.NODE_ENV === 'production' || process.env.WITH_API
-    ? `https://api.coderplex.org`
+    ? `https://coderplex.org/api`
     : 'http://localhost:4000';
 
 const dev = process.env.NODE_ENV !== 'production';
@@ -53,14 +53,23 @@ app
     // Get loggedIn user
     server.use(async (req, res, next) => {
       const token = req.cookies['feathers-jwt'];
+      console.log('****token****');
+      console.log(token);
+      console.log('****token****');
       if (!token) return next();
       try {
         const { userId } = await feathersClient.passport.verifyJWT(token);
+        console.log('****USERID****');
+        console.log(userId);
+        console.log('****USERID****');
         req.user = await fetch(`${baseUrl}/users/${userId}`, {
           headers: {
             Authorization: `${token}`,
           },
         }).then(res => res.json());
+        console.log('****ServerUSER****');
+        console.log(req.user);
+        console.log('****ServerUSER****');
         next();
       } catch (error) {
         console.error(error);
