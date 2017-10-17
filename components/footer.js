@@ -4,7 +4,7 @@ import FaYoutube from 'react-icons/lib/fa/youtube-play';
 import FaGithub from 'react-icons/lib/fa/github-alt';
 import FaInstagram from 'react-icons/lib/fa/instagram';
 
-export default () =>
+export default () => (
   <footer>
     <div className="footer__container">
       <div className="footer__content">
@@ -79,4 +79,5 @@ export default () =>
         color: #314159;
       }
     `}</style>
-  </footer>;
+  </footer>
+);

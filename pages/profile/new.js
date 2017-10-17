@@ -163,9 +163,7 @@ class Profile extends React.Component {
         <main>
           <Container text>
             <Message info>
-              <Message.Header>
-                Welcome {this.props.username} :)
-              </Message.Header>
+              <Message.Header>Welcome {this.props.username} :)</Message.Header>
               <p>Complete rest of your profile details</p>
             </Message>
             <Form
@@ -219,7 +217,7 @@ class Profile extends React.Component {
                           this.setState({ profession: data.value })}
                       />
                     </Form.Group>
-                    {this.state.profession === 'working' &&
+                    {this.state.profession === 'working' && (
                       <Form.Group widths="equal">
                         <Form.Field
                           required
@@ -231,7 +229,8 @@ class Profile extends React.Component {
                           onChange={e =>
                             this.setState({ company: e.target.value })}
                         />
-                      </Form.Group>}
+                      </Form.Group>
+                    )}
                     <Form.Group widths="equal">
                       <Form.Field
                         required
@@ -390,17 +389,19 @@ class Profile extends React.Component {
                   </Grid.Column>
                 </Grid.Row>
               </Grid>
-              {this.state.errors.length
-                ? <Message error>
-                    <Message.Header>
-                      Error: Fill the required * fields
-                    </Message.Header>
-                    <p>
-                      <strong>{this.state.errors.join(',')}</strong> is/are
-                      required fields
-                    </p>
-                  </Message>
-                : ''}
+              {this.state.errors.length ? (
+                <Message error>
+                  <Message.Header>
+                    Error: Fill the required * fields
+                  </Message.Header>
+                  <p>
+                    <strong>{this.state.errors.join(',')}</strong> is/are
+                    required fields
+                  </p>
+                </Message>
+              ) : (
+                ''
+              )}
               <Form.Group widths="equal">
                 <Form.Button
                   loading={this.state.loading}

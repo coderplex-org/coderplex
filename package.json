@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "xo",
-    "lint": "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write --single-quote --print-width='80' --trailing-comma='all' && xo --fix",
+    "lint":
+      "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write --single-quote --print-width='80' --trailing-comma='all' && xo --fix",
     "precommit": "lint-staged",
     "analyze": "cross-env ANALYZE=1 next build",
     "dev": "cross-env NODE_ENV=development nodemon server.js -w server.js",
@@ -33,9 +34,6 @@
       "git add"
     ]
   },
-  "engines": {
-    "node": "8.1.4"
-  },
   "keywords": [],
   "author": "Vinay Puppal <me@vinaypuppal.com> (https://www.vinaypuppal.com/)",
   "license": "MIT",
@@ -49,6 +47,7 @@
     "feathers-rest": "^1.8.0",
     "isomorphic-unfetch": "^2.0.0",
     "js-cookie": "^2.1.4",
+    "moment": "^2.19.1",
     "next": "2.4.7",
     "nprogress": "^0.2.0",
     "preact": "^8.2.1",
@@ -60,6 +59,7 @@
     "react-ga": "^2.2.0",
     "react-headroom": "^2.1.6",
     "react-icons": "^2.2.5",
+    "react-textgradient": "0.0.2",
     "semantic-ui-react": "^0.71.3"
   },
   "devDependencies": {
@@ -71,7 +71,7 @@
     "husky": "^0.14.3",
     "lint-staged": "^4.0.2",
     "nodemon": "^1.11.0",
-    "prettier": "^1.5.3",
+    "prettier": "^1.7.0",
     "webpack-bundle-analyzer": "^2.8.3",
     "xo": "^0.18.2"
   }

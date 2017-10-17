@@ -173,9 +173,7 @@ class PostJob extends React.Component {
         <main>
           <Container text>
             <Message info>
-              <Message.Header>
-                Hi, {this.props.username} :)
-              </Message.Header>
+              <Message.Header>Hi, {this.props.username} :)</Message.Header>
               <p>Fill the below details to post new job opening</p>
             </Message>
             <Form
@@ -330,19 +328,22 @@ class PostJob extends React.Component {
                   </Grid.Column>
                 </Grid.Row>
               </Grid>
-              {this.state.errors.length
-                ? <Message error>
-                    <Message.Header>
-                      Error:{' '}
-                      {this.state.errorMessage || 'Fill the required * fields'}
-                    </Message.Header>
-                    {!this.state.errorMessage &&
-                      <p>
-                        <strong>{this.state.errors.join(',')}</strong> is/are
-                        required fields
-                      </p>}
-                  </Message>
-                : ''}
+              {this.state.errors.length ? (
+                <Message error>
+                  <Message.Header>
+                    Error:{' '}
+                    {this.state.errorMessage || 'Fill the required * fields'}
+                  </Message.Header>
+                  {!this.state.errorMessage && (
+                    <p>
+                      <strong>{this.state.errors.join(',')}</strong> is/are
+                      required fields
+                    </p>
+                  )}
+                </Message>
+              ) : (
+                ''
+              )}
               <Form.Group widths="equal">
                 <Form.Button
                   loading={this.state.loading}

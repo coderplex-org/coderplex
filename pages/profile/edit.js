@@ -3,7 +3,7 @@ import React from 'react';
 import Icon from '../../components/icon';
 import publicPage from '../../hocs/public-page';
 
-export default publicPage(() =>
+export default publicPage(() => (
   <div>
     <main>
       <Icon />
@@ -20,5 +20,5 @@ export default publicPage(() =>
         flex-direction: column;
       }
     `}</style>
-  </div>,
-);
+  </div>
+));

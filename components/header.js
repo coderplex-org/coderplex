@@ -91,7 +91,7 @@ export default props => {
                   </li>
                 );
               })}
-              {props.username &&
+              {props.username && (
                 <li className="nav__linkItem">
                   <img src={props.avatarUrl} alt="avatar_img" />
                   <Dropdown
@@ -109,7 +109,8 @@ export default props => {
                       </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
-                </li>}
+                </li>
+              )}
             </ul>
           </nav>
         </div>

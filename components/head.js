@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 
-export default ({ title }) =>
+export default ({ title }) => (
   <Head>
     <meta charSet="utf-8" />
     <meta
@@ -41,9 +41,7 @@ export default ({ title }) =>
       rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css"
     />
-    <title>
-      {title}
-    </title>
+    <title>{title}</title>
     <meta name="description" content="coderplex" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
@@ -51,4 +49,5 @@ export default ({ title }) =>
     <meta property="og:image" content="/static/favicons/favicon-32x32.png" />
     <meta property="og:site_name" content="coderplex" />
     <meta property="og:description" content="coderplex" />
-  </Head>;
+  </Head>
+);

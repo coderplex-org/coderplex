@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default () =>
+export default () => (
   <div>
     <style jsx global>{`
       *,
@@ -14,9 +14,9 @@ export default () =>
         padding: 0;
         margin: 0;
         background: #fafafa;
-        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
-          Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
-          "Helvetica Neue", sans-serif;
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
+          Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+          'Helvetica Neue', sans-serif;
         font-weight: 400;
         color: #444;
         text-rendering: optimizeLegibility;
@@ -43,11 +43,12 @@ export default () =>
         width: 100px;
         height: 100%;
         box-shadow: 0 0 10px #d812c8, 0 0 5px #d812c8;
-        opacity: 1.0;
+        opacity: 1;
         transform: rotate(3deg) translate(0px, -4px);
       }
       .headroom--pinned header {
-        box-shadow: 0 2px 4px rgba(61, 71, 82, .1);
+        box-shadow: 0 2px 4px rgba(61, 71, 82, 0.1);
       }
     `}</style>
-  </div>;
+  </div>
+);
