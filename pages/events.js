@@ -3,15 +3,23 @@ import axios from 'axios';
 import { Card } from 'semantic-ui-react';
 
 import publicPage from '../hocs/public-page';
-import { futureEventsMeetupURL, pastEventsMeetupURL } from '../utils/urls';
+import {
+  futureEventsMeetupURL,
+  pastEventsMeetupURL,
+  reverseProxyCORS,
+} from '../utils/urls';
 import RowEvent from '../components/row-events';
 
 export default publicPage(
   class Events extends React.Component {
     static async getInitialProps() {
       try {
-        const requestPastEvents = await axios.get(pastEventsMeetupURL);
-        const requestFutureEvents = await axios.get(futureEventsMeetupURL);
+        const requestPastEvents = await axios.get(
+          `${reverseProxyCORS}${pastEventsMeetupURL}`,
+        );
+        const requestFutureEvents = await axios.get(
+          `${reverseProxyCORS}${futureEventsMeetupURL}`,
+        );
         return {
           pastEvents: requestPastEvents.data,
           futureEvents: requestFutureEvents.data,
