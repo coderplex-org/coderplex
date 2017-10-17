@@ -34,9 +34,6 @@
       "git add"
     ]
   },
-  "engines": {
-    "node": "8.1.4"
-  },
   "keywords": [],
   "author": "Vinay Puppal <me@vinaypuppal.com> (https://www.vinaypuppal.com/)",
   "license": "MIT",
