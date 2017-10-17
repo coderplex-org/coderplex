@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "xo",
-    "lint":
-      "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write --single-quote --print-width='80' --trailing-comma='all' && xo --fix",
+    "lint": "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write --single-quote --print-width='80' --trailing-comma='all' && xo --fix",
     "precommit": "lint-staged",
     "analyze": "cross-env ANALYZE=1 next build",
     "dev": "cross-env NODE_ENV=development nodemon server.js -w server.js",
@@ -17,15 +16,24 @@
   },
   "xo": {
     "parser": "babel-eslint",
-    "extends": ["prettier", "prettier/react", "plugin:react/recommended"],
-    "env": ["browser", "node"],
+    "extends": [
+      "prettier",
+      "prettier/react",
+      "plugin:react/recommended"
+    ],
+    "env": [
+      "browser",
+      "node"
+    ],
     "rules": {
       "linebreak-style": 0,
       "react/display-name": 0,
       "react/prop-types": 0
     },
     "space:": 2,
-    "ignores": ["next.config.js"]
+    "ignores": [
+      "next.config.js"
+    ]
   },
   "lint-staged": {
     "*.js": [
@@ -48,14 +56,14 @@
     "isomorphic-unfetch": "^2.0.0",
     "js-cookie": "^2.1.4",
     "moment": "^2.19.1",
-    "next": "2.4.7",
+    "next": "^4.1.0",
     "nprogress": "^0.2.0",
     "preact": "^8.2.1",
     "preact-compat": "^3.16.0",
     "prop-types": "^15.5.10",
-    "react": "^15.6.1",
+    "react": "^16.0.0",
     "react-count-down": "^1.1.0",
-    "react-dom": "^15.6.1",
+    "react-dom": "^16.0.0",
     "react-ga": "^2.2.0",
     "react-headroom": "^2.1.6",
     "react-icons": "^2.2.5",
