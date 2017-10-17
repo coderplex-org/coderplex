@@ -13,7 +13,7 @@ This project mainly uses
 
 ## Demo
 
-[https://dev.coderplex.org](https://dev.coderplex.org)
+[https://coderplex.org](https://coderplex.org)
 
 - [x] Login/Registration with Github and LinkedIn
 - [x] Collecting additional profile details after Registration
