@@ -1,5 +1,5 @@
-import React from 'react'
-import Router from 'next/router'
+import React from 'react';
+import Router from 'next/router';
 import {
   Container,
   Message,
@@ -9,18 +9,18 @@ import {
   TextArea,
   Select,
   Dropdown,
-} from 'semantic-ui-react'
+} from 'semantic-ui-react';
 
-import secretPage from '../../hocs/secret-page'
-import { client as feathersClient } from '../../utils/feathers-client'
+import secretPage from '../../hocs/secret-page';
+import { client as feathersClient } from '../../utils/feathers-client';
 
-const _jobTypes = ['FullTime', 'PartTime', 'Remote', 'Consulting', 'Freelance']
+const _jobTypes = ['FullTime', 'PartTime', 'Remote', 'Consulting', 'Freelance'];
 
 const jobTypes = _jobTypes.map(type => ({
   key: type,
   text: type,
   value: type,
-}))
+}));
 
 const technologies = [
   { key: 'angular', text: 'Angular', value: 'angular' },
@@ -38,7 +38,7 @@ const technologies = [
   { key: 'ruby', text: 'Ruby', value: 'ruby' },
   { key: 'ui', text: 'UI Design', value: 'ui' },
   { key: 'ux', text: 'User Experience', value: 'ux' },
-]
+];
 
 class PostJob extends React.Component {
   state = {
@@ -55,9 +55,9 @@ class PostJob extends React.Component {
     errors: [],
     errorMessage: '',
     loading: false,
-  }
+  };
   handelForm = e => {
-    e.preventDefault()
+    e.preventDefault();
     const {
       title,
       description,
@@ -68,68 +68,68 @@ class PostJob extends React.Component {
       companyLocation,
       companyWebsite,
       companyEmail,
-    } = this.state
+    } = this.state;
     if (!title) {
       this.setState({
         errors: ['title'],
-      })
-      return
+      });
+      return;
     }
     if (!description) {
       this.setState({
         errors: ['description'],
-      })
-      return
+      });
+      return;
     }
     if (!jobType) {
       this.setState({
         errors: ['jobType'],
-      })
-      return
+      });
+      return;
     }
     if (!payScale) {
       this.setState({
         errors: ['payScale'],
-      })
-      return
+      });
+      return;
     }
     if (requiredTechnologies.length === 0) {
       this.setState({
         errors: ['requiredTechnologies'],
-      })
-      return
+      });
+      return;
     }
     if (!companyName) {
       this.setState({
         errors: ['companyName'],
-      })
-      return
+      });
+      return;
     }
     if (!companyWebsite) {
       this.setState({
         errors: ['companyWebsite'],
-      })
-      return
+      });
+      return;
     }
     if (!companyEmail) {
       this.setState({
         errors: ['companyEmail'],
-      })
-      return
+      });
+      return;
     }
     if (!companyLocation) {
       this.setState({
         errors: ['companyLocation'],
-      })
-      return
+      });
+      return;
     }
-    this.setState({ loading: true })
+    this.setState({ loading: true });
     const companyDetails = {
       name: companyName,
       location: companyLocation,
       website: companyWebsite,
       email: companyEmail,
-    }
+    };
     feathersClient
       .service('jobs')
       .create({
@@ -141,7 +141,7 @@ class PostJob extends React.Component {
         companyDetails,
       })
       .then(job => {
-        console.log(job)
+        console.log(job);
         return Router.push('/jobs').then(() => {
           this.setState({
             loading: false,
@@ -154,19 +154,19 @@ class PostJob extends React.Component {
             companyLocation: '',
             companyWebsite: '',
             companyEmail: '',
-          })
-        })
+          });
+        });
       })
       .catch(err => {
-        console.log(err)
+        console.log(err);
         this.setState({
           loading: false,
           errors: [`${e.message}`],
           errorMessage: e.message,
-        })
-      })
-    console.log('all don')
-  }
+        });
+      });
+    console.log('all don');
+  };
   render() {
     return (
       <div>
@@ -370,8 +370,8 @@ class PostJob extends React.Component {
           }
         `}</style>
       </div>
-    )
+    );
   }
 }
 
-export default secretPage(PostJob)
+export default secretPage(PostJob);

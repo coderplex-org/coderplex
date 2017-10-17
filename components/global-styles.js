@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default () => (
   <div>
@@ -51,4 +51,4 @@ export default () => (
       }
     `}</style>
   </div>
-)
+);

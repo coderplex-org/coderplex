@@ -1,9 +1,9 @@
-import React from 'react'
-import Link from 'next/link'
-import { Grid, Button, Image, Divider, Tab } from 'semantic-ui-react'
+import React from 'react';
+import Link from 'next/link';
+import { Grid, Button, Image, Divider, Tab } from 'semantic-ui-react';
 
-import secretPage from '../../hocs/secret-page'
-import Icon from '../../components/icon'
+import secretPage from '../../hocs/secret-page';
+import Icon from '../../components/icon';
 
 const TabsContent = [
   {
@@ -58,7 +58,7 @@ const TabsContent = [
       </Tab.Pane>
     ),
   },
-]
+];
 
 const Profile = props => (
   <div>
@@ -191,6 +191,6 @@ const Profile = props => (
       }
     `}</style>
   </div>
-)
+);
 
-export default secretPage(Profile)
+export default secretPage(Profile);

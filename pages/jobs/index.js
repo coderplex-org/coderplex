@@ -1,21 +1,21 @@
-import React from 'react'
-import Link from 'next/link'
-import { Input, Dropdown, Button, Header, Icon } from 'semantic-ui-react'
-import FaBuilding from 'react-icons/lib/fa/building'
-import FaLocation from 'react-icons/lib/fa/map-marker'
+import React from 'react';
+import Link from 'next/link';
+import { Input, Dropdown, Button, Header, Icon } from 'semantic-ui-react';
+import FaBuilding from 'react-icons/lib/fa/building';
+import FaLocation from 'react-icons/lib/fa/map-marker';
 // Import FaArrowRight from 'react-icons/lib/fa/angle-right'
 
-import publicPage from '../../hocs/public-page'
-import { client as feathersClient } from '../../utils/feathers-client'
-import truncateString from '../../utils'
+import publicPage from '../../hocs/public-page';
+import { client as feathersClient } from '../../utils/feathers-client';
+import truncateString from '../../utils';
 
-const _jobTypes = ['FullTime', 'PartTime', 'Remote', 'Consulting', 'Freelance']
+const _jobTypes = ['FullTime', 'PartTime', 'Remote', 'Consulting', 'Freelance'];
 
 const jobTypes = _jobTypes.map(type => ({
   key: type,
   text: type,
   value: type,
-}))
+}));
 
 const technologies = [
   { key: 'all', text: 'All', value: 'all' },
@@ -34,7 +34,7 @@ const technologies = [
   { key: 'ruby', text: 'Ruby', value: 'ruby' },
   { key: 'ui', text: 'UI Design', value: 'ui' },
   { key: 'ux', text: 'User Experience', value: 'ux' },
-]
+];
 
 const Jobs = props => (
   <div>
@@ -124,7 +124,7 @@ const Jobs = props => (
                       </Link>
                     </div>
                   </div>
-                )
+                );
               })}
             </div>
             {/* <div className="jobs__more">
@@ -364,7 +364,7 @@ const Jobs = props => (
       }
     `}</style>
   </div>
-)
+);
 
 Jobs.getInitialProps = async () => {
   const jobs = await feathersClient
@@ -376,8 +376,8 @@ Jobs.getInitialProps = async () => {
         },
       },
     })
-    .then(res => res.data)
-  return { jobs }
-}
+    .then(res => res.data);
+  return { jobs };
+};
 
-export default publicPage(Jobs)
+export default publicPage(Jobs);

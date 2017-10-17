@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-import Icon from '../../components/icon'
-import publicPage from '../../hocs/public-page'
+import Icon from '../../components/icon';
+import publicPage from '../../hocs/public-page';
 
 export default publicPage(() => (
   <div>
@@ -21,4 +21,4 @@ export default publicPage(() => (
       }
     `}</style>
   </div>
-))
+));

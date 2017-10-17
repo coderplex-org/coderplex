@@ -1,5 +1,5 @@
-import React from 'react'
-import Head from 'next/head'
+import React from 'react';
+import Head from 'next/head';
 
 export default ({ title }) => (
   <Head>
@@ -50,4 +50,4 @@ export default ({ title }) => (
     <meta property="og:site_name" content="coderplex" />
     <meta property="og:description" content="coderplex" />
   </Head>
-)
+);

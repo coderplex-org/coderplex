@@ -1,8 +1,8 @@
-import React from 'react'
-import FaFacebook from 'react-icons/lib/fa/facebook'
-import FaYoutube from 'react-icons/lib/fa/youtube-play'
-import FaGithub from 'react-icons/lib/fa/github-alt'
-import FaInstagram from 'react-icons/lib/fa/instagram'
+import React from 'react';
+import FaFacebook from 'react-icons/lib/fa/facebook';
+import FaYoutube from 'react-icons/lib/fa/youtube-play';
+import FaGithub from 'react-icons/lib/fa/github-alt';
+import FaInstagram from 'react-icons/lib/fa/instagram';
 
 export default () => (
   <footer>
@@ -80,4 +80,4 @@ export default () => (
       }
     `}</style>
   </footer>
-)
+);
