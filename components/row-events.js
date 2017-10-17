@@ -4,7 +4,7 @@ import moment from 'moment';
 
 const RowEvent = props => {
   return (
-    <Card fluid href={props.link} raised>
+    <Card fluid raised targer="_blank" href={props.link}>
       <Card.Content>
         <Card.Header>{props.name}</Card.Header>
         <div className="card_venue">
