@@ -1,31 +1,31 @@
-import React from 'react'
-import axios from 'axios'
-import NProgress from 'nprogress'
+import React from 'react';
+import axios from 'axios';
+import NProgress from 'nprogress';
 
-import publicPage from '../hocs/public-page'
-import { futureEventsMeetupURL, pastEventsMeetupURL } from '../common/urls'
-import RowEvent from '../components/row-events'
+import publicPage from '../hocs/public-page';
+import { futureEventsMeetupURL, pastEventsMeetupURL } from '../utils/urls';
+import RowEvent from '../components/row-events';
 
 export default publicPage(
   class Events extends React.Component {
     state = {
       pastEvents: [],
       futureEvents: [],
-    }
+    };
 
     async componentDidMount() {
-      NProgress.start()
+      NProgress.start();
       try {
-        const requestPastEvents = await axios.get(pastEventsMeetupURL)
-        NProgress.set(0.4)
-        const requestFutureEvents = await axios.get(futureEventsMeetupURL)
+        const requestPastEvents = await axios.get(pastEventsMeetupURL);
+        NProgress.set(0.4);
+        const requestFutureEvents = await axios.get(futureEventsMeetupURL);
         await this.setState({
           pastEvents: requestPastEvents.data,
           futureEvents: requestFutureEvents.data,
-        })
-        NProgress.done()
+        });
+        NProgress.done();
       } catch (err) {
-        console.log(err)
+        console.log(err);
       }
     }
 
@@ -102,7 +102,7 @@ export default publicPage(
             }
           `}</style>
         </div>
-      )
+      );
     }
   },
-)
+);
