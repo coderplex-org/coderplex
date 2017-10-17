@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import NProgress from 'nprogress';
+import { Card } from 'semantic-ui-react';
 
 import publicPage from '../hocs/public-page';
 import { futureEventsMeetupURL, pastEventsMeetupURL } from '../utils/urls';
@@ -32,26 +33,9 @@ export default publicPage(
     render() {
       return (
         <div>
-          <div
-            style={{
-              backgroundColor: '#f4f7fb',
-              minHeight: '200px',
-            }}
-          >
-            <h1
-              style={{
-                textAlign: 'center',
-                paddingTop: '20px',
-                fontSize: '4em',
-                color: '#DF1CB5',
-                fontWeight: '900',
-              }}
-            >
-              Events
-            </h1>
-            <h2 style={{ textAlign: 'center' }}>
-              Because you cannot change the world alone
-            </h2>
+          <div className="top_banner_root">
+            <h1 className="top_banner_headline">Events</h1>
+            <h2>Because you cannot change the world alone</h2>
           </div>
           <main>
             {this.state.pastEvents.length !== 0 &&
@@ -60,27 +44,30 @@ export default publicPage(
                 <h4>Upcoming events</h4>
                 <div>
                   {this.state.futureEvents.map(event => (
-                    <RowEvent
-                      key={event.id}
-                      name={event.name}
-                      yesCount={event.yes_rsvp_count}
-                      time={event.time}
-                      venue={event.venue}
-                      link={event.link}
-                    />
+                    <Card.Group key={event.id}>
+                      <RowEvent
+                        name={event.name}
+                        yesCount={event.yes_rsvp_count}
+                        time={event.time}
+                        venue={event.venue}
+                        link={event.link}
+                      />
+                    </Card.Group>
                   ))}
                 </div>
                 <h4>Recent events</h4>
                 <div>
                   {this.state.pastEvents.map(event => (
-                    <RowEvent
-                      key={event.id}
-                      name={event.name}
-                      yesCount={event.yes_rsvp_count}
-                      time={event.time}
-                      venue={event.venue}
-                      link={event.link}
-                    />
+                    <Card.Group key={event.id}>
+                      <RowEvent
+                        key={event.id}
+                        name={event.name}
+                        yesCount={event.yes_rsvp_count}
+                        time={event.time}
+                        venue={event.venue}
+                        link={event.link}
+                      />
+                    </Card.Group>
                   ))}
                 </div>
               </div>
@@ -90,15 +77,27 @@ export default publicPage(
           </main>
           <style jsx>{`
             main {
-              background-color :#FFFFFF
+              background-color: #ffffff;
               padding-top: 30px;
-              padding-bottom:30px;
+              padding-bottom: 30px;
+              padding-left: 30px;
+              padding-right: 30px;
               min-height: calc(100vh - 70px);
-              padding-left: 40;
               display: flex;
               justify-content: center;
               align-items: center;
               flex-direction: column;
+            }
+            .top_banner_root {
+              background-color: #f4f7fb;
+              min-height: 200px;
+              text-align: center;
+            }
+            .top_banner_headline {
+              padding-top: 20px;
+              font-size: 4em;
+              color: #df1cb5;
+              font-weight: 900;
             }
           `}</style>
         </div>

@@ -1,43 +1,40 @@
-import React from 'react'
-import { Card, Icon } from 'semantic-ui-react'
-import moment from 'moment'
+import React from 'react';
+import { Card, Icon } from 'semantic-ui-react';
+import moment from 'moment';
 
 const RowEvent = props => {
   return (
-    <cardhead onClick={() => window.open(props.link)}>
-      {/* <div style={{ display: 'inline-block' }}>Picture goes here</div> */}
-      <Card
-        style={{
-          marginTop: '15px',
-          width: '800px',
-          backgroundColor: '#fafafa',
-        }}
-      >
-        <Card.Content>
-          <Card.Header>{props.name}</Card.Header>
-          <Card.Meta style={{ marginTop: '15px' }}>
+    <Card fluid href={props.link} raised>
+      <Card.Content>
+        <Card.Header>{props.name}</Card.Header>
+        <div className="card_venue">
+          <Card.Meta>
             {props.venue === undefined ? 'Online' : props.venue.name}
           </Card.Meta>
-          {/* <Card.Description as="string">
-            {props.description.replace(/<\/?[a-z][a-z0-9]*[^<>]*>/gi, '')}
-          </Card.Description> */}
-        </Card.Content>
-        <Card.Content extra>
+        </div>
+      </Card.Content>
+      <Card.Content extra>
+        <span className="card_icons">
           <Icon name="clock" />
           {moment(props.time).format("h:mm A, ddd MMM Do 'YY")}
-          <Icon name="users" style={{ marginLeft: '15px' }} />
+        </span>
+        <span className="card_icons">
+          <Icon name="users" />
           {`${props.yesCount} attended`}
-          <Icon name="log out" style={{ marginLeft: '15px' }} />
-          {props.venue === undefined ? 'Free session' : 'Free entry'}
-        </Card.Content>
-      </Card>
+        </span>
+        <Icon name="log out" />
+        {props.venue === undefined ? 'Free session' : 'Free entry'}
+      </Card.Content>
       <style jsx>{`
-        cardhead :hover {
-          cursor: pointer;
+        .card_venue {
+          margin-top: 15px;
+        }
+        .card_icons {
+          margin-right: 15px;
         }
       `}</style>
-    </cardhead>
-  )
-}
+    </Card>
+  );
+};
 
-export default RowEvent
+export default RowEvent;
