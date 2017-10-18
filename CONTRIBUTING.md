@@ -9,11 +9,11 @@
 ```bash
 $ npm i -g now
 ```
-* Run now inside the project root directory
+* Run **now** inside the project root directory
 ```bash
 $ now
 ```
-* After the app is deployed. Alias your generated link to *coderplex-pr-XX.now.sh*
+* After the app is deployed. [Alias](https://zeit.co/docs/features/aliases) your generated link to *coderplex-pr-XX.now.sh*
 ```bash
 $ now alias url coderplex-pr-XX
 ```
