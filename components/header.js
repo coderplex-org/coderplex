@@ -103,8 +103,8 @@ export default props => {
           align-items: center;
         }
         .nav__logo img {
-          width: 72px;
-          height: 72px;
+          width: 50px;
+          height: 50px;
           margin-right: 5px;
         }
         .nav__links {

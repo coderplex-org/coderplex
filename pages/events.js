@@ -62,6 +62,7 @@ class Events extends React.Component {
                       time={event.time}
                       venue={event.venue}
                       link={event.link}
+                      status={event.status}
                     />
                   </Card.Group>
                 ))}
@@ -77,6 +78,7 @@ class Events extends React.Component {
                       time={event.time}
                       venue={event.venue}
                       link={event.link}
+                      status={event.status}
                     />
                   </Card.Group>
                 ))}
