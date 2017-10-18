@@ -2,8 +2,19 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - "7.7"
+  - '7.7'
 before_install:
-  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 0.27.5
-  - export PATH="$HOME/.yarn/bin:$PATH"
+  - 'curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 0.27.5'
+  - 'export PATH="$HOME/.yarn/bin:$PATH"'
 cache: yarn
+after_script:
+  - NOW_ALIAS=coderplex.org node_modules/.bin/now-travis
+branches:
+  only:
+    - master
+env:
+  global:
+    - secure: >-
+        n+2Hmo9EXQf8+fxOeVzF13eRG6LyQz0A0y+GEtwySLzHkJkOdLX1UkD9BqVKwt2DgkQXzis5LF4OOAUOO2EnOjkq7bJB/vHQGWywNlQ3vuvm5m7F+EIWwBtNJHJMjEGiwUF9C6FiX2dPYiGgfkWWXEZ74P+oEOEFuQst1dj4197IU+SOcgME7iQLX+N/PWOty0o3el6I8fKkgMNnnpTkmPwuYPBixicnH6lNBURAixMZsEhfZbdl6L9/uAoEz3pPQDbOOlorgDESzwseLADcHnrUtRz9Pl2C4YzRXSkf5iiJWWbcGGzTymROnwH1T8baTtzEdeUslOHIvpA8oYjq8Vtmq0tTllIM5Pc05h1Zdbd/dqvVE6bXzjzC1ddKJawP3avG/ZnS9WrVhg+nXLH4Ic9ULVjbdxYa61SGjAWevaA5vWj2FwEjF1FscbYSNP9SCpp4P2ehYw1JDWEygfOqWzn1MH+fD2ffFrHi/+q7CF99o85dQrDXIeGQ6Oii8JU08FtIUfGyQmDXb2xDF1SoIFlKrUL8R/oJZ9GmvKhOFmDtPvqtL93/WA+K72PHTL1PcMpo8NgZjPc+2EzhQbpCLSSUgvoG+1Y0c9DCF5NEjlxUa9h1PqiHw18NVOctZ7q0zPDL2dpqqKedbOqWb/Q9cg7oebEDWowlHlFRrlnfpsk=
+    - secure: >-
+        RnukVdPtXialGJRvYoJVelRPmyU9ZOE7+be9ec1fndOrWQCiymurQob1jFMSEQ8mqN7YAEXnfzXJcDmXAGcvoWJBHsmM0tXAndsPCVASOs7ZdREZ/HX5Z/g6V+RcRn6ldgGoon6YVwKJ/lSwT/X2dKuSa/QljdAzEpMA7uwKKniDNMv6Yl1I7sMb37ulC2em5e28PMCbVoyNTrPik7dJxA0aJh5zeQcTOZdiBR6sSkUZ33RvAg4M9reRWvtNfwM/SPlmirFCzSy6LL0mwsBhmoBe01bz2hs0wvoF1QzK7I2Q5MWa2A/0iY9tn0dNiaalmxJTQDkEv2IDlznXr+B+FznOQMs2KNoUtkJ4shWw+57dhrfw8eN7LJZzOYAdcx+75KRO3Z0dOkip6ykxr/sNmFKW5pASOfdeXDPtS3B7bCGMnO24kOrUSQUmIMA5kzwb+3PeHzDoGVnJbBjHgDz0VVMxjql3clw1Ci3DuqsQ9e/eWW4JpaciTsjIUk4uVLVMoDrWcBLcqkQE4b9VyoGx9m4Rj+z3mWscHQF4i/COhYOhYukeCgzeXZuJeQoKmYspBNq0R5jcJWnmtZ5Lc19+QCP86DGyZGcDCBpp2CRn8nslUDh8jXfwXC55rlmb7p3oN9sgXrDjPaFTfdZDHdPwjXx5PDJQJkHANjpAQuO2fr4=

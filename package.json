@@ -79,6 +79,7 @@
     "husky": "^0.14.3",
     "lint-staged": "^4.0.2",
     "nodemon": "^1.11.0",
+    "now-travis": "1.0.1",
     "prettier": "^1.7.0",
     "webpack-bundle-analyzer": "^2.8.3",
     "xo": "^0.18.2"
