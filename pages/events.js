@@ -1,6 +1,6 @@
 import React from 'react';
 import fetch from 'isomorphic-unfetch';
-import { Card, Divider } from 'semantic-ui-react';
+import { Card, Divider, Dimmer, Loader } from 'semantic-ui-react';
 
 import publicPage from '../hocs/public-page';
 import {
@@ -11,7 +11,13 @@ import {
 import RowEvent from '../components/row-events';
 
 class Events extends React.Component {
-  static async getInitialProps() {
+  state = {
+    pastEvents: null,
+    futureEvents: null,
+    fetchError: null,
+    loading: true,
+  };
+  async componentDidMount() {
     try {
       const pastEvents = await fetch(
         `${reverseProxyCORS}${pastEventsMeetupURL}`,
@@ -25,21 +31,72 @@ class Events extends React.Component {
         if (res.ok) return res.json();
         throw new Error('Failed to Retrieve Events');
       });
-      return {
+      await this.setState({
         pastEvents,
         futureEvents,
         fetchError: null,
-      };
+        loading: false,
+      });
     } catch (err) {
       console.log(err);
-      return {
+      await this.setState({
         pastEvents: null,
         futureEvents: null,
         fetchError: err.message,
-      };
+        loading: false,
+      });
     }
   }
-
+  renderEvents() {
+    if (this.state.fetchError) {
+      return <div>{this.state.fetchError}</div>;
+    }
+    return (
+      <div>
+        <section>
+          <h2>Upcoming events</h2>
+          <div>
+            {this.state.futureEvents.map(event => (
+              <Card.Group key={event.id}>
+                <RowEvent
+                  name={event.name}
+                  yesCount={event.yes_rsvp_count}
+                  time={event.time}
+                  venue={event.venue}
+                  link={event.link}
+                  status={event.status}
+                />
+              </Card.Group>
+            ))}
+          </div>
+        </section>
+        <Divider />
+        <section>
+          <h2>Recent events</h2>
+          <div>
+            {this.state.pastEvents.map(event => (
+              <Card.Group key={event.id}>
+                <RowEvent
+                  key={event.id}
+                  name={event.name}
+                  yesCount={event.yes_rsvp_count}
+                  time={event.time}
+                  venue={event.venue}
+                  link={event.link}
+                  status={event.status}
+                />
+              </Card.Group>
+            ))}
+          </div>
+        </section>
+        <style jsx>{`
+          section {
+            margin: 50px 0;
+          }
+        `}</style>
+      </div>
+    );
+  }
   render() {
     return (
       <div>
@@ -48,47 +105,12 @@ class Events extends React.Component {
           <h2>Because you cannot change the world alone</h2>
         </div>
         <main>
-          {this.props.fetchError ? (
-            <div>{this.props.fetchError}</div>
+          {this.state.loading ? (
+            <Dimmer active>
+              <Loader indeterminate>Fetching Events</Loader>
+            </Dimmer>
           ) : (
-            <div>
-              <section>
-                <h2>Upcoming events</h2>
-                <div>
-                  {this.props.futureEvents.map(event => (
-                    <Card.Group key={event.id}>
-                      <RowEvent
-                        name={event.name}
-                        yesCount={event.yes_rsvp_count}
-                        time={event.time}
-                        venue={event.venue}
-                        link={event.link}
-                        status={event.status}
-                      />
-                    </Card.Group>
-                  ))}
-                </div>
-              </section>
-              <Divider />
-              <section>
-                <h2>Recent events</h2>
-                <div>
-                  {this.props.pastEvents.map(event => (
-                    <Card.Group key={event.id}>
-                      <RowEvent
-                        key={event.id}
-                        name={event.name}
-                        yesCount={event.yes_rsvp_count}
-                        time={event.time}
-                        venue={event.venue}
-                        link={event.link}
-                        status={event.status}
-                      />
-                    </Card.Group>
-                  ))}
-                </div>
-              </section>
-            </div>
+            this.renderEvents()
           )}
         </main>
         <style jsx>{`
@@ -114,9 +136,6 @@ class Events extends React.Component {
             font-size: 4em;
             color: #df1cb5;
             font-weight: 900;
-          }
-          section {
-            margin: 50px 0;
           }
         `}</style>
       </div>
