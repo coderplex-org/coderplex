@@ -1,6 +1,6 @@
 import React from 'react';
 import fetch from 'isomorphic-unfetch';
-import { Card } from 'semantic-ui-react';
+import { Card, Divider } from 'semantic-ui-react';
 
 import publicPage from '../hocs/public-page';
 import {
@@ -52,37 +52,42 @@ class Events extends React.Component {
             <div>{this.props.fetchError}</div>
           ) : (
             <div>
-              <h4>Upcoming events</h4>
-              <div>
-                {this.props.futureEvents.map(event => (
-                  <Card.Group key={event.id}>
-                    <RowEvent
-                      name={event.name}
-                      yesCount={event.yes_rsvp_count}
-                      time={event.time}
-                      venue={event.venue}
-                      link={event.link}
-                      status={event.status}
-                    />
-                  </Card.Group>
-                ))}
-              </div>
-              <h4>Recent events</h4>
-              <div>
-                {this.props.pastEvents.map(event => (
-                  <Card.Group key={event.id}>
-                    <RowEvent
-                      key={event.id}
-                      name={event.name}
-                      yesCount={event.yes_rsvp_count}
-                      time={event.time}
-                      venue={event.venue}
-                      link={event.link}
-                      status={event.status}
-                    />
-                  </Card.Group>
-                ))}
-              </div>
+              <section>
+                <h2>Upcoming events</h2>
+                <div>
+                  {this.props.futureEvents.map(event => (
+                    <Card.Group key={event.id}>
+                      <RowEvent
+                        name={event.name}
+                        yesCount={event.yes_rsvp_count}
+                        time={event.time}
+                        venue={event.venue}
+                        link={event.link}
+                        status={event.status}
+                      />
+                    </Card.Group>
+                  ))}
+                </div>
+              </section>
+              <Divider />
+              <section>
+                <h2>Recent events</h2>
+                <div>
+                  {this.props.pastEvents.map(event => (
+                    <Card.Group key={event.id}>
+                      <RowEvent
+                        key={event.id}
+                        name={event.name}
+                        yesCount={event.yes_rsvp_count}
+                        time={event.time}
+                        venue={event.venue}
+                        link={event.link}
+                        status={event.status}
+                      />
+                    </Card.Group>
+                  ))}
+                </div>
+              </section>
             </div>
           )}
         </main>
@@ -109,6 +114,9 @@ class Events extends React.Component {
             font-size: 4em;
             color: #df1cb5;
             font-weight: 900;
+          }
+          section {
+            margin: 50px 0;
           }
         `}</style>
       </div>
