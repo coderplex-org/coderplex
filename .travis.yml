@@ -8,7 +8,7 @@ before_install:
   - 'export PATH="$HOME/.yarn/bin:$PATH"'
 cache: yarn
 after_script:
-  - NOW_ALIAS=coderplex.org node_modules/.bin/now-travis
+  - yarn export && cd out && NOW_ALIAS=coderplex-app.now.sh ../scripts/now -p
 branches:
   only:
     - master
