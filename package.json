@@ -10,7 +10,8 @@
     "analyze": "cross-env ANALYZE=1 next build",
     "dev": "cross-env NODE_ENV=development next",
     "start": "cross-env NODE_ENV=production next start",
-    "build": "next build"
+    "build": "next build",
+    "export": "yarn build && next export"
   },
   "xo": {
     "parser": "babel-eslint",
@@ -63,13 +64,19 @@
     "babel-eslint": "^7.2.3",
     "babel-plugin-lodash": "^3.2.11",
     "cross-env": "^5.0.2",
+    "cross-spawn": "5.1.0",
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-react": "^7.1.0",
     "husky": "^0.14.3",
     "lint-staged": "^4.0.2",
-    "now-travis": "1.0.1",
+    "normalize-url": "1.9.1",
+    "now": "8.3.10",
+    "octonode": "0.9.1",
     "prettier": "^1.7.0",
+    "travis-after-all": "1.4.5",
+    "url-regex": "4.1.1",
     "webpack-bundle-analyzer": "^2.8.3",
-    "xo": "^0.18.2"
+    "xo": "^0.18.2",
+    "yargs": "9.0.1"
   }
 }
