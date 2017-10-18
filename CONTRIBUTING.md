@@ -5,8 +5,19 @@
 #### Test deploy
 
 
-* Install [now-cli](https://zeit.co/now) using `npm i -g now` and run `now` inside the project root directory.
+* Install [now-cli](https://zeit.co/now)
+```bash
+$ npm i -g now
+```
+* Run now inside the project root directory
+```bash
+$ now
+```
+* After the app is deployed. Alias your generated link to *coderplex-pr-XX.now.sh*
+```bash
+$ now alias url coderplex-pr-XX
+```
+> url = generated link to website when `now` was run
 
-* Thats it! Now the app is deployed. A link similar to https://coderplex-app-hj1vnm.now.sh is generated. Open this link to see the app live with the changes you made.
+> XX = Opened pull request number
 
-* You can alias your now.sh deployment to PR number like `coderplex-pr-11.now.sh` by using `run now alias <url> coderplex-pr-11.now.sh`.
