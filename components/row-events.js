@@ -20,10 +20,13 @@ const RowEvent = props => {
         </span>
         <span className="card_icons">
           <Icon name="users" />
-          {`${props.yesCount} attended`}
+          {props.yesCount}
+          {moment(props.time).isAfter() ? ' attending' : ' attended'}
         </span>
-        <Icon name="log out" />
-        {props.venue === undefined ? 'Free session' : 'Free entry'}
+        <span className="card_icons">
+          <Icon name="log out" />
+          {props.venue === undefined ? 'Free session' : 'Free entry'}
+        </span>
       </Card.Content>
       <style jsx>{`
         .card_venue {
@@ -31,6 +34,12 @@ const RowEvent = props => {
         }
         .card_icons {
           margin-right: 15px;
+        }
+        @media (max-width: 700px) {
+          .card_icons {
+            display: flex;
+            margin: 5px 0;
+          }
         }
       `}</style>
     </Card>
