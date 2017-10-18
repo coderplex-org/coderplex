@@ -123,10 +123,11 @@ function deploy(context, sha) {
       ghPR.createComment(
         {
           body: comment,
-          commit_id: process.env.TRAVIS_COMMIT,
         },
         noop,
       );
+    } else {
+      console.log('No PR found');
     }
   });
 }
