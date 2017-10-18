@@ -24,6 +24,8 @@ if (!nowToken) {
   throw new Error('Missing required environment variable NOW_TOKEN');
 }
 
+console.log(process.env.TRAVIS_PULL_REQUEST);
+
 const client = github.client(githubToken);
 const ghRepo = client.repo(process.env.TRAVIS_REPO_SLUG);
 let ghPR;
