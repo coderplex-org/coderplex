@@ -21,7 +21,7 @@ const RowEvent = props => {
         <span className="card_icons">
           <Icon name="users" />
           {props.yesCount}
-          {moment(props.time).isAfter() ? ' attending' : ' attended'}
+          {props.status === 'upcoming' ? ' attending' : ' attended'}
         </span>
         <span className="card_icons">
           <Icon name="log out" />
