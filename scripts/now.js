@@ -111,6 +111,7 @@ function deploy(context, sha) {
       ghPR.createComment(
         {
           body: comment,
+          in_reply_to: 1,
         },
         (err, res) => {
           console.log(err, res);
