@@ -53,6 +53,7 @@ export default publicPage(
                         time={event.time}
                         venue={event.venue}
                         link={event.link}
+                        status={event.status}
                       />
                     </Card.Group>
                   ))}
@@ -68,6 +69,7 @@ export default publicPage(
                         time={event.time}
                         venue={event.venue}
                         link={event.link}
+                        status={event.status}
                       />
                     </Card.Group>
                   ))}
