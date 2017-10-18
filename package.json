@@ -5,35 +5,25 @@
   "main": "index.js",
   "scripts": {
     "test": "xo",
-    "lint": "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write --single-quote --print-width='80' --trailing-comma='all' && xo --fix",
+    "lint":
+      "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write --single-quote --print-width='80' --trailing-comma='all' && xo --fix",
     "precommit": "lint-staged",
     "analyze": "cross-env ANALYZE=1 next build",
-    "dev": "cross-env NODE_ENV=development nodemon server.js -w server.js",
-    "dev:with-api": "cross-env WITH_API=1 nodemon server.js -w server.js",
-    "start": "cross-env NODE_ENV=production node server",
-    "build": "next build",
-    "heroku-postbuild": "next build"
+    "dev": "cross-env NODE_ENV=development next",
+    "start": "cross-env NODE_ENV=production next start",
+    "build": "next build"
   },
   "xo": {
     "parser": "babel-eslint",
-    "extends": [
-      "prettier",
-      "prettier/react",
-      "plugin:react/recommended"
-    ],
-    "env": [
-      "browser",
-      "node"
-    ],
+    "extends": ["prettier", "prettier/react", "plugin:react/recommended"],
+    "env": ["browser", "node"],
     "rules": {
       "linebreak-style": 0,
       "react/display-name": 0,
       "react/prop-types": 0
     },
     "space:": 2,
-    "ignores": [
-      "next.config.js"
-    ]
+    "ignores": ["next.config.js"]
   },
   "lint-staged": {
     "*.js": [
@@ -44,22 +34,13 @@
   },
   "keywords": [],
   "author": "Vinay Puppal <me@vinaypuppal.com> (https://www.vinaypuppal.com/)",
-  "license": "MIT",
+  "license": "BSD",
   "dependencies": {
     "axios": "^0.16.2",
-    "cookie-parser": "^1.4.3",
-    "express": "^4.15.3",
-    "feathers": "^2.1.7",
-    "feathers-authentication-client": "^0.3.3",
-    "feathers-hooks": "^2.0.2",
     "feathers-rest": "^1.8.0",
-    "isomorphic-unfetch": "^2.0.0",
-    "js-cookie": "^2.1.4",
     "moment": "^2.19.1",
     "next": "^4.1.0",
     "nprogress": "^0.2.0",
-    "preact": "^8.2.1",
-    "preact-compat": "^3.16.0",
     "prop-types": "^15.5.10",
     "react": "^16.0.0",
     "react-count-down": "^1.1.0",
@@ -78,7 +59,6 @@
     "eslint-plugin-react": "^7.1.0",
     "husky": "^0.14.3",
     "lint-staged": "^4.0.2",
-    "nodemon": "^1.11.0",
     "now-travis": "1.0.1",
     "prettier": "^1.7.0",
     "webpack-bundle-analyzer": "^2.8.3",

@@ -3,9 +3,7 @@ import Headroom from 'react-headroom';
 import NProgress from 'nprogress';
 import Router from 'next/router';
 import Link from 'next/link';
-import { Dropdown } from 'semantic-ui-react';
 
-import { logout } from '../utils/authenticate';
 import GlobalStyles from './global-styles';
 import Head from './head';
 
@@ -30,36 +28,29 @@ export default props => {
     {
       title: 'Home',
       path: '/',
+      external: false,
     },
     {
       title: 'Events',
       path: '/events',
+      external: false,
     },
     {
       title: 'Learn',
       path: '/learn',
+      external: false,
     },
     {
       title: 'Space',
       path: '/space',
-    },
-    {
-      title: 'Jobs',
-      path: '/jobs',
-    },
-    {
-      title: 'Projects',
-      path: '/projects',
+      external: false,
     },
     {
       title: 'Blog',
       path: 'https://medium.com/freecodecamp-hyderabad',
+      external: true,
     },
-    {
-      title: 'Login/Register',
-      path: '/login',
-    },
-  ].filter(item => (props.username ? item.path !== '/login' : true));
+  ];
   return (
     <Headroom>
       <header>
@@ -73,17 +64,13 @@ export default props => {
             <ul className="nav__links">
               {navItems.map(item => {
                 return (
-                  <li
-                    key={item.title}
-                    className={`nav__linkItem ${item.path === '/login'
-                      ? 'login__btn'
-                      : ''}`}
-                  >
+                  <li key={item.title} className="nav__linkItem">
                     <Link href={item.path}>
                       <a
                         className={`nav__link ${props.url.pathname === item.path
                           ? 'nav__link--active'
                           : ''}`}
+                        target={item.external ? '_blank' : '_self'}
                       >
                         {item.title}
                       </a>
@@ -91,26 +78,6 @@ export default props => {
                   </li>
                 );
               })}
-              {props.username && (
-                <li className="nav__linkItem">
-                  <img src={props.avatarUrl} alt="avatar_img" />
-                  <Dropdown
-                    inline
-                    text={`${props.username}`}
-                    pointing
-                    className="dropdown__linkItem"
-                  >
-                    <Dropdown.Menu>
-                      <Link href="/profile">
-                        <Dropdown.Item as="a">Profile</Dropdown.Item>
-                      </Link>
-                      <Dropdown.Item onClick={() => logout()}>
-                        Logout
-                      </Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                </li>
-              )}
             </ul>
           </nav>
         </div>
@@ -178,19 +145,6 @@ export default props => {
         .nav__link--active {
           color: #444;
           border-bottom: 2px solid #314159;
-          pointer-events: none;
-        }
-        .login__btn .nav__link {
-          font-weight: bold;
-          color: #00df90;
-        }
-        .login__btn .nav__link:hover {
-          font-weight: bold;
-          color: #01bf7c;
-        }
-        .login__btn .nav__link--active {
-          color: #01bf7c;
-          border-bottom: 2px solid #00df90;
           pointer-events: none;
         }
         @media (max-width: 700px) {
