@@ -31,7 +31,7 @@ const ghRepo = client.repo(process.env.TRAVIS_REPO_SLUG);
 let ghPR;
 
 if (process.env.TRAVIS_PULL_REQUEST) {
-  ghPR = client.pr(
+  ghPR = client.issue(
     process.env.TRAVIS_REPO_SLUG,
     process.env.TRAVIS_PULL_REQUEST,
   );
@@ -114,7 +114,6 @@ function deploy(context, sha) {
       ghPR.createComment(
         {
           body: comment,
-          in_reply_to: 147402206,
         },
         (err, res) => {
           console.log(err, res);
