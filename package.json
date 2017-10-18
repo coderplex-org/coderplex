@@ -44,9 +44,9 @@
   "author": "Vinay Puppal <me@vinaypuppal.com> (https://www.vinaypuppal.com/)",
   "license": "BSD",
   "dependencies": {
+    "date-fns": "1.29.0",
     "feathers-rest": "^1.8.0",
     "isomorphic-unfetch": "2.0.0",
-    "moment": "^2.19.1",
     "next": "^4.1.0",
     "nprogress": "^0.2.0",
     "prop-types": "^15.5.10",
