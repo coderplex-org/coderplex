@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "xo",
-    "lint":
-      "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write --single-quote --print-width='80' --trailing-comma='all' && xo --fix",
+    "lint": "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write --single-quote --print-width='80' --trailing-comma='all' && xo --fix",
     "precommit": "lint-staged",
     "analyze": "cross-env ANALYZE=1 next build",
     "dev": "cross-env NODE_ENV=development next",
@@ -15,15 +14,24 @@
   },
   "xo": {
     "parser": "babel-eslint",
-    "extends": ["prettier", "prettier/react", "plugin:react/recommended"],
-    "env": ["browser", "node"],
+    "extends": [
+      "prettier",
+      "prettier/react",
+      "plugin:react/recommended"
+    ],
+    "env": [
+      "browser",
+      "node"
+    ],
     "rules": {
       "linebreak-style": 0,
       "react/display-name": 0,
       "react/prop-types": 0
     },
     "space:": 2,
-    "ignores": ["next.config.js"]
+    "ignores": [
+      "next.config.js"
+    ]
   },
   "lint-staged": {
     "*.js": [
@@ -36,8 +44,8 @@
   "author": "Vinay Puppal <me@vinaypuppal.com> (https://www.vinaypuppal.com/)",
   "license": "BSD",
   "dependencies": {
-    "axios": "^0.16.2",
     "feathers-rest": "^1.8.0",
+    "isomorphic-unfetch": "2.0.0",
     "moment": "^2.19.1",
     "next": "^4.1.0",
     "nprogress": "^0.2.0",
