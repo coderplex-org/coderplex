@@ -11,27 +11,27 @@ export default () => (
         <h3>Follow Us</h3>
         <ul>
           <li>
-            <a href="https://www.youtube.com/channel/UCZ2EgRcIyY8lcHz0c5-lOUw">
+            <a href="https://www.youtube.com/channel/UCTkguToherUvVNnzMFINk-w">
               <FaYoutube size={20} />
             </a>
           </li>
           <li>
-            <a href="https://www.facebook.com/freecodecamphyderabad/">
+            <a href="https://www.facebook.com/coderplex/">
               <FaFacebook size={20} />
             </a>
           </li>
           <li>
-            <a href="https://github.com/fcc-hyd">
+            <a href="https://github.com/coderplex">
               <FaGithub size={20} />
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/fcc_hyd/">
+            <a href="https://www.instagram.com/coderplex/">
               <FaInstagram size={20} />
             </a>
           </li>
           <li>
-            <a href="https://www.meetup.com/freeCodeCamp-Hyderabad/">m</a>
+            <a href="https://www.meetup.com/coderplex/">m</a>
           </li>
         </ul>
       </div>
