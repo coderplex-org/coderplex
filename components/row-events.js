@@ -1,10 +1,25 @@
 import React from 'react';
-import { Card, Icon } from 'semantic-ui-react';
+import { Card, Icon, Image } from 'semantic-ui-react';
 import format from 'date-fns/format';
+import PropTypes from 'prop-types';
+
+const extractImage = input => {
+  let src = '';
+  if (input) {
+    const regex = /<img.*?src=['"](.*?)['"]/;
+    src = regex.exec(input)[1];
+  }
+  return src;
+};
 
 const RowEvent = props => {
   return (
-    <Card fluid raised target="_blank" href={props.link}>
+    <Card fluid={props.fluid} raised centered target="_blank" href={props.link}>
+      {props.description ? (
+        <Image src={extractImage(props.description)} />
+      ) : (
+        <div />
+      )}
       <Card.Content>
         <Card.Header>{props.name}</Card.Header>
         <div className="card_venue">
@@ -44,6 +59,14 @@ const RowEvent = props => {
       `}</style>
     </Card>
   );
+};
+
+RowEvent.defaultProps = {
+  fluid: false,
+};
+
+RowEvent.propTypes = {
+  fluid: PropTypes.bool,
 };
 
 export default RowEvent;
