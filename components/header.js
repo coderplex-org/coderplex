@@ -53,7 +53,7 @@ export default props => {
     },
     {
       title: 'Blog',
-      path: 'https://medium.com/freecodecamp-hyderabad',
+      path: 'https://medium.com/coderplex',
     },
     {
       title: 'Login/Register',
