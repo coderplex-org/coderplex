@@ -16,22 +16,22 @@ export default () => (
             </a>
           </li>
           <li>
-            <a href="https://www.facebook.com/freecodecamphyderabad/">
+            <a href="https://www.facebook.com/coderplex">
               <FaFacebook size={20} />
             </a>
           </li>
           <li>
-            <a href="https://github.com/fcc-hyd">
+            <a href="https://github.com/coderplex">
               <FaGithub size={20} />
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/fcc_hyd/">
+            <a href="https://www.instagram.com/coderplex/">
               <FaInstagram size={20} />
             </a>
           </li>
           <li>
-            <a href="https://www.meetup.com/freeCodeCamp-Hyderabad/">m</a>
+            <a href="https://www.meetup.com/coderplex/">m</a>
           </li>
         </ul>
       </div>
