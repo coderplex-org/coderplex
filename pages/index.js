@@ -22,7 +22,11 @@ class Home extends React.Component {
           }
           .about__container {
             max-width: 1280px;
+            min-height: calc(100vh - 260px);
             margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
           }
           .about__content img {
             width: 100%;
