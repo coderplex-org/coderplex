@@ -1,7 +1,7 @@
 const nowCli = require.resolve('now/download/dist/now');
 const spawn = require('cross-spawn');
 
-export function runNow(args, cb) {
+function runNow(args, cb) {
   const now = spawn(nowCli, args);
 
   let nowRes = '';
@@ -21,7 +21,7 @@ export function runNow(args, cb) {
   });
 }
 
-export function runNowAlias(baseArgs, { deployedUrl, aliasUrl }, cb) {
+function runNowAlias(baseArgs, { deployedUrl, aliasUrl }, cb) {
   console.log(`\nCreating alias for ${deployedUrl}\n`);
   const nowAliasArgs = [];
   if (aliasUrl) {
@@ -42,3 +42,8 @@ export function runNowAlias(baseArgs, { deployedUrl, aliasUrl }, cb) {
 
   nowAlias.on('close', cb);
 }
+
+module.exports = {
+  runNow,
+  runNowAlias,
+};
