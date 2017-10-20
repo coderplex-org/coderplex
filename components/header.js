@@ -48,7 +48,7 @@ export default props => {
     {
       title: 'Blog',
       path: 'https://medium.com/coderplex',
-      external: false,
+      external: true,
     },
   ];
   return (
