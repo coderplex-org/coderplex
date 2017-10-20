@@ -3,20 +3,16 @@ import { Card, Icon, Image } from 'semantic-ui-react';
 import format from 'date-fns/format';
 import PropTypes from 'prop-types';
 
-const extractImage = input => {
-  let src = '';
-  if (input) {
-    const regex = /<img.*?src=['"](.*?)['"]/;
-    src = regex.exec(input)[1];
-  }
-  return src;
+const extractImageUrl = input => {
+  const regex = /<img.*?src=['"](.*?)['"]/;
+  return regex.exec(input)[1];
 };
 
 const RowEvent = props => {
   return (
     <Card fluid={props.fluid} raised centered target="_blank" href={props.link}>
       {props.description ? (
-        <Image src={extractImage(props.description)} />
+        <Image src={extractImageUrl(props.description)} />
       ) : (
         <div />
       )}
@@ -67,6 +63,13 @@ RowEvent.defaultProps = {
 
 RowEvent.propTypes = {
   fluid: PropTypes.bool,
+  link: PropTypes.string,
+  description: PropTypes.string,
+  name: PropTypes.string,
+  venue: PropTypes.object,
+  time: PropTypes.number,
+  yesCount: PropTypes.number,
+  status: PropTypes.string,
 };
 
 export default RowEvent;
