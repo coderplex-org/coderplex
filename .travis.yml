@@ -7,11 +7,6 @@ before_install:
   - 'curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 0.27.5'
   - 'export PATH="$HOME/.yarn/bin:$PATH"'
 cache: yarn
-after_script:
-  - yarn export && cd out && NOW_ALIAS=coderplex-app.now.sh node ../scripts/deploy.js -p --team coderplex -d && cd ../
-branches:
-  only:
-    - master
 env:
   global:
     - secure: nDYIe5Cw1FgD1Iqv2FKRG5Q6Jvvml4ovKPjMRD3BBWinPHe6xbZGtPi0P/Jqt6PFmu5o3aiWQO4ffYnFYUW8N8Tu86RMr0sLQ7Sv6MiE0JxL+7Y+VBZ9h1i9MARiTFQRUw9lrToNa13bnuGy5YNfx4nVUo63vluRTCW6AZd0h01tgEjbhTAamWf1z/n26ACMNJSr2iQ7coakLwpsQvdXMcUe5tAduzoQtLb8DiXdbXO+D7Oepl4dQvOfosa14wW5Z6MN6Y/AxxJ246Cngm3hgZF7IpLCD49H7shXHHSaIcYkJtnSRozKSBEdz34+Jqw+278vcWOA4n2advAhWd2oCAUa0drmu8Nu2Obtrx4oAUQhDwBxfQhbmXpen2Ry5DKp86AurTxgXc+n6bPfjwGdjha2u6cd1fCwpTu5pgnOeX101U/Bu68tAz/EIErCDxHDW/WyrBkVKG3rkABjv3pse4ZJuMy3eeKp+8o2P29b77GHxhKdEw4SvZSfdfnVooABcC6p/sqcumuTvJn20AZkBdhuxGDYSEfNecKPAEHRV8nUQUbMVT7bImQAgl4O4QhHcOfrthbNnQJM94DX0Z2xRQ5sdRmzhe4Ob771EUByNdMO7k2O1KsJAWQ78KhTdOJKoiIp2sH9zRGCTjnTIoCDJx4zBTGHpqV0+R4ltth7T4Q=
