@@ -50,8 +50,6 @@ if (!process.env.CI || !process.env.TRAVIS) {
 const githubToken = process.env.GH_TOKEN;
 const nowToken = process.env.NOW_TOKEN;
 const discordHook = process.env.DISCORD_HOOK;
-const prSha = process.env.TRAVIS_PULL_REQUEST_SHA;
-const commitSha = process.env.TRAVIS_COMMIT;
 const repoSlug = process.env.TRAVIS_REPO_SLUG;
 const aliasUrl = process.env.NOW_ALIAS;
 
@@ -116,7 +114,7 @@ function notifyInDiscord(err, res) {
       content: buildComment(res.context, res.url, 'https://coderplex.org'),
     })
     .then(() => {
-      console.log(`Error posted to discord`);
+      console.log(`Success posted to discord`);
     })
     .catch(console.log.bind(console));
 }
@@ -128,6 +126,8 @@ function buildComment(context, url, aliasUrl) {
 }
 
 function deploy(context, sha) {
+  console.log(`context: ${context}`);
+  console.log(`sha: ${sha}`);
   if (context === 'staging') {
     // Send error status to github PR
     ghRepo.status(
@@ -163,7 +163,7 @@ function deploy(context, sha) {
 
     // Retrieve now.sh unique url from stdOut
     const deployedUrl = getUrl(res);
-
+    console.log(`deployedUrl: ${deployedUrl}`);
     if (context === 'staging') {
       // Send success status to github PR
       ghRepo.status(
@@ -177,14 +177,12 @@ function deploy(context, sha) {
         console.log.bind(console),
       );
       // Check and create comment on github PR abot deployment results
-      if (argv.comment && context === 'staging') {
-        ghIssue.createComment(
-          {
-            body: buildComment(context, deployedUrl),
-          },
-          console.log.bind(console),
-        );
-      }
+      ghIssue.createComment(
+        {
+          body: buildComment(context, deployedUrl),
+        },
+        console.log.bind(console),
+      );
       return;
     }
     // In production alias deployment to specified alias url from now.json file or from env variable
@@ -207,9 +205,9 @@ travisAfterAll((code, err) => {
   if (err || code) return;
   switch (process.env.TRAVIS_EVENT_TYPE) {
     case 'pull_request':
-      return deploy('staging', prSha);
+      return deploy('staging', process.env.TRAVIS_PULL_REQUEST_SHA);
     case 'push':
-      return deploy('production', commitSha);
+      return deploy('production', process.env.TRAVIS_COMMIT);
     default:
       break;
   }
