@@ -31,11 +31,6 @@ export default props => {
       external: false,
     },
     {
-      title: 'Events',
-      path: '/events',
-      external: false,
-    },
-    {
       title: 'Learn',
       path: '/learn',
       external: false,
@@ -46,9 +41,14 @@ export default props => {
       external: false,
     },
     {
+      title: 'Events',
+      path: '/events',
+      external: false,
+    },
+    {
       title: 'Blog',
       path: 'https://medium.com/coderplex',
-      external: true,
+      external: false,
     },
   ];
   return (
@@ -134,9 +134,8 @@ export default props => {
         }
         .nav__link {
           text-decoration: none;
-          text-transform: uppercase;
           color: #666;
-          font-size: 12px;
+          font-size: 14px;
           padding-bottom: 4px;
         }
         .nav__link:hover {
