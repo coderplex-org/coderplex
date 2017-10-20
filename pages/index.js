@@ -8,7 +8,8 @@ import publicPage from '../hocs/public-page';
 
 const indexPageLearns = [
   {
-    link: '#',
+    link:
+      'https://github.com/coderplex/learn/blob/master/web-dev/Frontend/Libraries%20%26%20Frameworks/Learn-React.md',
     title: 'ReactJS',
     subject: 'Frontend Web Development',
     image: '',
@@ -20,25 +21,29 @@ const indexPageLearns = [
     image: '',
   },
   {
-    link: '#',
+    link:
+      'https://github.com/coderplex/learn/blob/master/programming-languages/Go/learn-go.md',
     title: 'Go',
     subject: 'Programming Language',
     image: '',
   },
   {
-    link: '#',
-    title: 'Security',
-    subject: 'Networking',
+    link:
+      'https://github.com/coderplex/learn/blob/master/computer-science/Learn-CS.md',
+    title: 'Introduction to C.S',
+    subject: 'Computer Science',
     image: '',
   },
   {
-    link: '#',
+    link:
+      'https://github.com/coderplex/learn/blob/master/Blockchain/blockchain-basics.md',
     title: 'Blockchain',
     subject: 'Distributed Computing',
     image: '',
   },
   {
-    link: '#',
+    link:
+      'https://github.com/coderplex/learn/blob/master/mobile-dev/Android/learn-android.md',
     title: 'Android',
     subject: 'Mobile Development',
     image: '',
