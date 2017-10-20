@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Card, Button, Divider } from 'semantic-ui-react';
+import { Card, Button, Divider, Form } from 'semantic-ui-react';
 
 import { indexPageMeetupURL, reverseProxyCORS } from '../utils/urls';
 import RowEvent from '../components/row-events';
@@ -53,6 +53,7 @@ const indexPageLearns = [
 class Home extends React.Component {
   state = {
     indexPageEvent: '',
+    subscribersEmail: '',
   };
 
   async componentDidMount() {
@@ -68,6 +69,14 @@ class Home extends React.Component {
       console.log(err);
     }
   }
+
+  handleChange = event => {
+    this.setState({ subscribersEmail: event.target.value });
+  };
+
+  handleSubmit = () => {
+    this.setState({ subscribersEmail: '' });
+  };
 
   render() {
     return (
@@ -98,6 +107,7 @@ class Home extends React.Component {
                       raised
                       key={learn.title}
                       href={learn.link}
+                      target="_blank"
                       header={learn.title}
                       meta={learn.subject}
                     />
@@ -169,6 +179,44 @@ class Home extends React.Component {
               </Link>
             </div>
           </section>
+          <Divider hidden />
+          <section className="discord">
+            <div className="container">
+              <h3 className="taglines">
+                Join our Discord server, and say Hello World!
+              </h3>
+              <Button.Group basic>
+                <Button
+                  content="Join Chat"
+                  icon="discussions"
+                  labelPosition="left"
+                  onClick={() =>
+                    window.open('https://discord.gg/dVnQ2Gf', '_blank')}
+                />
+              </Button.Group>
+            </div>
+          </section>
+          <section className="update">
+            <div className="container update_container">
+              <h3 className="taglines">
+                We are constanly updating our platform.<br />If you would like
+                to stay informed about our updates, drop you email.
+              </h3>
+              <div className="update_content">
+                <Form onSubmit={this.handleSubmit}>
+                  <Form.Group>
+                    <Form.Input
+                      placeholder="Enter email address"
+                      name="email"
+                      value={this.state.subscribersEmail}
+                      onChange={this.handleChange}
+                    />
+                    <Form.Button color="pink" content="Subscribe" />
+                  </Form.Group>
+                </Form>
+              </div>
+            </div>
+          </section>
         </main>
         <style jsx>{`
           main {
@@ -220,6 +268,18 @@ class Home extends React.Component {
             max-width: 600px;
             padding-left: 30px;
             padding-right: 30px;
+          }
+          .update_container{
+            background-color: #f6f6f6;
+
+          }
+          .update_content {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
           }
         `}</style>
       </div>
