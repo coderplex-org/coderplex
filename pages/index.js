@@ -109,7 +109,7 @@ class Home extends React.Component {
           <Divider section />
           <section className="space">
             <div className="container">
-              <h2 className="titles">Off line Co-Learning Spaces</h2>
+              <h2 className="titles">Offline Co-Learning Spaces</h2>
               <h3 className="taglines">
                 Physical spaces where you can come down to engage in self
                 learing, peer-learning and collaboration.
