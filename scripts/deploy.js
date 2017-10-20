@@ -72,7 +72,7 @@ function getUrl(content) {
   return urls.map(url => normalizeUrl(url.trim().replace(/\.+$/, '')))[0];
 }
 
-const baseArgs = ['--token', nowToken];
+const baseArgs = ['--token', nowToken, '--name', 'coderplex-app'];
 
 const nowArgs = ['--no-clipboard'];
 
@@ -103,7 +103,7 @@ function notifyInDiscord(err, res) {
       .post(discordHook, {
         username: `${repoSlug.replace('/', '-')}-BOT`,
         content: `Deploymet failed check travis logs here https://travis-ci.org/coderplex/coderplex/builds/${process
-          .env.TRAVIS_BUILD_ID}`,
+          .env.TRAVIS_BUILD_ID}#L538`,
       })
       .then(() => {
         console.log(`Error posted to discord`);
@@ -128,30 +128,34 @@ function buildComment(context, url, aliasUrl) {
 }
 
 function deploy(context, sha) {
-  // Send error status to github PR
-  ghRepo.status(
-    sha,
-    {
-      context,
-      state: 'pending',
-      description: `Δ Now ${context} deployment pending`,
-    },
-    console.log.bind(console),
-  );
+  if (context === 'staging') {
+    // Send error status to github PR
+    ghRepo.status(
+      sha,
+      {
+        context,
+        state: 'pending',
+        description: `Δ Now ${context} deployment pending`,
+      },
+      console.log.bind(console),
+    );
+  }
   // Initiate deployment process
   runNow([...baseArgs, ...nowArgs], (code, res) => {
     // Remember, process code: 0 means success else failure in unix/linux
     if (code) {
-      // Send error status to github PR
-      ghRepo.status(
-        sha,
-        {
-          context,
-          state: 'error',
-          description: `Δ Now ${context} deployment failed`,
-        },
-        console.log.bind(console),
-      );
+      if (context === 'staging') {
+        // Send error status to github PR
+        ghRepo.status(
+          sha,
+          {
+            context,
+            state: 'error',
+            description: `Δ Now ${context} deployment failed`,
+          },
+          console.log.bind(console),
+        );
+      }
       // Notify in discord
       notifyInDiscord(true);
       return console.log(`now process exited with code ${code}`);
@@ -173,7 +177,7 @@ function deploy(context, sha) {
         console.log.bind(console),
       );
       // Check and create comment on github PR abot deployment results
-      if (argv.comment) {
+      if (argv.comment && context === 'staging') {
         ghIssue.createComment(
           {
             body: buildComment(context, deployedUrl),
