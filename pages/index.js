@@ -1,14 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
-import { Card, Button, Divider } from 'semantic-ui-react';
+import { Card, Button, Divider, Form, Message } from 'semantic-ui-react';
 
-import { indexPageMeetupURL, reverseProxyCORS } from '../utils/urls';
+import { baseEventsURL, indexPageEventURL, subscribeURL } from '../utils/urls';
 import RowEvent from '../components/row-events';
 import publicPage from '../hocs/public-page';
 
 const indexPageLearns = [
   {
-    link: '#',
+    link:
+      'https://github.com/coderplex/learn/blob/master/web-dev/Frontend/Libraries%20%26%20Frameworks/Learn-React.md',
     title: 'ReactJS',
     subject: 'Frontend Web Development',
     image: '',
@@ -20,25 +21,29 @@ const indexPageLearns = [
     image: '',
   },
   {
-    link: '#',
+    link:
+      'https://github.com/coderplex/learn/blob/master/programming-languages/Go/learn-go.md',
     title: 'Go',
     subject: 'Programming Language',
     image: '',
   },
   {
-    link: '#',
-    title: 'Security',
-    subject: 'Networking',
+    link:
+      'https://github.com/coderplex/learn/blob/master/computer-science/Learn-CS.md',
+    title: 'Introduction to C.S',
+    subject: 'Computer Science',
     image: '',
   },
   {
-    link: '#',
+    link:
+      'https://github.com/coderplex/learn/blob/master/Blockchain/blockchain-basics.md',
     title: 'Blockchain',
     subject: 'Distributed Computing',
     image: '',
   },
   {
-    link: '#',
+    link:
+      'https://github.com/coderplex/learn/blob/master/mobile-dev/Android/learn-android.md',
     title: 'Android',
     subject: 'Mobile Development',
     image: '',
@@ -48,19 +53,71 @@ const indexPageLearns = [
 class Home extends React.Component {
   state = {
     indexPageEvent: '',
+    subscribersEmail: '',
+    submittingEmail: false,
+    emailSubmittingError: '',
+    subscriberEmailPosted: false,
   };
 
   async componentDidMount() {
     try {
-      const requestEvent = await fetch(
-        `${reverseProxyCORS}${indexPageMeetupURL}`,
-      );
+      const requestEvent = await fetch(`${baseEventsURL}${indexPageEventURL}`);
       const requestEventJson = await requestEvent.json();
       await this.setState({
         indexPageEvent: requestEventJson[0],
       });
     } catch (err) {
       console.log(err);
+    }
+  }
+
+  handleChange = event => {
+    this.setState({
+      subscribersEmail: event.target.value,
+      emailSubmittingError: '',
+    });
+  };
+
+  handleSubmit = () => {
+    this.setState({ emailSubmittingError: '' });
+    const emailRegx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const email = this.state.subscribersEmail;
+    if (!email) {
+      this.setState({
+        emailSubmittingError: 'Please enter a email',
+      });
+      return;
+    }
+    if (!emailRegx.test(email)) {
+      this.setState({
+        emailSubmittingError: 'Please enter a valid email',
+      });
+      return;
+    }
+    this.postSubscriberEmail(email);
+  };
+
+  async postSubscriberEmail(subscribersEmail) {
+    await this.setState({ submittingEmail: true });
+    const postSubscriberEmailRequest = await fetch(
+      `${baseEventsURL}${subscribeURL}`,
+      {
+        method: 'post',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: subscribersEmail }),
+      },
+    );
+    if (postSubscriberEmailRequest.status === 200) {
+      this.setState({
+        subscriberEmailPosted: true,
+        submittingEmail: false,
+        emailSubmittingError: '',
+      });
+    } else {
+      this.setState({
+        submittingEmail: false,
+        emailSubmittingError: 'Submission Failed Try Again.',
+      });
     }
   }
 
@@ -87,12 +144,12 @@ class Home extends React.Component {
                 resource to learn any technology
               </h3>
               <div className="content">
-                <Card.Group itemsPerRow={3} stackable textAlign={'center'}>
+                <Card.Group itemsPerRow={3} stackable>
                   {indexPageLearns.map(learn => (
                     <Card
-                      raised
                       key={learn.title}
                       href={learn.link}
+                      target="_blank"
                       header={learn.title}
                       meta={learn.subject}
                     />
@@ -164,6 +221,63 @@ class Home extends React.Component {
               </Link>
             </div>
           </section>
+          <Divider hidden />
+          <section className="discord">
+            <div className="container">
+              <h3 className="taglines">
+                Join our Discord server, and say Hello World!
+              </h3>
+              <Button.Group basic>
+                <Button
+                  content="Join Chat"
+                  icon="discussions"
+                  labelPosition="left"
+                  onClick={() =>
+                    window.open('https://discord.gg/dVnQ2Gf', '_blank')}
+                />
+              </Button.Group>
+            </div>
+          </section>
+          <section className="update">
+            <div className="container update_container">
+              <h3 className="taglines">
+                We are constanly updating our platform.<br />If you would like
+                to stay informed about our updates, drop you email.
+              </h3>
+              <div className="update_content">
+                {this.state.subscriberEmailPosted ? (
+                  <h2>Thank you, we will keep you posted</h2>
+                ) : (
+                  <Form
+                    onSubmit={this.handleSubmit}
+                    error={this.state.emailSubmittingError}
+                  >
+                    <Form.Group>
+                      <Form.Input
+                        placeholder="Enter email address"
+                        name="email"
+                        value={this.state.subscribersEmail}
+                        onChange={this.handleChange}
+                        disabled={this.state.submittingEmail}
+                      />
+                      <Form.Button
+                        loading={this.state.submittingEmail}
+                        color="pink"
+                        content="Subscribe"
+                      />
+                    </Form.Group>
+                    {this.state.emailSubmittingError && (
+                      <Message
+                        error
+                        header="Action Forbidden"
+                        content={this.state.emailSubmittingError}
+                      />
+                    )}
+                  </Form>
+                )}
+              </div>
+            </div>
+          </section>
         </main>
         <style jsx>{`
           main {
@@ -215,6 +329,20 @@ class Home extends React.Component {
             max-width: 600px;
             padding-left: 30px;
             padding-right: 30px;
+          }
+          .discord .container {
+            background: #FAFAFA;
+          }
+          .update_container{
+            background-color: #f6f6f6;
+          }
+          .update_content {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
           }
         `}</style>
       </div>

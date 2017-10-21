@@ -49,6 +49,9 @@ export default () => (
       .headroom--pinned header {
         box-shadow: 0 2px 4px rgba(61, 71, 82, 0.1);
       }
+      .headroom--scrolled {
+        z-index: 99999 !important;
+      }
     `}</style>
   </div>
 );
