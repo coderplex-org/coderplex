@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Card, Button, Divider, Form } from 'semantic-ui-react';
+import { Card, Button, Divider, Form, Message } from 'semantic-ui-react';
 
 import { baseEventsURL, indexPageEventURL, subscribeURL } from '../utils/urls';
 import RowEvent from '../components/row-events';
@@ -54,6 +54,8 @@ class Home extends React.Component {
   state = {
     indexPageEvent: '',
     subscribersEmail: '',
+    submittingEmail: false,
+    emailSubmittingError: '',
     subscriberEmailPosted: false,
   };
 
@@ -70,14 +72,33 @@ class Home extends React.Component {
   }
 
   handleChange = event => {
-    this.setState({ subscribersEmail: event.target.value });
+    this.setState({
+      subscribersEmail: event.target.value,
+      emailSubmittingError: '',
+    });
   };
 
   handleSubmit = () => {
-    this.postSubscriberEmail(this.state.subscribersEmail);
+    this.setState({ emailSubmittingError: '' });
+    const emailRegx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const email = this.state.subscribersEmail;
+    if (!email) {
+      this.setState({
+        emailSubmittingError: 'Please enter a email',
+      });
+      return;
+    }
+    if (!emailRegx.test(email)) {
+      this.setState({
+        emailSubmittingError: 'Please enter a valid email',
+      });
+      return;
+    }
+    this.postSubscriberEmail(email);
   };
 
   async postSubscriberEmail(subscribersEmail) {
+    await this.setState({ submittingEmail: true });
     const postSubscriberEmailRequest = await fetch(
       `${baseEventsURL}${subscribeURL}`,
       {
@@ -87,7 +108,16 @@ class Home extends React.Component {
       },
     );
     if (postSubscriberEmailRequest.status === 200) {
-      this.setState({ subscriberEmailPosted: true });
+      this.setState({
+        subscriberEmailPosted: true,
+        submittingEmail: false,
+        emailSubmittingError: '',
+      });
+    } else {
+      this.setState({
+        submittingEmail: false,
+        emailSubmittingError: 'Submission Failed Try Again.',
+      });
     }
   }
 
@@ -117,7 +147,6 @@ class Home extends React.Component {
                 <Card.Group itemsPerRow={3} stackable>
                   {indexPageLearns.map(learn => (
                     <Card
-                      raised
                       key={learn.title}
                       href={learn.link}
                       target="_blank"
@@ -219,16 +248,31 @@ class Home extends React.Component {
                 {this.state.subscriberEmailPosted ? (
                   <h2>Thank you, we will keep you posted</h2>
                 ) : (
-                  <Form onSubmit={this.handleSubmit}>
+                  <Form
+                    onSubmit={this.handleSubmit}
+                    error={this.state.emailSubmittingError}
+                  >
                     <Form.Group>
                       <Form.Input
                         placeholder="Enter email address"
                         name="email"
                         value={this.state.subscribersEmail}
                         onChange={this.handleChange}
+                        disabled={this.state.submittingEmail}
                       />
-                      <Form.Button color="pink" content="Subscribe" />
+                      <Form.Button
+                        loading={this.state.submittingEmail}
+                        color="pink"
+                        content="Subscribe"
+                      />
                     </Form.Group>
+                    {this.state.emailSubmittingError && (
+                      <Message
+                        error
+                        header="Action Forbidden"
+                        content={this.state.emailSubmittingError}
+                      />
+                    )}
                   </Form>
                 )}
               </div>
@@ -286,9 +330,11 @@ class Home extends React.Component {
             padding-left: 30px;
             padding-right: 30px;
           }
+          .discord .container {
+            background: #FAFAFA;
+          }
           .update_container{
             background-color: #f6f6f6;
-
           }
           .update_content {
             display: flex;
