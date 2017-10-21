@@ -101,7 +101,7 @@ class Home extends React.Component {
                 resource to learn any technology
               </h3>
               <div className="content">
-                <Card.Group itemsPerRow={3} stackable textAlign={'center'}>
+                <Card.Group itemsPerRow={3} stackable>
                   {indexPageLearns.map(learn => (
                     <Card
                       raised
