@@ -87,7 +87,6 @@ export default props => {
           padding: 5px 20px;
           width: 100%;
           background: #fff;
-          z-index: 1000
         }
         .header__container {
           max-width: 1280px;
