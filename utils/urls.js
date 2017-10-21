@@ -5,3 +5,5 @@ export const futureEventsURL = '/events/upcoming';
 export const pastEventsURL = '/events/past';
 
 export const indexPageEventURL = '/events';
+
+export const subscribeURL = '/subscribe';

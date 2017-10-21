@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Card, Button, Divider, Form } from 'semantic-ui-react';
 
-import { baseEventsURL, indexPageEventURL } from '../utils/urls';
+import { baseEventsURL, indexPageEventURL, subscribeURL } from '../utils/urls';
 import RowEvent from '../components/row-events';
 import publicPage from '../hocs/public-page';
 
@@ -54,6 +54,7 @@ class Home extends React.Component {
   state = {
     indexPageEvent: '',
     subscribersEmail: '',
+    subscriberEmailPosted: false,
   };
 
   async componentDidMount() {
@@ -73,8 +74,22 @@ class Home extends React.Component {
   };
 
   handleSubmit = () => {
-    this.setState({ subscribersEmail: '' });
+    this.postSubscriberEmail(this.state.subscribersEmail);
   };
+
+  async postSubscriberEmail(subscribersEmail) {
+    const postSubscriberEmailRequest = await fetch(
+      `${baseEventsURL}${subscribeURL}`,
+      {
+        method: 'post',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: subscribersEmail }),
+      },
+    );
+    if (postSubscriberEmailRequest.status === 200) {
+      this.setState({ subscriberEmailPosted: true });
+    }
+  }
 
   render() {
     return (
@@ -201,17 +216,21 @@ class Home extends React.Component {
                 to stay informed about our updates, drop you email.
               </h3>
               <div className="update_content">
-                <Form onSubmit={this.handleSubmit}>
-                  <Form.Group>
-                    <Form.Input
-                      placeholder="Enter email address"
-                      name="email"
-                      value={this.state.subscribersEmail}
-                      onChange={this.handleChange}
-                    />
-                    <Form.Button color="pink" content="Subscribe" />
-                  </Form.Group>
-                </Form>
+                {this.state.subscriberEmailPosted ? (
+                  <h2>Thank you, we will keep you posted</h2>
+                ) : (
+                  <Form onSubmit={this.handleSubmit}>
+                    <Form.Group>
+                      <Form.Input
+                        placeholder="Enter email address"
+                        name="email"
+                        value={this.state.subscribersEmail}
+                        onChange={this.handleChange}
+                      />
+                      <Form.Button color="pink" content="Subscribe" />
+                    </Form.Group>
+                  </Form>
+                )}
               </div>
             </div>
           </section>
