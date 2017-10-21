@@ -3,11 +3,7 @@ import fetch from 'isomorphic-unfetch';
 import { Card, Divider, Dimmer, Loader } from 'semantic-ui-react';
 
 import publicPage from '../hocs/public-page';
-import {
-  futureEventsMeetupURL,
-  pastEventsMeetupURL,
-  reverseProxyCORS,
-} from '../utils/urls';
+import { baseEventsURL, futureEventsURL, pastEventsURL } from '../utils/urls';
 import RowEvent from '../components/row-events';
 
 class Events extends React.Component {
@@ -20,13 +16,13 @@ class Events extends React.Component {
   async componentDidMount() {
     try {
       const pastEvents = await fetch(
-        `${reverseProxyCORS}${pastEventsMeetupURL}`,
+        `${baseEventsURL}${pastEventsURL}`,
       ).then(res => {
         if (res.ok) return res.json();
         throw new Error('Failed to Retrieve Events');
       });
       const futureEvents = await fetch(
-        `${reverseProxyCORS}${futureEventsMeetupURL}`,
+        `${baseEventsURL}${futureEventsURL}`,
       ).then(res => {
         if (res.ok) return res.json();
         throw new Error('Failed to Retrieve Events');

@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Card, Button, Divider, Form } from 'semantic-ui-react';
 
-import { indexPageMeetupURL, reverseProxyCORS } from '../utils/urls';
+import { baseEventsURL, indexPageEventURL } from '../utils/urls';
 import RowEvent from '../components/row-events';
 import publicPage from '../hocs/public-page';
 
@@ -58,9 +58,7 @@ class Home extends React.Component {
 
   async componentDidMount() {
     try {
-      const requestEvent = await fetch(
-        `${reverseProxyCORS}${indexPageMeetupURL}`,
-      );
+      const requestEvent = await fetch(`${baseEventsURL}${indexPageEventURL}`);
       const requestEventJson = await requestEvent.json();
       await this.setState({
         indexPageEvent: requestEventJson[0],

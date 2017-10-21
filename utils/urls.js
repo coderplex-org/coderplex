@@ -1,7 +1,7 @@
-export const pastEventsMeetupURL = '/events/past';
+export const baseEventsURL = 'https://coderplex-api.glitch.me/api';
 
-export const futureEventsMeetupURL = '/events/upcoming';
+export const futureEventsURL = '/events/upcoming';
 
-export const indexPageMeetupURL = '/events';
+export const pastEventsURL = '/events/past';
 
-export const reverseProxyCORS = 'https://coderplex-api.glitch.me/api';
+export const indexPageEventURL = '/events';
