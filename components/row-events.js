@@ -14,7 +14,7 @@ const RowEvent = props => {
       {props.description ? (
         <Image src={extractImageUrl(props.description)} />
       ) : (
-        <div />
+        
       )}
       <Card.Content>
         <Card.Header>{props.name}</Card.Header>
