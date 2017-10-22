@@ -3,6 +3,7 @@ import fetch from 'isomorphic-unfetch';
 import { Card, Divider, Dimmer, Loader } from 'semantic-ui-react';
 
 import publicPage from '../hocs/public-page';
+import TopBanner from '../components/top-banner';
 import { baseEventsURL, futureEventsURL, pastEventsURL } from '../utils/urls';
 import RowEvent from '../components/row-events';
 
@@ -98,10 +99,10 @@ class Events extends React.Component {
   render() {
     return (
       <div>
-        <div className="top_banner_root">
-          <h1 className="top_banner_headline">Events</h1>
-          <h2>Because you cannot change the world alone</h2>
-        </div>
+        <TopBanner
+          pageTitle="Events"
+          pageSubTitle="Because you cannot change the world alone"
+        />
         <main>
           {this.state.loading ? (
             <Dimmer active>
@@ -123,17 +124,6 @@ class Events extends React.Component {
             justify-content: center;
             align-items: center;
             flex-direction: column;
-          }
-          .top_banner_root {
-            background-color: #f4f7fb;
-            min-height: 200px;
-            text-align: center;
-          }
-          .top_banner_headline {
-            padding-top: 20px;
-            font-size: 4em;
-            color: #df1cb5;
-            font-weight: 900;
           }
         `}</style>
       </div>
