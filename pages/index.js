@@ -1,10 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
-import { Card, Button, Divider, Form, Message } from 'semantic-ui-react';
+import { Card, Button, Divider } from 'semantic-ui-react';
 
-import { baseEventsURL, indexPageEventURL, subscribeURL } from '../utils/urls';
+import { baseEventsURL, indexPageEventURL } from '../utils/urls';
 import RowEvent from '../components/row-events';
 import publicPage from '../hocs/public-page';
+import Subscribe from '../components/subscribe';
 
 const indexPageLearns = [
   {
@@ -53,10 +54,6 @@ const indexPageLearns = [
 class Home extends React.Component {
   state = {
     indexPageEvent: '',
-    subscribersEmail: '',
-    submittingEmail: false,
-    emailSubmittingError: '',
-    subscriberEmailPosted: false,
   };
 
   async componentDidMount() {
@@ -68,56 +65,6 @@ class Home extends React.Component {
       });
     } catch (err) {
       console.log(err);
-    }
-  }
-
-  handleChange = event => {
-    this.setState({
-      subscribersEmail: event.target.value,
-      emailSubmittingError: '',
-    });
-  };
-
-  handleSubmit = () => {
-    this.setState({ emailSubmittingError: '' });
-    const emailRegx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    const email = this.state.subscribersEmail;
-    if (!email) {
-      this.setState({
-        emailSubmittingError: 'Please enter a email',
-      });
-      return;
-    }
-    if (!emailRegx.test(email)) {
-      this.setState({
-        emailSubmittingError: 'Please enter a valid email',
-      });
-      return;
-    }
-    this.postSubscriberEmail(email);
-  };
-
-  async postSubscriberEmail(subscribersEmail) {
-    await this.setState({ submittingEmail: true });
-    const postSubscriberEmailRequest = await fetch(
-      `${baseEventsURL}${subscribeURL}`,
-      {
-        method: 'post',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: subscribersEmail }),
-      },
-    );
-    if (postSubscriberEmailRequest.status === 200) {
-      this.setState({
-        subscriberEmailPosted: true,
-        submittingEmail: false,
-        emailSubmittingError: '',
-      });
-    } else {
-      this.setState({
-        submittingEmail: false,
-        emailSubmittingError: 'Submission Failed Try Again.',
-      });
     }
   }
 
@@ -238,46 +185,7 @@ class Home extends React.Component {
               </Button.Group>
             </div>
           </section>
-          <section className="update">
-            <div className="container update_container">
-              <h3 className="taglines">
-                We are constanly updating our platform.<br />If you would like
-                to stay informed about our updates, drop you email.
-              </h3>
-              <div className="update_content">
-                {this.state.subscriberEmailPosted ? (
-                  <h2>Thank you, we will keep you posted</h2>
-                ) : (
-                  <Form
-                    onSubmit={this.handleSubmit}
-                    error={this.state.emailSubmittingError}
-                  >
-                    <Form.Group>
-                      <Form.Input
-                        placeholder="Enter email address"
-                        name="email"
-                        value={this.state.subscribersEmail}
-                        onChange={this.handleChange}
-                        disabled={this.state.submittingEmail}
-                      />
-                      <Form.Button
-                        loading={this.state.submittingEmail}
-                        color="pink"
-                        content="Subscribe"
-                      />
-                    </Form.Group>
-                    {this.state.emailSubmittingError && (
-                      <Message
-                        error
-                        header="Action Forbidden"
-                        content={this.state.emailSubmittingError}
-                      />
-                    )}
-                  </Form>
-                )}
-              </div>
-            </div>
-          </section>
+          <Subscribe />
         </main>
         <style jsx>{`
           main {
@@ -333,17 +241,7 @@ class Home extends React.Component {
           .discord .container {
             background: #FAFAFA;
           }
-          .update_container{
-            background-color: #f6f6f6;
-          }
-          .update_content {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-content: center;
-            align-items: center;
-          }
+          
         `}</style>
       </div>
     );
