@@ -16,7 +16,8 @@ const indexPageLearns = [
     image: '',
   },
   {
-    link: '#',
+    link:
+      'https://github.com/coderplex/learn/blob/master/web-dev/Backend/Learn-Laravel.md',
     title: 'Laravel',
     subject: 'Backend Web Development',
     image: '',
