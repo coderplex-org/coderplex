@@ -5190,7 +5190,7 @@ semantic-release@^8.0.3:
     require-relative "^0.8.7"
     semver "^5.4.1"
 
-semantic-ui-react@^0.71.3:
+semantic-ui-react@^0.71.5:
   version "0.71.5"
   resolved "https://registry.yarnpkg.com/semantic-ui-react/-/semantic-ui-react-0.71.5.tgz#c8713f1cbdd63815843949fb611602541d3a20d8"
   dependencies:
