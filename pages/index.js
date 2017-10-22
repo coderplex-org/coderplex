@@ -138,7 +138,7 @@ class Home extends React.Component {
           </section>
           <section className="learn">
             <div className="container">
-              <h2 className="titles">Open Source Learing Guides</h2>
+              <h2 className="titles">Open Source Learning Guides</h2>
               <h3 className="taglines">
                 Our guides are crowd-sourced recommendations of free online
                 resource to learn any technology
@@ -169,7 +169,7 @@ class Home extends React.Component {
               <h2 className="titles">Offline Co-Learning Spaces</h2>
               <h3 className="taglines">
                 Physical spaces where you can come down to engage in self
-                learing, peer-learning and collaboration.
+                learning, peer-learning and collaboration.
               </h3>
               <div className="space-content">
                 <div className="space_content_info">
