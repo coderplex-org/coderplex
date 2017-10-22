@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "xo",
-    "lint": "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write --single-quote --print-width='80' --trailing-comma='all' && xo --fix",
+    "lint":
+      "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write --single-quote --print-width='80' --trailing-comma='all' && xo --fix",
     "precommit": "lint-staged",
     "analyze": "cross-env ANALYZE=1 next build",
     "dev": "cross-env NODE_ENV=development next",
@@ -15,24 +16,15 @@
   },
   "xo": {
     "parser": "babel-eslint",
-    "extends": [
-      "prettier",
-      "prettier/react",
-      "plugin:react/recommended"
-    ],
-    "env": [
-      "browser",
-      "node"
-    ],
+    "extends": ["prettier", "prettier/react", "plugin:react/recommended"],
+    "env": ["browser", "node"],
     "rules": {
       "linebreak-style": 0,
       "react/display-name": 0,
       "react/prop-types": 0
     },
     "space:": 2,
-    "ignores": [
-      "next.config.js"
-    ]
+    "ignores": ["next.config.js"]
   },
   "lint-staged": {
     "*.js": [
@@ -42,8 +34,15 @@
     ]
   },
   "keywords": [],
-  "author": "Vinay Puppal <me@vinaypuppal.com> (https://www.vinaypuppal.com/)",
-  "license": "BSD",
+  "contributors": [
+    "Vinay Puppal <me@vinaypuppal.com> (https://www.vinaypuppal.com/)",
+    "M-ZubairAhmed <ahmedzubari216@gmail.com> (https://github.com/M-ZubairAhmed)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coderplex/coderplex.git"
+  },
+  "license": "BSD-3-Clause",
   "dependencies": {
     "date-fns": "1.29.0",
     "feathers-rest": "^1.8.0",
@@ -58,7 +57,7 @@
     "react-headroom": "^2.1.6",
     "react-icons": "^2.2.5",
     "react-textgradient": "0.0.2",
-    "semantic-ui-react": "^0.71.3"
+    "semantic-ui-react": "^0.71.5"
   },
   "devDependencies": {
     "axios": "0.16.2",

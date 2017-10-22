@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 
 const extractImageUrl = input => {
   const regex = /<img.*?src=['"](.*?)['"]/;
-  return regex.exec(input)[1];
+  const matches = regex.exec(input);
+  return matches ? matches[1] : '';
 };
 
 const RowEvent = props => {
