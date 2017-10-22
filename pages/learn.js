@@ -6,14 +6,14 @@ import TopBanner from '../components/top-banner';
 
 export default publicPage(() => {
   return (
-    <div>
+    <div className="root">
       <TopBanner
         pageTitle="Learn"
         pageSubTitle="Open Source Learning Guides to master your favorite technology"
       />
       <main>
         <section>
-          <Accordion styled>
+          <Accordion fluid styled>
             <Accordion.Title>
               <Icon name="dropdown" />
               Web Development
@@ -26,23 +26,10 @@ export default publicPage(() => {
                 </Accordion.Title>
                 <Accordion.Content>
                   <List selection verticalAlign="middle">
-                    <List.Item>
-                      <List.Content>
-                        <List.Header>Basics</List.Header>
-                        <List.Description>
-                          Get started with Frontend development
-                        </List.Description>
-                      </List.Content>
-                    </List.Item>
-                    <List.Item>
-                      <List.Content>
-                        <List.Header>Intermediate</List.Header>
-                        <List.Description>
-                          Next level after basics course
-                        </List.Description>
-                      </List.Content>
-                    </List.Item>
-                    <List.Item>
+                    <List.Item
+                      target="_blank"
+                      href="https://github.com/coderplex/learn/blob/master/web-dev/Frontend/Libraries%20%26%20Frameworks/Learn-Angular.md"
+                    >
                       <List.Content>
                         <List.Header>Angular</List.Header>
                         <List.Description>
@@ -50,7 +37,10 @@ export default publicPage(() => {
                         </List.Description>
                       </List.Content>
                     </List.Item>
-                    <List.Item>
+                    <List.Item
+                      target="_blank"
+                      href="https://github.com/coderplex/learn/blob/master/web-dev/Frontend/Libraries%20%26%20Frameworks/Learn-React.md"
+                    >
                       <List.Content>
                         <List.Header>React</List.Header>
                         <List.Description>
@@ -59,7 +49,10 @@ export default publicPage(() => {
                         </List.Description>
                       </List.Content>
                     </List.Item>
-                    <List.Item>
+                    <List.Item
+                      target="_blank"
+                      href="https://github.com/coderplex/learn/blob/master/web-dev/Frontend/Libraries%20%26%20Frameworks/Learn-VueJS.md"
+                    >
                       <List.Content>
                         <List.Header>Vue</List.Header>
                         <List.Description>
@@ -76,7 +69,10 @@ export default publicPage(() => {
                 </Accordion.Title>
                 <Accordion.Content>
                   <List selection verticalAlign="middle">
-                    <List.Item>
+                    <List.Item
+                      target="_blank"
+                      href="https://github.com/coderplex/learn/blob/master/web-dev/Backend/Learn-Laravel.md"
+                    >
                       <List.Content>
                         <List.Header>Laravel</List.Header>
                         <List.Description>PHP web framework</List.Description>
@@ -92,7 +88,10 @@ export default publicPage(() => {
             </Accordion.Title>
             <Accordion.Content>
               <List selection verticalAlign="middle">
-                <List.Item>
+                <List.Item
+                  target="_blank"
+                  href="https://github.com/coderplex/learn/blob/master/data-science/learn-ds.md"
+                >
                   <List.Content>
                     <List.Header>Core Data Science</List.Header>
                     <List.Description>
@@ -109,7 +108,10 @@ export default publicPage(() => {
             </Accordion.Title>
             <Accordion.Content>
               <List selection verticalAlign="middle">
-                <List.Item>
+                <List.Item
+                  target="_blank"
+                  href="https://github.com/coderplex/learn/blob/master/Blockchain/learn-blockchain.md"
+                >
                   <List.Content>
                     <List.Header>Blockchain</List.Header>
                     <List.Description>
@@ -123,17 +125,17 @@ export default publicPage(() => {
         </section>
       </main>
       <style jsx>{`
+        .root {
+          background-color: #ffffff;
+        }
         main {
           background-color: #ffffff;
+          max-width: 800px;
           padding-top: 30px;
           padding-bottom: 30px;
           padding-left: 30px;
           padding-right: 30px;
           min-height: calc(100vh - 70px);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
           margin: 0 auto;
         }
         section {
