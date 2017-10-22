@@ -1,19 +1,23 @@
 import React from 'react';
 
-import Icon from '../components/icon';
+import TopBanner from '../components/top-banner';
 import publicPage from '../hocs/public-page';
 
 export default publicPage(() => (
   <div>
-    <main>
-      <Icon />
-      <h3>Under Construction, Coming Soon!...</h3>
-    </main>
+    <TopBanner
+      pageTitle="Space"
+      pageSubTitle="Physical spaces for collaboration, peer-learning and self-learning"
+    />
+    <main>llll</main>
     <style jsx>{`
       main {
+        background-color: #ffffff;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
         min-height: calc(100vh - 70px);
-        background: #f4f7fb;
-        color: #314159;
         display: flex;
         justify-content: center;
         align-items: center;
