@@ -88,7 +88,7 @@ class Home extends React.Component {
               <h2 className="titles">Open Source Learning Guides</h2>
               <h3 className="taglines">
                 Our guides are crowd-sourced recommendations of free online
-                resource to learn any technology
+                resources to learn any technology
               </h3>
               <div className="content">
                 <Card.Group itemsPerRow={3} stackable>
@@ -120,7 +120,7 @@ class Home extends React.Component {
               </h3>
               <div className="space-content">
                 <div className="space_content_info">
-                  These are dynamic learning environment where everyone learns
+                  These are dynamic learning environments where everyone learns
                   at their own pace and compliments each other. We also organize
                   weekly group activities like Open source evenings, casual
                   hackathons etc.
@@ -241,7 +241,7 @@ class Home extends React.Component {
           .discord .container {
             background: #FAFAFA;
           }
-          
+
         `}</style>
       </div>
     );
