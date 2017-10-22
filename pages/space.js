@@ -29,26 +29,26 @@ export default publicPage(() => (
           <Segment.Group raised piled>
             <Segment textAlign="left">
               People who are genuinely passionate about tech, who get excited
-              about learning new skills, building , solving and discussing
+              about learning new skills, building, solving and discussing
               problems in latest tech.
             </Segment>
             <Segment textAlign="left" secondary>
               Graduates who are struggling to get a job, who want to build their
-              expertise in modern technologis and are willing to invest
-              significant amount to their time self-learning
+              expertise in modern technologies and are willing to invest a
+              significant amount of their time self-learning
             </Segment>
             <Segment textAlign="left">
-              Students who are willing to learn outside of theri collegs
+              Students who are willing to learn outside of their college
               curriculum, would like to become professional developers down the
-              line and get exposire to the real world
+              line and get exposure to the real world
             </Segment>
             <Segment textAlign="left" secondary>
               Experienced developers, who want to interact with other
               developers, contribute to open source, expand their horizons and
-              learn new technologis.
+              learn new technologies.
             </Segment>
             <Segment textAlign="left">
-              Professioanls from non-tech background, who want to get started
+              Professionals from non-tech background, who want to get started
               with tech or switch their careers.
             </Segment>
           </Segment.Group>
@@ -64,7 +64,7 @@ export default publicPage(() => (
             </Segment>
             <Segment textAlign="left" secondary>
               <h4>Daily</h4>
-              You will engage in daily code review and pair programming exercise
+              You will engage in daily code review and pair programming exercises
               with other members.
             </Segment>
             <Segment textAlign="left">
@@ -79,17 +79,17 @@ export default publicPage(() => (
             </Segment>
             <Segment textAlign="left">
               <h4>Friday - Saturday</h4>
-              We will have a casual hackathons, where everyone will participate
+              We will have casual hackathons, where everyone will participate
               to build a project, big or small.
             </Segment>
             <Segment textAlign="left" secondary>
               <h4>Saturday</h4>
-              In evening, we will screen a tech related documentary, movie or TV
+              In the evening, we will screen a tech-related documentary, movie or TV
               show.
             </Segment>
             <Segment textAlign="left">
               <h4>Sunday</h4>
-              Members will present their work i.e projects or new topics they
+              Members will present their work i.e. projects or new topics they
               have made or learned in the past week
             </Segment>
           </Segment.Group>
