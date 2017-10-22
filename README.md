@@ -21,9 +21,9 @@ This project mainly uses
     > Make sure you install node version 8 or above and check node version by running `node -v`
 1. Then clone this repo
     ```bash
-    git clone git@github.com:coderplex/coderplex-website.git
+    git clone git@github.com:coderplex/coderplex.git
     ```
-1. `cd coderplex-website`
+1. `cd coderplex`
 1. `npm install`
 1. `npm run dev` to start local development server
 1. Open app at `localhost:3000`
