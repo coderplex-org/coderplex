@@ -40,7 +40,7 @@ const indexPageLearns = [
     link:
       'https://github.com/coderplex/learn/blob/master/Blockchain/blockchain-basics.md',
     title: 'Blockchain',
-    subject: 'Distributed Computing',
+    subject: 'Decentralized Systems',
     image: '',
   },
   {
