@@ -104,7 +104,7 @@ export default publicPage(() => {
             </Accordion.Content>
             <Accordion.Title>
               <Icon name="dropdown" />
-              Distributed Computing
+              Decentralized Systems
             </Accordion.Title>
             <Accordion.Content>
               <List selection verticalAlign="middle">
