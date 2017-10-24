@@ -195,7 +195,6 @@ class Home extends React.Component {
                     </section>
                   </Segment>
                 </Grid.Column>
-                <Divider vertical />
                 <Grid.Column>
                   <Subscribe />
                 </Grid.Column>
