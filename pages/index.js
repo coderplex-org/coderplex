@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Card, Button, Divider } from 'semantic-ui-react';
-
+import { Card, Button, Divider, Grid, Segment } from 'semantic-ui-react';
 import { baseEventsURL, indexPageEventURL } from '../utils/urls';
 import RowEvent from '../components/row-events';
 import publicPage from '../hocs/public-page';
@@ -170,23 +169,39 @@ class Home extends React.Component {
             </div>
           </section>
           <Divider hidden />
-          <section className="discord">
+          <section className="discord-subscribe">
             <div className="container">
-              <h3 className="taglines">
-                Join our Discord server, and say Hello World!
-              </h3>
-              <Button.Group basic>
-                <Button
-                  content="Join Chat"
-                  icon="discussions"
-                  labelPosition="left"
-                  onClick={() =>
-                    window.open('https://discord.gg/dVnQ2Gf', '_blank')}
-                />
-              </Button.Group>
+              <Grid stackable columns={2} divided>
+                <Grid.Column>
+                  <Segment basic>
+                    <section className="discord">
+                      <div>
+                        <h3 className="taglines">
+                          Join our Discord server, and say Hello World!
+                        </h3>
+                        <Button.Group basic>
+                          <Button
+                            content="Join Chat"
+                            icon="discussions"
+                            labelPosition="left"
+                            onClick={() =>
+                              window.open(
+                                'https://discord.gg/dVnQ2Gf',
+                                '_blank',
+                              )}
+                          />
+                        </Button.Group>
+                      </div>
+                    </section>
+                  </Segment>
+                </Grid.Column>
+                <Divider vertical />
+                <Grid.Column>
+                  <Subscribe />
+                </Grid.Column>
+              </Grid>
             </div>
           </section>
-          <Subscribe />
         </main>
         <style jsx>{`
           main {
@@ -239,7 +254,7 @@ class Home extends React.Component {
             padding-left: 30px;
             padding-right: 30px;
           }
-          .discord .container {
+          .discord-subscribe .container {
             background: #FAFAFA;
           }
 

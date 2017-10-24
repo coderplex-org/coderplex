@@ -65,7 +65,7 @@ class Subscribe extends Component {
     return (
       <div>
         <section className="update">
-          <div className="container update_container">
+          <div>
             <h3 className="taglines">
               We are constanly updating our platform.<br />If you would like to
               stay informed about our updates, drop you email.
@@ -103,9 +103,6 @@ class Subscribe extends Component {
           .taglines {
             padding-bottom: 20px;
           }
-          .update_container {
-            background-color: #f6f6f6 !important;
-          }
           .update_content {
             display: flex;
             flex-direction: row;
@@ -113,11 +110,6 @@ class Subscribe extends Component {
             justify-content: center;
             align-content: center;
             align-items: center;
-          }
-          .container {
-            background-color: #ffffff;
-            text-align: center;
-            padding: 60px;
           }
         `}</style>
       </div>
