@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Message } from 'semantic-ui-react';
+import { Form, Message, Grid } from 'semantic-ui-react';
 import { baseEventsURL, subscribeURL } from '../utils/urls';
 
 class Subscribe extends Component {
@@ -76,18 +76,24 @@ class Subscribe extends Component {
               ) : (
                 <Form onSubmit={this.handleSubmit} error={hasError}>
                   <Form.Group>
-                    <Form.Input
-                      placeholder="Enter email address"
-                      name="email"
-                      value={this.state.subscribersEmail}
-                      onChange={this.handleChange}
-                      disabled={this.state.submittingEmail}
-                    />
-                    <Form.Button
-                      loading={this.state.submittingEmail}
-                      color="pink"
-                      content="Subscribe"
-                    />
+                    <Grid stackable columns={2}>
+                      <Grid.Column width={12}>
+                        <Form.Input
+                          placeholder="Enter email address"
+                          name="email"
+                          value={this.state.subscribersEmail}
+                          onChange={this.handleChange}
+                          disabled={this.state.submittingEmail}
+                        />
+                      </Grid.Column>
+                      <Grid.Column width={4}>
+                        <Form.Button
+                          loading={this.state.submittingEmail}
+                          color="pink"
+                          content="Subscribe"
+                        />
+                      </Grid.Column>
+                    </Grid>
                   </Form.Group>
                   <Message
                     error
