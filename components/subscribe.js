@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Message } from 'semantic-ui-react';
+import { Form, Message, Grid } from 'semantic-ui-react';
 import { baseEventsURL, subscribeURL } from '../utils/urls';
 
 class Subscribe extends Component {
@@ -65,7 +65,7 @@ class Subscribe extends Component {
     return (
       <div>
         <section className="update">
-          <div className="container update_container">
+          <div>
             <h3 className="taglines">
               We are constanly updating our platform.<br />If you would like to
               stay informed about our updates, drop you email.
@@ -76,18 +76,24 @@ class Subscribe extends Component {
               ) : (
                 <Form onSubmit={this.handleSubmit} error={hasError}>
                   <Form.Group>
-                    <Form.Input
-                      placeholder="Enter email address"
-                      name="email"
-                      value={this.state.subscribersEmail}
-                      onChange={this.handleChange}
-                      disabled={this.state.submittingEmail}
-                    />
-                    <Form.Button
-                      loading={this.state.submittingEmail}
-                      color="pink"
-                      content="Subscribe"
-                    />
+                    <Grid stackable columns={2}>
+                      <Grid.Column width={12}>
+                        <Form.Input
+                          placeholder="Enter email address"
+                          name="email"
+                          value={this.state.subscribersEmail}
+                          onChange={this.handleChange}
+                          disabled={this.state.submittingEmail}
+                        />
+                      </Grid.Column>
+                      <Grid.Column width={4}>
+                        <Form.Button
+                          loading={this.state.submittingEmail}
+                          color="pink"
+                          content="Subscribe"
+                        />
+                      </Grid.Column>
+                    </Grid>
                   </Form.Group>
                   <Message
                     error
@@ -103,9 +109,6 @@ class Subscribe extends Component {
           .taglines {
             padding-bottom: 20px;
           }
-          .update_container {
-            background-color: #f6f6f6 !important;
-          }
           .update_content {
             display: flex;
             flex-direction: row;
@@ -113,11 +116,6 @@ class Subscribe extends Component {
             justify-content: center;
             align-content: center;
             align-items: center;
-          }
-          .container {
-            background-color: #ffffff;
-            text-align: center;
-            padding: 60px;
           }
         `}</style>
       </div>
