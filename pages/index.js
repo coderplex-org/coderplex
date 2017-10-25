@@ -148,6 +148,7 @@ class Home extends React.Component {
               <div className="content">
                 {this.state.indexPageEvent ? (
                   <RowEvent
+                    isMultiLine={true}
                     key={this.state.indexPageEvent.id}
                     name={this.state.indexPageEvent.name}
                     description={this.state.indexPageEvent.description}
