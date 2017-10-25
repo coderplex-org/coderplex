@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Icon, Label, Popup } from 'semantic-ui-react';
+import { Card, Icon, Label, Popup, Grid } from 'semantic-ui-react';
 
 import publicPage from '../hocs/public-page';
 import TopBanner from '../components/top-banner';
@@ -21,12 +21,11 @@ class Learn extends React.Component {
         <main>
           <section>
             <filterset>{/* <Button /> */}</filterset>
-            <grid>
-              <Card.Group itemsPerRow={3}>
-                {dataInRootLearn.map(subject => (
+            <Grid stackable columns={3}>
+              {dataInRootLearn.map(subject => (
+                <Grid.Column key={subject.id}>
                   <Card
                     raised
-                    key={subject.id}
                     label={{ as: 'a', corner: 'left', icon: 'heart' }}
                   >
                     <Label attached="bottom right">
@@ -56,9 +55,10 @@ class Learn extends React.Component {
                       {`${subject.learningCount} learning`}
                     </Card.Content>
                   </Card>
-                ))}
-              </Card.Group>
-            </grid>
+                </Grid.Column>
+              ))}
+            </Grid>
+            {/* </Grid> */}
           </section>
         </main>
         <style jsx>{`
@@ -67,19 +67,17 @@ class Learn extends React.Component {
           }
           main {
             background-color: #ffffff;
-            max-width: 800px;
             padding-top: 30px;
             padding-bottom: 30px;
             padding-left: 30px;
             padding-right: 30px;
             min-height: calc(100vh - 70px);
-            margin: 0 auto;
           }
           section {
             margin: 50px 0;
           }
           logo {
-            font-size: 140px;
+            font-size: 15em;
             text-align: center;
             padding-top: 10px;
             padding-bottom: 10px;
