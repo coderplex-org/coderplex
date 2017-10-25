@@ -46,6 +46,7 @@ const RowEvent = props => {
         }
         .card_icons {
           margin-right: 15px;
+          display: block;
         }
         @media (max-width: 700px) {
           .card_icons {
