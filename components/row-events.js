@@ -11,6 +11,7 @@ const extractImageUrl = input => {
 
 const RowEvent = ({
   link,
+  isMultiLine,
   fluid,
   description,
   name,
@@ -49,7 +50,7 @@ const RowEvent = ({
         }
         .card_icons {
           margin-right: 15px;
-          display: block;
+          display: ${isMultiLine ? 'block' : null};
         }
         @media (max-width: 700px) {
           .card_icons {
