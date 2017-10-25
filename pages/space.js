@@ -64,8 +64,8 @@ export default publicPage(() => (
             </Segment>
             <Segment textAlign="left" secondary>
               <h4>Daily</h4>
-              You will engage in daily code review and pair programming exercises
-              with other members.
+              You will engage in daily code review and pair programming
+              exercises with other members.
             </Segment>
             <Segment textAlign="left">
               <h4>Wednesday</h4>
@@ -79,13 +79,13 @@ export default publicPage(() => (
             </Segment>
             <Segment textAlign="left">
               <h4>Friday - Saturday</h4>
-              We will have casual hackathons, where everyone will participate
-              to build a project, big or small.
+              We will have casual hackathons, where everyone will participate to
+              build a project, big or small.
             </Segment>
             <Segment textAlign="left" secondary>
               <h4>Saturday</h4>
-              In the evening, we will screen a tech-related documentary, movie or TV
-              show.
+              In the evening, we will screen a tech-related documentary, movie
+              or TV show.
             </Segment>
             <Segment textAlign="left">
               <h4>Sunday</h4>
