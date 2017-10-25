@@ -45,7 +45,6 @@ class Events extends React.Component {
     }
   }
   renderEvents() {
-    console.log('this.state', this.state);
     if (this.state.fetchError) {
       return <div>{this.state.fetchError}</div>;
     }
