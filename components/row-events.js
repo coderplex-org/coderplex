@@ -51,6 +51,7 @@ const RowEvent = ({
         .card_icons {
           margin-right: 15px;
           display: ${isMultiLine ? 'block' : null};
+          text-align: left;
         }
         @media (max-width: 700px) {
           .card_icons {
