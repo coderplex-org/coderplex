@@ -9,11 +9,12 @@ import {
   Search,
   Header,
 } from 'semantic-ui-react';
+import Link from 'next/link';
 
-import publicPage from '../hocs/public-page';
-import TopBanner from '../components/top-banner';
+import publicPage from '../../hocs/public-page';
+import TopBanner from '../../components/top-banner';
 
-import { listOfSubjects, listOfDomains } from '../utils/mock-data';
+import { listOfSubjects, listOfDomains } from '../../utils/mock-data';
 
 let numOfFilteredSubjects;
 class Learn extends React.Component {
@@ -78,37 +79,43 @@ class Learn extends React.Component {
                   style={{ paddingBottom: '4.5rem' }}
                   key={subject.id}
                 >
-                  <Card
-                    raised
-                    label={{ as: 'a', corner: 'left', icon: 'heart' }}
+                  <Link
+                    href={`/learn/subject?id=${subject.subjectId}`}
+                    as={subject.url}
                   >
-                    <Label attached="bottom right">
-                      <Popup
-                        trigger={
-                          <Icon
-                            style={{ marginRight: '0px' }}
-                            name={
-                              subject.learnGuideStatus ? 'checkmark' : 'info'
-                            }
-                          />
-                        }
-                        position="top center"
-                      >
-                        {subject.learnGuideStatus
-                          ? 'Complete guide'
-                          : 'Guide underconstruction'}
-                      </Popup>
-                    </Label>
-                    <logo className={subject.icon} />
-                    <Card.Content>
-                      <Card.Header>{subject.title}</Card.Header>
-                      <Card.Meta>{subject.domain}</Card.Meta>
-                    </Card.Content>
-                    <Card.Content extra>
-                      <Icon name="student" />
-                      {`${subject.learningCount} learning`}
-                    </Card.Content>
-                  </Card>
+                    <Card
+                      as="a"
+                      raised
+                      label={{ as: 'a', corner: 'left', icon: 'heart' }}
+                    >
+                      <Label attached="bottom right">
+                        <Popup
+                          trigger={
+                            <Icon
+                              style={{ marginRight: '0px' }}
+                              name={
+                                subject.learnGuideStatus ? 'checkmark' : 'info'
+                              }
+                            />
+                          }
+                          position="top center"
+                        >
+                          {subject.learnGuideStatus
+                            ? 'Complete guide'
+                            : 'Guide underconstruction'}
+                        </Popup>
+                      </Label>
+                      <logo className={subject.icon} />
+                      <Card.Content>
+                        <Card.Header>{subject.title}</Card.Header>
+                        <Card.Meta>{subject.domain}</Card.Meta>
+                      </Card.Content>
+                      <Card.Content extra>
+                        <Icon name="student" />
+                        {`${subject.learningCount} learning`}
+                      </Card.Content>
+                    </Card>
+                  </Link>
                 </Grid.Column>
               ))}
             </Grid>
