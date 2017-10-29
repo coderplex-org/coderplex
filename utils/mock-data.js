@@ -1,8 +1,8 @@
-export const dataInRootLearn = [
+export const listOfSubjects = [
   {
     id: '2132',
     title: 'Laravel',
-    domain: 'Backend Development',
+    domain: 'Web Development',
     url: '/learn/laravel',
     icon: 'devicon-laravel-plain colored',
     learningCount: '20',
@@ -11,7 +11,7 @@ export const dataInRootLearn = [
   {
     id: '213',
     title: 'ReactJS',
-    domain: 'Frontend Development',
+    domain: 'Web Development',
     url: '/learn/reactjs',
     icon: 'devicon-react-original colored',
     learningCount: '28',
@@ -29,7 +29,7 @@ export const dataInRootLearn = [
   {
     id: '21fa3',
     title: 'Android',
-    domain: 'Mobile Development',
+    domain: 'Mobile Technology',
     url: '/learn/',
     icon: 'devicon-android-plain colored',
     learningCount: '9',
@@ -56,7 +56,7 @@ export const dataInRootLearn = [
   {
     id: '2bxcvbx13',
     title: 'iOS',
-    domain: 'Mobile Development',
+    domain: 'Mobile Technology',
     url: '/learn/',
     icon: 'devicon-swift-plain colored',
     learningCount: '45',
@@ -125,4 +125,15 @@ export const indexPageLearns = [
     subject: 'Mobile Development',
     image: '',
   },
+];
+
+export const listOfDomains = [
+  'All',
+  'Computer Science',
+  'Programming Language',
+  'Web Development',
+  'Mobile Technology',
+  'Data Science',
+  'Artificial Intelligence',
+  'BlockChain',
 ];

@@ -1,15 +1,41 @@
 import React from 'react';
-import { Card, Icon, Label, Popup, Grid } from 'semantic-ui-react';
+import {
+  Card,
+  Icon,
+  Label,
+  Popup,
+  Grid,
+  Button,
+  Search,
+  Header,
+} from 'semantic-ui-react';
 
 import publicPage from '../hocs/public-page';
 import TopBanner from '../components/top-banner';
 
-import { dataInRootLearn } from '../utils/mock-data';
+import { listOfSubjects, listOfDomains } from '../utils/mock-data';
 
+let numOfFilteredSubjects;
 class Learn extends React.Component {
   state = {
-    filter: '',
+    filter: 'All',
+    filteredSubjects: listOfSubjects,
   };
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.filter !== this.state.filter) {
+      const filteredSubjects = listOfSubjects.filter(subject => {
+        if (this.state.filter === 'All') {
+          return true;
+        }
+        return subject.domain === this.state.filter;
+      });
+      numOfFilteredSubjects = filteredSubjects.length;
+      this.setState({
+        filteredSubjects,
+      });
+    }
+  }
 
   render() {
     return (
@@ -20,10 +46,38 @@ class Learn extends React.Component {
         />
         <main>
           <section>
-            <filterset>{/* <Button /> */}</filterset>
+            {listOfDomains.map(domain => (
+              <Button
+                key={domain}
+                style={{ marginBottom: '10px' }}
+                className="filter_button"
+                basic
+                color="pink"
+                onClick={() => this.setState({ filter: domain })}
+              >
+                {domain}
+              </Button>
+            ))}
+            <Search className="learn_search" placeholder="Search topics" />
+            <Header
+              as="h3"
+              dividing
+              style={{ marginBottom: '40px', textAlign: 'center' }}
+            >
+              {this.state.filter === 'All'
+                ? 'Showing all courses'
+                : numOfFilteredSubjects === 0
+                  ? `Currenlty we dont have any subjects under ${this.state
+                      .filter}`
+                  : `Showing ${numOfFilteredSubjects} courses under ${this.state
+                      .filter}`}
+            </Header>
             <Grid stackable columns={3}>
-              {dataInRootLearn.map(subject => (
-                <Grid.Column key={subject.id}>
+              {this.state.filteredSubjects.map(subject => (
+                <Grid.Column
+                  style={{ paddingBottom: '4.5rem' }}
+                  key={subject.id}
+                >
                   <Card
                     raised
                     label={{ as: 'a', corner: 'left', icon: 'heart' }}
@@ -66,18 +120,23 @@ class Learn extends React.Component {
             background-color: #ffffff;
           }
           main {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: flex-start;
+            align-items: flex-start;
             background-color: #ffffff;
-            padding-top: 30px;
-            padding-bottom: 30px;
-            padding-left: 30px;
-            padding-right: 30px;
+            padding: 30px;
             min-height: calc(100vh - 70px);
+            margin: 0 auto;
           }
           section {
             margin: 50px 0;
+            max-width: 800px;
           }
           logo {
-            font-size: 15em;
+            font-size: 12em;
             text-align: center;
             padding-top: 10px;
             padding-bottom: 10px;

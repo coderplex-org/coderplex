@@ -52,6 +52,10 @@ export default () => (
       .headroom--scrolled {
         z-index: 99999 !important;
       }
+      .learn_search {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
     `}</style>
   </div>
 );
