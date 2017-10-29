@@ -6,13 +6,13 @@ import publicPage from '../../hocs/public-page';
 export default publicPage(props => (
   <div>
     <TopBanner
-      pageTitle={`learn/${props.url.query.subject}`}
+      pageTitle={`learn/${props.url.query.id}`}
       pageSubTitle="Physical spaces for collaboration, peer-learning and self-learning"
     />
     <main>
       <section>
         <h1>Under construction</h1>
-        <p>You are on learn/{props.url.query.subject} page</p>
+        <p>You are on learn/{props.url.query.id} page</p>
       </section>
     </main>
     <style jsx>{`
