@@ -47,19 +47,21 @@ class Learn extends React.Component {
         />
         <main>
           <section>
-            {listOfDomains.map(domain => (
-              <Button
-                key={domain}
-                style={{ marginBottom: '10px' }}
-                className="filter_button"
-                basic
-                color="pink"
-                onClick={() => this.setState({ filter: domain })}
-              >
-                {domain}
-              </Button>
-            ))}
-            <Search className="learn_search" placeholder="Search topics" />
+            <div className="filters">
+              {listOfDomains.map(domain => (
+                <Button
+                  key={domain}
+                  style={{ marginBottom: '10px' }}
+                  className="filter_button"
+                  basic
+                  color="pink"
+                  onClick={() => this.setState({ filter: domain })}
+                >
+                  {domain}
+                </Button>
+              ))}
+            </div>
+            <Search placeholder="Search topics" />
             <Header
               as="h3"
               dividing
@@ -119,7 +121,6 @@ class Learn extends React.Component {
                 </Grid.Column>
               ))}
             </Grid>
-            {/* </Grid> */}
           </section>
         </main>
         <style jsx>{`
@@ -141,6 +142,9 @@ class Learn extends React.Component {
           section {
             margin: 50px 0;
             max-width: 800px;
+          }
+          .filters {
+            margin-bottom: 20px;
           }
           logo {
             font-size: 12em;
