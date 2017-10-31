@@ -148,6 +148,7 @@ export const listOfDomains = [
 ];
 
 export const contentsOfLaravel = {
+  logo: 'devicon-laravel-plain colored',
   overview: 'https://rawgit.com/coderplex/learn/cdn/cdn/laravel/overview.md',
   guides: [
     {

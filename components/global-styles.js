@@ -62,7 +62,7 @@ export default () => (
         text-align: center;
       }
       th {
-        background: #fafafa;
+        background: #f4f6fb;
         font-weight: bold;
       }
       td,

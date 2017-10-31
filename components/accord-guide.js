@@ -53,7 +53,6 @@ export default class AccordGuide extends Component {
             </Accordion.Content>
           </Accordion>
         </main>
-        <style jsx>{``}</style>
       </div>
     );
   }

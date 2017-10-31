@@ -37,10 +37,10 @@ export default publicPage(
     render() {
       return (
         <div>
-          <header>
-            <logo className="devicon-laravel-plain colored" />
-            <headling>{this.props.url.query.id}</headling>
-          </header>
+          <div className="header">
+            <div className={`logo ${contentsOfLaravel.logo}`} />
+            <div className="headline">{this.props.url.query.id}</div>
+          </div>
           <main>
             <section>
               <Tab
@@ -89,7 +89,7 @@ export default publicPage(
             </section>
           </main>
           <style jsx>{`
-            header {
+            .header {
               display: flex;
               flex-direction: row;
               flex-wrap: wrap;
@@ -99,19 +99,20 @@ export default publicPage(
               background-color: #f4f7fb;
               min-height: 200px;
             }
-            logo {
+            .logo {
               order: 1;
               flex: 0 1 auto;
               align-self: auto;
-              font-size: 5em;
+              font-size: 4.5em;
               padding-right: 30px;
             }
-            headling {
+            .headline {
               order: 2;
               flex: 0 1 auto;
               align-self: auto;
               font-size: 5em;
               text-align: center;
+              text-transform: capitalize;
             }
             main {
               background-color: #ffffff;
