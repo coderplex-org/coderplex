@@ -106,30 +106,30 @@ export default () => (
           position: absolute;
           top: 6px;
           left: 6px;
-          width: 45%;
-          padding-right: 10px;
-          white-space: nowrap;
+          width: 30%;
+          padding-right: 5px;
+          white-space: normal;
+          font-size: 12px;
+          text-align: left;
         }
 
         td:nth-of-type(1):before {
-          text-align: center;
           content: 'Concept';
         }
         td:nth-of-type(1) {
-          text-align: center;
-          background: #fafafa;
+          background: #f4f6fb;
         }
         td:nth-of-type(2):before {
-          content: 'Best Video Resource';
+          content: 'Best video';
         }
         td:nth-of-type(3):before {
-          content: 'Best Text Resource';
+          content: 'Best text';
         }
         td:nth-of-type(4):before {
           content: 'Duration';
         }
         td:nth-of-type(5):before {
-          content: 'Prerequisites';
+          content: 'Prereq';
         }
       }
     `}</style>
