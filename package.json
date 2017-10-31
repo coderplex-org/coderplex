@@ -47,6 +47,7 @@
     "date-fns": "1.29.0",
     "feathers-rest": "^1.8.0",
     "isomorphic-unfetch": "2.0.0",
+    "marked": "^0.3.6",
     "next": "^4.1.0",
     "nprogress": "^0.2.0",
     "path-match": "1.2.4",
