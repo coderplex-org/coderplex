@@ -149,7 +149,7 @@ export const listOfDomains = [
 
 export const contentsOfLaravel = {
   overview: 'https://rawgit.com/coderplex/learn/cdn/cdn/laravel/overview.md',
-  guide: [
+  guides: [
     {
       name: 'Prerequisites',
       url: 'https://rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/0.md',

@@ -1,8 +1,10 @@
 import React from 'react';
+import fetch from 'isomorphic-unfetch';
 import { Tab } from 'semantic-ui-react';
 
 import publicPage from '../../hocs/public-page';
 import MarkedJS from '../../components/marked-js';
+import AccordGuide from '../../components/accord-guide';
 import { contentsOfLaravel } from '../../utils/mock-data';
 
 export default publicPage(
@@ -63,7 +65,15 @@ export default publicPage(
                   {
                     menuItem: 'Guide',
                     render: () => (
-                      <Tab.Pane attached={false}>Guides will go here</Tab.Pane>
+                      <Tab.Pane attached={false}>
+                        {contentsOfLaravel.guides.map(guide => (
+                          <AccordGuide
+                            key={guide.url}
+                            title={guide.name}
+                            url={guide.url}
+                          />
+                        ))}
+                      </Tab.Pane>
                     ),
                   },
                   {
