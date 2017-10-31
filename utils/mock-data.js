@@ -190,8 +190,35 @@ export const contentsOfLaravel = {
   ],
   contributors: [
     {
-      name: 'P Bhanu Teja',
-      github: 'https://github.com/pbteja1998',
+      userName: 'P Bhanu Teja',
+      userPage: 'https://github.com/pbteja1998',
+      userImage: 'https://avatars0.githubusercontent.com/u/17903466?s=400&v=4',
+      contributions: [
+        {
+          type: 'topic',
+          count: '20',
+        },
+        {
+          type: 'article',
+          count: '30',
+        },
+        {
+          type: 'video',
+          count: '25',
+        },
+      ],
+    },
+    {
+      userName: 'M Zubair Ahmed',
+      userPage: 'https://github.com/M-ZubairAhmed',
+      userImage:
+        'https://avatars0.githubusercontent.com/u/17708702?s=400&u=032075b378bf6d82da48725b9ce5f31c7a6469fa&v=4',
+      contributions: [
+        {
+          type: 'topic',
+          count: '2',
+        },
+      ],
     },
   ],
 };

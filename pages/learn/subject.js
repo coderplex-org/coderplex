@@ -6,6 +6,7 @@ import publicPage from '../../hocs/public-page';
 import MarkedJS from '../../components/marked-js';
 import AccordGuide from '../../components/accord-guide';
 import { contentsOfLaravel } from '../../utils/mock-data';
+import RowContributors from '../../components/row-contributors';
 
 export default publicPage(
   class Subjects extends React.Component {
@@ -80,7 +81,15 @@ export default publicPage(
                     menuItem: 'Contributors',
                     render: () => (
                       <Tab.Pane attached={false}>
-                        {contentsOfLaravel.contributors[0].name}
+                        {contentsOfLaravel.contributors.map(contributor => (
+                          <RowContributors
+                            key={contributor.userPage}
+                            userPage={contributor.userPage}
+                            userName={contributor.userName}
+                            userImage={contributor.userImage}
+                            contributions={contributor.contributions}
+                          />
+                        ))}
                       </Tab.Pane>
                     ),
                   },
