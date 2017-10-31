@@ -53,12 +53,10 @@
     "path-match": "1.2.4",
     "prop-types": "^15.5.10",
     "react": "^16.0.0",
-    "react-count-down": "^1.1.0",
     "react-dom": "^16.0.0",
     "react-ga": "^2.2.0",
     "react-headroom": "^2.1.6",
     "react-icons": "^2.2.5",
-    "react-textgradient": "0.0.2",
     "semantic-ui-react": "^0.71.5"
   },
   "devDependencies": {
