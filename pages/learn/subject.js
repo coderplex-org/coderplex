@@ -7,6 +7,7 @@ import MarkedJS from '../../components/marked-js';
 import AccordGuide from '../../components/accord-guide';
 import { contentsOfLaravel } from '../../utils/mock-data';
 import RowContributors from '../../components/row-contributors';
+import Icon from '../../components/icon';
 
 export default publicPage(
   class Subjects extends React.Component {
@@ -38,65 +39,75 @@ export default publicPage(
     render() {
       return (
         <div>
-          <div className="header">
-            <div className={`logo ${contentsOfLaravel.logo}`} />
-            <div className="headline">{this.props.url.query.id}</div>
-          </div>
-          <main>
-            <section>
-              <Tab
-                menu={{
-                  color: 'pink',
-                  attached: false,
-                  tabular: false,
-                  borderless: true,
-                }}
-                panes={[
-                  {
-                    menuItem: 'Overview',
-                    render: () => (
-                      <Tab.Pane attached={false}>
-                        <MarkedJS
-                          loading={this.state.overviewLoading}
-                          markdown={this.state.overview}
-                        />
-                      </Tab.Pane>
-                    ),
-                  },
-                  {
-                    menuItem: 'Guide',
-                    render: () => (
-                      <Tab.Pane attached={false}>
-                        {contentsOfLaravel.guides.map(guide => (
-                          <AccordGuide
-                            key={guide.url}
-                            title={guide.name}
-                            url={guide.url}
-                          />
-                        ))}
-                      </Tab.Pane>
-                    ),
-                  },
-                  {
-                    menuItem: 'Contributors',
-                    render: () => (
-                      <Tab.Pane attached={false}>
-                        {contentsOfLaravel.contributors.map(contributor => (
-                          <RowContributors
-                            key={contributor.userPage}
-                            userPage={contributor.userPage}
-                            userName={contributor.userName}
-                            userImage={contributor.userImage}
-                            contributions={contributor.contributions}
-                          />
-                        ))}
-                      </Tab.Pane>
-                    ),
-                  },
-                ]}
-              />
-            </section>
-          </main>
+          {this.props.url.query.id === 'laravel' ? (
+            <div>
+              <div className="header">
+                <div className={`logo ${contentsOfLaravel.logo}`} />
+                <div className="headline">{this.props.url.query.id}</div>
+              </div>
+              <main>
+                <section>
+                  <Tab
+                    menu={{
+                      color: 'pink',
+                      attached: false,
+                      tabular: false,
+                      borderless: true,
+                    }}
+                    panes={[
+                      {
+                        menuItem: 'Overview',
+                        render: () => (
+                          <Tab.Pane attached={false}>
+                            <MarkedJS
+                              loading={this.state.overviewLoading}
+                              markdown={this.state.overview}
+                            />
+                          </Tab.Pane>
+                        ),
+                      },
+                      {
+                        menuItem: 'Guide',
+                        render: () => (
+                          <Tab.Pane attached={false}>
+                            {contentsOfLaravel.guides.map(guide => (
+                              <AccordGuide
+                                key={guide.url}
+                                title={guide.name}
+                                url={guide.url}
+                              />
+                            ))}
+                          </Tab.Pane>
+                        ),
+                      },
+                      {
+                        menuItem: 'Contributors',
+                        render: () => (
+                          <Tab.Pane attached={false}>
+                            {contentsOfLaravel.contributors.map(contributor => (
+                              <RowContributors
+                                key={contributor.userPage}
+                                userPage={contributor.userPage}
+                                userName={contributor.userName}
+                                userImage={contributor.userImage}
+                                contributions={contributor.contributions}
+                              />
+                            ))}
+                          </Tab.Pane>
+                        ),
+                      },
+                    ]}
+                  />
+                </section>
+              </main>
+            </div>
+          ) : (
+            <div className="comingSoon">
+              <Icon />
+              <h2>{`${this.props.url.query
+                .id} and other guides coming soon...!`}</h2>
+            </div>
+          )}
           <style jsx>{`
             .header {
               display: flex;
@@ -141,6 +152,15 @@ export default publicPage(
             }
             divide {
               width: 100%;
+            }
+            .comingSoon {
+              min-height: calc(100vh - 70px);
+              background: #f4f7fb;
+              color: #314159;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
             }
           `}</style>
         </div>

@@ -220,5 +220,21 @@ export const contentsOfLaravel = {
         },
       ],
     },
+    {
+      userName: 'Vinay Puppal',
+      userPage: 'https://www.vinaypuppal.com/',
+      userImage:
+        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/214440/profile/profile-512.jpg?2',
+      contributions: [
+        {
+          type: 'topic',
+          count: '4',
+        },
+        {
+          type: 'article',
+          count: '2',
+        },
+      ],
+    },
   ],
 };
