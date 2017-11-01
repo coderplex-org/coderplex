@@ -5,34 +5,26 @@
   "main": "index.js",
   "scripts": {
     "test": "xo",
-    "lint": "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write --single-quote --print-width='80' --trailing-comma='all' && xo --fix",
+    "lint":
+      "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write --single-quote --print-width='80' --trailing-comma='all' && xo --fix",
     "precommit": "lint-staged",
     "analyze": "cross-env ANALYZE=1 next build",
-    "dev": "cross-env NODE_ENV=development next",
+    "dev": "cross-env NODE_ENV=development node server.js",
     "start": "cross-env NODE_ENV=production next start",
     "build": "next build",
     "export": "cross-env NODE_ENV=production yarn build && next export"
   },
   "xo": {
     "parser": "babel-eslint",
-    "extends": [
-      "prettier",
-      "prettier/react",
-      "plugin:react/recommended"
-    ],
-    "env": [
-      "browser",
-      "node"
-    ],
+    "extends": ["prettier", "prettier/react", "plugin:react/recommended"],
+    "env": ["browser", "node"],
     "rules": {
       "linebreak-style": 0,
       "react/display-name": 0,
       "react/prop-types": 0
     },
     "space:": 2,
-    "ignores": [
-      "next.config.js"
-    ]
+    "ignores": ["next.config.js"]
   },
   "lint-staged": {
     "*.js": [
@@ -55,16 +47,16 @@
     "date-fns": "1.29.0",
     "feathers-rest": "^1.8.0",
     "isomorphic-unfetch": "2.0.0",
+    "marked": "^0.3.6",
     "next": "^4.1.0",
     "nprogress": "^0.2.0",
+    "path-match": "1.2.4",
     "prop-types": "^15.5.10",
     "react": "^16.0.0",
-    "react-count-down": "^1.1.0",
     "react-dom": "^16.0.0",
     "react-ga": "^2.2.0",
     "react-headroom": "^2.1.6",
     "react-icons": "^2.2.5",
-    "react-textgradient": "0.0.2",
     "semantic-ui-react": "^0.71.5"
   },
   "devDependencies": {

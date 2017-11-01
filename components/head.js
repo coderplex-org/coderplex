@@ -41,6 +41,10 @@ export default ({ title }) => (
       rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css"
+    />
     <title>{title}</title>
     <meta name="description" content="coderplex" />
     <meta property="og:type" content="website" />
