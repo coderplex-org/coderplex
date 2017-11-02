@@ -6,7 +6,7 @@
   "scripts": {
     "test": "xo && jest",
     "lint": "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write --single-quote --print-width='80' --trailing-comma='all' && xo --fix",
-    "precommit": "lint-staged && npm test",
+    "precommit": "lint-staged",
     "analyze": "cross-env ANALYZE=1 next build",
     "dev": "cross-env NODE_ENV=development node server.js",
     "start": "cross-env NODE_ENV=production next start",
@@ -35,7 +35,7 @@
     ],
     "overrides": [
       {
-        "files": "__tests__/*.test.js",
+        "files": "**/__tests__/*.test.js",
         "globals": [
           "describe",
           "it",
@@ -47,6 +47,8 @@
   "lint-staged": {
     "*.js": [
       "prettier --write --single-quote --print-width=80 --trailing-comma=all",
+      "xo",
+      "jest --findRelatedTests",
       "git add"
     ]
   },
