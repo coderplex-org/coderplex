@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Headroom from 'react-headroom';
 import NProgress from 'nprogress';
 import Router from 'next/router';
-import Link from 'next/link';
+import { Menu } from 'semantic-ui-react';
 
 import GlobalStyles from './global-styles';
 import Head from './head';
@@ -19,146 +19,106 @@ Router.onRouteChangeError = () => {
   NProgress.done();
 };
 
-export default props => {
-  const title =
-    props.url.pathname === '/'
-      ? 'Home'
-      : props.url.pathname.split('/')[1].toUpperCase();
-  const navItems = [
-    {
-      title: 'Home',
-      path: '/',
-      external: false,
-    },
-    {
-      title: 'Learn',
-      path: '/learn',
-      external: false,
-    },
-    {
-      title: 'Space',
-      path: '/space',
-      external: false,
-    },
-    {
-      title: 'Events',
-      path: '/events',
-      external: false,
-    },
-    {
-      title: 'Blog',
-      path: 'https://medium.com/coderplex',
-      external: true,
-    },
-  ];
-  return (
-    <Headroom>
-      <header>
-        <Head title={`${title} | Coderplex`} />
-        <GlobalStyles />
-        <div className="header__container">
-          <nav>
-            <div className="nav__logo">
-              <img src="/static/favicons/android-chrome-192x192.png" alt="" />
-            </div>
-            <ul className="nav__links">
-              {navItems.map(item => {
-                return (
-                  <li key={item.title} className="nav__linkItem">
-                    <Link href={item.path}>
-                      <a
-                        className={`nav__link ${props.url.pathname === item.path
-                          ? 'nav__link--active'
-                          : ''}`}
-                        target={item.external ? '_blank' : '_self'}
-                      >
-                        {item.title}
-                      </a>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-        </div>
-      </header>
-      <style jsx>{`
-        header {
-          padding: 5px 20px;
-          width: 100%;
-          background: #fff;
-          z-index: 1000;
-        }
-        .header__container {
-          max-width: 1280px;
-          margin: 0 auto;
-        }
-        nav {
-          display: flex;
-          height: 70px;
-          align-items: center;
-        }
-        .nav__logo {
-          flex: 1;
-          display: flex;
-          align-items: center;
-        }
-        .nav__logo img {
-          width: 50px;
-          height: 50px;
-          margin-right: 5px;
-        }
-        .nav__links {
-          margin: 0;
-          padding: 0;
-          list-style: none;
-          flex: 2;
-          display: flex;
-          align-items: center;
-        }
-        .nav__linkItem {
-          flex: 1;
-          text-align: center;
-          display: flex;
-          justify-content: center;
-        }
-        .nav__linkItem :global(.dropdown__linkItem) {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        .nav__linkItem img {
-          width: 30px;
-          height: 30px;
-          border-radius: 50%;
-          margin-right: 5px;
-        }
-        .nav__link {
-          text-decoration: none;
-          color: #666;
-          font-size: 14px;
-          padding-bottom: 4px;
-        }
-        .nav__link:hover {
-          color: #444;
-        }
-        .nav__link--active {
-          color: #444;
-          border-bottom: 2px solid #314159;
-          pointer-events: none;
-        }
-        @media (max-width: 700px) {
+export default class Header extends Component {
+  state = {
+    activeItem:
+      this.props.url.pathname === '/'
+        ? 'Home'
+        : this.props.url.pathname
+            .split('/')[1]
+            .charAt(0)
+            .toUpperCase() + this.props.url.pathname.split('/')[1].slice(1),
+  };
+
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+
+  render() {
+    const { activeItem } = this.state;
+    const title = this.state.activeItem;
+    const navItems = [
+      {
+        title: 'Home',
+        path: '/',
+        external: false,
+      },
+      {
+        title: 'Learn',
+        path: '/learn',
+        external: false,
+      },
+      {
+        title: 'Space',
+        path: '/space',
+        external: false,
+      },
+      {
+        title: 'Events',
+        path: '/events',
+        external: false,
+      },
+      {
+        title: 'Blog',
+        path: 'https://medium.com/coderplex',
+        external: true,
+      },
+    ];
+
+    return (
+      <Headroom>
+        <header>
+          <Head title={`${title} | Coderplex`} />
+          <GlobalStyles />
+          <div className="header__container">
+            <nav>
+              <div className="nav__logo">
+                <img src="/static/favicons/android-chrome-192x192.png" alt="" />
+              </div>
+              <div>
+                <Menu className="nav__links" pointing secondary>
+                  {navItems.map(item => {
+                    return (
+                      <Menu.Item
+                        className="nav__linkItem"
+                        key={item.title}
+                        name={item.title}
+                        active={activeItem === item.title}
+                        onClick={this.handleItemClick}
+                        href={item.path}
+                      />
+                    );
+                  })}
+                </Menu>
+              </div>
+            </nav>
+          </div>
+        </header>
+        <style jsx>{`
+          header {
+            padding: 5px 20px;
+            width: 100%;
+            background: #fff;
+            z-index: 1000;
+          }
+          .header__container {
+            max-width: 1280px;
+            margin: 0 auto;
+          }
           nav {
-            justify-content: center;
+            display: flex;
+            height: 70px;
+            align-items: center;
           }
           .nav__logo {
-            flex: initial;
+            flex: 1;
+            display: flex;
           }
-          .nav__links {
-            display: none;
+          .nav__logo img {
+            width: 50px;
+            height: 50px;
+            margin-right: 5px;
           }
-        }
-      `}</style>
-    </Headroom>
-  );
-};
+        `}</style>
+      </Headroom>
+    );
+  }
+}
