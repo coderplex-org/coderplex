@@ -47,8 +47,8 @@ export default props => {
     },
     {
       title: 'Blog',
-      path: 'https://medium.com/coderplex',
-      external: true,
+      path: 'https://coderplex.org/blog',
+      external: false,
     },
   ];
   return (
@@ -144,7 +144,7 @@ export default props => {
         }
         .nav__link--active {
           color: #444;
-          border-bottom: 2px solid #314159;
+          border-bottom: 2px solid #d900e4;
           pointer-events: none;
         }
         @media (max-width: 700px) {

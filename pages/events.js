@@ -3,7 +3,7 @@ import fetch from 'isomorphic-unfetch';
 import { Card, Divider, Dimmer, Loader } from 'semantic-ui-react';
 
 import publicPage from '../hocs/public-page';
-import TopBanner from '../components/top-banner';
+import CommonBanner from '../components/common-banner';
 import { baseEventsURL, futureEventsURL, pastEventsURL } from '../utils/urls';
 import RowEvent from '../components/row-events';
 
@@ -14,6 +14,7 @@ class Events extends React.Component {
     fetchError: null,
     loading: true,
   };
+
   async componentDidMount() {
     try {
       const pastEvents = await fetch(
@@ -44,6 +45,7 @@ class Events extends React.Component {
       });
     }
   }
+
   renderEvents() {
     if (this.state.fetchError) {
       return <div>{this.state.fetchError}</div>;
@@ -96,10 +98,11 @@ class Events extends React.Component {
       </div>
     );
   }
+
   render() {
     return (
       <div>
-        <TopBanner
+        <CommonBanner
           pageTitle="Events"
           pageSubTitle="Because you cannot change the world alone"
         />
