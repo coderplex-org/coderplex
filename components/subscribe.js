@@ -68,7 +68,7 @@ class Subscribe extends Component {
           <div>
             <h3 className="taglines">
               We are constanly updating our platform.<br />If you would like to
-              stay informed about our updates, drop you email.
+              stay informed about our updates, drop your email.
             </h3>
             <div className="update_content">
               {this.state.subscriberEmailPosted ? (
