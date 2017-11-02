@@ -144,7 +144,7 @@ export default props => {
         }
         .nav__link--active {
           color: #444;
-          border-bottom: 2px solid #314159;
+          border-bottom: 2px solid #d900e4;
           pointer-events: none;
         }
         @media (max-width: 700px) {

@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+
 import { Card, Button, Divider, Grid, Segment } from 'semantic-ui-react';
 import { baseEventsURL, indexPageEventURL } from '../utils/urls';
 import RowEvent from '../components/row-events';
@@ -8,46 +9,40 @@ import Subscribe from '../components/subscribe';
 
 const indexPageLearns = [
   {
-    link:
-      'https://github.com/coderplex/learn/blob/master/web-dev/Frontend/Libraries%20%26%20Frameworks/Learn-React.md',
+    subjectId: 'react',
+    url: 'learn/react',
     title: 'ReactJS',
     subject: 'Frontend Web Development',
-    image: '',
   },
   {
-    link:
-      'https://github.com/coderplex/learn/blob/master/web-dev/Backend/Learn-Laravel.md',
+    subjectId: 'laravel',
+    url: 'learn/laravel',
     title: 'Laravel',
     subject: 'Backend Web Development',
-    image: '',
   },
   {
-    link:
-      'https://github.com/coderplex/learn/blob/master/programming-languages/Go/learn-go.md',
+    subjectId: 'go',
+    url: 'learn/go',
     title: 'Go',
     subject: 'Programming Language',
-    image: '',
   },
   {
-    link:
-      'https://github.com/coderplex/learn/blob/master/computer-science/Learn-CS.md',
+    subjectId: 'introductiontoCS',
+    url: 'learn/introductiontoCS',
     title: 'Introduction to C.S',
     subject: 'Computer Science',
-    image: '',
   },
   {
-    link:
-      'https://github.com/coderplex/learn/blob/master/Blockchain/blockchain-basics.md',
+    subjectId: 'blockchain',
+    url: 'learn/blockchain',
     title: 'Blockchain',
     subject: 'Decentralized Systems',
-    image: '',
   },
   {
-    link:
-      'https://github.com/coderplex/learn/blob/master/mobile-dev/Android/learn-android.md',
+    subjectId: 'android',
+    url: 'learn/android',
     title: 'Android',
     subject: 'Mobile Development',
-    image: '',
   },
 ];
 
@@ -93,13 +88,13 @@ class Home extends React.Component {
               <div className="content">
                 <Card.Group itemsPerRow={3} stackable>
                   {indexPageLearns.map(learn => (
-                    <Card
-                      key={learn.title}
-                      href={learn.link}
-                      target="_blank"
-                      header={learn.title}
-                      meta={learn.subject}
-                    />
+                    <Link
+                      href={`/learn/subject?id=${learn.subjectId}`}
+                      as={learn.url}
+                      key={learn.url}
+                    >
+                      <Card header={learn.title} meta={learn.subject} />
+                    </Link>
                   ))}
                 </Card.Group>
               </div>
