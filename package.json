@@ -92,6 +92,7 @@
     "normalize-url": "1.9.1",
     "now": "8.3.10",
     "octonode": "0.9.1",
+    "opn": "^5.1.0",
     "prettier": "^1.7.0",
     "travis-after-all": "1.4.5",
     "url-regex": "4.1.1",
