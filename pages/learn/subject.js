@@ -3,11 +3,12 @@ import fetch from 'isomorphic-unfetch';
 import { Tab } from 'semantic-ui-react';
 
 import publicPage from '../../hocs/public-page';
+import SubjectBanner from '../../components/learn-components/subject-banner';
 import MarkedJS from '../../components/marked-js';
-import AccordGuide from '../../components/accord-guide';
+import AccordGuide from '../../components/learn-components/accord-guide';
 import { contentsOfLaravel } from '../../utils/mock-data';
-import RowContributors from '../../components/row-contributors';
-import Icon from '../../components/icon';
+import RowContributors from '../../components/learn-components/row-contributors';
+import { UnderConstructionSVG } from '../../components/icons';
 
 export default publicPage(
   class Subjects extends React.Component {
@@ -41,10 +42,10 @@ export default publicPage(
         <div>
           {this.props.url.query.id === 'laravel' ? (
             <div>
-              <div className="header">
-                <div className={`logo ${contentsOfLaravel.logo}`} />
-                <div className="headline">{this.props.url.query.id}</div>
-              </div>
+              <SubjectBanner
+                logo={contentsOfLaravel.logo}
+                subject={this.props.url.query.id}
+              />
               <main>
                 <section>
                   <Tab
@@ -103,37 +104,12 @@ export default publicPage(
             </div>
           ) : (
             <div className="comingSoon">
-              <Icon />
+              <UnderConstructionSVG size={'200px'} />
               <h2>{`${this.props.url.query
                 .id} and other guides coming soon...!`}</h2>
             </div>
           )}
           <style jsx>{`
-            .header {
-              display: flex;
-              flex-direction: row;
-              flex-wrap: wrap;
-              justify-content: center;
-              align-content: center;
-              align-items: center;
-              background-color: #f4f7fb;
-              min-height: 200px;
-            }
-            .logo {
-              order: 1;
-              flex: 0 1 auto;
-              align-self: auto;
-              font-size: 4.5em;
-              padding-right: 30px;
-            }
-            .headline {
-              order: 2;
-              flex: 0 1 auto;
-              align-self: auto;
-              font-size: 5em;
-              text-align: center;
-              text-transform: capitalize;
-            }
             main {
               background-color: #ffffff;
               padding-top: 30px;

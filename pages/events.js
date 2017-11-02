@@ -14,6 +14,7 @@ class Events extends React.Component {
     fetchError: null,
     loading: true,
   };
+
   async componentDidMount() {
     try {
       const pastEvents = await fetch(
@@ -44,6 +45,7 @@ class Events extends React.Component {
       });
     }
   }
+
   renderEvents() {
     if (this.state.fetchError) {
       return <div>{this.state.fetchError}</div>;
@@ -96,6 +98,7 @@ class Events extends React.Component {
       </div>
     );
   }
+
   render() {
     return (
       <div>
