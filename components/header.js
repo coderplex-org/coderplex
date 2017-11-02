@@ -48,7 +48,7 @@ export default props => {
     {
       title: 'Blog',
       path: 'https://coderplex.org/blog',
-      external: false,
+      external: true,
     },
   ];
   return (
@@ -65,16 +65,27 @@ export default props => {
               {navItems.map(item => {
                 return (
                   <li key={item.title} className="nav__linkItem">
-                    <Link href={item.path}>
+                    {item.external ? (
                       <a
+                        href={item.path}
                         className={`nav__link ${props.url.pathname === item.path
                           ? 'nav__link--active'
                           : ''}`}
-                        target={item.external ? '_blank' : '_self'}
                       >
                         {item.title}
                       </a>
-                    </Link>
+                    ) : (
+                      <Link href={item.path}>
+                        <a
+                          className={`nav__link ${props.url.pathname ===
+                          item.path
+                            ? 'nav__link--active'
+                            : ''}`}
+                        >
+                          {item.title}
+                        </a>
+                      </Link>
+                    )}
                   </li>
                 );
               })}
