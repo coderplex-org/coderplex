@@ -12,7 +12,7 @@ import {
 import Link from 'next/link';
 
 import publicPage from '../../hocs/public-page';
-import TopBanner from '../../components/top-banner';
+import CommonBanner from '../../components/common-banner';
 
 import { listOfSubjects, listOfDomains } from '../../utils/mock-data';
 
@@ -41,7 +41,7 @@ class Learn extends React.Component {
   render() {
     return (
       <div className="root">
-        <TopBanner
+        <CommonBanner
           pageTitle="Learn"
           pageSubTitle="Open Source Learning Guides to master your favorite technology"
         />

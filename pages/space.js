@@ -1,12 +1,12 @@
 import React from 'react';
 import { Card, Segment, Header, Divider } from 'semantic-ui-react';
 
-import TopBanner from '../components/top-banner';
+import CommonBanner from '../components/common-banner';
 import publicPage from '../hocs/public-page';
 
 export default publicPage(() => (
   <div>
-    <TopBanner
+    <CommonBanner
       pageTitle="Space"
       pageSubTitle="Physical spaces for collaboration, peer-learning and self-learning"
     />
