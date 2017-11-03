@@ -111,7 +111,7 @@ export default props => {
       </header>
       <style jsx>{`
         header {
-          padding: 5px 20px;
+          padding: 5px 10px;
           width: 100%;
           background: #c454df linear-gradient(to top, #ec53ab, #d354cf);
           z-index: 1000;
@@ -193,7 +193,7 @@ export default props => {
           display: none;
           cursor: pointer;
           top: 15px;
-          left: 10px;
+          left: 5px;
           position: absolute;
           z-index: 1;
         }
