@@ -8,21 +8,11 @@ export default publicPage(() => (
   <div>
     <CommonBanner
       pageTitle="Space"
-      pageSubTitle="Physical spaces for collaboration, peer-learning and self-learning"
+      pageSubTitle="Physical spaces for collaboration, peer-learning and self-learning. These are dynamic learning environments, where everyone learns at their own pace and
+            compliments each other. You can also participate in weekly group activities like Open
+            source evenings and other casual competitions"
     />
     <main>
-      <section>
-        <div>
-          <Card centered fluid>
-            <Card.Content>
-              These are dynamic learning environments, where everyone learns at
-              their own pace and compliments each other. You can also
-              participate in weekly group activities like Open source evenings
-              and other casual competitions
-            </Card.Content>
-          </Card>
-        </div>
-      </section>
       <section>
         <h2>Who is this for?</h2>
         <div>

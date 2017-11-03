@@ -209,7 +209,7 @@ class Home extends React.Component {
           }
           .about__container {
             padding-bottom: 30px;
-            min-height: calc(100vh - 260px);
+            min-height: 200px;
             margin: 0 auto;
             display: flex;
             justify-content: center;
@@ -220,12 +220,12 @@ class Home extends React.Component {
             width: 100%;
           }
           .about__tag {
-            font-size: 2.5em;
+            font-size: 2.5rem;
           }
           .container {
             background-color: #ffffff;
             text-align: center;
-            padding: 60px;
+            padding: 20px;
           }
           .taglines {
             padding-bottom: 20px;
@@ -252,7 +252,11 @@ class Home extends React.Component {
           .discord-subscribe .container {
             background: #FAFAFA;
           }
-
+          @media (max-width: 720px) {
+            .about__tag {
+              font-size: 1.5rem;
+            }
+          }
         `}</style>
       </div>
     );
