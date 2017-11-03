@@ -1,6 +1,6 @@
 # Contribution guidlines
 
-We welcome pull requests from freeCodeCamp campers (our students) and seasoned JavaScript developers alike! Follow these steps to contribute:
+We welcome pull requests from coderplex hackers (our students) and seasoned JavaScript developers alike! Follow these steps to contribute:
 
 1. Find an issue that needs assistance by searching for the [Help Wanted](https://github.com/coderplex/coderplex/labels/help%20wanted) tag.
 
