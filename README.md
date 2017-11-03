@@ -16,4 +16,4 @@ This project mainly uses
 
 ## Contributing
 
-We welcome pull requests from coderplex hackers (our students) and seasoned JavaScript developers alike! Please follow [these steps](CONTRIBUTING.md) to contribute.
+We welcome pull requests from hackerspace members (our students) and seasoned JavaScript developers alike! Please follow [these steps](CONTRIBUTING.md) to contribute.
