@@ -271,7 +271,10 @@ export default props => {
           .nav__link {
             width: 100%;
             padding: 25px 15px;
-            color: #666;
+            color: #888;
+          }
+          .nav__link:hover {
+            color: #222;
           }
           .nav__link--active {
             border: none;
