@@ -5,7 +5,7 @@ import { Tab } from 'semantic-ui-react';
 import publicPage from '../../hocs/public-page';
 import SubjectBanner from '../../components/learn-components/subject-banner';
 import MarkedJS from '../../components/marked-js';
-import AccordGuide from '../../components/learn-components/accord-guide';
+import AccordGuides from '../../components/learn-components/accord-guides';
 import { contentsOfLaravel } from '../../utils/mock-data';
 import RowContributors from '../../components/learn-components/row-contributors';
 import { UnderConstructionSVG } from '../../components/icons';
@@ -72,10 +72,12 @@ export default publicPage(
                         render: () => (
                           <Tab.Pane attached={false}>
                             {contentsOfLaravel.guides.map(guide => (
-                              <AccordGuide
+                              <AccordGuides
                                 key={guide.url}
-                                title={guide.name}
+                                title={guide.title}
                                 url={guide.url}
+                                units={guide.units}
+                                chapter={guide.chapter}
                               />
                             ))}
                           </Tab.Pane>

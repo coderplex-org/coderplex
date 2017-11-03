@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import fetch from 'isomorphic-unfetch';
 import marked from 'marked';
-import { Accordion, Icon, Loader } from 'semantic-ui-react';
 
 export default class AccordGuide extends Component {
   constructor(props) {
@@ -32,28 +31,20 @@ export default class AccordGuide extends Component {
   }
 
   render() {
+    if (this.props.url === '') {
+      return <span />;
+    }
+
     return (
-      <div>
-        <main>
-          <Accordion fluid styled>
-            <Accordion.Title>
-              <Icon name="dropdown" />
-              {this.props.title}
-            </Accordion.Title>
-            <Accordion.Content>
-              {this.state.markdown === '' ? (
-                <Loader active inline="centered" />
-              ) : (
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: marked(this.state.markdown),
-                  }}
-                />
-              )}
-            </Accordion.Content>
-          </Accordion>
-        </main>
-      </div>
+      <span>
+        {this.props.chapter}
+        <div
+          dangerouslySetInnerHTML={{
+            __html: marked(this.state.markdown),
+          }}
+        />
+        <br />
+      </span>
     );
   }
 }

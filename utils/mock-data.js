@@ -147,45 +147,239 @@ export const listOfDomains = [
   'BlockChain',
 ];
 
+export const baseUrlLaravelGuides =
+  'https://rawgit.com/pbteja1998/laravel-cdn/master/';
+
 export const contentsOfLaravel = {
   logo: 'devicon-laravel-plain colored',
   overview: 'https://rawgit.com/coderplex/learn/cdn/cdn/laravel/overview.md',
   guides: [
     {
-      name: 'Prerequisites',
-      url: 'https://rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/0.md',
+      chapter: 1,
+      title: 'Prerequisites',
+      url: '',
+      units: [
+        {
+          chapter: 1,
+          title: 'Prerequisites',
+          url: baseUrlLaravelGuides + '1/1.md',
+          units: [],
+        },
+      ],
     },
     {
-      name: 'Introduction to MVC architecture in PHP',
-      url: 'https://rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/1.md',
+      chapter: 2,
+      title: 'Introduction to MVC Architecture',
+      url: '',
+      units: [
+        {
+          chapter: 1,
+          title: 'Introduction to MVC Architecture',
+          url: baseUrlLaravelGuides + '2/1.md',
+          units: [],
+        },
+      ],
     },
     {
-      name: 'Models Views Controllers and Routes',
-      url: 'https://rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/2.md',
+      chapter: 3,
+      title: 'Core Laravel',
+      url: '',
+      units: [
+        {
+          chapter: 1,
+          title: 'Installation',
+          url: '',
+          units: [
+            {
+              chapter: 1,
+              title: 'Installation',
+              url: baseUrlLaravelGuides + '3/1/1.md',
+              units: [],
+            },
+          ],
+        },
+        {
+          chapter: 2,
+          title: 'MVC and Routes',
+          url: '',
+          units: [
+            {
+              chapter: 1,
+              title: 'Basic Routing and Views',
+              url: baseUrlLaravelGuides + '3/2/1.md',
+              units: [],
+            },
+            {
+              chapter: 2,
+              title: 'Pass Data to Views',
+              url: baseUrlLaravelGuides + '3/2/2.md',
+              units: [],
+            },
+            {
+              chapter: 3,
+              title: 'Database Setup',
+              url: baseUrlLaravelGuides + '3/2/3.md',
+              units: [],
+            },
+            {
+              chapter: 4,
+              title: 'Working with Query Builder',
+              url: baseUrlLaravelGuides + '3/2/4.md',
+              units: [],
+            },
+            {
+              chapter: 5,
+              title: 'Eloquent',
+              url: baseUrlLaravelGuides + '3/2/5.md',
+              units: [],
+            },
+            {
+              chapter: 6,
+              title: 'Controllers',
+              url: baseUrlLaravelGuides + '3/2/6.md',
+              units: [],
+            },
+            {
+              chapter: 7,
+              title: 'Route Model Binding',
+              url: baseUrlLaravelGuides + '3/2/7.md',
+              units: [],
+            },
+          ],
+        },
+        {
+          chapter: 3,
+          title: 'FrontEnd',
+          url: '',
+          units: [
+            {
+              chapter: 1,
+              title: 'Layouts and Structures',
+              url: baseUrlLaravelGuides + '3/3/1.md',
+              units: [],
+            },
+            {
+              chapter: 2,
+              title: 'Form Requests and CSRF',
+              url: baseUrlLaravelGuides + '3/3/2.md',
+              units: [],
+            },
+            {
+              chapter: 3,
+              title: 'Form Validation',
+              url: baseUrlLaravelGuides + '3/3/3.md',
+              units: [],
+            },
+            {
+              chapter: 4,
+              title: 'Rendering',
+              url: baseUrlLaravelGuides + '3/3/4.md',
+              units: [],
+            },
+            {
+              chapter: 5,
+              title: 'Laravel Mix',
+              url: baseUrlLaravelGuides + '3/3/5.md',
+              units: [],
+            },
+            {
+              chapter: 6,
+              title: 'Flash Messaging',
+              url: baseUrlLaravelGuides + '3/3/6.md',
+              units: [],
+            },
+          ],
+        },
+        {
+          chapter: 4,
+          title: 'Relationships',
+          url: '',
+          units: [
+            {
+              chapter: 1,
+              title: 'Eloquent Relationships',
+              url: baseUrlLaravelGuides + '3/4/1.md',
+              units: [],
+            },
+            {
+              chapter: 2,
+              title: 'One to Many Relationship',
+              url: baseUrlLaravelGuides + '3/4/2.md',
+              units: [],
+            },
+            {
+              chapter: 3,
+              title: 'Pivot Tables',
+              url: baseUrlLaravelGuides + '3/4/3.md',
+              units: [],
+            },
+          ],
+        },
+        {
+          chapter: 5,
+          title: 'Authentication',
+          url: '',
+          units: [
+            {
+              chapter: 1,
+              title: 'Scaffold Authentication',
+              url: baseUrlLaravelGuides + '3/5/1.md',
+              units: [],
+            },
+            {
+              chapter: 2,
+              title: 'Manual Authentication',
+              url: baseUrlLaravelGuides + '3/5/2.md',
+              units: [],
+            },
+          ],
+        },
+        {
+          chapter: 6,
+          title: 'Archives',
+          url: '',
+          units: [
+            {
+              chapter: 1,
+              title: 'Add Archives',
+              url: baseUrlLaravelGuides + '3/6/1.md',
+              units: [],
+            },
+            {
+              chapter: 2,
+              title: 'View Composers',
+              url: baseUrlLaravelGuides + '3/6/2.md',
+              units: [],
+            },
+          ],
+        },
+      ],
     },
     {
-      name: 'FrontEnd',
-      url: 'https://rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/3.md',
+      chapter: 4,
+      title: 'Advanced Laravel',
+      url: '',
+      units: [
+        {
+          chapter: 1,
+          title: 'Testing ans Seeding',
+          url: baseUrlLaravelGuides + '4/1.md',
+          units: [],
+        },
+      ],
     },
     {
-      name: 'Relationships',
-      url: 'https://rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/4.md',
-    },
-    {
-      name: 'Authentication',
-      url: 'https://rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/5.md',
-    },
-    {
-      name: 'View Composers and Archives',
-      url: 'https://rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/6.md',
-    },
-    {
-      name: 'Testing & Seeding',
-      url: 'https://rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/7.md',
-    },
-    {
-      name: 'Final Project',
-      url: 'https://rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/8.md',
+      chapter: 5,
+      title: 'Projects',
+      url: '',
+      units: [
+        {
+          chapter: 1,
+          title: 'Projects',
+          url: baseUrlLaravelGuides + '5/1.md',
+          units: [],
+        },
+      ],
     },
   ],
   contributors: [
