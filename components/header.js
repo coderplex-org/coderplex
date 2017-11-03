@@ -165,6 +165,7 @@ export default props => {
           text-decoration: none;
           color: #fff;
           font-size: 14px;
+          font-weight: bold;
           padding-bottom: 4px;
           display: flex;
           align-items: center;
@@ -261,8 +262,9 @@ export default props => {
             width: 100%;
             position: fixed;
             top: 66px;
-            background: #fff;
+            background: #fafafa;
             display: none;
+            border-bottom: 1px solid #eee;
           }
           .nav__linkItem {
             width: 100%;
@@ -270,6 +272,8 @@ export default props => {
           }
           .nav__link {
             width: 100%;
+            font-size: 16px;
+            font-weight: bold;
             padding: 25px 15px;
             color: #888;
           }
