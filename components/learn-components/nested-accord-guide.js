@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Accordion, Icon } from 'semantic-ui-react';
 import AccordGuide from './accord-guide';
 
-export default class AccordGuides extends Component {
+export default class NestedAccordGuide extends Component {
   render() {
     const { units } = this.props;
     return (
@@ -23,7 +23,7 @@ export default class AccordGuides extends Component {
                     chapter={this.props.chapter + '.' + unit.chapter}
                   />
                   {unit.url === '' && (
-                    <AccordGuides
+                    <NestedAccordGuide
                       title={unit.title}
                       units={unit.units}
                       chapter={this.props.chapter + '.' + unit.chapter}
