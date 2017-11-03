@@ -12,19 +12,8 @@ This project mainly uses
 - [Next.js](https://github.com/zeit/next.js/)
 - [Semantic UI React](http://react.semantic-ui.com/introduction)
 
-## Demo
+### [Join our community here](https://www.coderplex.org)
 
-[https://coderplex.org](https://coderplex.org)
+## Contributing
 
-## Running Locally
-
-1. Make sure you have [NodeJS](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
-    > Make sure you install node version 8 or above and check node version by running `node -v`
-1. Then clone this repo
-    ```bash
-    git clone git@github.com:coderplex/coderplex.git
-    ```
-1. `cd coderplex`
-1. `npm install`
-1. `npm run dev` to start local development server
-1. Open app at `localhost:3000`
+We welcome pull requests from coderplex hackers (our students) and seasoned JavaScript developers alike! Please follow [these steps](CONTRIBUTING.md) to contribute.
