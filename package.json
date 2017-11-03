@@ -1,11 +1,12 @@
 {
   "name": "coderplex-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "We are on a mission to improve the state of tech in India",
   "main": "index.js",
   "scripts": {
     "test": "xo && jest",
-    "lint": "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write --single-quote --print-width='80' --trailing-comma='all' && xo --fix",
+    "lint":
+      "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write --single-quote --print-width='80' --trailing-comma='all' && xo --fix",
     "precommit": "lint-staged",
     "analyze": "cross-env ANALYZE=1 next build",
     "dev": "cross-env NODE_ENV=development node server.js",
@@ -15,32 +16,19 @@
   },
   "xo": {
     "parser": "babel-eslint",
-    "extends": [
-      "prettier",
-      "prettier/react",
-      "plugin:react/recommended"
-    ],
-    "env": [
-      "browser",
-      "node"
-    ],
+    "extends": ["prettier", "prettier/react", "plugin:react/recommended"],
+    "env": ["browser", "node"],
     "rules": {
       "linebreak-style": 0,
       "react/display-name": 0,
       "react/prop-types": 0
     },
     "space:": 2,
-    "ignores": [
-      "next.config.js"
-    ],
+    "ignores": ["next.config.js"],
     "overrides": [
       {
         "files": "**/__tests__/*.test.js",
-        "globals": [
-          "describe",
-          "it",
-          "expect"
-        ]
+        "globals": ["describe", "it", "expect"]
       }
     ]
   },
@@ -52,19 +40,8 @@
       "git add"
     ]
   },
-  "keywords": [],
-  "contributors": [
-    "Vinay Puppal <me@vinaypuppal.com> (https://www.vinaypuppal.com/)",
-    "M-ZubairAhmed <ahmedzubari216@gmail.com> (https://github.com/M-ZubairAhmed)"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/coderplex/coderplex.git"
-  },
-  "license": "BSD-3-Clause",
   "dependencies": {
     "date-fns": "1.29.0",
-    "feathers-rest": "^1.8.0",
     "isomorphic-unfetch": "2.0.0",
     "marked": "^0.3.6",
     "next": "^4.1.0",
@@ -73,31 +50,36 @@
     "prop-types": "^15.5.10",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-ga": "^2.2.0",
     "react-headroom": "^2.1.6",
     "react-icons": "^2.2.5",
     "semantic-ui-react": "^0.75.1"
   },
   "devDependencies": {
-    "axios": "0.17.0",
     "babel-eslint": "^8.0.1",
     "babel-plugin-lodash": "^3.2.11",
     "cross-env": "^5.0.2",
-    "cross-spawn": "5.1.0",
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-react": "^7.1.0",
     "husky": "^0.14.3",
     "jest": "^21.2.1",
     "lint-staged": "^4.0.2",
-    "normalize-url": "1.9.1",
-    "now": "8.3.11",
-    "octonode": "0.9.1",
     "opn": "^5.1.0",
     "prettier": "^1.7.0",
-    "travis-after-all": "1.4.5",
-    "url-regex": "4.1.1",
     "webpack-bundle-analyzer": "^2.8.3",
-    "xo": "^0.18.2",
-    "yargs": "10.0.3"
-  }
+    "xo": "^0.18.2"
+  },
+  "keywords": [],
+  "contributors": [
+    "Vinay Puppal <me@vinaypuppal.com> (https://www.vinaypuppal.com/)",
+    "M-ZubairAhmed <ahmedzubari216@gmail.com> (https://github.com/M-ZubairAhmed)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coderplex/coderplex.git"
+  },
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/coderplex/coderplex/issues"
+  },
+  "homepage": "https://github.com/coderplex/coderplex#readme"
 }
