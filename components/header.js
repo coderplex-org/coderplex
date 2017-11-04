@@ -164,7 +164,7 @@ export default props => {
         .nav__link {
           text-decoration: none;
           color: #fff;
-          font-size: 14px;
+          font-size: 16px;
           font-weight: bold;
           padding-bottom: 4px;
           display: flex;
@@ -174,11 +174,10 @@ export default props => {
           margin-left: 5px;
         }
         .nav__link:hover {
-          color: #ffeb3b;
+          color: #e1e1e1;
         }
         .nav__link--active {
-          color: #ffeb3b;
-          border-bottom: 2px solid #ffeb3b;
+          border-bottom: 2px solid #fff;
           pointer-events: none;
         }
         input[type='checkbox'] {
@@ -265,6 +264,7 @@ export default props => {
             background: #fafafa;
             display: none;
             border-bottom: 1px solid #eee;
+            font-size: 10px;
           }
           .nav__linkItem {
             width: 100%;
@@ -272,9 +272,9 @@ export default props => {
           }
           .nav__link {
             width: 100%;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: bold;
-            padding: 25px 15px;
+            padding: 12px 15px;
             color: #888;
           }
           .nav__link:hover {
