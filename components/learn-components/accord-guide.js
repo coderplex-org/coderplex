@@ -18,9 +18,16 @@ export default class AccordGuide extends Component {
     });
     this.state = {
       markdown: '',
+      activeIndex: -1,
     };
   }
+  handleClick = (e, titleProps) => {
+    const { index } = titleProps;
+    const { activeIndex } = this.state;
+    const newIndex = activeIndex === index ? -1 : index;
 
+    this.setState({ activeIndex: newIndex });
+  };
   async componentDidMount() {
     try {
       const request = await fetch(this.props.url);
@@ -32,15 +39,20 @@ export default class AccordGuide extends Component {
   }
 
   render() {
+    const { activeIndex } = this.state;
     return (
       <div>
         <main>
           <Accordion fluid styled>
-            <Accordion.Title>
+            <Accordion.Title
+              active={activeIndex === 0}
+              onClick={this.handleClick}
+              index={0}
+            >
               <Icon name="dropdown" />
               {this.props.title}
             </Accordion.Title>
-            <Accordion.Content>
+            <Accordion.Content active={activeIndex === 0}>
               {this.state.markdown === '' ? (
                 <Loader active inline="centered" />
               ) : (
