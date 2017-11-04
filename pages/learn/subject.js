@@ -1,6 +1,6 @@
 import React from 'react';
 import fetch from 'isomorphic-unfetch';
-import { Tab } from 'semantic-ui-react';
+import { Accordion, Tab } from 'semantic-ui-react';
 
 import publicPage from '../../hocs/public-page';
 import SubjectBanner from '../../components/learn-components/subject-banner';
@@ -71,13 +71,16 @@ export default publicPage(
                         menuItem: 'Guide',
                         render: () => (
                           <Tab.Pane attached={false}>
-                            {contentsOfLaravel.guides.map(guide => (
-                              <AccordGuide
-                                key={guide.url}
-                                title={guide.name}
-                                url={guide.url}
-                              />
-                            ))}
+                            <Accordion fluid styled>
+                              {contentsOfLaravel.guides.map((guide, index) => (
+                                <AccordGuide
+                                  index={index}
+                                  key={guide.url}
+                                  title={guide.name}
+                                  url={guide.url}
+                                />
+                              ))}
+                            </Accordion>
                           </Tab.Pane>
                         ),
                       },

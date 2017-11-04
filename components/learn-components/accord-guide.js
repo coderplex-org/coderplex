@@ -31,27 +31,40 @@ export default class AccordGuide extends Component {
     }
   }
 
+  state = { activeIndex: 0 };
+
+  handleClick = (e, titleProps) => {
+    const { index } = titleProps;
+    const { activeIndex } = this.state;
+    const newIndex = activeIndex === index ? -1 : index;
+
+    this.setState({ activeIndex: newIndex });
+  };
+
   render() {
+    const { activeIndex } = this.state;
     return (
       <div>
         <main>
-          <Accordion fluid styled>
-            <Accordion.Title>
-              <Icon name="dropdown" />
-              {this.props.title}
-            </Accordion.Title>
-            <Accordion.Content>
-              {this.state.markdown === '' ? (
-                <Loader active inline="centered" />
-              ) : (
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: marked(this.state.markdown),
-                  }}
-                />
-              )}
-            </Accordion.Content>
-          </Accordion>
+          <Accordion.Title
+            active={activeIndex === this.props.index}
+            index={this.props.index}
+            onClick={this.handleClick}
+          >
+            <Icon name="dropdown" />
+            {this.props.title}
+          </Accordion.Title>
+          <Accordion.Content active={activeIndex === this.props.index}>
+            {this.state.markdown === '' ? (
+              <Loader active inline="centered" />
+            ) : (
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: marked(this.state.markdown),
+                }}
+              />
+            )}
+          </Accordion.Content>
         </main>
       </div>
     );
