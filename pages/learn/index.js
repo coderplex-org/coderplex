@@ -40,7 +40,7 @@ class Learn extends React.Component {
 
   render() {
     return (
-      <div className="root">
+      <div>
         <CommonBanner
           pageTitle="Learn"
           pageSubTitle="Open Source Learning Guides to master your favorite technology"
@@ -135,7 +135,7 @@ class Learn extends React.Component {
             align-content: flex-start;
             align-items: flex-start;
             background-color: #ffffff;
-            padding: 30px;
+            padding: 20px;
             min-height: calc(100vh - 70px);
             margin: 0 auto;
           }

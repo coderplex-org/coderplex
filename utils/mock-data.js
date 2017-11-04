@@ -149,43 +149,44 @@ export const listOfDomains = [
 
 export const contentsOfLaravel = {
   logo: 'devicon-laravel-plain colored',
-  overview: 'https://rawgit.com/coderplex/learn/cdn/cdn/laravel/overview.md',
+  overview:
+    'https://cdn.rawgit.com/coderplex/learn/cdn/cdn/laravel/overview.md',
   guides: [
     {
       name: 'Prerequisites',
-      url: 'https://rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/0.md',
+      url: 'https://cdn.rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/0.md',
     },
     {
       name: 'Introduction to MVC architecture in PHP',
-      url: 'https://rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/1.md',
+      url: 'https://cdn.rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/1.md',
     },
     {
       name: 'Models Views Controllers and Routes',
-      url: 'https://rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/2.md',
+      url: 'https://cdn.rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/2.md',
     },
     {
       name: 'FrontEnd',
-      url: 'https://rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/3.md',
+      url: 'https://cdn.rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/3.md',
     },
     {
       name: 'Relationships',
-      url: 'https://rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/4.md',
+      url: 'https://cdn.rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/4.md',
     },
     {
       name: 'Authentication',
-      url: 'https://rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/5.md',
+      url: 'https://cdn.rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/5.md',
     },
     {
       name: 'View Composers and Archives',
-      url: 'https://rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/6.md',
+      url: 'https://cdn.rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/6.md',
     },
     {
       name: 'Testing & Seeding',
-      url: 'https://rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/7.md',
+      url: 'https://cdn.rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/7.md',
     },
     {
       name: 'Final Project',
-      url: 'https://rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/8.md',
+      url: 'https://cdn.rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/8.md',
     },
   ],
   contributors: [

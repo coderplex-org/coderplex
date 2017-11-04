@@ -39,7 +39,7 @@ export default () => (
     <style jsx>{`
       footer {
         padding: 50px 0;
-        background: #314159;
+        background: #c454df linear-gradient(to bottom, #ec53ab, #d354cf);
         color: #fff;
       }
       .footer__container {

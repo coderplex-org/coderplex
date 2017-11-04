@@ -9,7 +9,7 @@ export default props => (
     <style jsx>{`
       .root {
         background-color: #f4f7fb;
-        min-height: 200px;
+        min-height: 150px;
         text-align: center;
       }
       .headline {
@@ -17,6 +17,20 @@ export default props => (
         font-size: 4em;
         color: #df1cb5;
         font-weight: 900;
+      }
+      h2 {
+        max-width: 1024px;
+        margin-left: auto;
+        margin-right: auto;
+        letter-spacing: 2px;
+        line-height: 2;
+        margin-bottom: 30px;
+      }
+      @media (max-width: 720px) {
+        h2 {
+          font-size: 14px;
+          padding: 0 10px;
+        }
       }
     `}</style>
   </div>
