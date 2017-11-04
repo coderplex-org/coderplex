@@ -33,27 +33,23 @@ export default class AccordGuide extends Component {
 
   render() {
     return (
-      <div>
-        <main>
-          <Accordion fluid styled>
-            <Accordion.Title>
-              <Icon name="dropdown" />
-              {this.props.title}
-            </Accordion.Title>
-            <Accordion.Content>
-              {this.state.markdown === '' ? (
-                <Loader active inline="centered" />
-              ) : (
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: marked(this.state.markdown),
-                  }}
-                />
-              )}
-            </Accordion.Content>
-          </Accordion>
-        </main>
-      </div>
+      <Accordion fluid styled>
+        <Accordion.Title>
+          <Icon name="dropdown" />
+          {this.props.title}
+        </Accordion.Title>
+        <Accordion.Content>
+          {this.state.markdown === '' ? (
+            <Loader active inline="centered" />
+          ) : (
+            <div
+              dangerouslySetInnerHTML={{
+                __html: marked(this.state.markdown),
+              }}
+            />
+          )}
+        </Accordion.Content>
+      </Accordion>
     );
   }
 }
