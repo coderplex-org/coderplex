@@ -50,7 +50,10 @@ export default ({ title }) => (
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:url" content="https://coderplex.org" />
-    <meta property="og:image" content="/static/favicons/favicon-32x32.png" />
+    <meta
+      property="og:image"
+      content="/static/favicons/android-chrome-512x512.png"
+    />
     <meta property="og:site_name" content="coderplex" />
     <meta property="og:description" content="coderplex" />
   </Head>
