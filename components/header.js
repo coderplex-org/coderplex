@@ -28,9 +28,7 @@ Router.onRouteChangeError = () => {
 export default props => {
   const title =
     props.url.pathname === '/' ? 'home' : props.url.pathname.split('/')[1];
-  console.log(title);
   const metaData = MetaInfo[title];
-  console.log(metaData);
   const navItems = [
     {
       title: 'Home',
