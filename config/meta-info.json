@@ -1,0 +1,25 @@
+{
+  "home": {
+    "title": "Coderplex | Learn, Collaborate and Create with a Community",
+    "description":
+      "We're a non-profit startup on a mission to improve the state of tech across India",
+    "image": ""
+  },
+  "learn": {
+    "title": "Free and Open Source Learning Guides | Coderplex",
+    "description":
+      "Curated guides with crowd-sourced recommendations of the best free online resources to learn various modern technologies",
+    "image": ""
+  },
+  "space": {
+    "title": "Offline Co-learning Spaces | Coderplex",
+    "description":
+      "A network of off-learning spaces for autodidacts to come and engage in peer-learning and collaboration",
+    "image": ""
+  },
+  "events": {
+    "title": "Online and Offline Tech Events | Coderplex",
+    "description": "We host frequent online and offline events, from sessions to competitions",
+    "image": ""
+  }
+}
