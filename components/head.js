@@ -52,7 +52,7 @@ export default ({ title }) => (
     <meta property="og:url" content="https://coderplex.org" />
     <meta
       property="og:image"
-      content="/static/favicons/android-chrome-512x512.png"
+      content="https://coderplex.org/static/favicons/android-chrome-512x512.png"
     />
     <meta property="og:site_name" content="coderplex" />
     <meta property="og:description" content="coderplex" />
