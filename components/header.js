@@ -9,6 +9,7 @@ import GoStar from 'react-icons/lib/md/library-books';
 import GoCalender from 'react-icons/lib/go/calendar';
 import GoOrg from 'react-icons/lib/go/organization';
 
+import MetaInfo from '../config/meta-info';
 import GlobalStyles from './global-styles';
 import Head from './head';
 
@@ -26,9 +27,10 @@ Router.onRouteChangeError = () => {
 
 export default props => {
   const title =
-    props.url.pathname === '/'
-      ? 'Home'
-      : props.url.pathname.split('/')[1].toUpperCase();
+    props.url.pathname === '/' ? 'home' : props.url.pathname.split('/')[1];
+  console.log(title);
+  const metaData = MetaInfo[title];
+  console.log(metaData);
   const navItems = [
     {
       title: 'Home',
@@ -64,7 +66,11 @@ export default props => {
   return (
     <Headroom>
       <header>
-        <Head title={`${title} | Coderplex`} />
+        <Head
+          title={metaData.title}
+          description={metaData.description}
+          image={metaData.image}
+        />
         <GlobalStyles />
         <div className="header__container">
           <nav>
