@@ -263,6 +263,10 @@ export default props => {
           .mobile__menu {
             display: block;
           }
+          input[type='checkbox'] {
+            display: block;
+            opacity: 0;
+          }
           .nav__links {
             flex-direction: column;
             width: 100%;
