@@ -73,7 +73,9 @@ export default props => {
         <div className="header__container">
           <nav>
             <div className="nav__logo">
-              <img src="/static/favicons/android-chrome-192x192.png" alt="" />
+              <a href="/">
+                <img src="/static/favicons/android-chrome-192x192.png" alt="" />
+              </a>
             </div>
             <input id="menu" type="checkbox" />
             <label htmlFor="menu" className="mobile__menu">
