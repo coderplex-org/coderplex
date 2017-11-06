@@ -73,7 +73,9 @@ export default props => {
         <div className="header__container">
           <nav>
             <div className="nav__logo">
-              <img src="/static/favicons/android-chrome-192x192.png" alt="" />
+              <Link href="/">
+                <img src="/static/favicons/android-chrome-192x192.png" alt="" />
+              </Link>
             </div>
             <input id="menu" type="checkbox" />
             <label htmlFor="menu" className="mobile__menu">
@@ -139,6 +141,7 @@ export default props => {
           width: 50px;
           height: 50px;
           margin-right: 5px;
+          cursor: pointer;
         }
         .nav__links {
           margin: 0;
@@ -186,7 +189,7 @@ export default props => {
         }
         input[type='checkbox'] {
           position: absolute;
-          opacity: 0;
+          display: none;
           top: 25px;
           left: 25px;
         }
@@ -259,6 +262,10 @@ export default props => {
           }
           .mobile__menu {
             display: block;
+          }
+          input[type='checkbox'] {
+            display: block;
+            opacity: 0;
           }
           .nav__links {
             flex-direction: column;
