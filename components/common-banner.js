@@ -11,9 +11,10 @@ export default props => (
         background-color: #f4f7fb;
         min-height: 150px;
         text-align: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
       }
       .headline {
-        padding-top: 20px;
         font-size: 4em;
         color: #df1cb5;
         font-weight: 900;
@@ -24,7 +25,6 @@ export default props => (
         margin-right: auto;
         letter-spacing: 2px;
         line-height: 2;
-        margin-bottom: 30px;
       }
       @media (max-width: 720px) {
         h2 {
