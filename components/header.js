@@ -189,7 +189,7 @@ export default props => {
         }
         input[type='checkbox'] {
           position: absolute;
-          opacity: 0;
+          display: none;
           top: 25px;
           left: 25px;
         }
