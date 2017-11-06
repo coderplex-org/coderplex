@@ -73,9 +73,9 @@ export default props => {
         <div className="header__container">
           <nav>
             <div className="nav__logo">
-              <a href="/">
+              <Link href="/">
                 <img src="/static/favicons/android-chrome-192x192.png" alt="" />
-              </a>
+              </Link>
             </div>
             <input id="menu" type="checkbox" />
             <label htmlFor="menu" className="mobile__menu">
@@ -141,6 +141,7 @@ export default props => {
           width: 50px;
           height: 50px;
           margin-right: 5px;
+          cursor: pointer;
         }
         .nav__links {
           margin: 0;
