@@ -1,11 +1,15 @@
 import React from 'react';
 import fetch from 'isomorphic-unfetch';
-import { Card, Divider, Dimmer, Loader } from 'semantic-ui-react';
+import { Card, Divider } from 'semantic-ui-react';
 
 import publicPage from '../hocs/public-page';
 import CommonBanner from '../components/common-banner';
 import { baseEventsURL, futureEventsURL, pastEventsURL } from '../utils/urls';
 import RowEvent from '../components/row-events';
+import {
+  TextContentLoader,
+  CardContentLoader,
+} from '../components/content-loaders';
 
 class Events extends React.Component {
   state = {
@@ -106,15 +110,18 @@ class Events extends React.Component {
           pageTitle="Events"
           pageSubTitle="Because you cannot change the world alone"
         />
-        <main>
+        <div>
           {this.state.loading ? (
-            <Dimmer active>
-              <Loader indeterminate>Fetching Events</Loader>
-            </Dimmer>
+            <div style={{ backgroundColor: '#FFF' }}>
+              <TextContentLoader topPadding="80px" />
+              <CardContentLoader />
+              <CardContentLoader />
+              <CardContentLoader />
+            </div>
           ) : (
-            this.renderEvents()
+            <main>{this.renderEvents()}</main>
           )}
-        </main>
+        </div>
         <style jsx>{`
           main {
             background-color: #ffffff;

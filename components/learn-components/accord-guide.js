@@ -21,6 +21,7 @@ export default class AccordGuide extends Component {
       activeIndex: -1,
     };
   }
+
   handleClick = (e, titleProps) => {
     const { index } = titleProps;
     const { activeIndex } = this.state;
@@ -28,6 +29,7 @@ export default class AccordGuide extends Component {
 
     this.setState({ activeIndex: newIndex });
   };
+
   async componentDidMount() {
     try {
       const request = await fetch(this.props.url);
