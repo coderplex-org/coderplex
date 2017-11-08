@@ -24,3 +24,10 @@ Working on your first Pull Request? You can learn how from this *free* series [H
 1. `npm install`
 1. `npm run dev` to start local development server
 1. App opens at `localhost:3000`
+
+
+**Note:**
+
+    So our team's official policy (for now) is:  
+    we only use Yarn as our official Node package manager, and so we request you to use Yarn instead of  
+    npm and commit yarn.lock file.
