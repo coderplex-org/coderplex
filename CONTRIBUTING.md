@@ -2,7 +2,7 @@
 
 We welcome pull requests from hackerspace members (our students) and seasoned JavaScript developers alike! Follow these steps to contribute:
 
-1. Find an issue that needs assistance by searching for the [Help Wanted](https://github.com/coderplex/coderplex/labels/help%20wanted) tag.
+1. Find an issue that needs assistance by searching for the [Help Wanted](https://github.com/coderplex/coderplex/labels/help-wanted) tag.
 
 1. Let us know you are working on it by posting a comment on the issue.
 
@@ -18,7 +18,7 @@ Working on your first Pull Request? You can learn how from this *free* series [H
     > Make sure you install node version 8 or above and check node version by running `node -v`
 1. Then clone this repo
     ```bash
-    git clone git@github.com:coderplex/coderplex.git
+    git clone https://github.com/coderplex/coderplex.git
     ```
 1. `cd coderplex`
 1. `npm install`
