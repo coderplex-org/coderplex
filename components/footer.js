@@ -3,6 +3,7 @@ import FaFacebook from 'react-icons/lib/fa/facebook';
 import FaYoutube from 'react-icons/lib/fa/youtube-play';
 import FaGithub from 'react-icons/lib/fa/github-alt';
 import FaInstagram from 'react-icons/lib/fa/instagram';
+import FaTwitter from 'react-icons/lib/fa/twitter';
 
 export default () => (
   <footer>
@@ -31,7 +32,7 @@ export default () => (
             </a>
           </li>
           <li>
-            <a href="https://www.meetup.com/coderplex/">m</a>
+            <a href="https://www.twitter.com/coderplex/"><FaTwitter size={20}/></a>
           </li>
         </ul>
       </div>
