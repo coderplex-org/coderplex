@@ -32,7 +32,7 @@ export default () => (
             </a>
           </li>
           <li>
-            <a href="https://www.twitter.com/coderplex/"><FaTwitter size={20}</a>
+            <a href="https://www.twitter.com/coderplex/"><FaTwitter size={20}/></a>
           </li>
         </ul>
       </div>
