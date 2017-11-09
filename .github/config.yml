@@ -25,6 +25,6 @@ newPRWelcomeComment: >
 
 # Comment to be posted to on pull requests merged by a first time user
 firstPRMergeComment: >
-  Congrats on merging your first pull request! We here at coderplex.org are proud of you!
+  :tada: :tada: :confetti_ball: Congrats on merging your first pull request! We here at coderplex.org are proud of you!. If you believe in our :page_with_curl: [mission statement](https://medium.com/coderplex/a-new-name-a-new-beginning-freecodecamp-hyderabad-is-now-coderplex-b5b43dbd06ed) please :star: us.
 
 # It is recommended to include as many gifs and emojis as possible!
