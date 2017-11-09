@@ -1,18 +1,18 @@
 {
   "name": "coderplex-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "We are on a mission to improve the state of tech in India",
   "main": "index.js",
   "scripts": {
-    "test": "xo",
-    "lint": "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write --single-quote --print-width='80' --trailing-comma='all' && xo --fix",
+    "test": "xo && jest",
+    "lint":
+      "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write --single-quote --print-width='80' --trailing-comma='all' && xo --fix",
     "precommit": "lint-staged",
     "analyze": "cross-env ANALYZE=1 next build",
-    "dev": "cross-env NODE_ENV=development nodemon server.js -w server.js",
-    "dev:with-api": "cross-env WITH_API=1 nodemon server.js -w server.js",
-    "start": "cross-env NODE_ENV=production node server",
+    "dev": "cross-env NODE_ENV=development node server.js",
+    "start": "cross-env NODE_ENV=production next start",
     "build": "next build",
-    "heroku-postbuild": "next build"
+    "export": "cross-env NODE_ENV=production yarn build && next export"
   },
   "xo": {
     "parser": "babel-eslint",
@@ -24,55 +24,62 @@
       "react/prop-types": 0
     },
     "space:": 2,
-    "ignores": ["next.config.js"]
+    "ignores": ["next.config.js"],
+    "overrides": [
+      {
+        "files": "**/__tests__/*.test.js",
+        "globals": ["describe", "it", "expect"]
+      }
+    ]
   },
   "lint-staged": {
     "*.js": [
       "prettier --write --single-quote --print-width=80 --trailing-comma=all",
       "xo",
+      "jest --findRelatedTests",
       "git add"
     ]
   },
-  "engines": {
-    "node": "8.1.4"
-  },
-  "keywords": [],
-  "author": "Vinay Puppal <me@vinaypuppal.com> (https://www.vinaypuppal.com/)",
-  "license": "MIT",
   "dependencies": {
-    "axios": "^0.16.2",
-    "cookie-parser": "^1.4.3",
-    "express": "^4.15.3",
-    "feathers": "^2.1.7",
-    "feathers-authentication-client": "^0.3.3",
-    "feathers-hooks": "^2.0.2",
-    "feathers-rest": "^1.8.0",
-    "isomorphic-unfetch": "^2.0.0",
-    "js-cookie": "^2.1.4",
-    "next": "2.4.7",
+    "date-fns": "1.29.0",
+    "isomorphic-unfetch": "2.0.0",
+    "marked": "^0.3.6",
+    "next": "^4.1.0",
     "nprogress": "^0.2.0",
-    "preact": "^8.2.1",
-    "preact-compat": "^3.16.0",
+    "path-match": "1.2.4",
     "prop-types": "^15.5.10",
-    "react": "^15.6.1",
-    "react-count-down": "^1.1.0",
-    "react-dom": "^15.6.1",
-    "react-ga": "^2.2.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-headroom": "^2.1.6",
     "react-icons": "^2.2.5",
-    "semantic-ui-react": "^0.71.3"
+    "semantic-ui-react": "^0.76.0"
   },
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
+    "babel-eslint": "^8.0.1",
     "babel-plugin-lodash": "^3.2.11",
     "cross-env": "^5.0.2",
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-react": "^7.1.0",
     "husky": "^0.14.3",
+    "jest": "^21.2.1",
     "lint-staged": "^4.0.2",
-    "nodemon": "^1.11.0",
-    "prettier": "^1.5.3",
+    "opn": "^5.1.0",
+    "prettier": "^1.7.0",
     "webpack-bundle-analyzer": "^2.8.3",
     "xo": "^0.18.2"
-  }
+  },
+  "keywords": [],
+  "contributors": [
+    "Vinay Puppal <me@vinaypuppal.com> (https://www.vinaypuppal.com/)",
+    "M-ZubairAhmed <ahmedzubari216@gmail.com> (https://github.com/M-ZubairAhmed)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coderplex/coderplex.git"
+  },
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/coderplex/coderplex/issues"
+  },
+  "homepage": "https://github.com/coderplex/coderplex#readme"
 }

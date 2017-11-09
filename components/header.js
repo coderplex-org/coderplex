@@ -3,9 +3,13 @@ import Headroom from 'react-headroom';
 import NProgress from 'nprogress';
 import Router from 'next/router';
 import Link from 'next/link';
-import { Dropdown } from 'semantic-ui-react';
+import GoHome from 'react-icons/lib/go/home';
+import GoBook from 'react-icons/lib/md/school';
+import GoStar from 'react-icons/lib/md/library-books';
+import GoCalender from 'react-icons/lib/go/calendar';
+import GoOrg from 'react-icons/lib/go/organization';
 
-import { logout } from '../utils/authenticate';
+import MetaInfo from '../config/meta-info';
 import GlobalStyles from './global-styles';
 import Head from './head';
 
@@ -23,102 +27,100 @@ Router.onRouteChangeError = () => {
 
 export default props => {
   const title =
-    props.url.pathname === '/'
-      ? 'Home'
-      : props.url.pathname.split('/')[1].toUpperCase();
+    props.url.pathname === '/' ? 'home' : props.url.pathname.split('/')[1];
+  const metaData = MetaInfo[title];
   const navItems = [
     {
       title: 'Home',
       path: '/',
-    },
-    {
-      title: 'Events',
-      path: '/events',
+      external: false,
+      icon: GoHome,
     },
     {
       title: 'Learn',
       path: '/learn',
+      external: false,
+      icon: GoBook,
     },
     {
       title: 'Space',
       path: '/space',
+      external: false,
+      icon: GoOrg,
     },
     {
-      title: 'Jobs',
-      path: '/jobs',
-    },
-    {
-      title: 'Projects',
-      path: '/projects',
+      title: 'Events',
+      path: '/events',
+      external: false,
+      icon: GoCalender,
     },
     {
       title: 'Blog',
-      path: 'https://medium.com/freecodecamp-hyderabad',
+      path: 'https://coderplex.org/blog',
+      external: true,
+      icon: GoStar,
     },
-    {
-      title: 'Login/Register',
-      path: '/login',
-    },
-  ].filter(item => (props.username ? item.path !== '/login' : true));
+  ];
   return (
     <Headroom>
       <header>
-        <Head title={`${title} | Coderplex`} />
+        <Head
+          title={metaData.title}
+          description={metaData.description}
+          image={metaData.image}
+        />
         <GlobalStyles />
         <div className="header__container">
           <nav>
             <div className="nav__logo">
-              <img src="/static/favicons/android-chrome-192x192.png" alt="" />
+              <Link href="/">
+                <img src="/static/favicons/android-chrome-192x192.png" alt="" />
+              </Link>
             </div>
+            <input id="menu" type="checkbox" />
+            <label htmlFor="menu" className="mobile__menu">
+              <span>Menu</span>
+            </label>
             <ul className="nav__links">
               {navItems.map(item => {
                 return (
-                  <li
-                    key={item.title}
-                    className={`nav__linkItem ${item.path === '/login'
-                      ? 'login__btn'
-                      : ''}`}
-                  >
-                    <Link href={item.path}>
+                  <li key={item.title} className="nav__linkItem">
+                    {item.external ? (
                       <a
+                        href={item.path}
                         className={`nav__link ${props.url.pathname === item.path
                           ? 'nav__link--active'
                           : ''}`}
                       >
-                        {item.title}
+                        {React.createElement(item.icon)}
+                        <span>{item.title}</span>
                       </a>
-                    </Link>
+                    ) : (
+                      <Link href={item.path}>
+                        <a
+                          className={`nav__link ${props.url.pathname ===
+                          item.path
+                            ? 'nav__link--active'
+                            : ''}`}
+                        >
+                          {React.createElement(item.icon)}
+                          <span>{item.title}</span>
+                        </a>
+                      </Link>
+                    )}
                   </li>
                 );
               })}
-              {props.username &&
-                <li className="nav__linkItem">
-                  <img src={props.avatarUrl} alt="avatar_img" />
-                  <Dropdown
-                    inline
-                    text={`${props.username}`}
-                    pointing
-                    className="dropdown__linkItem"
-                  >
-                    <Dropdown.Menu>
-                      <Link href="/profile">
-                        <Dropdown.Item as="a">Profile</Dropdown.Item>
-                      </Link>
-                      <Dropdown.Item onClick={() => logout()}>
-                        Logout
-                      </Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                </li>}
             </ul>
           </nav>
         </div>
       </header>
       <style jsx>{`
         header {
-          padding: 5px 20px;
+          padding: 5px 10px;
           width: 100%;
-          background: #fff;
+          background: #c454df linear-gradient(to top, #ec53ab, #d354cf);
+          z-index: 1000;
         }
         .header__container {
           max-width: 1280px;
@@ -126,8 +128,9 @@ export default props => {
         }
         nav {
           display: flex;
-          height: 70px;
+          height: 56px;
           align-items: center;
+          position: relative;
         }
         .nav__logo {
           flex: 1;
@@ -135,9 +138,10 @@ export default props => {
           align-items: center;
         }
         .nav__logo img {
-          width: 72px;
-          height: 72px;
+          width: 50px;
+          height: 50px;
           margin-right: 5px;
+          cursor: pointer;
         }
         .nav__links {
           margin: 0;
@@ -166,31 +170,88 @@ export default props => {
         }
         .nav__link {
           text-decoration: none;
-          text-transform: uppercase;
-          color: #666;
-          font-size: 12px;
+          color: #fff;
+          font-size: 16px;
+          font-weight: bold;
           padding-bottom: 4px;
+          display: flex;
+          align-items: center;
+        }
+        .nav__link span {
+          margin-left: 5px;
         }
         .nav__link:hover {
-          color: #444;
+          color: #e1e1e1;
         }
         .nav__link--active {
-          color: #444;
-          border-bottom: 2px solid #314159;
+          border-bottom: 2px solid #fff;
           pointer-events: none;
         }
-        .login__btn .nav__link {
-          font-weight: bold;
-          color: #00df90;
+        input[type='checkbox'] {
+          position: absolute;
+          display: none;
+          top: 25px;
+          left: 25px;
         }
-        .login__btn .nav__link:hover {
-          font-weight: bold;
-          color: #01bf7c;
+        .mobile__menu {
+          width: 30px;
+          height: 24px;
+          display: none;
+          cursor: pointer;
+          top: 15px;
+          left: 5px;
+          position: absolute;
+          z-index: 1;
         }
-        .login__btn .nav__link--active {
-          color: #01bf7c;
-          border-bottom: 2px solid #00df90;
-          pointer-events: none;
+        .mobile__menu:after,
+        .mobile__menu:before {
+          content: '';
+          width: 100%;
+          height: 2px;
+          border-radius: 4px;
+          position: absolute;
+          background: #fff;
+          top: 50%;
+          -webkit-transition: -webkit-transform 0.5s;
+          transition: -webkit-transform 0.5s;
+          transition: transform 0.5s;
+          transition: transform 0.5s, -webkit-transform 0.5s;
+          -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+        }
+        .mobile__menu:after {
+          -webkit-transform: translate3d(0, -10px, 0) scale3d(0.8, 1, 1);
+          transform: translate3d(0, -10px, 0) scale3d(0.8, 1, 1);
+        }
+        .mobile__menu:before {
+          -webkit-transform: translate3d(0, 10px, 0) scale3d(0.8, 1, 1);
+          transform: translate3d(0, 10px, 0) scale3d(0.8, 1, 1);
+        }
+        .mobile__menu span {
+          position: absolute;
+          width: 100%;
+          overflow: hidden;
+          height: 2px;
+          border-radius: 4px;
+          background: #fff;
+          top: 50%;
+          -webkit-transition: all 0.5s;
+          transition: all 0.5s;
+        }
+        input[type='checkbox']:checked ~ .mobile__menu span {
+          -webkit-transform: scale3d(0, 1, 1);
+          transform: scale3d(0, 1, 1);
+        }
+        input[type='checkbox']:checked ~ .mobile__menu:after {
+          -webkit-transform: rotate3d(0, 0, 1, 45deg);
+          transform: rotate3d(0, 0, 1, 45deg);
+        }
+        input[type='checkbox']:checked ~ .mobile__menu:before {
+          -webkit-transform: rotate3d(0, 0, 1, -45deg);
+          transform: rotate3d(0, 0, 1, -45deg);
+        }
+        input[type='checkbox']:checked ~ .nav__links {
+          display: flex;
         }
         @media (max-width: 700px) {
           nav {
@@ -199,8 +260,39 @@ export default props => {
           .nav__logo {
             flex: initial;
           }
+          .mobile__menu {
+            display: block;
+          }
+          input[type='checkbox'] {
+            display: block;
+            opacity: 0;
+          }
           .nav__links {
+            flex-direction: column;
+            width: 100%;
+            position: fixed;
+            top: 66px;
+            background: #fafafa;
             display: none;
+            border-bottom: 1px solid #eee;
+            font-size: 10px;
+          }
+          .nav__linkItem {
+            width: 100%;
+            border-top: 1px solid #eee;
+          }
+          .nav__link {
+            width: 100%;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 12px 15px;
+            color: #888;
+          }
+          .nav__link:hover {
+            color: #222;
+          }
+          .nav__link--active {
+            border: none;
           }
         }
       `}</style>

@@ -4,7 +4,7 @@ import FaYoutube from 'react-icons/lib/fa/youtube-play';
 import FaGithub from 'react-icons/lib/fa/github-alt';
 import FaInstagram from 'react-icons/lib/fa/instagram';
 
-export default () =>
+export default () => (
   <footer>
     <div className="footer__container">
       <div className="footer__content">
@@ -16,22 +16,22 @@ export default () =>
             </a>
           </li>
           <li>
-            <a href="https://www.facebook.com/freecodecamphyderabad/">
+            <a href="https://www.facebook.com/coderplex">
               <FaFacebook size={20} />
             </a>
           </li>
           <li>
-            <a href="https://github.com/fcc-hyd">
+            <a href="https://github.com/coderplex">
               <FaGithub size={20} />
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/fcc_hyd/">
+            <a href="https://www.instagram.com/coderplex/">
               <FaInstagram size={20} />
             </a>
           </li>
           <li>
-            <a href="https://www.meetup.com/freeCodeCamp-Hyderabad/">m</a>
+            <a href="https://www.meetup.com/coderplex/">m</a>
           </li>
         </ul>
       </div>
@@ -39,7 +39,7 @@ export default () =>
     <style jsx>{`
       footer {
         padding: 50px 0;
-        background: #314159;
+        background: #c454df linear-gradient(to bottom, #ec53ab, #d354cf);
         color: #fff;
       }
       .footer__container {
@@ -79,4 +79,5 @@ export default () =>
         color: #314159;
       }
     `}</style>
-  </footer>;
+  </footer>
+);

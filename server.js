@@ -1,81 +1,31 @@
-const express = require('express');
+const { createServer } = require('http');
+const { parse } = require('url');
 const next = require('next');
-const cookieParser = require('cookie-parser');
-const fetch = require('isomorphic-unfetch');
-const feathers = require('feathers/client');
-const hooks = require('feathers-hooks');
-const auth = require('feathers-authentication-client');
-const rest = require('feathers-rest/client');
+const pathMatch = require('path-match');
+const opn = require('opn');
 
-const baseUrl =
-  process.env.NODE_ENV === 'production' || process.env.WITH_API
-    ? `https://api.coderplex.org`
-    : 'http://localhost:4000';
-
+const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
-const app = next({ dir: '.', dev });
+const app = next({ dev });
 const handle = app.getRequestHandler();
-const feathersClient = feathers();
+const route = pathMatch();
+const match = route('/learn/:id');
 
-feathersClient
-  .configure(rest(baseUrl).fetch(fetch))
-  .configure(hooks())
-  .configure(auth());
-
-app
-  .prepare()
-  .then(() => {
-    const server = express();
-    server.use(cookieParser());
-
-    // Handling login
-    server.use((req, res, next) => {
-      if (!req.query.token) return next();
-      res.cookie('feathers-jwt', req.query.token, {
-        expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 30),
-        httpOnly: false,
-      });
-      return res.redirect(req.query.next);
-    });
-
-    // Handling logout
-    server.use((req, res, next) => {
-      if (!req.query.logout) return next();
-      console.log('logout', req.query.logout);
-      res.cookie('feathers-jwt', null, {
-        expires: new Date(Date.now() - 1000),
-        httpOnly: false,
-      });
-
-      return res.redirect('/login');
-    });
-
-    // Get loggedIn user
-    server.use(async (req, res, next) => {
-      const token = req.cookies['feathers-jwt'];
-      if (!token) return next();
-      try {
-        const { userId } = await feathersClient.passport.verifyJWT(token);
-        req.user = await fetch(`${baseUrl}/users/${userId}`, {
-          headers: {
-            Authorization: `${token}`,
-          },
-        }).then(res => res.json());
-        next();
-      } catch (error) {
-        console.error(error);
-        next();
-      }
-    });
-
-    // Pass all routes to next.js handler
-    server.get('*', (req, res) => handle(req, res));
-
-    server.listen(process.env.PORT || 3000, err => {
-      if (err) throw err;
-      console.log('> App running on port', process.env.PORT || 3000);
-    });
-  })
-  .catch(ex => {
-    console.error(ex.stack);
+app.prepare().then(() => {
+  createServer((req, res) => {
+    const { pathname, query } = parse(req.url, true);
+    const params = match(pathname);
+    if (params === false) {
+      handle(req, res);
+      return;
+    }
+    // Assigning `query` into the params means that we still
+    // get the query string passed to our application
+    // i.e. /blog/foo?show-comments=true
+    app.render(req, res, '/learn/subject', Object.assign(params, query));
+  }).listen(port, err => {
+    if (err) throw err;
+    console.log(`>> App running on http://localhost:${port}`);
+    opn(`http://localhost:${port}`);
   });
+});
