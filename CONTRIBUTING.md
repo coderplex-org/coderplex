@@ -14,7 +14,7 @@ Working on your first Pull Request? You can learn how from this *free* series [H
 
 ## Running this project locally
 
-1. Make sure you have [NodeJS](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
+1. Make sure you have [NodeJS](https://nodejs.org/) and [Yarn](https://yarnpkg.com/en/docs/install) installed.
     > Make sure you install node version 8 or above and check node version by running `node -v`
 1. Then clone this repo
     ```bash
@@ -25,9 +25,5 @@ Working on your first Pull Request? You can learn how from this *free* series [H
 1. `npm run dev` to start local development server
 1. App opens at `localhost:3000`
 
-
 **Note:**
-
-    So our team's official policy (for now) is:  
-    we only use Yarn as our official Node package manager, and so we request you to use Yarn instead of  
-    npm and commit yarn.lock file.
+> So our team's official policy (for now) is: We only use [Yarn](https://yarnpkg.com/en/docs/install) as our official Node package manager, and so we request you to use Yarn instead of npm and commit yarn.lock file.
