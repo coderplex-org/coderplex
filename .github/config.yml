@@ -2,7 +2,7 @@
 
 # *Required* Comment to reply with
 requestInfoReplyComment: >
-  Hey there, You did not give us whole lot of info for this issue. We would appreciate if you could provide us with more details!
+  Hey there, You did not give us whole lot of info for this issue. We would appreciate if you could provide us with more details :exclamation: :warning: :barber:
 
 # *OPTIONAL* Label to be added to Issues and Pull Requests with insufficient information given
 requestInfoLabelToAdd: needs-more-info
@@ -19,12 +19,12 @@ newIssueWelcomeComment: >
 
 # Comment to be posted to on PRs from first time contributors in your repository
 newPRWelcomeComment: >
-  Thanks for opening this pull request!
+  :smiley: Thanks for opening this pull request!, :busts_in_silhouette: maintainers will get back to you with the review :mag:
 
 # Configuration for first-pr-merge - https://github.com/behaviorbot/first-pr-merge
 
 # Comment to be posted to on pull requests merged by a first time user
 firstPRMergeComment: >
-  Congrats on merging your first pull request! We here at coderplex.org are proud of you!
+  :tada: :tada: :confetti_ball: Congrats on merging your first pull request! We here at coderplex.org are proud of you!. If you believe in our :page_with_curl: [mission statement](https://medium.com/coderplex/a-new-name-a-new-beginning-freecodecamp-hyderabad-is-now-coderplex-b5b43dbd06ed) please :star: us.
 
 # It is recommended to include as many gifs and emojis as possible!
