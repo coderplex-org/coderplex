@@ -9,7 +9,6 @@ import {
   Search,
   Header,
 } from 'semantic-ui-react';
-import Link from 'next/link';
 
 import publicPage from '../../hocs/public-page';
 import CommonBanner from '../../components/common-banner';
@@ -70,10 +69,12 @@ class Learn extends React.Component {
               {this.state.filter === 'All'
                 ? 'Showing all courses'
                 : numOfFilteredSubjects === 0
-                  ? `Currenlty we dont have any subjects under ${this.state
-                      .filter}`
-                  : `Showing ${numOfFilteredSubjects} courses under ${this.state
-                      .filter}`}
+                  ? `Currenlty we dont have any subjects under ${
+                      this.state.filter
+                    }`
+                  : `Showing ${numOfFilteredSubjects} courses under ${
+                      this.state.filter
+                    }`}
             </Header>
             <Grid stackable columns={3}>
               {this.state.filteredSubjects.map(subject => (
@@ -81,43 +82,39 @@ class Learn extends React.Component {
                   style={{ paddingBottom: '4.5rem' }}
                   key={subject.id}
                 >
-                  <Link
-                    href={`/learn/subject?id=${subject.subjectId}`}
-                    as={subject.url}
+                  <Card
+                    href={subject.url}
+                    as="a"
+                    raised
+                    label={{ as: 'a', corner: 'left', icon: 'heart' }}
                   >
-                    <Card
-                      as="a"
-                      raised
-                      label={{ as: 'a', corner: 'left', icon: 'heart' }}
-                    >
-                      <Label attached="bottom right">
-                        <Popup
-                          trigger={
-                            <Icon
-                              style={{ marginRight: '0px' }}
-                              name={
-                                subject.learnGuideStatus ? 'checkmark' : 'info'
-                              }
-                            />
-                          }
-                          position="top center"
-                        >
-                          {subject.learnGuideStatus
-                            ? 'Complete guide'
-                            : 'Guide underconstruction'}
-                        </Popup>
-                      </Label>
-                      <logo className={subject.icon} />
-                      <Card.Content>
-                        <Card.Header>{subject.title}</Card.Header>
-                        <Card.Meta>{subject.domain}</Card.Meta>
-                      </Card.Content>
-                      <Card.Content extra>
-                        <Icon name="student" />
-                        {`${subject.learningCount} learning`}
-                      </Card.Content>
-                    </Card>
-                  </Link>
+                    <Label attached="bottom right">
+                      <Popup
+                        trigger={
+                          <Icon
+                            style={{ marginRight: '0px' }}
+                            name={
+                              subject.learnGuideStatus ? 'checkmark' : 'info'
+                            }
+                          />
+                        }
+                        position="top center"
+                      >
+                        {subject.learnGuideStatus
+                          ? 'Complete guide'
+                          : 'Guide underconstruction'}
+                      </Popup>
+                    </Label>
+                    <logo className={subject.icon} />
+                    <Card.Content>
+                      <Card.Header>{subject.title}</Card.Header>
+                      <Card.Meta>{subject.domain}</Card.Meta>
+                    </Card.Content>
+                    <Card.Content extra>
+                      <Icon name="student" />
+                      {`${subject.learningCount} learning`}
+                    </Card.Content>
+                  </Card>
                 </Grid.Column>
               ))}
             </Grid>
