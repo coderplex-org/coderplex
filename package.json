@@ -58,6 +58,9 @@
     "babel-eslint": "^8.0.1",
     "babel-plugin-lodash": "^3.2.11",
     "cross-env": "^5.0.2",
+    "enzyme": "^3.1.1",
+    "enzyme-adapter-react-16": "^1.0.4",
+    "enzyme-to-json": "^3.2.2",
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-react": "^7.1.0",
     "husky": "^0.14.3",
@@ -65,6 +68,8 @@
     "lint-staged": "^4.0.2",
     "opn": "^5.1.0",
     "prettier": "^1.7.0",
+    "raf": "^3.4.0",
+    "react-test-renderer": "^16.0.0",
     "webpack-bundle-analyzer": "^2.8.3",
     "xo": "^0.18.2"
   },
@@ -81,5 +86,5 @@
   "bugs": {
     "url": "https://github.com/coderplex/coderplex/issues"
   },
-  "homepage": "https://github.com/coderplex/coderplex#readme"
+  "homepage": "https://coderplex.org"
 }

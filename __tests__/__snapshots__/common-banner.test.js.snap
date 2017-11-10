@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing CommonBanner of \`components/common-banner\` Check the snapshot 1`] = `
+<div
+  className="jsx-1924801089"
+>
+  <div
+    className="jsx-1924801089 root"
+  >
+    <h1
+      className="jsx-1924801089 headline"
+    />
+    <h2
+      className="jsx-1924801089"
+    />
+  </div>
+  <JSXStyle
+    css=".root.jsx-1924801089{background-color:#f4f7fb;min-height:150px;text-align:center;padding-top:30px;padding-bottom:30px;}.headline.jsx-1924801089{font-size:4em;color:#df1cb5;font-weight:900;}h2.jsx-1924801089{max-width:1024px;margin-left:auto;margin-right:auto;-webkit-letter-spacing:2px;-moz-letter-spacing:2px;-ms-letter-spacing:2px;letter-spacing:2px;line-height:2;}@media (max-width:720px){h2.jsx-1924801089{font-size:14px;padding:0 10px;}}"
+    styleId="1924801089"
+  />
+</div>
+`;
