@@ -2,7 +2,7 @@
 
 # *Required* Comment to reply with
 requestInfoReplyComment: >
-  Hey there, You did not give us whole lot of info for this issue. We would appreciate if you could provide us with more details :exclamation: :warning: :barber:
+  We would appreciate it if you could provide us with more info about this issue/pr!
 
 # *OPTIONAL* Label to be added to Issues and Pull Requests with insufficient information given
 requestInfoLabelToAdd: needs-more-info
@@ -13,13 +13,13 @@ requestInfoLabelToAdd: needs-more-info
 
 # Comment to be posted to on first time issues
 newIssueWelcomeComment: >
-  Thanks for opening your first issue here!
+  Thanks for opening this issue, a maintainer will get back to you shortly!
 
 # Configuration for new-pr-welcome - https://github.com/behaviorbot/new-pr-welcome
 
 # Comment to be posted to on PRs from first time contributors in your repository
 newPRWelcomeComment: >
-  :smiley: Thanks for opening this pull request!, :busts_in_silhouette: maintainers will get back to you with the review :mag:
+  Thanks so much for opening your first PR here!
 
 # Configuration for first-pr-merge - https://github.com/behaviorbot/first-pr-merge
 

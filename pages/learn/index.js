@@ -82,14 +82,10 @@ class Learn extends React.Component {
                   key={subject.id}
                 >
                   <Link
-                    href={`/learn/subject?id=${subject.subjectId}`}
                     as={subject.url}
+                    href={`/learn/subject?id=${subject.subjectId}`}
                   >
-                    <Card
-                      as="a"
-                      raised
-                      label={{ as: 'a', corner: 'left', icon: 'heart' }}
-                    >
+                    <Card href={subject.url} raised>
                       <Label attached="bottom right">
                         <Popup
                           trigger={
