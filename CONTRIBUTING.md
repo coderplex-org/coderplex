@@ -48,12 +48,8 @@ We welcome pull requests from beginners and seasoned javaScript developers alike
     > Our team's official policy (for now) is: We only use [Yarn](https://yarnpkg.com/en/docs/install) as our official Node package manager, and so we request you to use Yarn instead of npm and commit `yarn.lock` file.
 
 3. [Git](https://git-scm.com/download/linux)
-  <br/>
-  Familiarity with git is mandatory.
-
-
-Remember to feel free to ask for help in our [Discord](https://discordapp.com/invite/dVnQ2Gf) rooms.
-
+    <br/>
+    Familiarity with git is mandatory.
 
 ### Running
 
