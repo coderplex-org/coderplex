@@ -30,14 +30,13 @@ We welcome pull requests from beginners and seasoned javaScript developers alike
 
 ### Prerequisites
 1. [NodeJS](https://nodejs.org/)
-<br/>
-Minimum version v8.0.0+
+    <br/>
+    Minimum version v8.0.0+
     ```bash
     To check node version
     $ node -v
     ```
     Any lower version than mentioned above may results in this [error](https://github.com/coderplex/coderplex/issues/100).
-
     > If you face problem updating your node then you might need a Node version manager tool. [Follow here]()
 
 2. [Yarn](https://yarnpkg.com)
@@ -147,4 +146,16 @@ $ nvm use 8.9.1
 Still facing problem this [article](https://medium.com/appseed-io/how-to-run-multiple-versions-of-node-js-with-nvm-for-windows-ffbe5c7a2b47) from [@skounis  ](https://twitter.com/skounis) explain in details.
 
 ##### 2. Local host occupied
+```bash
+Error: listen EADDRINUSE :::3000
+    at Object._errnoException (util.js:1024:11)
+    at _exceptionWithHostPort (util.js:1046:20)
+    at Server.setupListenHandle [as _listen2] (net.js:1351:14)
+    at listenInCluster (net.js:1392:12)
+    at Server.listen (net.js:1476:7)
+    at app.prepare.then (/home/m-zubairahmed/github/official/coderplex-frontend/server.js:26:6)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+error Command failed with exit code 1.
+```
 If you get this error while running `yarn dev` then probably another app is occupying `localhost:3000`. You may want to close that and run the command again.
