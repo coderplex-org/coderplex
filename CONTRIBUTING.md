@@ -12,7 +12,7 @@ Both of them are under very active development. This document provides non exhau
 Coderplex has adopted [Contributor Covenant](https://github.com/coderplex/coderplex/blob/docs-update/CODE_OF_CONDUCT.md) that we expect project participants to adhere to.
 
 ## Open Development
-All work related to the application takes place on Github itself. We use [Issues](https://github.com/coderplex/coderplex/issues) to track bugs, discuss ideas and to engage open source contributors. [Projects](https://github.com/coderplex/coderplex/projects) are used to keep track of everything and is our project management tool. We maintain [Wiki](https://github.com/coderplex/coderplex/wiki) for structuring our long term thoughts. Both maintainers and contributors sends a pull request which goes through the same review process. Whole process is as transparent as it can be and we strive to keep it that way.
+All work related to the application takes place on Github itself. We use [Issues](https://github.com/coderplex/coderplex/issues) to track bugs, discuss ideas and to engage open source contributors. [Projects](https://github.com/coderplex/coderplex/projects) are used to keep track of everything and is our project management tool. We maintain [Wiki](https://github.com/coderplex/coderplex/wiki) for structuring our long term thoughts. Both core team members and contributors sends a pull request which goes through the same review process. Whole process is as transparent as it can be and we strive to keep it that way.
 
 ## Development Workflow
 
@@ -26,57 +26,100 @@ We welcome pull requests from beginners and seasoned javaScript developers alike
 
 ### Proposing a Change
 1. Open a new issue if you would like report a bug or suggest improvements.
-2. Please wait for maintainers to comment on the thread. This lets us reach an agreement on your proposal before you put significant effort into it.
+2. Please wait for core team members to comment on the thread. This lets us reach an agreement on your proposal before you put significant effort into it.
 
 ### Prerequisites
-##### 1. [NodeJS](https://nodejs.org/)
-Minimum version v8.0.0+
-```bash
-To check node version
-$ node -v
- ```
-Any lower version than mentioned above may results in this [error](https://github.com/coderplex/coderplex/issues/100).
-
-> If you face problem updating your node then you might need a Node version manager tool. [Follow here]()
-
-##### 2.[Yarn](https://yarnpkg.com)
-Minimum version v1.2.0+
+1. [NodeJS](https://nodejs.org/)
 <br/>
-Installing instructions are at [official docs](https://yarnpkg.com/en/docs/install#windows-tab)
+Minimum version v8.0.0+
+    ```bash
+    To check node version
+    $ node -v
+    ```
+    Any lower version than mentioned above may results in this [error](https://github.com/coderplex/coderplex/issues/100).
 
-Use yarn over npm
-> Our team's official policy (for now) is: We only use [Yarn](https://yarnpkg.com/en/docs/install) as our official Node package manager, and so we request you to use Yarn instead of npm and commit `yarn.lock` file.
+    > If you face problem updating your node then you might need a Node version manager tool. [Follow here]()
 
-##### 3. [GIT](https://git-scm.com/download/linux)
-Familiarity with git is mandatory.
+2. [Yarn](https://yarnpkg.com)
+    <br/>
+    Minimum version v1.2.0+
+    <br/>
+    Installing instructions are at [official docs](https://yarnpkg.com/en/docs/install#windows-tab).
+    Use yarn over npm
+    > Our team's official policy (for now) is: We only use [Yarn](https://yarnpkg.com/en/docs/install) as our official Node package manager, and so we request you to use Yarn instead of npm and commit `yarn.lock` file.
+
+3. [Git](https://git-scm.com/download/linux)
+  <br/>
+  Familiarity with git is mandatory.
 
 
 Remember to feel free to ask for help in our [Discord](https://discordapp.com/invite/dVnQ2Gf) rooms.
 
-Working on your first Pull Request? You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
 
-### Running locally
+### Running
 
-1. Make sure you have [NodeJS](https://nodejs.org/) and [Yarn](https://yarnpkg.com/en/docs/install) installed.
-    > Make sure you install node version 8 or above and check node version by running `node -v`
-1. Then clone this repo
+1. Clone repository
     ```bash
-    git clone https://github.com/coderplex/coderplex.git
+    $ git clone https://github.com/coderplex/coderplex.git
     ```
-1. `cd coderplex`
-1. `npm install`
-1. `npm run dev` to start local development server
-1. App opens at `localhost:3000`
+2. Move to the repository root folder
+    ```bash
+    $ cd coderplex
+    ```  
+3. Install dependencies
+    ```bash
+    $ yarn
+    ```
+4. Start the development server
+    ```bash
+    $ yarn dev
+    ```
+    App now opens at `localhost:3000` in your default browser.
+    > You may get this [error]() if any other app is already running the above port.
 
+### Sending a Pull Request
 
-## How to get in touch
-- [Coderplex Discord Channel](https://discord.gg/dVnQ2Gf)
-- Tweet maintainers
+*Working on your first Pull Request? You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)*
+
+#### Before submitting:
+1. Fork the [repository](https://github.com/coderplex/coderplex).
+2. From your fork, create a [branch](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/) and name it. eg. `typo-in-readme`
+3. If you’ve fixed a bug or added code that should be tested, add tests!
+4. Ensure that all test pass
+    ```bash
+    $ yarn test
+    ```
+5. Run code formatters
+    ```bash
+    $ yarn lint
+    ```
+6. Add and commit your code. Please give meaning full commit messages.
+7. Pull latest code from [upstream repository's ](https://help.github.com/articles/merging-an-upstream-repository-into-your-fork/)`master`, if in case anything new were merged while you were working on your fork.
+8. Push the code to your fork.
+9. Raise the pull request from your created branch to `master` branch of coderplex.
+10. Take some time to give a brief description of the work you have done.
+
+#### After submitting
+1. Wait for all checks to pass in below section.
+2. Your changes are deployed with a unique link `https://deploy-preview-xx--coderplex.netlify.com`. <br/>
+*`- xx` is your pull request number.*
+3. The core team  will review your pull request and either merge it, request changes to it, or close it with an explanation.
+
+##### Received a review request
+- Work on the requested changes
+- Push the changes as you did earlier, the pull request will automatically catch those and update itself.
+
+### How to get in touch
+- Coderplex [Discord Channel](https://discord.gg/dVnQ2Gf)
+- Tweet core team members :
+  - Vinay Puppal [@VinayPuppal](https://twitter.com/vinaypuppal)
+  - Md-ZubairAhmed [@Md_ZubairAhmed](https://twitter.com/Md_ZubairAhmed)
+  - P Bhanu Teja [@pbteja1998](https://twitter.com/pbteja1998)
 
 ## Appendix
-#### 1. Node Version Manager
+##### 1. Node Version Manager
 
-##### [nvm](https://github.com/creationix/nvm) for Linux & OSX
+###### [nvm](https://github.com/creationix/nvm) for Linux & OSX
 ```bash
 Installation
 $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
@@ -91,7 +134,7 @@ Run the app in the same terminal session
 ```
 *Make sure you have [curl](https://curl.haxx.se/) installed*
 
-##### [nvm-windows](https://github.com/coreybutler/nvm-windows) for Windows
+###### [nvm-windows](https://github.com/coreybutler/nvm-windows) for Windows
 It comes with an [installer](https://github.com/coreybutler/nvm-windows#installation--upgrades).
 
 ```bash
@@ -102,3 +145,6 @@ Use installed version
 $ nvm use 8.9.1
 ```
 Still facing problem this [article](https://medium.com/appseed-io/how-to-run-multiple-versions-of-node-js-with-nvm-for-windows-ffbe5c7a2b47) from [@skounis  ](https://twitter.com/skounis) explain in details.
+
+##### 2. Local host occupied
+If you get this error while running `yarn dev` then probably another app is occupying `localhost:3000`. You may want to close that and run the command again.
