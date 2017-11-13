@@ -1,8 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
 import take from 'lodash.take';
+import FaLoc from 'react-icons/lib/fa/map-marker';
+import FaClock from 'react-icons/lib/fa/clock-o';
+import FaUsers from 'react-icons/lib/md/supervisor-account';
+import FaEnter from 'react-icons/lib/fa/sign-out';
+import format from 'date-fns/format';
+
 import { baseEventsURL, indexPageEventURL } from '../utils/urls';
-import RowEvent from '../components/row-events';
 import publicPage from '../hocs/public-page';
 import { listOfSubjects } from '../utils/mock-data';
 
@@ -36,7 +41,7 @@ class Home extends React.Component {
                 <img src="/static/banner1280x370.png" alt="words" />
               </div>
               <h1 className="hero__title">
-                On a mission to improve the state of technology across India
+                On a mission to improve the state of tech across India
               </h1>
             </div>
           </section>
@@ -110,17 +115,47 @@ class Home extends React.Component {
               <div className="events__content">
                 <div className="left">
                   {this.state.indexPageEvent ? (
-                    <RowEvent
-                      isMultiLine={true}
-                      key={this.state.indexPageEvent.id}
-                      name={this.state.indexPageEvent.name}
-                      description={this.state.indexPageEvent.description}
-                      yesCount={this.state.indexPageEvent.yes_rsvp_count}
-                      time={this.state.indexPageEvent.time}
-                      venue={this.state.indexPageEvent.venue}
-                      link={this.state.indexPageEvent.link}
-                      status={this.state.indexPageEvent.status}
-                    />
+                    <img src="/static/events.png" alt="events__pic" />
+                  ) : (
+                    ''
+                  )}
+                  {this.state.indexPageEvent ? (
+                    <a
+                      href={this.state.indexPageEvent.link}
+                      className="events__card"
+                    >
+                      <h3 className="events__cardTitle">
+                        {this.state.indexPageEvent.name}
+                      </h3>
+                      <div className="events__cardLocation">
+                        <FaLoc size={20} />
+                        <span>
+                          {this.state.indexPageEvent.venue.name},{' '}
+                          {this.state.indexPageEvent.venue.city}
+                        </span>
+                      </div>
+                      <ul className="events__cardDetails">
+                        <li>
+                          <FaClock size={20} />
+                          <span>
+                            {format(
+                              this.state.indexPageEvent.time,
+                              "MMM Do 'YY",
+                            )}
+                          </span>
+                        </li>
+                        <li>
+                          <FaUsers size={20} />
+                          <span>
+                            {this.state.indexPageEvent.yes_rsvp_count} Attending
+                          </span>
+                        </li>
+                        <li>
+                          <FaEnter size={20} />
+                          <span>Free entry</span>
+                        </li>
+                      </ul>
+                    </a>
                   ) : (
                     <div className="events__fallback">
                       <img src="/static/events.png" alt="events__pic" />
@@ -132,7 +167,7 @@ class Home extends React.Component {
                   <h3 className="events__info">
                     We do frequent online and offline events, covering broad
                     range of topics, from Web Development to Data Science. The
-                    goal of these vents are to share knowledge, connect with
+                    goal of these events are to share knowledge, connect with
                     people and enable collabration. We also partner with local
                     comunities to help them reach a wider audience.
                   </h3>
@@ -199,7 +234,7 @@ class Home extends React.Component {
             color: #36434d;
           }
           .learn {
-            background-color: #f7f7f7;
+            background-color: #f6f6f6;
             position: relative;
             text-align: center;
           }
@@ -211,7 +246,7 @@ class Home extends React.Component {
           .learn__curve--reverse {
             width: 100%;
             height: 200px;
-            background: #f7f7f7;
+            background: #f6f6f6;
             border-radius: 100% 100% 0 0;
             position: absolute;
             display: flex;
@@ -224,7 +259,6 @@ class Home extends React.Component {
             padding: 0 20px;
           }
           .learn__curve--reverse {
-            border-radius: 0 0 100% 100%;
             top: 0px;
             height: 60px;
           }
@@ -260,13 +294,11 @@ class Home extends React.Component {
             width: calc(33.33% - 40px);
             margin: 20px;
             min-height: 200px;
-            box-shadow: inset 20px 20px 40px 20px rgba(9, 11, 12, 0.05);
-            border-radius: 8px;
             background: #fff;
+            border: 1px solid #b9b9b9;
             display: flex;
             flex-direction: column;
             text-decoration: none;
-            background: #f7f7f7;
             transition: all 0.25s;
           }
 
@@ -277,13 +309,12 @@ class Home extends React.Component {
           .learn__guideIcon {
             padding: 10px 15px;
             font-size: 10rem;
-            border-radius: 8px;
           }
 
           .learn__guideContent {
             padding: 10px 0 10px 30px;
             color: #444;
-            background: #fff;
+            background: #f6f6f6;
             text-align: left;
             border-bottom-left-radius: 8px;
             border-bottom-right-radius: 8px;
@@ -291,19 +322,26 @@ class Home extends React.Component {
 
           .learn__guideTitle {
             font-size: 1.5rem;
+            font-size: 600;
+            color: #222;
           }
 
           .learn__guideDomain {
             font-size: 0.8rem;
+            color: #888;
           }
 
           .learn__btn,
           .space__btn,
           .events__btn,
           .discord__btn {
-            background: ${primaryBrandColor};
+            background: ${primaryBrandColor}
+              linear-gradient(
+                30deg,
+                ${primaryBrandColor},
+                ${secondaryBrandColor}
+              );
             box-shadow: 4px 8px 12px 0 rgba(46, 61, 73, 0.15);
-            border-radius: 4px;
             color: #fff;
             display: inline-block;
             font-size: 1.5rem;
@@ -315,9 +353,19 @@ class Home extends React.Component {
           .discord__btn:hover {
             color: #fff;
             box-shadow: 2px 4px 8px 0 rgba(46, 61, 73, 0.2);
-            background: ${secondaryBrandColor};
+            background: ${primaryBrandColor}
+              linear-gradient(
+                120deg,
+                ${primaryBrandColor},
+                ${secondaryBrandColor}
+              );
           }
-
+          .learn__btn,
+          .space__btn,
+          .events__btn {
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+          }
           .space {
             background: ${secondaryBrandColor};
             position: relative;
@@ -363,9 +411,11 @@ class Home extends React.Component {
             margin-top: 30px;
             background: #fff;
             color: #888;
+            font-weight: 600;
             display: inline-block;
             position: relative;
             z-index: 2;
+            font-size: 1rem;
           }
           .space__btn:hover,
           .events__btn:hover {
@@ -378,7 +428,6 @@ class Home extends React.Component {
             color: #fff;
             position: relative;
             text-align: left;
-            min-height: 600px;
           }
           .events__content {
             display: flex;
@@ -390,8 +439,62 @@ class Home extends React.Component {
             padding: 20px;
             flex: 1;
           }
-          .events__fallback img {
+          .events__content .left {
+            position: relative;
+            padding: 20px 20px 20px 5px;
+          }
+          .events__content .left > img {
+            width: 95%;
+            position: absolute;
+            top: -134px;
+            left: 5px;
+          }
+          .events__fallback {
+            display: flex;
+            align-items: center;
+            min-height: 150px;
+          }
+          .events__fallback > img {
             width: 100%;
+          }
+          .events__card {
+            text-decoration: none;
+            display: block;
+            position: relative;
+            z-index: 1;
+            background: #fff;
+            color: #888;
+            min-height: 110px;
+            padding: 10px 18px;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.25s;
+          }
+          .events__card:hover {
+            transform: translate(0, -2px) scale(1.05);
+          }
+          .events__cardTitle {
+            color: #444;
+            font-size: 1.2rem;
+          }
+          .events__cardLocation {
+            display: flex;
+            align-items: center;
+          }
+          .events__cardLocation span {
+            margin-left: 5px;
+          }
+          .events__cardDetails {
+            list-style: none;
+            padding: 15px 0 0 0;
+            margin: 0;
+            display: flex;
+          }
+          .events__cardDetails > li {
+            flex: 1;
+          }
+          .events__cardDetails > li span {
+            margin-left: 5px;
           }
 
           .discord {
@@ -444,10 +547,17 @@ class Home extends React.Component {
             .space__overlay {
               display: none;
             }
+            .events__content .left > img {
+              display: none;
+            }
           }
           @media (max-width: 780px) {
             .hero {
               padding-bottom: 10px;
+            }
+            .learn__curve,
+            .learn__curve--reverse {
+              border-radius: 0;
             }
             .hero__title,
             .learn__title,
@@ -472,6 +582,18 @@ class Home extends React.Component {
             }
             .learn__guide {
               width: calc(100% - 40px);
+            }
+            .events__cardTitle {
+              text-align: left;
+            }
+            .events__cardDetails {
+              width: 100%;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 5px 0;
+            }
+            .events__cardDetails li {
+              padding: 5px;
             }
           }
         `}</style>

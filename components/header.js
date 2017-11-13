@@ -114,7 +114,7 @@ export default props => {
       </header>
       <style jsx>{`
         header {
-          padding: 10px;
+          padding: 2px 10px;
           width: 100%;
           background: #fff;
           z-index: 1000;
@@ -126,7 +126,7 @@ export default props => {
         }
         nav {
           display: flex;
-          height: 56px;
+          height: 55px;
           align-items: center;
           position: relative;
         }
@@ -187,16 +187,15 @@ export default props => {
           color: #cb18d4;
         }
         .nav__link--login {
-          background: #7657fb linear-gradient(to top, #7657fb, #6f19ed);
+          background: #6f19ed linear-gradient(30deg, #7657fb, #6f19ed);
           box-shadow: 4px 8px 12px 0 rgba(46, 61, 73, 0.15);
-          border-radius: 4px;
           padding: 0.5rem 1rem;
           color: #fff;
         }
         .nav__link--login:hover {
           color: #fff;
+          background: #7657fb linear-gradient(120deg, #7657fb, #6f19ed);
           box-shadow: 2px 4px 8px 0 rgba(46, 61, 73, 0.2);
-          background-color: #6f19ed linear-gradient(to top, #6f19ed, #7657fb);
         }
         .nav__link--active {
           pointer-events: none;
