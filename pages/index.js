@@ -184,7 +184,8 @@ class Home extends React.Component {
                               window.open(
                                 'https://discord.gg/dVnQ2Gf',
                                 '_blank',
-                              )}
+                              )
+                            }
                           />
                         </Button.Group>
                       </div>
@@ -203,7 +204,7 @@ class Home extends React.Component {
             background-color: #ffffff;
           }
           .about {
-            background-color: #f4f7fb;
+            background-color: #f7f7f7;
             position: relative;
             text-align: center;
           }
