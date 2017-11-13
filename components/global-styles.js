@@ -23,6 +23,10 @@ export default () => (
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
+      .container {
+        max-width: 1024px;
+        margin: 0 auto;
+      }
       #nprogress {
         pointer-events: none;
       }

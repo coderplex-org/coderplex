@@ -3,11 +3,6 @@ import Headroom from 'react-headroom';
 import NProgress from 'nprogress';
 import Router from 'next/router';
 import Link from 'next/link';
-import GoHome from 'react-icons/lib/go/home';
-import GoBook from 'react-icons/lib/md/school';
-import GoStar from 'react-icons/lib/md/library-books';
-import GoCalender from 'react-icons/lib/go/calendar';
-import GoOrg from 'react-icons/lib/go/organization';
 
 import MetaInfo from '../config/meta-info';
 import GlobalStyles from './global-styles';
@@ -31,34 +26,24 @@ export default props => {
   const metaData = MetaInfo[title];
   const navItems = [
     {
-      title: 'Home',
-      path: '/',
-      external: false,
-      icon: GoHome,
-    },
-    {
       title: 'Learn',
       path: '/learn',
       external: false,
-      icon: GoBook,
     },
     {
       title: 'Space',
       path: '/space',
       external: false,
-      icon: GoOrg,
     },
     {
       title: 'Events',
       path: '/events',
       external: false,
-      icon: GoCalender,
     },
     {
       title: 'Blog',
       path: 'https://coderplex.org/blog',
       external: true,
-      icon: GoStar,
     },
   ];
   return (
@@ -88,22 +73,23 @@ export default props => {
                     {item.external ? (
                       <a
                         href={item.path}
-                        className={`nav__link ${props.url.pathname === item.path
-                          ? 'nav__link--active'
-                          : ''}`}
+                        className={`nav__link ${
+                          props.url.pathname === item.path
+                            ? 'nav__link--active'
+                            : ''
+                        }`}
                       >
-                        {React.createElement(item.icon)}
                         <span>{item.title}</span>
                       </a>
                     ) : (
                       <Link href={item.path}>
                         <a
-                          className={`nav__link ${props.url.pathname ===
-                          item.path
-                            ? 'nav__link--active'
-                            : ''}`}
+                          className={`nav__link ${
+                            props.url.pathname === item.path
+                              ? 'nav__link--active'
+                              : ''
+                          }`}
                         >
-                          {React.createElement(item.icon)}
                           <span>{item.title}</span>
                         </a>
                       </Link>
@@ -111,19 +97,31 @@ export default props => {
                   </li>
                 );
               })}
+              <li className="nav__linkItem">
+                <Link href="/learn">
+                  <a
+                    className={`nav__link nav__link--login ${
+                      props.url.pathname === '/login' ? 'nav__link--active' : ''
+                    }`}
+                  >
+                    <span>Login / Signup</span>
+                  </a>
+                </Link>
+              </li>
             </ul>
           </nav>
         </div>
       </header>
       <style jsx>{`
         header {
-          padding: 5px 10px;
+          padding: 10px;
           width: 100%;
-          background: #c454df linear-gradient(to top, #ec53ab, #d354cf);
+          background: #fff;
           z-index: 1000;
+          border-bottom: 1px solid #eee;
         }
         .header__container {
-          max-width: 1280px;
+          max-width: 1024px;
           margin: 0 auto;
         }
         nav {
@@ -136,10 +134,11 @@ export default props => {
           flex: 1;
           display: flex;
           align-items: center;
+          padding: 10px 0;
         }
         .nav__logo img {
-          width: 50px;
-          height: 50px;
+          width: 45px;
+          height: 45px;
           margin-right: 5px;
           cursor: pointer;
         }
@@ -147,12 +146,13 @@ export default props => {
           margin: 0;
           padding: 0;
           list-style: none;
-          flex: 2;
+          flex: 3;
           display: flex;
           align-items: center;
         }
         .nav__linkItem {
           flex: 1;
+          height: inherit;
           text-align: center;
           display: flex;
           justify-content: center;
@@ -170,22 +170,37 @@ export default props => {
         }
         .nav__link {
           text-decoration: none;
-          color: #fff;
-          font-size: 16px;
-          font-weight: bold;
-          padding-bottom: 4px;
+          color: #525c65;
+          font-size: 1rem;
+          font-weight: 400;
+          line-height: 1.9rem;
+          padding: 0.5rem 1rem;
           display: flex;
           align-items: center;
+          position: relative;
+          text-transform: capitalize;
         }
         .nav__link span {
           margin-left: 5px;
         }
         .nav__link:hover {
-          color: #e1e1e1;
+          color: #cb18d4;
+        }
+        .nav__link--login {
+          background: #7657fb linear-gradient(to top, #7657fb, #6f19ed);
+          box-shadow: 4px 8px 12px 0 rgba(46, 61, 73, 0.15);
+          border-radius: 4px;
+          padding: 0.5rem 1rem;
+          color: #fff;
+        }
+        .nav__link--login:hover {
+          color: #fff;
+          box-shadow: 2px 4px 8px 0 rgba(46, 61, 73, 0.2);
+          background-color: #6f19ed linear-gradient(to top, #6f19ed, #7657fb);
         }
         .nav__link--active {
-          border-bottom: 2px solid #fff;
           pointer-events: none;
+          color: #cb18d4;
         }
         input[type='checkbox'] {
           position: absolute;
@@ -194,7 +209,7 @@ export default props => {
           left: 25px;
         }
         .mobile__menu {
-          width: 30px;
+          width: 32px;
           height: 24px;
           display: none;
           cursor: pointer;
@@ -210,21 +225,15 @@ export default props => {
           height: 2px;
           border-radius: 4px;
           position: absolute;
-          background: #fff;
+          background: #888;
           top: 50%;
-          -webkit-transition: -webkit-transform 0.5s;
-          transition: -webkit-transform 0.5s;
           transition: transform 0.5s;
-          transition: transform 0.5s, -webkit-transform 0.5s;
-          -webkit-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
         }
         .mobile__menu:after {
-          -webkit-transform: translate3d(0, -10px, 0) scale3d(0.8, 1, 1);
           transform: translate3d(0, -10px, 0) scale3d(0.8, 1, 1);
         }
         .mobile__menu:before {
-          -webkit-transform: translate3d(0, 10px, 0) scale3d(0.8, 1, 1);
           transform: translate3d(0, 10px, 0) scale3d(0.8, 1, 1);
         }
         .mobile__menu span {
@@ -233,27 +242,24 @@ export default props => {
           overflow: hidden;
           height: 2px;
           border-radius: 4px;
-          background: #fff;
+          background: #888;
           top: 50%;
-          -webkit-transition: all 0.5s;
           transition: all 0.5s;
+          transform: translate3d(-2px, 0, 0) scale3d(0.6, 1, 1);
         }
         input[type='checkbox']:checked ~ .mobile__menu span {
-          -webkit-transform: scale3d(0, 1, 1);
-          transform: scale3d(0, 1, 1);
+          transform: translate3d(-2px, 0, 0) scale3d(0, 1, 1);
         }
         input[type='checkbox']:checked ~ .mobile__menu:after {
-          -webkit-transform: rotate3d(0, 0, 1, 45deg);
-          transform: rotate3d(0, 0, 1, 45deg);
+          transform: rotate3d(0, 0, 1, 45deg) scale3d(0.8, 1, 1);
         }
         input[type='checkbox']:checked ~ .mobile__menu:before {
-          -webkit-transform: rotate3d(0, 0, 1, -45deg);
-          transform: rotate3d(0, 0, 1, -45deg);
+          transform: rotate3d(0, 0, 1, -45deg) scale3d(0.8, 1, 1);
         }
         input[type='checkbox']:checked ~ .nav__links {
-          display: flex;
+          top: 76px;
         }
-        @media (max-width: 700px) {
+        @media (max-width: 885px) {
           nav {
             justify-content: center;
           }
@@ -268,14 +274,16 @@ export default props => {
             opacity: 0;
           }
           .nav__links {
+            height: auto;
             flex-direction: column;
             width: 100%;
             position: fixed;
-            top: 66px;
+            z-index: -1;
+            top: -600%;
             background: #fafafa;
-            display: none;
             border-bottom: 1px solid #eee;
             font-size: 10px;
+            transition: all 0.25s;
           }
           .nav__linkItem {
             width: 100%;
@@ -291,8 +299,11 @@ export default props => {
           .nav__link:hover {
             color: #222;
           }
-          .nav__link--active {
-            border: none;
+          .nav__link--active.nav__link:after {
+            display: none;
+          }
+          .nav__link--login {
+            background: transparent;
           }
         }
       `}</style>
