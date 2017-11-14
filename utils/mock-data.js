@@ -25,7 +25,7 @@ export const listOfSubjects = [
     domain: 'Programming Language',
     url: '/learn/go',
     subjectId: 'go',
-    icon: 'devicon-go-plain ',
+    icon: 'devicon-go-plain colored',
     learningCount: '7',
     learnGuideStatus: false,
   },

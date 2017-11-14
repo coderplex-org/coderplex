@@ -57,7 +57,7 @@ const SocialLink = styled.li`
 const Title = styled.h3`
   text-align: center;
   margin-bottom: 20px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 300;
   color: #fff;
   @media (max-width: 1000px) {
@@ -176,13 +176,13 @@ export default class FooterBar extends React.Component {
     return (
       <Footer>
         <Container>
-          <Flex wrap py={[0, 2]}>
+          <Flex wrap py={[0, 3]}>
             <Flex
               align="center"
               direction="column"
               justify="center"
               width={[1, 1, 1 / 2]}
-              p={2}
+              p={[2, 1]}
             >
               <Title>
                 We are constanly updating our platform. If you would like to
