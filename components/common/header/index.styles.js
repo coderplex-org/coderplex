@@ -51,6 +51,7 @@ export const NavLinks = styled.ul`
     position: fixed;
     z-index: -1;
     top: -600%;
+    left: 0;
     background: #fafafa;
     border-bottom: 1px solid #eee;
     font-size: 10px;

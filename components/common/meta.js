@@ -33,6 +33,10 @@ export default ({ title, description, image }) => {
         color="#c201b9"
       />
       <link rel="shortcut icon" href="/static/favicons/favicon.ico" />
+      <link
+        rel="stylesheet"
+        href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css"
+      />
       <meta
         name="msapplication-config"
         content="/static/favicons/browserconfig.xml"

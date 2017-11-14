@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'react-emotion';
-import { Flex } from 'grid-emotion';
+import { Flex, Box } from 'grid-emotion';
 import FaFacebook from 'react-icons/lib/fa/facebook';
 import FaYoutube from 'react-icons/lib/fa/youtube-play';
 import FaGithub from 'react-icons/lib/fa/github-alt';
@@ -11,9 +11,13 @@ import { Container, baseButton } from '../../../utils/base.styles';
 import { baseEventsURL, subscribeURL } from '../../../utils/urls';
 
 const Footer = styled.footer`
-  padding: 0 0 25px 0;
   background: #222;
   color: #fff;
+  @media (max-width: 480px) {
+    .follow {
+      background: #111;
+    }
+  }
 `;
 
 const SocialLinks = styled.ul`
@@ -44,12 +48,25 @@ const SocialLink = styled.li`
       background: #fff;
       color: #314159;
     }
+    @media (max-width: 480px) {
+      margin: 10px;
+    }
   }
 `;
 
 const Title = styled.h3`
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #fff;
+  @media (max-width: 1000px) {
+    margin-bottom: 10px;
+  }
+  @media (max-width: 780px) {
+    font-size: 1rem;
+    line-height: 1.8rem;
+  }
 `;
 
 const Form = styled.form`
@@ -74,6 +91,9 @@ const Form = styled.form`
     display: flex;
     align-items: center;
     cursor: pointer;
+    @media (max-width: 401px) {
+      margin-top: 20px;
+    }
   }
 `;
 
@@ -156,7 +176,7 @@ export default class FooterBar extends React.Component {
     return (
       <Footer>
         <Container>
-          <Flex wrap>
+          <Flex wrap py={[0, 2]}>
             <Flex
               align="center"
               direction="column"
@@ -192,40 +212,41 @@ export default class FooterBar extends React.Component {
               </Message>
             </Flex>
             <Flex
+              className="follow"
               align="center"
-              direction="column"
               justify="center"
               width={[1, 1, 1 / 2]}
-              p={2}
             >
-              <Title>Follow Us</Title>
-              <SocialLinks>
-                <SocialLink>
-                  <a href="https://www.youtube.com/channel/UCZ2EgRcIyY8lcHz0c5-lOUw">
-                    <FaYoutube size={20} />
-                  </a>
-                </SocialLink>
-                <SocialLink>
-                  <a href="https://www.facebook.com/coderplex">
-                    <FaFacebook size={20} />
-                  </a>
-                </SocialLink>
-                <SocialLink>
-                  <a href="https://github.com/coderplex">
-                    <FaGithub size={20} />
-                  </a>
-                </SocialLink>
-                <SocialLink>
-                  <a href="https://www.twitter.com/coderplex/">
-                    <FaTwitter size={20} />
-                  </a>
-                </SocialLink>
-                <SocialLink>
-                  <a href="https://www.instagram.com/coderplex/">
-                    <FaInstagram size={20} />
-                  </a>
-                </SocialLink>
-              </SocialLinks>
+              <Box p={[1, 2]}>
+                <Title>Follow Us</Title>
+                <SocialLinks>
+                  <SocialLink>
+                    <a href="https://www.youtube.com/channel/UCZ2EgRcIyY8lcHz0c5-lOUw">
+                      <FaYoutube size={20} />
+                    </a>
+                  </SocialLink>
+                  <SocialLink>
+                    <a href="https://www.facebook.com/coderplex">
+                      <FaFacebook size={20} />
+                    </a>
+                  </SocialLink>
+                  <SocialLink>
+                    <a href="https://github.com/coderplex">
+                      <FaGithub size={20} />
+                    </a>
+                  </SocialLink>
+                  <SocialLink>
+                    <a href="https://www.twitter.com/coderplex/">
+                      <FaTwitter size={20} />
+                    </a>
+                  </SocialLink>
+                  <SocialLink>
+                    <a href="https://www.instagram.com/coderplex/">
+                      <FaInstagram size={20} />
+                    </a>
+                  </SocialLink>
+                </SocialLinks>
+              </Box>
             </Flex>
           </Flex>
         </Container>
