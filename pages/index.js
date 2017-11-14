@@ -96,10 +96,10 @@ class Home extends React.Component {
                   <h3 className="space__info">
                     These are dynamic learning environments where everyone
                     learns at their own pace and compliments each other. We also
-                    organize weekly group activities like Open source evenings,
+                    organize weekly group activities like Open Source evenings,
                     casual hackathons etc.
                   </h3>
-                  <Link href={'/learn'}>
+                  <Link href={'/space'}>
                     <a className="space__btn">LEARN MORE ABOUT HACKERSPACE</a>
                   </Link>
                 </div>
@@ -168,7 +168,7 @@ class Home extends React.Component {
                     We do frequent online and offline events, covering broad
                     range of topics, from Web Development to Data Science. The
                     goal of these events are to share knowledge, connect with
-                    people and enable collabration. We also partner with local
+                    people and enable collaboration. We also partner with local
                     comunities to help them reach a wider audience.
                   </h3>
                   <Link href={'/events'}>
@@ -181,7 +181,9 @@ class Home extends React.Component {
           <section className="discord">
             <div className="discord__container">
               <div className="discord__content">
-                <h1>Join our Discord Server, and say &#34;Hello, word!&#34;</h1>
+                <h1>
+                  Join our Discord Server, and say &#34;Hello, world!&#34;
+                </h1>
                 <div className="discord__btnContainer">
                   <a
                     href="https://chat.coderplex.org"
