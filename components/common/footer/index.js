@@ -183,6 +183,7 @@ export default class FooterBar extends React.Component {
               justify="center"
               width={[1, 1, 1 / 2]}
               p={[2, 1]}
+              px={[2, 3]}
             >
               <Title>
                 We are constanly updating our platform. If you would like to
