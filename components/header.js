@@ -256,7 +256,7 @@ export default props => {
           transform: rotate3d(0, 0, 1, -45deg) scale3d(0.8, 1, 1);
         }
         input[type='checkbox']:checked ~ .nav__links {
-          top: 76px;
+          top: 60px;
         }
         @media (max-width: 885px) {
           nav {
@@ -279,6 +279,7 @@ export default props => {
             position: fixed;
             z-index: -1;
             top: -600%;
+            left: 0;
             background: #fafafa;
             border-bottom: 1px solid #eee;
             font-size: 10px;
