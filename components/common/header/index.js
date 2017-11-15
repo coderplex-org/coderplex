@@ -89,7 +89,7 @@ class NavBar extends React.Component {
               <NavLogo>
                 <Link href="/">
                   <img
-                    src="/static/favicons/android-chrome-192x192.png"
+                    src="https://res.cloudinary.com/coderplex/image/upload/c_scale,w_45/v1510788480/website__assets/logo.png"
                     alt="coderplex_logo"
                   />
                 </Link>

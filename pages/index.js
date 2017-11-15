@@ -12,7 +12,7 @@ const HeroSection = styled.section`
   background-color: #fff;
   position: relative;
   text-align: center;
-  background-image: url('/static/pattern.png');
+  background-image: url('https://res.cloudinary.com/coderplex/image/upload/v1510788480/website__assets/pattern.png');
   & h1 {
     font-size: 2.5rem;
     font-weight: 300;
@@ -30,6 +30,7 @@ const HeroSection = styled.section`
   }
   & img {
     width: 100%;
+    min-height: 300px;
   }
 `;
 
@@ -47,6 +48,10 @@ const SpaceSection = styled.section`
   & .box {
     position: relative;
     z-index: 2;
+    & img {
+      width: 100%;
+      min-height: 332px;
+    }
     ${breakpoints.sm} {
       text-align: center;
     }
@@ -63,6 +68,7 @@ const EventsSection = styled.section`
   text-align: left;
   & img {
     width: 100%;
+    min-height: 427px;
   }
   & .box {
     position: relative;
@@ -202,7 +208,10 @@ export default () => (
       <Container>
         <Flex justify="center" align="center" direction="column">
           <Box width={1} pb={[2, 3, 3]} px={[2, 0]}>
-            <img src="/static/banner1280x370.png" alt="words" />
+            <img
+              src="https://res.cloudinary.com/coderplex/image/upload/c_scale,w_1024/v1510788480/website__assets/banner1280x370.png"
+              alt="words"
+            />
             <h1>On a mission to improve the state of tech across India</h1>
           </Box>
         </Flex>
@@ -292,7 +301,10 @@ export default () => (
             pb={[0, 1, 4]}
             px={[3, 4, 3]}
           >
-            <img className="space__img" src="/static/space.svg" />
+            <img
+              className="space__img"
+              src="https://res.cloudinary.com/coderplex/image/upload/c_scale,w_450/v1510788480/website__assets/space.png"
+            />
           </Box>
         </Flex>
       </Container>
@@ -303,7 +315,10 @@ export default () => (
         <Flex align="center" justify="center" wrap>
           <Box order={[2, 2, 1]} width={[1, 1, 1 / 2]} px={[4, 4, 3]}>
             <Hide sm xs>
-              <img src="/static/events.png" alt="events__pic" />
+              <img
+                src="https://res.cloudinary.com/coderplex/image/upload/c_scale,w_448/v1510788480/website__assets/events.png"
+                alt="events__pic"
+              />
             </Hide>
           </Box>
           <Box
@@ -323,7 +338,10 @@ export default () => (
             </SubTitle>
             <Box className="box" width={[1]} pt={[2]} px={[3, 0]}>
               <Hide md lg>
-                <img src="/static/events.png" alt="events__pic" />
+                <img
+                  src="https://res.cloudinary.com/coderplex/image/upload/c_scale,w_448/v1510788480/website__assets/events.png"
+                  alt="events__pic"
+                />
               </Hide>
               <Link href={'/events'}>
                 <Button medium>VIEW ALL EVENTS</Button>
