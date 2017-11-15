@@ -4,8 +4,7 @@ import { Flex, Box } from 'grid-emotion';
 import take from 'lodash.take';
 import Link from 'next/link';
 
-import { Container, baseButton } from '../utils/base.styles';
-import Hide from '../utils/hide';
+import Hide, { Container, Button, breakpoints } from '../utils/base.styles';
 import { listOfSubjects } from '../utils/mock-data';
 import Layout from '../components/common/layout';
 
@@ -18,10 +17,13 @@ const HeroSection = styled.section`
     font-size: 2.5rem;
     font-weight: 300;
     color: #36434d;
-    @media (max-width: 1000px) {
-      font-size: 2rem;
+    ${breakpoints.md} {
+      font-size: 2.3rem;
     }
-    @media (max-width: 780px) {
+    ${breakpoints.sm} {
+      font-size: 1.8rem;
+    }
+    ${breakpoints.xs} {
       font-size: 1.5rem;
       line-height: 1.8rem;
     }
@@ -35,41 +37,6 @@ const LearnSection = styled.section`
   background-color: #f6f6f6;
   position: relative;
   text-align: center;
-  & .subject {
-    min-height: 200px;
-    background: #fff;
-    border: 1px solid #b9b9b9;
-    transition: all 0.25s;
-    cursor: pointer;
-    &:hover {
-      transform: translate(0, -2px) scale(1.05);
-    }
-    & .icon {
-      padding: 10px 15px;
-      font-size: 10rem;
-      @media (max-width: 480px) {
-        font-size: 8rem;
-      }
-    }
-    & .content {
-      padding: 10px 0 10px 30px;
-      color: #444;
-      background: #f6f6f6;
-      text-align: left;
-    }
-    & .title {
-      font-size: 1.5rem;
-      font-size: 600;
-      color: #222;
-      @media (max-width: 480px) {
-        font-size: 1.2rem;
-      }
-    }
-    & .subtitle {
-      font-size: 0.8rem;
-      color: #888;
-    }
-  }
 `;
 
 const SpaceSection = styled.section`
@@ -80,7 +47,10 @@ const SpaceSection = styled.section`
   & .box {
     position: relative;
     z-index: 2;
-    @media (max-width: 831px) {
+    ${breakpoints.sm} {
+      text-align: center;
+    }
+    ${breakpoints.xs} {
       text-align: center;
     }
   }
@@ -99,42 +69,46 @@ const EventsSection = styled.section`
     z-index: 2;
     & img {
       width: 100%;
-      @media (max-width: 831px) {
+      ${breakpoints.sm} {
         width: 50%;
       }
-      @media (max-width: 600px) {
+      ${breakpoints.xs} {
         width: 100%;
       }
     }
-    @media (max-width: 831px) {
+    ${breakpoints.sm} {
+      text-align: center;
+    }
+    ${breakpoints.xs} {
       text-align: center;
     }
   }
 `;
 
-const Button = styled.a`
-  ${baseButton};
-  background: ${props => (props.inverted ? '#7657fb' : '#fff')}
-  color: ${props => (props.inverted ? '#fff' : '#222')}
-  padding: 0.6rem 1rem;
-  cursor: pointer;
-  &:hover {
-    background: ${props => (props.inverted ? '#6f19ed' : '#eee')};
-    box-shadow: 2px 4px 8px 0 rgba(46, 61, 73, 0.2);
-  }
+const DiscordSection = styled.section`
+  background: #fff;
+  color: #222;
+  text-align: center;
+  position: relative;
 `;
 
 const Title = styled.h2`
   font-size: 2rem;
   font-weight: 400;
-  color: ${props => (props.inverted ? '#7657fb' : '#fff')};
-  @media (max-width: 831px) {
+  color: ${props =>
+    props.inverted ? (props.color ? props.color : '#7657fb') : '#fff'};
+  ${breakpoints.md} {
     font-size: 1.8rem;
+  }
+  ${breakpoints.sm} {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
     text-align: center;
   }
-  @media (max-width: 780px) {
-    font-size: 1.5rem;
-    line-height: 1.8rem;
+  ${breakpoints.xs} {
+    font-size: 1.8rem;
+    line-height: 2rem;
+    text-align: center;
   }
 `;
 
@@ -142,11 +116,14 @@ const SubTitle = styled.h3`
   font-size: ${props => (props.small ? '1rem' : '1.2rem')};
   font-weight: 400;
   color: ${props => (props.inverted ? '#222' : '#fff')};
-  @media (max-width: 831px) {
+  ${breakpoints.md} {
+    font-size: 1rem;
+  }
+  ${breakpoints.sm} {
     font-size: 1rem;
     text-align: center;
   }
-  @media (max-width: 480px) {
+  ${breakpoints.xs} {
     font-size: 0.9rem;
     text-align: center;
   }
@@ -160,8 +137,62 @@ const SpaceOverlay = styled.div`
   z-index: 1;
   bottom: 0;
   left: 0;
-  @media (max-width: 831px) {
+  ${breakpoints.sm} {
     display: none;
+  }
+  ${breakpoints.xs} {
+    display: none;
+  }
+`;
+
+const Subject = styled.a`
+  text-decoration: none;
+  width: calc(33.33% - 40px);
+  margin: 20px;
+  display: inline-block;
+  min-height: 200px;
+  background: #fff;
+  border: 1px solid #b9b9b9;
+  transition: all 0.25s;
+  cursor: pointer;
+  &:hover {
+    transform: translate(0, -2px) scale(1.05);
+  }
+  & .icon {
+    padding: 10px 15px;
+    font-size: 10rem;
+    ${breakpoints.xs} {
+      font-size: 8rem;
+    }
+  }
+  & .content {
+    padding: 10px 0 10px 30px;
+    color: #444;
+    background: #f6f6f6;
+    text-align: left;
+  }
+  & .title {
+    font-size: 1.5rem;
+    font-size: 600;
+    color: #222;
+    ${breakpoints.xs} {
+      font-size: 1.2rem;
+    }
+  }
+  & .subtitle {
+    font-size: 0.8rem;
+    color: #888;
+  }
+  ${breakpoints.md} {
+    width: calc(50% - 40px);
+  }
+  ${breakpoints.sm} {
+    width: calc(50% - 40px);
+    margin: 20px auto;
+  }
+  ${breakpoints.xs} {
+    width: 90%;
+    margin: 20px auto;
   }
 `;
 
@@ -196,12 +227,7 @@ export default () => (
                     as={subject.url}
                     key={subject.url}
                   >
-                    <Box
-                      className="subject"
-                      mx={[2]}
-                      my={[2]}
-                      width={[1, 1 / 3, 1 / 4]}
-                    >
+                    <Subject href={subject.url}>
                       <div className="icon">
                         <i className={subject.icon} />
                       </div>
@@ -209,7 +235,7 @@ export default () => (
                         <div className="title">{subject.title}</div>
                         <div className="subtitle">{subject.domain}</div>
                       </div>
-                    </Box>
+                    </Subject>
                   </Link>
                 );
               })}
@@ -217,7 +243,9 @@ export default () => (
           </Box>
           <Flex justify="center" width={[1]} pb={[3, 3, 4]}>
             <Link href={'/learn'}>
-              <Button inverted>SEE ALL AVAILABLE GUIDES</Button>
+              <Button href={'/learn'} inverted medium>
+                SEE ALL AVAILABLE GUIDES
+              </Button>
             </Link>
           </Flex>
         </Flex>
@@ -252,7 +280,7 @@ export default () => (
               pb={[4, 4, 0]}
             >
               <Link href={'/space'}>
-                <Button>LEARN MORE ABOUT HACKERSPACE</Button>
+                <Button medium>LEARN MORE ABOUT HACKERSPACE</Button>
               </Link>
             </Box>
           </Box>
@@ -298,12 +326,26 @@ export default () => (
                 <img src="/static/events.png" alt="events__pic" />
               </Hide>
               <Link href={'/events'}>
-                <Button>VIEW ALL EVENTS</Button>
+                <Button medium>VIEW ALL EVENTS</Button>
               </Link>
             </Box>
           </Box>
         </Flex>
       </Container>
     </EventsSection>
+    <DiscordSection>
+      <Container>
+        <Box py={[4]} px={[2]}>
+          <Title inverted color="#222">
+            Join our Discord Server, and say &#34;Hello, world!&#34;
+          </Title>
+          <Box pt={[4]} pb={[3]}>
+            <Button inverted large>
+              Join Discord
+            </Button>
+          </Box>
+        </Box>
+      </Container>
+    </DiscordSection>
   </Layout>
 );
