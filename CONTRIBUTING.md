@@ -2,7 +2,7 @@
 
 Coderplex web application comprises of two repositories :
 
-- [Coderplex](https://github.com/coderplex/coderplex) * : Frontend of the application
+- [Coderplex](https://github.com/coderplex/coderplex) : Frontend of the application
 
 - [Coderplex-Backend](https://github.com/coderplex/coderplex-backend) : Backend of the application
 
