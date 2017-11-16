@@ -11,7 +11,7 @@
 This project mainly uses
 
 - [Next.js](https://github.com/zeit/next.js/)
-- [Semantic UI React](http://react.semantic-ui.com/introduction)
+- [emotion](https://emotion.sh) As css-in-js library
 
 ### [Join our community here](https://www.coderplex.org)
 
