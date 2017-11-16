@@ -2,8 +2,7 @@ const { ANALYZE } = process.env;
 
 // For now copy paste from utils mockdata later we will fetch these from API
 // We cannot import from utils/mockData.js because this file is not transpiled so does not support es6 modules
-/**
- * Disable for now
+
 const listOfSubjects = [
   {
     id: '2132',
@@ -96,7 +95,6 @@ const listOfSubjects = [
     learnGuideStatus: false,
   },
 ];
- */
 
 module.exports = {
   webpack: (config, { dev }) => {
@@ -124,19 +122,16 @@ module.exports = {
   exportPathMap() {
     const routes = {
       '/': { page: '/' },
-      // '/events': { page: '/events' },
-      // '/learn': { page: '/learn' },
+      '/events': { page: '/events' },
+      '/learn': { page: '/learn' },
       '/space': { page: '/space' },
     };
-    /**
-     * Disable for now
-     for (const subject of listOfSubjects) {
-       routes[subject.url] = {
-         page: '/learn/subject',
-         query: { id: subject.subjectId },
-       };
-      }
-     */
+    for (const subject of listOfSubjects) {
+      routes[subject.url] = {
+        page: '/learn/subject',
+        query: { id: subject.subjectId },
+      };
+    }
     console.log(routes);
     return routes;
   },
