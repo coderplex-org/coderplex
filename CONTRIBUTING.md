@@ -96,7 +96,7 @@ We welcome pull requests from beginners and seasoned javaScript developers alike
     $ yarn lint
     ```
 6. Add and commit your code. Please give meaning full commit messages.
-7. Pull latest code from [upstream repository's ](https://help.github.com/articles/merging-an-upstream-repository-into-your-fork/)`master`, if in case anything new were merged while you were working on your fork.
+7. Pull latest code from [upstream repository's ](https://help.github.com/articles/merging-an-upstream-repository-into-your-fork/)`develop`, if in case anything new were merged while you were working on your fork.
 8. Push the code to your fork.
 9. Raise the pull request from your created branch to `develop` branch of coderplex. [why develop instead of master branch?]()
 10. Take some time to give a brief description of the work you have done.
