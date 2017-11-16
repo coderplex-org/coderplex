@@ -13,7 +13,7 @@ const HeroSection = styled.section`
   background-color: #fff;
   position: relative;
   text-align: center;
-  background-image: url('https://res.cloudinary.com/coderplex/image/upload/v1510788480/website__assets/pattern.webp');
+  background-image: url('https://res.cloudinary.com/coderplex/image/upload/v1510788480/website__assets/pattern.png');
   & h1 {
     font-size: 2.5rem;
     font-weight: 300;
@@ -121,7 +121,7 @@ export default () => (
         <Flex justify="center" align="center" direction="column">
           <Box width={1} pb={[2, 3, 3]} px={[2, 0]}>
             <img
-              src="https://res.cloudinary.com/coderplex/image/upload/c_scale,w_1024/v1510788480/website__assets/banner1280x370.webp"
+              src="https://res.cloudinary.com/coderplex/image/upload/c_scale,w_1024/v1510788480/website__assets/banner1280x370.png"
               alt="words"
             />
             <h1>On a mission to improve the state of tech across India</h1>
@@ -184,7 +184,7 @@ export default () => (
             <img
               className="space__img"
               alt="sapce__img"
-              src="https://res.cloudinary.com/coderplex/image/upload/c_scale,w_450/v1510788480/website__assets/space.webp"
+              src="https://res.cloudinary.com/coderplex/image/upload/c_scale,w_450/v1510788480/website__assets/space.png"
             />
           </Box>
         </Flex>
@@ -197,7 +197,7 @@ export default () => (
           <Box order={[2, 2, 1]} width={[1, 1, 1 / 2]} px={[4, 4, 3]}>
             <Hide sm xs>
               <img
-                src="https://res.cloudinary.com/coderplex/image/upload/c_scale,w_348/v1510788480/website__assets/events.webp"
+                src="https://res.cloudinary.com/coderplex/image/upload/c_scale,w_348/v1510788480/website__assets/events.png"
                 alt="events__pic"
               />
             </Hide>
@@ -212,7 +212,7 @@ export default () => (
             <Box className="box" width={[1]} pt={[2]} px={[3, 0]}>
               <Hide md lg>
                 <img
-                  src="https://res.cloudinary.com/coderplex/image/upload/c_scale,w_316/v1510788480/website__assets/events.webp"
+                  src="https://res.cloudinary.com/coderplex/image/upload/c_scale,w_316/v1510788480/website__assets/events.png"
                   alt="events__pic"
                 />
               </Hide>

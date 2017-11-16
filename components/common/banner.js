@@ -6,7 +6,7 @@ import { Container, Title, SubTitle } from '../../utils/base.styles';
 
 const BannerSection = styled.section`
   background: #fbfbfb;
-  background-image: url('https://res.cloudinary.com/coderplex/image/upload/v1510788480/website__assets/pattern.webp');
+  background-image: url('https://res.cloudinary.com/coderplex/image/upload/v1510788480/website__assets/pattern.png');
   min-height: 150px;
   text-align: center;
   ${space};
