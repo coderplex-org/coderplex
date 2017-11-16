@@ -162,6 +162,3 @@ Error: listen EADDRINUSE :::3000
 error Command failed with exit code 1.
 ```
 If you get this error while running `yarn dev` then probably another app is occupying `localhost:3000`. You may want to close that and run the command again.
-
-##### 3. Why we recommend sending new pull requests to `develop` instead of `master` branch ?
-The master branch of coderplex is relatively stable branch which we update for every release. We also have auto deployment in place for master branch i.e any changes in that branch gets reflected in `https://coderplex.org`. Every release we throughly test develop branch and merge into master. Hence it is recommended for both maintainers and contributors to raise a pull request to `develop` branch.
