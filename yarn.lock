@@ -5358,6 +5358,13 @@ preact-compat@^3.17.0:
     prop-types "^15.5.8"
     standalone-react-addons-pure-render-mixin "^0.1.1"
 
+preact-emotion@^8.0.10:
+  version "8.0.10"
+  resolved "https://registry.yarnpkg.com/preact-emotion/-/preact-emotion-8.0.10.tgz#e375602ac0f4aa5eff921e96f55a174e405d7792"
+  dependencies:
+    babel-plugin-emotion "^8.0.10"
+    emotion-utils "^8.0.10"
+
 preact-render-to-string@^3.6.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/preact-render-to-string/-/preact-render-to-string-3.7.0.tgz#7db4177454bc01395e0d01d6ac07bc5e838e31ee"

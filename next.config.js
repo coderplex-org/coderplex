@@ -101,11 +101,12 @@ module.exports = {
     /* Enable only in Production */
     if (!dev) {
       // Preact
-      console.log('> Using Preact instead of React');
-      config.resolve.alias = {
-        react: 'preact-compat/dist/preact-compat',
-        'react-dom': 'preact-compat/dist/preact-compat',
-      };
+      // console.log('> Using Preact instead of React');
+      // config.resolve.alias = {
+      //   react: 'preact-compat/dist/preact-compat',
+      //   'react-dom': 'preact-compat/dist/preact-compat',
+      //   'react-emotion': 'preact-emotion',
+      // };
       if (ANALYZE) {
         const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
         config.plugins.push(
