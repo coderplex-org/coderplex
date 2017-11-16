@@ -53,7 +53,7 @@ export const Button = styled.a`
   font-size: ${props => (props.large ? '1.8rem' : props.medium ? '1rem' : '1rem')}
   cursor: pointer;
   &:hover {
-    background: ${props => (props.inverted ? '#6f19ed' : '#eee')};
+    background: ${props => (props.inverted ? '#6f19ed' : '#340080')};
     box-shadow: 2px 4px 8px 0 rgba(46, 61, 73, 0.2);
   }
 `;
