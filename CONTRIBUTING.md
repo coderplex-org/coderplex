@@ -14,6 +14,13 @@ Coderplex has adopted [Contributor Covenant](https://github.com/coderplex/coderp
 ## Open Development
 All work related to the application takes place on Github itself. We use [Issues](https://github.com/coderplex/coderplex/issues) to track bugs, discuss ideas and to engage open source contributors. [Projects](https://github.com/coderplex/coderplex/projects) are used to keep track of everything and is our project management tool. We maintain [Wiki](https://github.com/coderplex/coderplex/wiki) for structuring our long term thoughts. Both core team members and contributors sends a pull request which goes through the same review process. Whole process is as transparent as it can be and we strive to keep it that way.
 
+## Branching Model
+The `master` branch of coderplex is relatively stable branch which we update for every release. We also have auto deployment in place for that particular branch i.e any changes in that branch gets reflected in [https://coderplex.org](https://coderplex.org).
+It is highly recommended for both maintainers and contributors to raise a pull request to `develop` branch. Before every release we throughly test develop branch and merge into master.
+![Imgur](https://i.imgur.com/KPO2dLul.png)
+<br/>
+*A pull request to any other branch may most likely be closed by our bots.*
+
 ## Development Workflow
 
 We welcome pull requests from beginners and seasoned javaScript developers alike!
@@ -23,10 +30,6 @@ We welcome pull requests from beginners and seasoned javaScript developers alike
 2. If you decide to fix an issue, please be sure to check the comment thread in case somebody is already working on a fix. If nobody is working on it at the moment, please leave a comment stating that you intend to work on it so other people don’t accidentally duplicate your effort.
 3. If somebody claims an issue but doesn’t follow up for more than a weeks, it’s fine to take over it but you should still leave a comment.
 
-### Branching Model
-The `master` branch of coderplex is relatively stable branch which we update for every release. We also have auto deployment in place for that particular branch i.e any changes in that branch gets reflected in [https://coderplex.org](https://coderplex.org). Before every release we throughly test develop branch and merge into master.
-![Imgur](https://i.imgur.com/KPO2dLul.png)
-Hence it is recommended for both maintainers and contributors to raise a pull request to `develop` branch.
 
 ### Proposing a Change
 1. Open a new issue if you would like report a bug or suggest improvements.
@@ -55,7 +58,11 @@ Hence it is recommended for both maintainers and contributors to raise a pull re
     <br/>
     Familiarity with git is mandatory.
 
-### Running
+### Sending a Pull Request
+
+*Working on your first Pull Request? You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)*
+
+#### Running Locally
 
 1. Clone repository
     ```bash
@@ -75,10 +82,6 @@ Hence it is recommended for both maintainers and contributors to raise a pull re
     ```
     App now opens at `localhost:3000` in your default browser.
     > You may get this [error]() if any other app is already running the above port.
-
-### Sending a Pull Request
-
-*Working on your first Pull Request? You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)*
 
 #### Before submitting:
 1. Fork the [repository](https://github.com/coderplex/coderplex).
