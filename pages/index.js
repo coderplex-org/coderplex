@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'react-emotion';
+import { space } from 'styled-system';
 import { Flex, Box } from 'grid-emotion';
 import take from 'lodash.take';
 import Link from 'next/link';
@@ -10,6 +11,7 @@ import Layout from '../components/common/layout';
 import SubjectCard from '../components/learn/subject-card';
 
 const HeroSection = styled.section`
+  ${space};
   background-color: #fff;
   position: relative;
   text-align: center;
@@ -35,12 +37,14 @@ const HeroSection = styled.section`
 `;
 
 const LearnSection = styled.section`
+  ${space};
   background-color: #f6f6f6;
   position: relative;
   text-align: center;
 `;
 
 const SpaceSection = styled.section`
+  ${space};
   background-color: #7657fb;
   position: relative;
   text-align: left;
@@ -62,6 +66,7 @@ const SpaceSection = styled.section`
 `;
 
 const EventsSection = styled.section`
+  ${space};
   background: #6f19ed;
   color: #fff;
   position: relative;
@@ -92,6 +97,7 @@ const EventsSection = styled.section`
 `;
 
 const DiscordSection = styled.section`
+  ${space};
   background: #fff;
   color: #222;
   text-align: center;
@@ -116,10 +122,10 @@ const SpaceOverlay = styled.div`
 
 export default () => (
   <Layout>
-    <HeroSection>
+    <HeroSection pb={[2, 4]} px={[2, 1]}>
       <Container>
         <Flex justify="center" align="center" direction="column">
-          <Box width={1} pb={[2, 3, 3]} px={[2, 0]}>
+          <Box width={1}>
             <img
               src="https://res.cloudinary.com/coderplex/image/upload/c_scale,w_1024/v1510788480/website__assets/banner1280x370.png"
               alt="words"
@@ -129,23 +135,23 @@ export default () => (
         </Flex>
       </Container>
     </HeroSection>
-    <LearnSection>
+    <LearnSection pb={[3, 4]} pt={[2, 3]} px={[2, 1]}>
       <Container>
         <Flex justify="center" align="center" direction="column">
-          <Box width={1} pb={[1, 2]} pt={[2, 3]} px={[2, 3]}>
+          <Box width={1}>
             <Title inverted>Open Source Learning Guides</Title>
             <SubTitle inverted>
               Our guides are crowd-sourced recommendations of free online resources to learn any technology
             </SubTitle>
           </Box>
-          <Box width={1} pb={[2, 3]} pt={[1]} px={[2, 0]}>
+          <Box width={1}>
             <Flex justify="center" align="center" wrap>
               {take(listOfSubjects, 6).map(subject => {
                 return <SubjectCard key={subject.url} subject={subject} />;
               })}
             </Flex>
           </Box>
-          <Flex justify="center" width={[1]} pb={[3, 3, 4]}>
+          <Flex justify="center" width={[1]} pt={[2, 3]}>
             <Link href={'/learn'}>
               <Button href={'/learn'} inverted medium>
                 SEE ALL AVAILABLE GUIDES
