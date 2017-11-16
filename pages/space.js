@@ -124,7 +124,7 @@ export default () => (
         </SubTitle>
         <ActivityTimeline>
           {activities.map(activity => (
-            <ActiviteEvent key={activity.day} title={activity.day} icon={<FaCalender size={18} />} iconColor="#222">
+            <ActiviteEvent key={activity.day} title={activity.day} icon={<FaCalender />} iconColor="#222">
               {activity.task}
             </ActiviteEvent>
           ))}
