@@ -93,43 +93,37 @@ export const listOfSubjects = [
 
 export const indexPageLearns = [
   {
-    link:
-      'https://github.com/coderplex/learn/blob/master/web-dev/Frontend/Libraries%20%26%20Frameworks/Learn-React.md',
+    link: 'https://github.com/coderplex/learn/blob/master/web-dev/Frontend/Libraries%20%26%20Frameworks/Learn-React.md',
     title: 'ReactJS',
     subject: 'Frontend Web Development',
     image: '',
   },
   {
-    link:
-      'https://github.com/coderplex/learn/blob/master/web-dev/Backend/Learn-Laravel.md',
+    link: 'https://github.com/coderplex/learn/blob/master/web-dev/Backend/Learn-Laravel.md',
     title: 'Laravel',
     subject: 'Backend Web Development',
     image: '',
   },
   {
-    link:
-      'https://github.com/coderplex/learn/blob/master/programming-languages/Go/learn-go.md',
+    link: 'https://github.com/coderplex/learn/blob/master/programming-languages/Go/learn-go.md',
     title: 'Go',
     subject: 'Programming Language',
     image: '',
   },
   {
-    link:
-      'https://github.com/coderplex/learn/blob/master/computer-science/Learn-CS.md',
+    link: 'https://github.com/coderplex/learn/blob/master/computer-science/Learn-CS.md',
     title: 'Introduction to C.S',
     subject: 'Computer Science',
     image: '',
   },
   {
-    link:
-      'https://github.com/coderplex/learn/blob/master/Blockchain/blockchain-basics.md',
+    link: 'https://github.com/coderplex/learn/blob/master/Blockchain/blockchain-basics.md',
     title: 'Blockchain',
     subject: 'Decentralized Systems',
     image: '',
   },
   {
-    link:
-      'https://github.com/coderplex/learn/blob/master/mobile-dev/Android/learn-android.md',
+    link: 'https://github.com/coderplex/learn/blob/master/mobile-dev/Android/learn-android.md',
     title: 'Android',
     subject: 'Mobile Development',
     image: '',
@@ -149,8 +143,7 @@ export const listOfDomains = [
 
 export const contentsOfLaravel = {
   logo: 'devicon-laravel-plain colored',
-  overview:
-    'https://cdn.rawgit.com/coderplex/learn/cdn/cdn/laravel/overview.md',
+  overview: 'https://cdn.rawgit.com/coderplex/learn/cdn/cdn/laravel/overview.md',
   guides: [
     {
       name: 'Prerequisites',
@@ -224,8 +217,7 @@ export const contentsOfLaravel = {
     {
       userName: 'Vinay Puppal',
       userPage: 'https://www.vinaypuppal.com/',
-      userImage:
-        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/214440/profile/profile-512.jpg?2',
+      userImage: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/214440/profile/profile-512.jpg?2',
       contributions: [
         {
           type: 'topic',

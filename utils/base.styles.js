@@ -25,12 +25,8 @@ export const Button = styled.a`
   ${baseButton};
   background: ${props => (props.inverted ? '#7657fb' : '#fff')}
   color: ${props => (props.inverted ? '#fff' : '#222')}
-  padding: ${props =>
-    props.large
-      ? '0.8rem 2.25rem'
-      : props.medium ? '0.6rem 1.2rem' : '0.2rem 1rem'};
-  font-size: ${props =>
-    props.large ? '1.8rem' : props.medium ? '1rem' : '1rem'}
+  padding: ${props => (props.large ? '0.8rem 2.25rem' : props.medium ? '0.6rem 1.2rem' : '0.2rem 1rem')};
+  font-size: ${props => (props.large ? '1.8rem' : props.medium ? '1rem' : '1rem')}
   cursor: pointer;
   &:hover {
     background: ${props => (props.inverted ? '#6f19ed' : '#eee')};
