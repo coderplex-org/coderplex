@@ -3,7 +3,7 @@ import Router, { withRouter } from 'next/router';
 import Headroom from 'react-headroom';
 import NProgress from 'nprogress';
 import Link from 'next/link';
-import { hydrate } from 'react-emotion';
+import { hydrate } from 'emotion';
 
 import MetaInfo from '../../../config/meta-info';
 import { Container } from '../../../utils/base.styles';
