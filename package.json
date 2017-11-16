@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "xo && jest",
-    "lint":
-      "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write --single-quote --print-width='120' --trailing-comma='es5' && xo",
+    "lint": "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write --single-quote --print-width='120' --trailing-comma='es5' && xo",
     "precommit": "lint-staged",
     "analyze": "cross-env ANALYZE=1 next build",
     "dev": "cross-env NODE_ENV=development node server.js",
@@ -16,19 +15,32 @@
   },
   "xo": {
     "parser": "babel-eslint",
-    "extends": ["prettier", "prettier/react", "plugin:react/recommended"],
-    "env": ["browser", "node"],
+    "extends": [
+      "prettier",
+      "prettier/react",
+      "plugin:react/recommended"
+    ],
+    "env": [
+      "browser",
+      "node"
+    ],
     "rules": {
       "linebreak-style": 0,
       "react/display-name": 0,
       "react/prop-types": 0
     },
     "space:": 2,
-    "ignores": ["next.config.js"],
+    "ignores": [
+      "next.config.js"
+    ],
     "overrides": [
       {
         "files": "**/__tests__/*.test.js",
-        "globals": ["describe", "it", "expect"]
+        "globals": [
+          "describe",
+          "it",
+          "expect"
+        ]
       }
     ]
   },
@@ -58,6 +70,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-emotion": "^8.0.10",
+    "react-event-timeline": "^1.4.0",
     "react-headroom": "^2.1.6",
     "react-icons": "^2.2.5",
     "semantic-ui-react": "^0.76.0",

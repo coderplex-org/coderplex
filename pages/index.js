@@ -4,7 +4,7 @@ import { Flex, Box } from 'grid-emotion';
 import take from 'lodash.take';
 import Link from 'next/link';
 
-import Hide, { Container, Button, breakpoints } from '../utils/base.styles';
+import Hide, { Container, Button, Title, SubTitle, breakpoints } from '../utils/base.styles';
 import { listOfSubjects } from '../utils/mock-data';
 import Layout from '../components/common/layout';
 import SubjectCard from '../components/learn/subject-card';
@@ -96,42 +96,6 @@ const DiscordSection = styled.section`
   color: #222;
   text-align: center;
   position: relative;
-`;
-
-const Title = styled.h2`
-  font-size: 2rem;
-  font-weight: 400;
-  color: ${props => (props.inverted ? (props.color ? props.color : '#7657fb') : '#fff')};
-  ${breakpoints.md} {
-    font-size: 1.8rem;
-  }
-  ${breakpoints.sm} {
-    font-size: 1.8rem;
-    line-height: 1.8rem;
-    text-align: center;
-  }
-  ${breakpoints.xs} {
-    font-size: 1.8rem;
-    line-height: 2rem;
-    text-align: center;
-  }
-`;
-
-const SubTitle = styled.h3`
-  font-size: ${props => (props.small ? '1rem' : '1.2rem')};
-  font-weight: 400;
-  color: ${props => (props.inverted ? '#222' : '#fff')};
-  ${breakpoints.md} {
-    font-size: 1rem;
-  }
-  ${breakpoints.sm} {
-    font-size: 1rem;
-    text-align: center;
-  }
-  ${breakpoints.xs} {
-    font-size: 0.9rem;
-    text-align: center;
-  }
 `;
 
 const SpaceOverlay = styled.div`

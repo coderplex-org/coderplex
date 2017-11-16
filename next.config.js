@@ -126,7 +126,7 @@ module.exports = {
       '/': { page: '/' },
       // '/events': { page: '/events' },
       // '/learn': { page: '/learn' },
-      // '/space': { page: '/space' },
+      '/space': { page: '/space' },
     };
     /**
      * Disable for now

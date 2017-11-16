@@ -174,7 +174,7 @@ export default class FooterBar extends React.Component {
       <Footer>
         <Container>
           <Flex wrap py={[0, 3]}>
-            <Flex align="center" direction="column" justify="center" width={[1, 1, 1 / 2]} p={[2, 1]} px={[2, 3]}>
+            <Flex align="center" direction="column" justify="center" width={[1, 1, 1 / 2]} px={[2, 3]} py={[3, 0]}>
               <Title>
                 We are constanly updating our platform. If you would like to stay informed about our updates, drop your
                 email.

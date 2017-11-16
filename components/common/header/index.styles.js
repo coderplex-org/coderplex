@@ -86,14 +86,16 @@ export const NavLink = styled.li`
     transition: all 0.25s
     will-change: color, background, box-shadow;
     &:hover {
-      color: #cb18d4;
+      color: #7657fb;
+      font-weight: bold;
       @media(max-width: 885px) {
         color: #222;
       }
     }
     &.active {
       pointer-events: none;
-      color: #cb18d4;
+      color: #7657fb;
+      font-weight: bold;
     }
     &.btn {
       ${baseButton}
@@ -196,15 +198,11 @@ injectGlobal`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  .container {
-    max-width: 1024px;
-    margin: 0 auto;
-  }
   #nprogress {
     pointer-events: none;
   }
   #nprogress .bar {
-    background: #f9d1ed;
+    background: #aa97fb;
     position: fixed;
     z-index: 1031;
     top: 0;
@@ -218,7 +216,7 @@ injectGlobal`
     right: 0px;
     width: 100px;
     height: 100%;
-    box-shadow: 0 0 10px #f9d1ed, 0 0 5px #f9d1ed;
+    box-shadow: 0 0 10px #aa97fb, 0 0 5px #aa97fb;
     opacity: 1;
     transform: rotate(3deg) translate(0px, -4px);
   }
