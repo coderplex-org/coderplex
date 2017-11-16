@@ -23,6 +23,10 @@ We welcome pull requests from beginners and seasoned javaScript developers alike
 2. If you decide to fix an issue, please be sure to check the comment thread in case somebody is already working on a fix. If nobody is working on it at the moment, please leave a comment stating that you intend to work on it so other people don’t accidentally duplicate your effort.
 3. If somebody claims an issue but doesn’t follow up for more than a weeks, it’s fine to take over it but you should still leave a comment.
 
+### Branching Model
+The `master` branch of coderplex is relatively stable branch which we update for every release. We also have auto deployment in place for that particular branch i.e any changes in that branch gets reflected in [https://coderplex.org](https://coderplex.org). Before every release we throughly test develop branch and merge into master.
+![Imgur](https://i.imgur.com/KPO2dLul.png)
+Hence it is recommended for both maintainers and contributors to raise a pull request to `develop` branch.
 
 ### Proposing a Change
 1. Open a new issue if you would like report a bug or suggest improvements.
@@ -91,7 +95,7 @@ We welcome pull requests from beginners and seasoned javaScript developers alike
 6. Add and commit your code. Please give meaning full commit messages.
 7. Pull latest code from [upstream repository's ](https://help.github.com/articles/merging-an-upstream-repository-into-your-fork/)`master`, if in case anything new were merged while you were working on your fork.
 8. Push the code to your fork.
-9. Raise the pull request from your created branch to `master` branch of coderplex.
+9. Raise the pull request from your created branch to `develop` branch of coderplex. [why develop instead of master branch?]()
 10. Take some time to give a brief description of the work you have done.
 
 #### After submitting
@@ -155,3 +159,6 @@ Error: listen EADDRINUSE :::3000
 error Command failed with exit code 1.
 ```
 If you get this error while running `yarn dev` then probably another app is occupying `localhost:3000`. You may want to close that and run the command again.
+
+##### 3. Why we recommend sending new pull requests to `develop` instead of `master` branch ?
+The master branch of coderplex is relatively stable branch which we update for every release. We also have auto deployment in place for master branch i.e any changes in that branch gets reflected in `https://coderplex.org`. Every release we throughly test develop branch and merge into master. Hence it is recommended for both maintainers and contributors to raise a pull request to `develop` branch.
