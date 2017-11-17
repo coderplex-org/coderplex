@@ -15,7 +15,7 @@ const Subject = styled.a`
   transition: all 0.25s;
   cursor: pointer;
   &:hover {
-    transform: translate(0, -2px) scale(1.05);
+    border: 1px solid #000;
   }
   & .icon {
     padding: 10px 15px;
