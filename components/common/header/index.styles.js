@@ -1,7 +1,5 @@
 import styled, { injectGlobal } from 'react-emotion';
 
-import { baseButton } from '../../../utils/base.styles';
-
 export const Header = styled.header`
   padding: 2px 10px;
   width: 100%;
@@ -76,7 +74,6 @@ export const NavLink = styled.li`
     text-decoration: none;
     color: #525c65;
     font-size: 0.9rem;
-    font-weight: 400;
     line-height: 1.9rem;
     padding: 0.5rem 1rem;
     display: flex;
@@ -84,21 +81,22 @@ export const NavLink = styled.li`
     position: relative;
     text-transform: capitalize;
     transition: all 0.25s
+    letter-spacing: 1px;
     will-change: color, background, box-shadow;
     &:hover {
-      color: #7657fb;
-      font-weight: bold;
+      color: #222;
+      text-shadow:0.8px 0px 0px #222
       @media(max-width: 885px) {
         color: #222;
       }
     }
     &.active {
       pointer-events: none;
-      color: #7657fb;
-      font-weight: bold;
+      color: #222;
+      text-shadow:0.8px 0px 0px #222
     }
     &.btn {
-      ${baseButton}
+      color: #7657fb;
       @media(max-width: 885px) {
         background: transparent;
         color: #888;
