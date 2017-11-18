@@ -237,7 +237,13 @@ export default () => (
             Join our Discord Server, and say &#34;Hello, world!&#34;
           </Title>
           <Box pt={[4]} pb={[3]}>
-            <Button inverted large>
+            <Button
+              href="https://discordapp.com/invite/dVnQ2Gf"
+              rel="noopener noreferrer"
+              target="_blank"
+              inverted
+              large
+            >
               Join Discord
             </Button>
           </Box>

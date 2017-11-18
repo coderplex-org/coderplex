@@ -16,12 +16,6 @@
       {
         "inline": true
       }
-    ],
-    [
-      "lodash",
-      {
-        "id": ["lodash", "semantic-ui-react"]
-      }
     ]
   ]
 }
