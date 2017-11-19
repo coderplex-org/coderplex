@@ -1,8 +1,7 @@
 {
   "home": {
     "title": "Coderplex | Learn, Collaborate and Create with a Community",
-    "description":
-      "We're a non-profit startup on a mission to improve the state of tech across India",
+    "description": "We're a non-profit startup on a mission to improve the state of tech across India",
     "image": ""
   },
   "learn": {
@@ -20,6 +19,11 @@
   "events": {
     "title": "Online and Offline Tech Events | Coderplex",
     "description": "We host frequent online and offline events, from sessions to competitions",
+    "image": ""
+  },
+  "login": {
+    "title": "Login Or Register | Coderplex",
+    "description": "Join our community",
     "image": ""
   }
 }

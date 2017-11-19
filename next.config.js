@@ -2,6 +2,7 @@ const { ANALYZE } = process.env;
 
 // For now copy paste from utils mockdata later we will fetch these from API
 // We cannot import from utils/mockData.js because this file is not transpiled so does not support es6 modules
+
 const listOfSubjects = [
   {
     id: '2132',
@@ -99,6 +100,13 @@ module.exports = {
   webpack: (config, { dev }) => {
     /* Enable only in Production */
     if (!dev) {
+      // Preact
+      // console.log('> Using Preact instead of React');
+      // config.resolve.alias = {
+      //   react: 'preact-compat/dist/preact-compat',
+      //   'react-dom': 'preact-compat/dist/preact-compat',
+      //   'react-emotion': 'preact-emotion',
+      // };
       if (ANALYZE) {
         const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
         config.plugins.push(
@@ -106,7 +114,7 @@ module.exports = {
             analyzerMode: 'server',
             analyzerPort: 8888,
             openAnalyzer: true,
-          }),
+          })
         );
       }
     }
@@ -118,6 +126,7 @@ module.exports = {
       '/events': { page: '/events' },
       '/learn': { page: '/learn' },
       '/space': { page: '/space' },
+      '/login': { page: '/login' },
     };
     for (const subject of listOfSubjects) {
       routes[subject.url] = {
