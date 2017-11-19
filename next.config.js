@@ -126,6 +126,7 @@ module.exports = {
       '/events': { page: '/events' },
       '/learn': { page: '/learn' },
       '/space': { page: '/space' },
+      '/login': { page: '/login' },
     };
     for (const subject of listOfSubjects) {
       routes[subject.url] = {

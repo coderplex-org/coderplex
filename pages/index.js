@@ -182,7 +182,9 @@ export default () => (
               pb={[4, 4, 0]}
             >
               <Link href={'/space'}>
-                <Button medium>LEARN MORE ABOUT HACKERSPACE</Button>
+                <Button href={'/space'} medium>
+                  LEARN MORE ABOUT HACKERSPACE
+                </Button>
               </Link>
             </Box>
           </Box>
@@ -223,7 +225,9 @@ export default () => (
                 />
               </Hide>
               <Link href={'/events'}>
-                <Button medium>VIEW ALL EVENTS</Button>
+                <Button href={'/events'} medium>
+                  VIEW ALL EVENTS
+                </Button>
               </Link>
             </Box>
           </Box>

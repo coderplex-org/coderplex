@@ -101,7 +101,7 @@ class NavBar extends React.Component {
                 ))}
                 <NavLink>
                   <Link href="/login">
-                    <a className="btn">
+                    <a className={pathName === '/login' ? 'btn active' : 'btn'}>
                       <span>Login / Signup</span>
                     </a>
                   </Link>

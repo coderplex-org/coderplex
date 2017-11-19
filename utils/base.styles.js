@@ -50,6 +50,8 @@ export const Button = styled.a`
   padding: ${props => (props.large ? '0.8rem 2.25rem' : props.medium ? '0.6rem 1.2rem' : '0.2rem 1rem')};
   font-size: ${props => (props.large ? '1.8rem' : props.medium ? '1rem' : '1rem')}
   cursor: pointer;
+  user-select: none;
+  -webkit-touch-callout: none;
   &:hover {
     background: ${props => (props.inverted ? '#6f19ed' : '#eee')};
   }
