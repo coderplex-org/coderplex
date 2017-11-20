@@ -15,13 +15,14 @@ import Hide, {
 import { listOfSubjects } from '../utils/mock-data';
 import Layout from '../components/common/layout';
 import SubjectCard from '../components/learn/subject-card';
+import { heroPattern, heroBanner } from '../utils/urls';
 
 const HeroSection = styled.section`
   ${space};
   background-color: #fff;
   position: relative;
   text-align: center;
-  background-image: url('https://res.cloudinary.com/coderplex/image/upload/v1510788480/website__assets/pattern.png');
+  background-image: url(${heroPattern});
   & h1 {
     font-size: 2.5rem;
     font-weight: 300;
@@ -132,10 +133,7 @@ export default () => (
       <Container>
         <Flex justify="center" align="center" direction="column">
           <Box width={1}>
-            <img
-              src="https://res.cloudinary.com/coderplex/image/upload/c_scale,w_1024/v1510788480/website__assets/banner1280x370.png"
-              alt="words"
-            />
+            <img src={heroBanner} alt="words" />
             <h1>On a mission to improve the state of tech across India</h1>
           </Box>
         </Flex>
