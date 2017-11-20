@@ -6,6 +6,7 @@ import { space } from 'styled-system';
 import Layout from '../components/common/layout';
 import BannerSection from '../components/common/banner';
 import { Container, Title, SubTitle } from '../utils/base.styles';
+import EventCard from '../components/events/event-card';
 
 const EventsSection = styled.section`
   ${space};
@@ -26,6 +27,7 @@ export default () => (
             <SubTitle inverted color="#222">
               No events as of now, check back later
             </SubTitle>
+            <EventCard />
           </Box>
         </Flex>
         <Flex direction="column" align="center" justify="center">
