@@ -20,5 +20,6 @@ This project mainly uses
 ## Contributing
 
 We welcome pull requests from beginners and seasoned javaScript developers alike!. You can work on open issues, fix bugs
-and more. Be sure to read our Contributing guide for hassel free contribution. <br/> This project follows ✨
-[All Contributors](https://github.com/kentcdodds/all-contributors) ✨ guidlines to recognize all contributors.
+and more. Be sure to read our [contributing guide](https://github.com/coderplex/coderplex/blob/v2/CONTRIBUTING.md) for
+hassel free contribution. <br/> This project follows ✨
+[All Contributors](https://github.com/kentcdodds/all-contributors) ✨ specifications to recognize all contributors.
