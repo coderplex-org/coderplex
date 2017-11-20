@@ -14,33 +14,41 @@ const EventsSection = styled.section`
   position: relative;
 `;
 
-export default () => (
-  <Layout>
-    <BannerSection textInverted title="Online & Offline Events" subTitle="Because you cannot change the world alone" />
-    <EventsSection py={[2, 4]} px={[2, 1]}>
-      <Container>
-        <Flex pb={[2, 4]} direction="column" align="center" justify="center">
-          <Box width={[1, 0.75]}>
-            <Title inverted color="#222">
-              Upcoming Events
-            </Title>
-            <SubTitle inverted color="#222">
-              No events as of now, check back later
-            </SubTitle>
-            <EventCard />
-          </Box>
-        </Flex>
-        <Flex direction="column" align="center" justify="center">
-          <Box width={[1, 0.75]}>
-            <Title inverted color="#222">
-              Past Events
-            </Title>
-            <SubTitle inverted color="#222">
-              Loading...
-            </SubTitle>
-          </Box>
-        </Flex>
-      </Container>
-    </EventsSection>
-  </Layout>
-);
+export default class Events extends React.Component {
+  render() {
+    return (
+      <Layout>
+        <BannerSection
+          textInverted
+          title="Online & Offline Events"
+          subTitle="Because you cannot change the world alone"
+        />
+        <EventsSection py={[2, 4]} px={[2, 1]}>
+          <Container>
+            <Flex pb={[2, 4]} direction="column" align="center" justify="center">
+              <Box width={[1, 0.75]}>
+                <Title inverted color="#222">
+                  Upcoming Events
+                </Title>
+                <SubTitle inverted color="#222">
+                  No events as of now, check back later
+                </SubTitle>
+                <EventCard />
+              </Box>
+            </Flex>
+            <Flex direction="column" align="center" justify="center">
+              <Box width={[1, 0.75]}>
+                <Title inverted color="#222">
+                  Past Events
+                </Title>
+                <SubTitle inverted color="#222">
+                  Loading...
+                </SubTitle>
+              </Box>
+            </Flex>
+          </Container>
+        </EventsSection>
+      </Layout>
+    );
+  }
+}
