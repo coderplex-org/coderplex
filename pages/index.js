@@ -5,13 +5,7 @@ import { Flex, Box } from 'grid-emotion';
 import take from 'lodash.take';
 import Link from 'next/link';
 
-import Hide, {
-  Container,
-  Button,
-  Title,
-  SubTitle,
-  breakpoints,
-} from '../utils/base.styles';
+import Hide, { Container, Button, Title, SubTitle, breakpoints } from '../utils/base.styles';
 import { listOfSubjects } from '../utils/mock-data';
 import Layout from '../components/common/layout';
 import SubjectCard from '../components/learn/subject-card';
@@ -145,8 +139,7 @@ export default () => (
           <Box width={1}>
             <Title inverted>Open Source Learning Guides</Title>
             <SubTitle inverted>
-              Our guides are crowd-sourced recommendations of free online
-              resources to learn any technology
+              Our guides are crowd-sourced recommendations of free online resources to learn any technology
             </SubTitle>
           </Box>
           <Box width={1}>
@@ -169,21 +162,14 @@ export default () => (
     <SpaceSection>
       <Container>
         <Flex justify="center" wrap>
-          <Box
-            order={[2, 2, 1]}
-            className="box"
-            width={[1, 1, 1 / 2]}
-            py={[0, 2, 3]}
-            px={[2, 4, 3]}>
+          <Box order={[2, 2, 1]} className="box" width={[1, 1, 1 / 2]} py={[0, 2, 3]} px={[2, 4, 3]}>
             <Title>Offline Co-Learning Spaces</Title>
             <SubTitle small>
-              Physical spaces where you can come down to engage in self
-              learning, peer-learning and collaboration.
+              Physical spaces where you can come down to engage in self learning, peer-learning and collaboration.
             </SubTitle>
             <SubTitle small>
-              These are dynamic learning environments where everyone learns at
-              their own pace and compliments each other. We also organize weekly
-              group activities like Open Source evenings, casual hackathons etc.
+              These are dynamic learning environments where everyone learns at their own pace and compliments each
+              other. We also organize weekly group activities like Open Source evenings, casual hackathons etc.
             </SubTitle>
             <Box
               mx={['auto', 'auto', 0]}
@@ -199,13 +185,7 @@ export default () => (
               </Link>
             </Box>
           </Box>
-          <Box
-            order={1}
-            className="box"
-            width={[1, 1, 1 / 2]}
-            pt={4}
-            pb={[0, 1, 4]}
-            px={[3, 4, 3]}>
+          <Box order={1} className="box" width={[1, 1, 1 / 2]} pt={4} pb={[0, 1, 4]} px={[3, 4, 3]}>
             <img
               className="space__img"
               alt="sapce__img"
@@ -227,19 +207,12 @@ export default () => (
               />
             </Hide>
           </Box>
-          <Box
-            order={1}
-            width={[1, 1, 1 / 2]}
-            px={[2, 3]}
-            pt={[3, 4, 0]}
-            pb={[4, 4, 0]}>
+          <Box order={1} width={[1, 1, 1 / 2]} px={[2, 3]} pt={[3, 4, 0]} pb={[4, 4, 0]}>
             <Title>Online & Offline Events</Title>
             <SubTitle small>
-              We do frequent online and offline events, covering broad range of
-              topics, from Web Development to Data Science. The goal of these
-              events are to share knowledge, connect with people and enable
-              collaboration. We also partner with local comunities to help them
-              reach a wider audience.
+              We do frequent online and offline events, covering broad range of topics, from Web Development to Data
+              Science. The goal of these events are to share knowledge, connect with people and enable collaboration. We
+              also partner with local comunities to help them reach a wider audience.
             </SubTitle>
             <Box className="box" width={[1]} pt={[2]} px={[3, 0]}>
               <Hide md lg>

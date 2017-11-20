@@ -8,12 +8,7 @@ import format from 'date-fns/format';
 import Layout from '../components/common/layout';
 import BannerSection from '../components/common/banner';
 import { Container, Title, SubTitle } from '../utils/base.styles';
-import {
-  baseEventsURL,
-  futureEventsURL,
-  pastEventsURL,
-  noMeetupImageURL,
-} from '../utils/urls';
+import { baseEventsURL, futureEventsURL, pastEventsURL, noMeetupImageURL } from '../utils/urls';
 import EventCard from '../components/events/event-card';
 
 const EventsSection = styled.section`
@@ -34,17 +29,13 @@ export default class Events extends React.Component {
     try {
       let pastEvents;
       let futureEvents;
-      const pastEventsResponse = await fetch(
-        `${baseEventsURL}${pastEventsURL}`
-      );
+      const pastEventsResponse = await fetch(`${baseEventsURL}${pastEventsURL}`);
       if (pastEventsResponse.ok) {
         pastEvents = await pastEventsResponse.json();
       } else {
         throw new Error('Failed to Retrieve past events');
       }
-      const futureEventsResponse = await fetch(
-        `${baseEventsURL}${futureEventsURL}`
-      );
+      const futureEventsResponse = await fetch(`${baseEventsURL}${futureEventsURL}`);
       if (futureEventsResponse.ok) {
         futureEvents = await futureEventsResponse.json();
       } else {
@@ -114,11 +105,7 @@ export default class Events extends React.Component {
         />
         <EventsSection py={[2, 4]} px={[2, 1]}>
           <Container>
-            <Flex
-              pb={[2, 4]}
-              direction="column"
-              align="center"
-              justify="center">
+            <Flex pb={[2, 4]} direction="column" align="center" justify="center">
               <Box width={[1, 0.75]}>
                 <Title inverted color="#222">
                   Upcoming Events

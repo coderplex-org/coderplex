@@ -89,17 +89,11 @@ export default props => (
         </div>
         <div className="infotext">
           <AttendeesIcon className="icons" />
-          {props.tense === 'past'
-            ? `${props.attendees} attended`
-            : `${props.attendees} attending`}
+          {props.tense === 'past' ? `${props.attendees} attended` : `${props.attendees} attending`}
         </div>
         {props.tense === 'past' ? null : (
           <div className="infotext">
-            {props.online ? (
-              <StreamIcon className="icons" />
-            ) : (
-              <TicketIcon className="icons" />
-            )}
+            {props.online ? <StreamIcon className="icons" /> : <TicketIcon className="icons" />}
             {props.online ? 'Free session' : 'Free entry'}
           </div>
         )}
