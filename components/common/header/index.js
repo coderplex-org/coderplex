@@ -3,6 +3,7 @@ import Router, { withRouter } from 'next/router';
 import Headroom from 'react-headroom';
 import NProgress from 'nprogress';
 import Link from 'next/link';
+import { hydrate } from 'react-emotion';
 
 import MetaInfo from '../../../config/meta-info';
 import { Container } from '../../../utils/base.styles';
@@ -23,9 +24,9 @@ Router.onRouteChangeError = () => {
 
 // Adds server generated styles to emotion cache.
 // '__NEXT_DATA__.ids' is set in '_document.js'
-// if (typeof window !== 'undefined' && window.__NEXT_DATA__) {
-//   hydrate(window.__NEXT_DATA__.ids);
-// }
+if (typeof window !== 'undefined' && window.__NEXT_DATA__) {
+  hydrate(window.__NEXT_DATA__.ids);
+}
 
 class NavBar extends React.Component {
   state = {
