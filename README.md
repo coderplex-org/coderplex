@@ -10,11 +10,15 @@
 
 This project mainly uses
 
-- [Next.js](https://github.com/zeit/next.js/)
-- [emotion](https://emotion.sh) As css-in-js library
+* [ReactJS](https://reactjs.org/) - A declarative, efficient, and flexible JavaScript library for building user
+  interfaces.
+* [Next.js](https://github.com/zeit/next.js/) - A minimalistic framework for server-rendered React applications.
+* [emotion](https://emotion.sh) - A high performance, lightweight css-in-js library.
 
 ### [Join our community here](https://www.coderplex.org)
 
 ## Contributing
 
-We welcome pull requests from hackerspace members (our students) and seasoned JavaScript developers alike! Please follow [these steps](CONTRIBUTING.md) to contribute.
+We welcome pull requests from beginners and seasoned javaScript developers alike!. You can work on open issues, fix bugs
+and more. Be sure to read our Contributing guide for hassel free contribution. <br/> This project follows ✨
+[All Contributors](https://github.com/kentcdodds/all-contributors) ✨ guidlines to recognize all contributors.
