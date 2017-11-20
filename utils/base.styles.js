@@ -1,7 +1,9 @@
 import styled, { css } from 'react-emotion';
 
-const purplePrimary = '#7657fb';
-const whiteFull = '#ffffff';
+export const purplePrimary = '#7657fb';
+export const whiteFull = '#ffffff';
+export const graySecondary = '#b9b9b9';
+
 export const breakpoints = {
   xs: '@media screen and (max-width: 40em)',
   sm: '@media screen and (min-width: 40em) and (max-width: 52em)',
