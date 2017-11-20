@@ -8,7 +8,7 @@ import StreamIcon from 'react-icons/lib/md/desktop-mac';
 
 import { Button, graySecondary } from '../../utils/base.styles';
 
-const Card = styled.a`
+const Card = styled.div`
   text-decoration: none;
   width: calc(100% - 40px);
   margin: 20px;
