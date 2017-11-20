@@ -1,5 +1,10 @@
 import React from 'react';
 import styled from 'react-emotion';
+import TimeIcon from 'react-icons/lib/md/access-time';
+import LocationIcon from 'react-icons/lib/md/location-on';
+import AttendeesIcon from 'react-icons/lib/md/people';
+import TicketIcon from 'react-icons/lib/md/exit-to-app';
+import StreamIcon from 'react-icons/lib/md/desktop-mac';
 
 import { Button, graySecondary } from '../../utils/base.styles';
 
@@ -22,12 +27,18 @@ const Card = styled.a`
     grid-area: photo;
     width: 120px;
     height: auto;
+    margin-right: 10px;
   }
   & .title {
     grid-area: title;
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: 400;
+    padding-top: 10px;
   }
   & .location {
     grid-area: location;
+    padding-top: 10px;
   }
   & .info {
     grid-area: info;
@@ -42,6 +53,7 @@ const Card = styled.a`
     order: 0;
     flex: 0 1 auto;
     align-self: auto;
+    margin-right: 1rem;
   }
   & .rsvp {
     order: 0;
@@ -50,21 +62,39 @@ const Card = styled.a`
     align-self: auto;
     text-align: right;
     }
+  & .icons{
+    font-size: 1.1rem;
+    margin-right: 0.25rem;
+  }
 }
 `;
 
-export default () => (
+export default props => (
   <div>
     <Card>
-      <img className="photo" src="http://via.placeholder.com/100x100" />
-      <div className="title">A huge Meetup</div>
-      <div className="location">Location</div>
+      <img className="photo" src={props.image} />
+      <div className="title">{props.title}</div>
+      <div className="location">
+        <LocationIcon className="icons" />
+        {props.location}
+      </div>
       <div className="info">
-        <div className="infotext">Time</div>
-        <div className="infotext">Time</div>
-        <div className="infotext">Time</div>
+        <div className="infotext">
+          <TimeIcon className="icons" />
+          {props.time}
+        </div>
+        <div className="infotext">
+          <AttendeesIcon className="icons" />
+          {props.attendees}
+        </div>
+        <div className="infotext">
+          {props.online ? <StreamIcon className="icons" /> : <TicketIcon className="icons" />}
+          {props.online ? 'Online' : 'Free entry'}
+        </div>
         <div className="rsvp">
-          <Button ghost>RSVP</Button>
+          <Button href={props.link} ghost>
+            {props.isPast ? 'View' : 'RSVP'}
+          </Button>
         </div>
       </div>
     </Card>
