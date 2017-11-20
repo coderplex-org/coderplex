@@ -179,8 +179,7 @@ export default () => (
               className="box"
               width={[1]}
               pt={[2, 3]}
-              pb={[4, 4, 0]}
-            >
+              pb={[4, 4, 0]}>
               <Link href={'/space'}>
                 <Button href={'/space'} medium>
                   LEARN MORE ABOUT HACKERSPACE
@@ -246,8 +245,7 @@ export default () => (
               rel="noopener noreferrer"
               target="_blank"
               inverted
-              large
-            >
+              large>
               Join Discord
             </Button>
           </Box>
