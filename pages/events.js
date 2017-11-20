@@ -3,11 +3,17 @@ import fetch from 'isomorphic-unfetch';
 import { Flex, Box } from 'grid-emotion';
 import styled from 'react-emotion';
 import { space } from 'styled-system';
+import format from 'date-fns/format';
 
 import Layout from '../components/common/layout';
 import BannerSection from '../components/common/banner';
 import { Container, Title, SubTitle } from '../utils/base.styles';
-import { baseEventsURL, futureEventsURL, pastEventsURL } from '../utils/urls';
+import {
+  baseEventsURL,
+  futureEventsURL,
+  pastEventsURL,
+  noMeetupImageURL,
+} from '../utils/urls';
 import EventCard from '../components/events/event-card';
 
 const EventsSection = styled.section`
@@ -33,7 +39,6 @@ export default class Events extends React.Component {
       );
       if (pastEventsResponse.ok) {
         pastEvents = await pastEventsResponse.json();
-        console.log(pastEvents);
       } else {
         throw new Error('Failed to Retrieve past events');
       }
@@ -42,7 +47,6 @@ export default class Events extends React.Component {
       );
       if (futureEventsResponse.ok) {
         futureEvents = await futureEventsResponse.json();
-        console.log(futureEvents);
       } else {
         throw new Error('Failed to retieve future events');
       }
@@ -86,13 +90,13 @@ export default class Events extends React.Component {
           return (
             <EventCard
               key={event.id}
-              image={imageSrc ? imageSrc[1] : ''}
-              location={event.venue ? event.venue.name : 'Online'}
-              link={event.link}
+              image={imageSrc ? imageSrc[1] : noMeetupImageURL}
               name={event.name}
-              tense={event.status}
+              location={event.venue ? event.venue.name : 'Online'}
+              time={format(event.time, "h:mm A, ddd MMM Do 'YY")}
               attendees={event.yes_rsvp_count}
-              time={event.time}
+              tense={event.status}
+              link={event.link}
             />
           );
         })}

@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "xo && jest",
-    "lint":
-      "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write && xo",
+    "lint": "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write && xo",
     "precommit": "lint-staged",
     "analyze": "cross-env ANALYZE=1 next build",
     "dev": "cross-env NODE_ENV=development node server.js",
@@ -16,19 +15,32 @@
   },
   "xo": {
     "parser": "babel-eslint",
-    "extends": ["prettier", "prettier/react", "plugin:react/recommended"],
-    "env": ["browser", "node"],
+    "extends": [
+      "prettier",
+      "prettier/react",
+      "plugin:react/recommended"
+    ],
+    "env": [
+      "browser",
+      "node"
+    ],
     "rules": {
       "linebreak-style": 0,
       "react/display-name": 0,
       "react/prop-types": 0
     },
     "space:": 2,
-    "ignores": ["next.config.js"],
+    "ignores": [
+      "next.config.js"
+    ],
     "overrides": [
       {
         "files": "**/__tests__/*.test.js",
-        "globals": ["describe", "it", "expect"]
+        "globals": [
+          "describe",
+          "it",
+          "expect"
+        ]
       }
     ]
   },
@@ -42,7 +54,7 @@
   },
   "dependencies": {
     "babel-plugin-emotion": "^8.0.10",
-    "date-fns": "1.29.0",
+    "date-fns": "^1.29.0",
     "emotion": "^8.0.10",
     "emotion-server": "^8.0.10",
     "grid-emotion": "^2.1.0",

@@ -15,7 +15,7 @@ const Card = styled.div`
   margin-top: 20px;
   padding-right: 10px;
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 2.5fr;
   grid-template-rows: 1.2fr 1fr 1fr;
   grid-template-areas:
     'photo title'
@@ -26,11 +26,12 @@ const Card = styled.div`
   transition: all 0.25s;
   & .photo {
     grid-area: photo;
-    width: 120px;
-    height: auto;
-    margin-right: 10px;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
   }
   & .title {
+    margin-left: 10px;
     grid-area: title;
     font-size: 1.5rem;
     color: #000;
@@ -38,10 +39,12 @@ const Card = styled.div`
     padding-top: 10px;
   }
   & .location {
+    margin-left: 10px;
     grid-area: location;
     padding-top: 10px;
   }
   & .info {
+    margin-left: 10px;
     grid-area: info;
     display: flex;
     flex-direction: row;
