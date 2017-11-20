@@ -151,11 +151,14 @@ export default class FooterBar extends React.Component {
 
   async postSubscriberEmail(subscribersEmail) {
     await this.setState({ submittingEmail: true });
-    const postSubscriberEmailRequest = await fetch(`${baseEventsURL}${subscribeURL}`, {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: subscribersEmail }),
-    });
+    const postSubscriberEmailRequest = await fetch(
+      `${baseEventsURL}${subscribeURL}`,
+      {
+        method: 'post',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: subscribersEmail }),
+      }
+    );
     if (postSubscriberEmailRequest.status === 200) {
       this.setState({
         subscriberEmailPosted: true,
@@ -174,8 +177,17 @@ export default class FooterBar extends React.Component {
       <Footer>
         <Container>
           <Flex wrap py={[0, 3]}>
-            <Flex align="center" direction="column" justify="center" width={[1, 1, 1 / 2]} px={[2, 3]} py={[3, 0]}>
-              <Title>We are constantly updating our platform. Do subscribe to stay informed.</Title>
+            <Flex
+              align="center"
+              direction="column"
+              justify="center"
+              width={[1, 1, 1 / 2]}
+              px={[2, 3]}
+              py={[3, 0]}>
+              <Title>
+                We are constantly updating our platform. Do subscribe to stay
+                informed.
+              </Title>
               {this.state.subscriberEmailPosted ? (
                 <h3>Thank you, we will keep you posted</h3>
               ) : (
@@ -187,15 +199,22 @@ export default class FooterBar extends React.Component {
                     placeholder="Enter your email..."
                   />
                   <button type="submit" disabled={this.state.submittingEmail}>
-                    {this.state.submittingEmail ? 'Subscribing...' : 'Subscribe'}
+                    {this.state.submittingEmail
+                      ? 'Subscribing...'
+                      : 'Subscribe'}
                   </button>
                 </Form>
               )}
-              <Message className={this.state.emailSubmittingError ? 'error' : ''}>
+              <Message
+                className={this.state.emailSubmittingError ? 'error' : ''}>
                 <p>{this.state.emailSubmittingError}</p>
               </Message>
             </Flex>
-            <Flex className="follow" align="center" justify="center" width={[1, 1, 1 / 2]}>
+            <Flex
+              className="follow"
+              align="center"
+              justify="center"
+              width={[1, 1, 1 / 2]}>
               <Box p={[1, 2]}>
                 <Title>Follow Us</Title>
                 <SocialLinks>

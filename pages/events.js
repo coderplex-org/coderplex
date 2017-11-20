@@ -1,4 +1,5 @@
 import React from 'react';
+import fetch from 'isomorphic-unfetch';
 import { Flex, Box } from 'grid-emotion';
 import styled from 'react-emotion';
 import { space } from 'styled-system';
@@ -6,6 +7,7 @@ import { space } from 'styled-system';
 import Layout from '../components/common/layout';
 import BannerSection from '../components/common/banner';
 import { Container, Title, SubTitle } from '../utils/base.styles';
+import { baseEventsURL, futureEventsURL, pastEventsURL } from '../utils/urls';
 import EventCard from '../components/events/event-card';
 
 const EventsSection = styled.section`
@@ -15,6 +17,89 @@ const EventsSection = styled.section`
 `;
 
 export default class Events extends React.Component {
+  state = {
+    pastEvents: [],
+    futureEvents: [],
+    fetchError: null,
+    loading: true,
+  };
+
+  async componentDidMount() {
+    try {
+      let pastEvents;
+      let futureEvents;
+      const pastEventsResponse = await fetch(
+        `${baseEventsURL}${pastEventsURL}`
+      );
+      if (pastEventsResponse.ok) {
+        pastEvents = await pastEventsResponse.json();
+        console.log(pastEvents);
+      } else {
+        throw new Error('Failed to Retrieve past events');
+      }
+      const futureEventsResponse = await fetch(
+        `${baseEventsURL}${futureEventsURL}`
+      );
+      if (futureEventsResponse.ok) {
+        futureEvents = await futureEventsResponse.json();
+        console.log(futureEvents);
+      } else {
+        throw new Error('Failed to retieve future events');
+      }
+      await this.setState({
+        pastEvents,
+        futureEvents,
+        fetchError: null,
+        loading: false,
+      });
+    } catch (err) {
+      console.log(err);
+      await this.setState({
+        pastEvents: null,
+        futureEvents: null,
+        fetchError: err.message,
+        loading: false,
+      });
+    }
+  }
+
+  renderEvents(events) {
+    if (this.state.loading) {
+      return (
+        <SubTitle inverted color="#222">
+          Loading..
+        </SubTitle>
+      );
+    }
+    if (events.length === 0) {
+      return (
+        <SubTitle inverted color="#222">
+          No upcoming events yet, check back later
+        </SubTitle>
+      );
+    }
+    return (
+      <div>
+        {events.map(event => {
+          const regexForImageSrc = /<img.*?src="([^">]*\/([^">]*?))".*?>/g;
+          const imageSrc = regexForImageSrc.exec(event.description);
+          return (
+            <EventCard
+              key={event.id}
+              image={imageSrc ? imageSrc[1] : ''}
+              location={event.venue ? event.venue.name : 'Online'}
+              link={event.link}
+              name={event.name}
+              tense={event.status}
+              attendees={event.yes_rsvp_count}
+              time={event.time}
+            />
+          );
+        })}
+      </div>
+    );
+  }
+
   render() {
     return (
       <Layout>
@@ -25,25 +110,24 @@ export default class Events extends React.Component {
         />
         <EventsSection py={[2, 4]} px={[2, 1]}>
           <Container>
-            <Flex pb={[2, 4]} direction="column" align="center" justify="center">
+            <Flex
+              pb={[2, 4]}
+              direction="column"
+              align="center"
+              justify="center">
               <Box width={[1, 0.75]}>
                 <Title inverted color="#222">
                   Upcoming Events
                 </Title>
-                <SubTitle inverted color="#222">
-                  No events as of now, check back later
-                </SubTitle>
-                <EventCard />
+                {this.renderEvents(this.state.futureEvents)}
               </Box>
             </Flex>
             <Flex direction="column" align="center" justify="center">
               <Box width={[1, 0.75]}>
                 <Title inverted color="#222">
-                  Past Events
+                  Recent Events
                 </Title>
-                <SubTitle inverted color="#222">
-                  Loading...
-                </SubTitle>
+                {this.renderEvents(this.state.pastEvents)}
               </Box>
             </Flex>
           </Container>

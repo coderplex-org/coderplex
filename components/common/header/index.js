@@ -7,7 +7,14 @@ import Link from 'next/link';
 import MetaInfo from '../../../config/meta-info';
 import { Container } from '../../../utils/base.styles';
 import Meta from '../meta';
-import { Header, Nav, NavLinks, NavLink, NavLogo, MobileMenuBtn } from './index.styles';
+import {
+  Header,
+  Nav,
+  NavLinks,
+  NavLink,
+  NavLogo,
+  MobileMenuBtn,
+} from './index.styles';
 
 Router.onRouteChangeStart = () => {
   NProgress.start();
@@ -61,7 +68,8 @@ class NavBar extends React.Component {
   };
   render() {
     const pathName = this.props.router.pathname;
-    const metaData = MetaInfo[pathName === '/' ? 'home' : pathName.split('/')[1]];
+    const metaData =
+      MetaInfo[pathName === '/' ? 'home' : pathName.split('/')[1]];
     const title = metaData.title;
     const description = metaData.description;
     const image = metaData.image;
@@ -71,7 +79,9 @@ class NavBar extends React.Component {
           <Meta title={title} description={description} image={image} />
           <Container>
             <Nav>
-              <MobileMenuBtn onClick={this.toggleMenu} className={this.state.menuOpen ? 'open' : ''}>
+              <MobileMenuBtn
+                onClick={this.toggleMenu}
+                className={this.state.menuOpen ? 'open' : ''}>
                 <span>Menu</span>
               </MobileMenuBtn>
               <NavLogo>
@@ -83,18 +93,23 @@ class NavBar extends React.Component {
                 </Link>
               </NavLogo>
               <NavLinks className={this.state.menuOpen ? 'open' : ''}>
-                {this.state.navItems.filter(item => !item.external).map(item => (
-                  <NavLink key={item.path}>
-                    <Link href={item.path}>
-                      <a className={pathName === item.path ? 'active' : ''}>
-                        <span>{item.title}</span>
-                      </a>
-                    </Link>
-                  </NavLink>
-                ))}
+                {this.state.navItems
+                  .filter(item => !item.external)
+                  .map(item => (
+                    <NavLink key={item.path}>
+                      <Link href={item.path}>
+                        <a className={pathName === item.path ? 'active' : ''}>
+                          <span>{item.title}</span>
+                        </a>
+                      </Link>
+                    </NavLink>
+                  ))}
                 {this.state.navItems.filter(item => item.external).map(item => (
                   <NavLink key={item.path}>
-                    <a href={item.path} rel="noopener noreferrer" className={pathName === item.path ? 'active' : ''}>
+                    <a
+                      href={item.path}
+                      rel="noopener noreferrer"
+                      className={pathName === item.path ? 'active' : ''}>
                       <span>{item.title}</span>
                     </a>
                   </NavLink>

@@ -49,25 +49,34 @@ export const baseButton = css`
 
 export const Button = styled.a`
   ${baseButton};
-  background: ${props => (props.inverted ? '#7657fb' : props.ghost ? '#fff' : '#fff')}
-  color: ${props => (props.inverted ? '#fff' : props.ghost ? purplePrimary : '#222')}
-  padding: ${props => (props.large ? '0.8rem 2.25rem' : props.medium ? '0.6rem 1.2rem' : '0.2rem 1rem')};
-  font-size: ${props => (props.large ? '1.8rem' : props.medium ? '1rem' : '1rem')}
+  background: ${props =>
+    props.inverted ? '#7657fb' : props.ghost ? '#fff' : '#fff'}
+  color: ${props =>
+    props.inverted ? '#fff' : props.ghost ? purplePrimary : '#222'}
+  padding: ${props =>
+    props.large
+      ? '0.8rem 2.25rem'
+      : props.medium ? '0.6rem 1.2rem' : '0.2rem 1rem'};
+  font-size: ${props =>
+    props.large ? '1.8rem' : props.medium ? '1rem' : '1rem'}
   outline:${props => (props.ghost ? `3px solid ${purplePrimary}` : 'none')}
   outline-offset:${props => (props.ghost ? '-3px' : '0px')}
   cursor: pointer;
   user-select: none;
   -webkit-touch-callout: none;
   &:hover {
-    background: ${props => (props.inverted ? '#6f19ed' : props.ghost ? purplePrimary : '#eee')};
-    color: ${props => (props.inverted ? '#fff' : props.ghost ? whiteFull : '#222')}
+    background: ${props =>
+      props.inverted ? '#6f19ed' : props.ghost ? purplePrimary : '#eee'};
+    color: ${props =>
+      props.inverted ? '#fff' : props.ghost ? whiteFull : '#222'}
   }
 `;
 
 export const Title = styled.h2`
   font-size: 2rem;
   font-weight: 400;
-  color: ${props => (props.inverted ? (props.color ? props.color : '#7657fb') : '#fff')};
+  color: ${props =>
+    props.inverted ? (props.color ? props.color : '#7657fb') : '#fff'};
   ${breakpoints.md} {
     font-size: 1.8rem;
   }

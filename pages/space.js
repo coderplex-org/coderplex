@@ -72,7 +72,8 @@ const forWhomPoints = [
 const activities = [
   {
     day: 'Daily',
-    task: 'You will engage in daily code review and pair programming exercises with other members.',
+    task:
+      'You will engage in daily code review and pair programming exercises with other members.',
   },
   {
     day: 'Wednesday',
@@ -86,15 +87,18 @@ const activities = [
   },
   {
     day: 'Friday',
-    task: 'We will have casual hackathons, where everyone will participate to build a project, big or small.',
+    task:
+      'We will have casual hackathons, where everyone will participate to build a project, big or small.',
   },
   {
     day: 'Saturday',
-    task: 'In the evening, we will screen a tech-related documentary, movie or TV show.',
+    task:
+      'In the evening, we will screen a tech-related documentary, movie or TV show.',
   },
   {
     day: 'Sunday',
-    task: 'Members will present their work i.e. projects or new topics they have made or learned in the past week',
+    task:
+      'Members will present their work i.e. projects or new topics they have made or learned in the past week',
   },
 ];
 
@@ -119,12 +123,16 @@ export default () => (
           Activites and Schedule
         </Title>
         <SubTitle inverted>
-          We will help you pick a technology and provide you with learning guides to learn and build something on a
-          daily basis.
+          We will help you pick a technology and provide you with learning
+          guides to learn and build something on a daily basis.
         </SubTitle>
         <ActivityTimeline>
           {activities.map(activity => (
-            <ActiviteEvent key={activity.day} title={activity.day} icon={<FaCalender />} iconColor="#222">
+            <ActiviteEvent
+              key={activity.day}
+              title={activity.day}
+              icon={<FaCalender />}
+              iconColor="#222">
               {activity.task}
             </ActiviteEvent>
           ))}
@@ -137,7 +145,8 @@ export default () => (
           Pricing
         </Title>
         <SubTitle inverted>
-          INR 1000/- per month. For membership mail us at <a href="mailto:space@codeplex.org">space@coderplex.org</a>
+          INR 1000/- per month. For membership mail us at{' '}
+          <a href="mailto:space@codeplex.org">space@coderplex.org</a>
         </SubTitle>
       </Container>
     </PricingSection>

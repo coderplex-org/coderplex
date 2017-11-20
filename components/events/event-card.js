@@ -10,8 +10,9 @@ import { Button, graySecondary } from '../../utils/base.styles';
 
 const Card = styled.div`
   text-decoration: none;
-  width: calc(100% - 40px);
-  margin: 20px;
+  width: 100%;
+  min-height: 150px;
+  margin-top: 20px;
   padding-right: 10px;
   display: grid;
   grid-template-columns: 1fr 4fr;
@@ -73,7 +74,7 @@ export default props => (
   <div>
     <Card>
       <img className="photo" src={props.image} />
-      <div className="title">{props.title}</div>
+      <div className="title">{props.name}</div>
       <div className="location">
         <LocationIcon className="icons" />
         {props.location}
@@ -85,15 +86,23 @@ export default props => (
         </div>
         <div className="infotext">
           <AttendeesIcon className="icons" />
-          {props.attendees}
+          {props.tense === 'past'
+            ? `${props.attendees} attended`
+            : `${props.attendees} attending`}
         </div>
-        <div className="infotext">
-          {props.online ? <StreamIcon className="icons" /> : <TicketIcon className="icons" />}
-          {props.online ? 'Online' : 'Free entry'}
-        </div>
+        {props.tense === 'past' ? null : (
+          <div className="infotext">
+            {props.online ? (
+              <StreamIcon className="icons" />
+            ) : (
+              <TicketIcon className="icons" />
+            )}
+            {props.online ? 'Free session' : 'Free entry'}
+          </div>
+        )}
         <div className="rsvp">
           <Button href={props.link} ghost>
-            {props.isPast ? 'View' : 'RSVP'}
+            {props.tense === 'past' ? 'View' : 'RSVP'}
           </Button>
         </div>
       </div>
