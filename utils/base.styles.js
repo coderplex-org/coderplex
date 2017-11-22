@@ -1,6 +1,7 @@
 import styled, { css } from 'react-emotion';
 
 export const purplePrimary = '#7657fb';
+export const purpleSecondary = '#6f19ed';
 export const whiteFull = '#ffffff';
 export const graySecondary = '#b9b9b9';
 
@@ -50,16 +51,16 @@ export const baseButton = css`
 export const Button = styled.a`
   ${baseButton};
   background: ${props => (props.inverted ? '#7657fb' : props.ghost ? '#fff' : '#fff')}
-  color: ${props => (props.inverted ? '#fff' : props.ghost ? purplePrimary : '#222')}
+  color: ${props => (props.inverted ? '#fff' : props.ghost ? purpleSecondary : '#222')}
   padding: ${props => (props.large ? '0.8rem 2.25rem' : props.medium ? '0.6rem 1.2rem' : '0.2rem 1rem')};
-  font-size: ${props => (props.large ? '1.8rem' : props.medium ? '1rem' : '1rem')}
-  outline:${props => (props.ghost ? `3px solid ${purplePrimary}` : 'none')}
-  outline-offset:${props => (props.ghost ? '-3px' : '0px')}
+  font-size: ${props => (props.large ? '1.8rem' : props.medium ? '1rem' : '0.8rem')}
+  outline:${props => (props.ghost ? `1px solid ${purpleSecondary}` : 'none')}
+  outline-offset:${props => (props.ghost ? '-1px' : '0px')}
   cursor: pointer;
   user-select: none;
   -webkit-touch-callout: none;
   &:hover {
-    background: ${props => (props.inverted ? '#6f19ed' : props.ghost ? purplePrimary : '#eee')};
+    background: ${props => (props.inverted ? purpleSecondary : props.ghost ? purpleSecondary : '#eee')};
     color: ${props => (props.inverted ? '#fff' : props.ghost ? whiteFull : '#222')}
   }
 `;

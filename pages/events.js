@@ -3,7 +3,6 @@ import fetch from 'isomorphic-unfetch';
 import { Flex, Box } from 'grid-emotion';
 import styled from 'react-emotion';
 import { space } from 'styled-system';
-import format from 'date-fns/format';
 
 import Layout from '../components/common/layout';
 import BannerSection from '../components/common/banner';
@@ -65,11 +64,16 @@ export default class Events extends React.Component {
           Loading..
         </SubTitle>
       );
-    }
-    if (events.length === 0) {
+    } else if (events.length === 0) {
       return (
         <SubTitle inverted color="#222">
           No upcoming events yet, check back later
+        </SubTitle>
+      );
+    } else if (events === null) {
+      return (
+        <SubTitle inverted color="#222">
+          Oops! somethings went wrong while fetching the events
         </SubTitle>
       );
     }
@@ -84,7 +88,7 @@ export default class Events extends React.Component {
               image={imageSrc ? imageSrc[1] : noMeetupImageURL}
               name={event.name}
               location={event.venue ? event.venue.name : 'Online'}
-              time={format(event.time, "h:mm A, ddd MMM Do 'YY")}
+              time={event.time}
               attendees={event.yes_rsvp_count}
               tense={event.status}
               link={event.link}
