@@ -3,6 +3,7 @@ import styled, { css } from 'react-emotion';
 export const purplePrimary = '#7657fb';
 export const purpleSecondary = '#6f19ed';
 export const whiteFull = '#ffffff';
+export const blackPure = '#000000';
 export const graySecondary = '#b9b9b9';
 
 export const breakpoints = {

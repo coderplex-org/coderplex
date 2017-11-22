@@ -8,7 +8,7 @@ export const indexPageEventURL = '/events';
 
 export const subscribeURL = '/subscribe';
 
-export const imagePlaceholder =
+export const imagePlaceholderURL =
   'http://res.cloudinary.com/coderplex/image/upload/c_scale,h_400,w_600/v1511345686/website__assets/placeholder.png';
 
 export const heroPatternURL =

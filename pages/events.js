@@ -7,7 +7,7 @@ import { space } from 'styled-system';
 import Layout from '../components/common/layout';
 import BannerSection from '../components/common/banner';
 import { Container, Title, SubTitle } from '../utils/base.styles';
-import { baseEventsURL, futureEventsURL, pastEventsURL, noMeetupImageURL } from '../utils/urls';
+import { baseEventsURL, futureEventsURL, pastEventsURL, imagePlaceholderURL } from '../utils/urls';
 import EventCard from '../components/events/event-card';
 
 const EventsSection = styled.section`
@@ -85,7 +85,7 @@ export default class Events extends React.Component {
           return (
             <EventCard
               key={event.id}
-              image={imageSrc ? imageSrc[1] : noMeetupImageURL}
+              image={imageSrc ? imageSrc[1] : imagePlaceholderURL}
               name={event.name}
               location={event.venue ? event.venue.name : 'Online'}
               time={event.time}
