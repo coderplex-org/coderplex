@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'react-emotion';
-import { space } from 'styled-system';
+import { space, fontSize } from 'styled-system';
 import { Flex, Box } from 'grid-emotion';
 import TimeIcon from 'react-icons/lib/md/access-time';
 import format from 'date-fns/format';
@@ -10,28 +10,30 @@ import TicketIcon from 'react-icons/lib/md/exit-to-app';
 import StreamIcon from 'react-icons/lib/md/desktop-mac';
 
 import { breakpoints, Button, graySecondary } from '../../utils/base.styles';
+import truncateString from '../../utils';
 
-const Card = styled.div`
+const Card = styled(Flex)`
   ${space};
   background: #fff;
   border: 1px solid ${graySecondary};
+  min-height: 120px;
   & .eventPhoto {
+    height: 120px;
     width: 100%;
-    height: 150px;
-    vertical-align: middle;
-    object-fit: cover;
-  }
-  & .title {
-    font-size: 1rem;
-    font-weight: 350;
-    color: #000;
-    border-bottom: 1px solid ${graySecondary};
+    ${breakpoints.sm} {
+      object-fit: cover;
+      height: 200px;
+    }
     ${breakpoints.xs} {
-      font-size: 0.9rem;
+      height: 200px;
+      object-fit: cover;
     }
   }
+  & .eventDetails {
+    min-height: 120px;
+  }
   & .secondaryText {
-    font-size: 0.8rem;
+    ${fontSize};
     color: #36434d;
   }
   & .icons {
@@ -41,53 +43,79 @@ const Card = styled.div`
   }
   & .rsvp {
     text-align: right;
+    ${breakpoints.sm} {
+      text-align: left;
+      & > * {
+        width: 100%;
+        display: block;
+        text-align: center;
+        margin: 0;
+      }
+    }
+    ${breakpoints.xs} {
+      text-align: left;
+      & > * {
+        width: 100%;
+        display: block;
+        text-align: center;
+        margin: 0;
+      }
+    }
   }
 `;
 
+const CardTitle = styled.h3`
+  ${space};
+  font-weight: 650;
+  border-bottom: 1px solid ${graySecondary};
+`;
+
 export default props => (
-  <Card m={2}>
-    <Flex wrap>
-      <Box width={[1, 1 / 3, 1 / 4, 1 / 4]}>
-        <img className="eventPhoto" src={props.image} />
-      </Box>
-      <Box width={[1, 2 / 3, 3 / 4, 3 / 4]} pb={1} pt={1}>
-        <Flex column justify={'space-between'} align={'stretch'}>
-          <Box className="title" pr={1} pl={1}>
-            {props.name}
-          </Box>
-          <Box className="secondaryText" pr={1} pl={1}>
-            <LocationIcon className="icons" />
-            <span>{props.location}</span>
-          </Box>
-          <Box pr={1} pl={1}>
-            <Flex wrap>
-              <Box className="secondaryText" pr={1}>
-                <TimeIcon className="icons" />
+  <Card my={[3]} wrap>
+    <Flex align="streach" width={[1, 1, 1 / 4]}>
+      <img
+        className="eventPhoto"
+        src={`https://res.cloudinary.com/coderplex/image/fetch/w_200,h_150/${props.image}`}
+        srcSet={`https://res.cloudinary.com/coderplex/image/fetch/w_300,h_200/${
+          props.image
+        } 720w, https://res.cloudinary.com/coderplex/image/fetch/w_200,h_150/${props.image} 1024w`}
+      />
+    </Flex>
+    <Box className="eventDetails" width={[1, 1, 3 / 4]}>
+      <Flex className="eventDetails" column justify="space-between">
+        <CardTitle inverted color="#222" px={[2]} py={[1]} m={0}>
+          {truncateString(props.name, 64)}
+        </CardTitle>
+        <Box fontSize={[12, 14, 16]} className="secondaryText" px={[2]} my={[1, 1, 0]}>
+          <LocationIcon className="icons" />
+          <span>{props.location}</span>
+        </Box>
+        <Box px={2} pb={[2, 1]}>
+          <Flex wrap>
+            <Box fontSize={[12, 14, 16]} width={[1, 1, 0.33]} className="secondaryText" pr={1} mr={[0]} my={[1, 1, 0]}>
+              <TimeIcon className="icons" />
+              <span>
                 {props.tense === 'past'
                   ? format(props.time, "ddd MMM Do 'YY")
                   : format(props.time, "h:mm A, ddd MMM Do 'YY")}
-              </Box>
-              <Box className="secondaryText" pr={1}>
-                <AttendeesIcon className="icons" />
-                {props.tense === 'past' ? `${props.attendees} attended` : `${props.attendees} attending`}
-              </Box>
-              <Box className="secondaryText" pr={1}>
-                {props.tense === 'past' ? null : (
-                  <div>
-                    {props.online ? <StreamIcon className="icons" /> : <TicketIcon className="icons" />}
-                    {props.online ? 'Free session' : 'Free entry'}
-                  </div>
-                )}
-              </Box>
-              <Box flex="1 1 auto" className="rsvp">
-                <Button href={props.link} ghost>
-                  {props.tense === 'past' ? 'View' : 'RSVP'}
-                </Button>
-              </Box>
-            </Flex>
-          </Box>
-        </Flex>
-      </Box>
-    </Flex>
+              </span>
+            </Box>
+            <Box fontSize={[12, 14, 16]} width={[1, 1, 0.25]} className="secondaryText" pr={1} mx={[0]} my={[1, 1, 0]}>
+              <AttendeesIcon className="icons" />
+              <span>{props.tense === 'past' ? `${props.attendees} attended` : `${props.attendees} attending`}</span>
+            </Box>
+            <Box fontSize={[12, 14, 16]} width={[1, 1, 0.25]} className="secondaryText" pr={1} mx={[0]} my={[1, 1, 0]}>
+              {props.online ? <StreamIcon className="icons" /> : <TicketIcon className="icons" />}
+              <span>{props.online ? 'Free session' : 'Free entry'}</span>
+            </Box>
+            <Box fontSize={[12, 14, 16]} width={[1, 1, 0.17]} mt={[1, 1, 0]} className="rsvp">
+              <Button href={props.link} ghost small>
+                {props.tense === 'past' ? 'View' : 'RSVP'}
+              </Button>
+            </Box>
+          </Flex>
+        </Box>
+      </Flex>
+    </Box>
   </Card>
 );
