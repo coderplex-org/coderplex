@@ -6,7 +6,7 @@ import { space } from 'styled-system';
 
 import Layout from '../components/common/layout';
 import BannerSection from '../components/common/banner';
-import { Container, Title, SubTitle } from '../utils/base.styles';
+import { Container, Title, SubTitle, Button } from '../utils/base.styles';
 import { baseEventsURL, futureEventsURL, pastEventsURL, imagePlaceholderURL } from '../utils/urls';
 import EventCard from '../components/events/event-card';
 
@@ -14,12 +14,17 @@ const EventsSection = styled.section`
   ${space};
   background: #fff;
   position: relative;
+  & .loadmore_div {
+    text-align: center;
+  }
 `;
 
 export default class Events extends React.Component {
   state = {
     pastEvents: [],
+    pastEventsLoadLimit: 2,
     futureEvents: [],
+    futureEventsLoadLimit: 2,
     fetchError: null,
     loading: true,
   };
@@ -57,7 +62,7 @@ export default class Events extends React.Component {
     }
   }
 
-  renderEvents(events) {
+  renderEvents(events, loadLimit) {
     if (this.state.loading) {
       return (
         <SubTitle inverted color="#222">
@@ -79,7 +84,7 @@ export default class Events extends React.Component {
     }
     return (
       <div>
-        {events.map(event => {
+        {events.slice(0, loadLimit).map(event => {
           const regexForImageSrc = /<img.*?src="([^">]*\/([^">]*?))".*?>/g;
           const imageSrc = regexForImageSrc.exec(event.description);
           return (
@@ -100,6 +105,22 @@ export default class Events extends React.Component {
     );
   }
 
+  renderLoadMoreButton(eventsTotalLength, loadLimit, isPastEvent) {
+    return loadLimit >= eventsTotalLength ? null : (
+      <div className="loadmore_div">
+        <Button inverted medium onClick={event => this.loadMore(event, isPastEvent)}>
+          Load more
+        </Button>
+      </div>
+    );
+  }
+
+  loadMore(isPastEvent) {
+    return isPastEvent
+      ? this.setState({ pastEventsLoadLimit: this.state.pastEventsLoadLimit + 5 })
+      : this.setState({ futureEventsLoadLimit: this.state.futureEventsLoadLimit + 5 });
+  }
+
   render() {
     return (
       <Layout>
@@ -115,7 +136,8 @@ export default class Events extends React.Component {
                 <Title inverted color="#222">
                   Upcoming Events
                 </Title>
-                {this.renderEvents(this.state.futureEvents)}
+                {this.renderEvents(this.state.futureEvents, this.state.futureEventsLoadLimit)}
+                {this.renderLoadMoreButton(this.state.futureEvents.length, this.state.futureEventsLoadLimit, false)}
               </Box>
             </Flex>
             <Flex direction="column" align="center" justify="center">
@@ -123,7 +145,8 @@ export default class Events extends React.Component {
                 <Title inverted color="#222">
                   Recent Events
                 </Title>
-                {this.renderEvents(this.state.pastEvents)}
+                {this.renderEvents(this.state.pastEvents, this.state.pastEventsLoadLimit)}
+                {this.renderLoadMoreButton(this.state.pastEvents.length, this.state.pastEventsLoadLimit, true)}
               </Box>
             </Flex>
           </Container>
