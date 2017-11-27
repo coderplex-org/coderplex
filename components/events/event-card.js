@@ -88,23 +88,23 @@ export default props => (
         </CardTitle>
         <Box fontSize={[12, 14, 16]} className="secondaryText" px={[2]} my={[1, 1, 0]}>
           <LocationIcon className="icons" />
-          <span>{props.location}</span>
+          <span>{truncateString(props.location, 55)}</span>
         </Box>
         <Box px={2} pb={[2, 1]}>
           <Flex wrap>
-            <Box fontSize={[12, 14, 16]} width={[1, 1, 0.33]} className="secondaryText" pr={1} mr={[0]} my={[1, 1, 0]}>
+            <Box fontSize={[12, 14, 16]} width={[1, 1, 0.38]} className="secondaryText" pr={1} mr={[0]} my={[1, 1, 0]}>
               <TimeIcon className="icons" />
               <span>
                 {props.tense === 'past'
                   ? format(props.time, "ddd MMM Do 'YY")
-                  : format(props.time, "h:mm A, ddd MMM Do 'YY")}
+                  : format(props.time, "ddd MMM Do 'YY, h:mm A")}
               </span>
             </Box>
-            <Box fontSize={[12, 14, 16]} width={[1, 1, 0.25]} className="secondaryText" pr={1} mx={[0]} my={[1, 1, 0]}>
+            <Box fontSize={[12, 14, 16]} width={[1, 1, 0.24]} className="secondaryText" pr={1} mx={[0]} my={[1, 1, 0]}>
               <AttendeesIcon className="icons" />
               <span>{props.tense === 'past' ? `${props.attendees} attended` : `${props.attendees} attending`}</span>
             </Box>
-            <Box fontSize={[12, 14, 16]} width={[1, 1, 0.25]} className="secondaryText" pr={1} mx={[0]} my={[1, 1, 0]}>
+            <Box fontSize={[12, 14, 16]} width={[1, 1, 0.21]} className="secondaryText" pr={1} mx={[0]} my={[1, 1, 0]}>
               {props.online ? <StreamIcon className="icons" /> : <TicketIcon className="icons" />}
               <span>{props.online ? 'Free session' : 'Free entry'}</span>
             </Box>

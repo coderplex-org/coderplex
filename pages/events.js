@@ -88,6 +88,7 @@ export default class Events extends React.Component {
               image={imageSrc ? imageSrc[1] : imagePlaceholderURL}
               name={event.name}
               location={event.venue ? event.venue.name : 'Online'}
+              online={!event.venue}
               time={event.time}
               attendees={event.yes_rsvp_count}
               tense={event.status}
