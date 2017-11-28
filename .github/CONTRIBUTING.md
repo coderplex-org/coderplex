@@ -9,7 +9,7 @@ Coderplex web application comprises of two repositories :
 Both of them are under very active development. This document provides non exhaustive guidelines for contributing to this repository.  
 
 ## Code of Conduct
-Coderplex has adopted [Contributor Covenant](https://github.com/coderplex/coderplex/blob/docs-update/CODE_OF_CONDUCT.md) that we expect project participants to adhere to.
+Coderplex has adopted [Contributor Covenant](https://github.com/coderplex/coderplex/blob/develop/.github/CODE_OF_CONDUCT.md) that we expect project participants to adhere to.
 
 ## Open Development
 All work related to the application takes place on Github itself. We use [Issues](https://github.com/coderplex/coderplex/issues) to track bugs, discuss ideas and to engage open source contributors. [Projects](https://github.com/coderplex/coderplex/projects) are used to keep track of everything and is our project management tool. We maintain [Wiki](https://github.com/coderplex/coderplex/wiki) for structuring our long term thoughts. Both core team members and contributors sends a pull request which goes through the same review process. Whole process is as transparent as it can be and we strive to keep it that way.
