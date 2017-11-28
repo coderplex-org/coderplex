@@ -1,31 +1,3 @@
-**Table Of Contents**
-
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-- [How to Contribute](#how-to-contribute)
-  - [Code of Conduct](#code-of-conduct)
-  - [Open Development](#open-development)
-  - [Branching Model](#branching-model)
-  - [Development Workflow](#development-workflow)
-    - [Work on Issues](#work-on-issues)
-    - [Proposing a Change](#proposing-a-change)
-    - [Prerequisites](#prerequisites)
-    - [Sending a Pull Request](#sending-a-pull-request)
-      - [Running Locally](#running-locally)
-      - [Before submitting](#before-submitting)
-      - [After submitting](#after-submitting)
-        - [Received a review request](#received-a-review-request)
-    - [How to get in touch](#how-to-get-in-touch)
-  - [Appendix](#appendix)
-    - [1. Node Version Manager](#1-node-version-manager)
-      - [nvm for Linux & macOS](#nvm-for-linux--macos)
-      - [nvm-windows for Windows](#nvm-windows-for-windows)
-    - [2. Local host occupied](#2-local-host-occupied)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # How to Contribute
 
 Coderplex web application comprises of two repositories :
@@ -33,6 +5,35 @@ Coderplex web application comprises of two repositories :
 * [Coderplex](https://github.com/coderplex/coderplex) : Frontend of the application
 
 * [Coderplex-Backend](https://github.com/coderplex/coderplex-backend) : Backend of the application
+
+## **Table Of Contents**
+
+---
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Code of Conduct](#code-of-conduct)
+- [Open Development](#open-development)
+- [Branching Model](#branching-model)
+- [Development Workflow](#development-workflow)
+  - [Work on Issues](#work-on-issues)
+  - [Proposing a Change](#proposing-a-change)
+  - [Prerequisites](#prerequisites)
+  - [Sending a Pull Request](#sending-a-pull-request)
+    - [Running Locally](#running-locally)
+    - [Before submitting](#before-submitting)
+    - [After submitting](#after-submitting)
+      - [Received a review request](#received-a-review-request)
+  - [How to get in touch](#how-to-get-in-touch)
+- [Appendix](#appendix)
+  - [1. Node Version Manager](#1-node-version-manager)
+    - [nvm for Linux & macOS](#nvm-for-linux--macos)
+    - [nvm-windows for Windows](#nvm-windows-for-windows)
+  - [2. Local host occupied](#2-local-host-occupied)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Code of Conduct
 
