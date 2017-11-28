@@ -6,6 +6,7 @@
 [![Build Status](https://travis-ci.org/coderplex/coderplex.svg?branch=master)](https://travis-ci.org/coderplex/coderplex)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://github.com/coderplex/coderplex/blob/master/LICENSE)
 
+##### Join our community here at https://www.coderplex.org
 >:construction: under active development
 
 ## About
@@ -17,7 +18,6 @@ This project mainly uses
 * [Next.js](https://github.com/zeit/next.js/) - A minimalistic framework for server-rendered React applications.
 * [emotion](https://emotion.sh) - A high performance, lightweight css-in-js library.
 
-### [Join our community here](https://www.coderplex.org)
 
 ## Contributing
 
