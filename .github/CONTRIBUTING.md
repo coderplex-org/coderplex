@@ -10,7 +10,7 @@ Coderplex web application comprises of two repositories :
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-<!-- DON'T EDIT THIS SECTION, WE AUTOMATICALLY GENERATE TOC USING GIT PRE-COMMIT HOOK WHEN SOMETHING GETS CHANGED IN THIS FILE -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [Code of Conduct](#code-of-conduct)
 - [Open Development](#open-development)
@@ -28,10 +28,10 @@ Coderplex web application comprises of two repositories :
       - [Received a review request](#received-a-review-request)
   - [How to get in touch](#how-to-get-in-touch)
 - [Appendix](#appendix)
-  - [1. Node Version Manager](#1-node-version-manager)
+  - [Node Version Manager](#node-version-manager)
     - [nvm for Linux & macOS](#nvm-for-linux--macos)
     - [nvm-windows for Windows](#nvm-windows-for-windows)
-  - [2. Local host occupied](#2-local-host-occupied)
+  - [Local host occupied](#local-host-occupied)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -73,13 +73,13 @@ We welcome pull requests from beginners and seasoned javaScript developers alike
    * Minimum version v8.0.0+
 
    ```bash
-   To check node version
+   # To check node version
    node -v
    ```
 
    Any lower version than mentioned above may results in this [error](https://github.com/coderplex/coderplex/issues/100).
 
-   > If you face problem updating your node then you might need a Node version manager tool. [Follow here](#1-node-version-manager)
+   > If you face problem updating your node then you might need a Node version manager tool. [Follow here](#node-version-manager)
 
 1. [Yarn](https://yarnpkg.com)
 
@@ -114,7 +114,7 @@ We welcome pull requests from beginners and seasoned javaScript developers alike
     yarn dev
    ```
    App now opens at `localhost:3000` in your default browser.
-   > You may get this [error](#2-local-host-occupied) if any other app is already running the above port.
+   > You may get this [error](#local-host-occupied) if any other app is already running the above port.
 
 #### Before submitting
 
@@ -172,21 +172,21 @@ Follow the prompt and commit `.all-contributorsrc` and `README.md` in the PR.
 
 ## Appendix
 
-### 1. Node Version Manager
+### Node Version Manager
 
 #### [nvm](https://github.com/creationix/nvm) for Linux & macOS
 
 ```bash
-  # Installation
- curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
+# Installation
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
 
-  # Install latest node lts
- nvm install --lts
+# Install latest node lts
+nvm install --lts
 
-  # Use installed version
- nvm use --lts
+# Use installed version
+nvm use --lts
 
-  # Run the app in the same terminal session
+# Run the app in the same terminal session
 ```
 
 _Make sure you have [curl](https://curl.haxx.se/) installed_
@@ -196,16 +196,16 @@ _Make sure you have [curl](https://curl.haxx.se/) installed_
 It comes with an [installer](https://github.com/coreybutler/nvm-windows#installation--upgrades).
 
 ```bash
-  # Install particular version
- nvm install 8.9.1
+# Install particular version
+nvm install 8.9.1
 
-  # Use installed version
- nvm use 8.9.1
+# Use installed version
+nvm use 8.9.1
 ```
 
 Still facing problem this [article](https://medium.com/appseed-io/how-to-run-multiple-versions-of-node-js-with-nvm-for-windows-ffbe5c7a2b47) from [@skounis](https://twitter.com/skounis) explain in details.
 
-### 2. Local host occupied
+### Local host occupied
 
 ```js
 Error: listen EADDRINUSE :::3000
