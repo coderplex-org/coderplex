@@ -6,7 +6,26 @@ Coderplex web application comprises of two repositories :
 
 - [Coderplex-Backend](https://github.com/coderplex/coderplex-backend) : Backend of the application
 
-Both of them are under very active development. This document provides non exhaustive guidelines for contributing to this repository.  
+## Index
+1. [Code of Conduct](https://github.com/coderplex/coderplex/blob/develop/.github/CONTRIBUTING.md#code-of-conduct)  
+2. [Open Development](https://github.com/coderplex/coderplex/blob/develop/.github/CONTRIBUTING.md#open-development)  
+3. [Branching Model](https://github.com/coderplex/coderplex/blob/develop/.github/CONTRIBUTING.md#branching-model)  
+4. [Development Workflow](https://github.com/coderplex/coderplex/blob/develop/.github/CONTRIBUTING.md#development-workflow)  
+   1. [Work on Issues](https://github.com/coderplex/coderplex/blob/develop/.github/CONTRIBUTING.md#work-on-issues)  
+   2. [Proposing a Change](https://github.com/coderplex/coderplex/blob/develop/.github/CONTRIBUTING.md#proposing-a-change)  
+   3. [Prerequisites](https://github.com/coderplex/coderplex/blob/develop/.github/CONTRIBUTING.md#prerequisites)  
+   4. [Sending a Pull Request](https://github.com/coderplex/coderplex/blob/develop/.github/CONTRIBUTING.md#sending-a-pull-request)  
+      1. [Running Locally](https://github.com/coderplex/coderplex/blob/develop/.github/CONTRIBUTING.md#running-locally)  
+      2. [Before submitting](https://github.com/coderplex/coderplex/blob/develop/.github/CONTRIBUTING.md#before-submitting)  
+      3. [After submitting](https://github.com/coderplex/coderplex/blob/develop/.github/CONTRIBUTING.md#after-submitting)  
+         1. [Received a review request](https://github.com/coderplex/coderplex/blob/develop/.github/CONTRIBUTING.md#received-a-review-request)  
+   5. [How to get in touch](https://github.com/coderplex/coderplex/blob/develop/.github/CONTRIBUTING.md#how-to-get-in-touch)  
+5. [Appendix](https://github.com/coderplex/coderplex/blob/develop/.github/CONTRIBUTING.md#appendix)  
+   1. [Node Version Manager](https://github.com/coderplex/coderplex/blob/develop/.github/CONTRIBUTING.md#1-node-version-manager)  
+      1. [Linux & macOS](https://github.com/coderplex/coderplex/blob/develop/.github/CONTRIBUTING.md#nvm-for-linux--osx)  
+      2. [Windows](https://github.com/coderplex/coderplex/blob/develop/.github/CONTRIBUTING.md#nvm-windows-for-windows)  
+   2. [Local host occupied](https://github.com/coderplex/coderplex/blob/develop/.github/CONTRIBUTING.md#2-local-host-occupied)  
+
 
 ## Code of Conduct
 Coderplex has adopted [Contributor Covenant](https://github.com/coderplex/coderplex/blob/docs-update/CODE_OF_CONDUCT.md) that we expect project participants to adhere to.
@@ -116,12 +135,11 @@ We welcome pull requests from beginners and seasoned javaScript developers alike
 - Tweet core team members :
   - Vinay Puppal [@VinayPuppal](https://twitter.com/vinaypuppal)
   - Md-ZubairAhmed [@Md_ZubairAhmed](https://twitter.com/Md_ZubairAhmed)
-  - P Bhanu Teja [@pbteja1998](https://twitter.com/pbteja1998)
 
 ## Appendix
 ##### 1. Node Version Manager
 
-###### [nvm](https://github.com/creationix/nvm) for Linux & OSX
+###### [nvm](https://github.com/creationix/nvm) for Linux & macOS
 ```bash
 Installation
 $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
