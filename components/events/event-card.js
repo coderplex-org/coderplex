@@ -68,7 +68,7 @@ const Card = styled(Flex)`
 const CardTitle = styled.h3`
   ${space};
   color: #374355;
-  font-weight: 400;
+  font-weight: 500;
   border-bottom: 1px solid ${graySecondary};
 `;
 
