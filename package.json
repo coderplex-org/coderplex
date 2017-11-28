@@ -6,7 +6,7 @@
   "scripts": {
     "test": "xo && jest",
     "lint":
-      "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write && xo",
+      "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' --write && xo && markdownlint .",
     "precommit": "lint-staged",
     "analyze": "cross-env ANALYZE=1 next build",
     "dev": "cross-env NODE_ENV=development node server.js",
@@ -39,8 +39,8 @@
       "jest --findRelatedTests",
       "git add"
     ],
-    "*.md": ["prettier", "git add"],
-    ".github/CONTRIBUTING.md": ["doctoc", "git add"]
+    "*.md": ["prettier", "markdownlint", "git add"],
+    ".github/CONTRIBUTING.md": ["doctoc", "prettier", "git add"]
   },
   "dependencies": {
     "babel-plugin-emotion": "^8.0.10",
@@ -80,6 +80,7 @@
     "husky": "^0.14.3",
     "jest": "^21.2.1",
     "lint-staged": "^5.0.0",
+    "markdownlint-cli": "^0.5.0",
     "opn": "^5.1.0",
     "prettier": "^1.7.0",
     "raf": "^3.4.0",
