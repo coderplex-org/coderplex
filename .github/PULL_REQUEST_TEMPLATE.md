@@ -1,23 +1,45 @@
-<!--- Provide a general summary of the PR in the Title above -->
-
 <!--
     Thank you very much for contributing to coderplex by creating an PR! ❤️
-    To quickly merge this PR we ask you to check off the following list
 -->
 
-<!--place the issue number which this PR is solving. Eg: Fixes #27-->
-Fixes
+<!--
+Please make sure you are familiar with and follow the instructions in the
+contributing guidelines (found in the CONTRIBUTING.md file).
 
-## Changes proposed in this PR
-- <!-- change 1-->
-- <!--change 2-->
+Please fill out the information below to expedite the review and (hopefully)
+merge of your pull request!
+-->
 
-<!-- Checked checkbox should look like this: [x] -->
+<!-- Is it a Bug fix, feature, docs update, ... -->
+
+# What kind of change does this PR introduce
+
+<!-- You can also link to an open issue here -->
+
+## What is the current behavior
+
+<!-- if this is a feature change -->
+
+## What is the new behavior
+
+<!-- Have you done all of these things?  -->
+
 ### Checklist for this PR
 
-- [ ] I have read [contributing guidelines](https://github.com/coderplex/coderplex/blob/develop/.github/CONTRIBUTING.md).
-- [ ] I executed `yarn lint` locally to format my code.
-- [ ] All tests `yarn test` ran successfully.
-- [ ] Pull request is towards `develop` branch.
-<!--If change is related to UI then tick below checkbox otherwise delete below line-->
-- [ ] I have tested responsiveness of the UI by checking on max devices using [ScreenFly](http://quirktools.com/screenfly/)
+<!-- add "N/A" to the end of each line that's irrelevant to your changes -->
+
+<!-- to check an item, place an "x" in the box like so: "- [x] Documentation" -->
+
+* [ ] I have read [contributing guidelines](https://github.com/coderplex/coderplex/blob/develop/.github/CONTRIBUTING.md).
+* [ ] I executed `yarn lint` locally to format my code.
+* [ ] All tests `yarn test` ran successfully.
+* [ ] Pull request is towards `develop` branch.
+* [ ] I have tested responsiveness of the UI by checking on devices using [ScreenFly](http://quirktools.com/screenfly/) <!--If change is related to UI then tick this checkbox otherwise mention N/A-->
+* [ ] Documentation
+* [ ] Tests
+* [ ] Ready to be merged <!-- In your opinion, is this ready to be merged as soon as it's reviewed? -->
+* [ ] Added myself to contributors table <!-- this is optional, see the contributing guidelines for instructions -->
+
+<!-- feel free to add additional comments -->
+
+<!-- Thank you for contributing! -->

@@ -22,6 +22,8 @@ Coderplex web application comprises of two repositories :
   - [Sending a Pull Request](#sending-a-pull-request)
     - [Running Locally](#running-locally)
     - [Before submitting](#before-submitting)
+    - [Add yourself as a contributor](#add-yourself-as-a-contributor)
+    - [Submitting PullRequest](#submitting-pullrequest)
     - [After submitting](#after-submitting)
       - [Received a review request](#received-a-review-request)
   - [How to get in touch](#how-to-get-in-touch)
@@ -127,6 +129,21 @@ We welcome pull requests from beginners and seasoned javaScript developers alike
     yarn lint
    ```
 1. Add and commit your code. Please give meaning full commit messages.
+
+#### Add yourself as a contributor
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
+
+To add yourself to the table of contributors on the `README.md`, please use the automated script as part of your PR:
+
+```bash
+yarn run add-contributor
+```
+
+Follow the prompt and commit `.all-contributorsrc` and `README.md` in the PR.
+
+#### Submitting PullRequest
+
 1. Pull latest code from [upstream repository's](https://help.github.com/articles/merging-an-upstream-repository-into-your-fork/)`develop`, if in case anything new were merged while you were working on your fork.
 1. Push the code to your fork.
 1. Raise the pull request from your created branch to `develop` branch of coderplex. [why develop instead of master branch?](https://www.atlassian.com/git/tutorials/comparing-workflows)
