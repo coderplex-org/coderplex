@@ -1,10 +1,12 @@
-# Coderplex Website [Work In Progress]
+# Coderplex Website
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/coderplex/coderplex.svg)](https://greenkeeper.io/)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Build Status](https://travis-ci.org/coderplex/coderplex.svg?branch=master)](https://travis-ci.org/coderplex/coderplex)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://github.com/coderplex/coderplex/blob/master/LICENSE)
+
+>:construction: under active development
 
 ## About
 
