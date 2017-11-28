@@ -135,9 +135,9 @@ export default class Events extends React.Component {
           title="Online & Offline Events"
           subTitle="Because you cannot change the world alone"
         />
-        <EventsSection py={[2, 4]} px={[2, 1]}>
+        <EventsSection py={[2, 2]} px={[2, 1]}>
           <Container>
-            <Flex pb={[2, 4]} direction="column" align="center" justify="center">
+            <Flex pb={[2, 2]} direction="column" align="center" justify="center">
               <Box width={[1, 0.75]}>
                 <h3 className="event_type_title" inverted color="#222">
                   Upcoming Events
