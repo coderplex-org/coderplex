@@ -28,7 +28,7 @@ Coderplex web application comprises of two repositories :
 
 
 ## Code of Conduct
-Coderplex has adopted [Contributor Covenant](https://github.com/coderplex/coderplex/blob/docs-update/CODE_OF_CONDUCT.md) that we expect project participants to adhere to.
+Coderplex has adopted [Contributor Covenant](https://github.com/coderplex/coderplex/blob/develop/.github/CODE_OF_CONDUCT.md) that we expect project participants to adhere to.
 
 ## Open Development
 All work related to the application takes place on Github itself. We use [Issues](https://github.com/coderplex/coderplex/issues) to track bugs, discuss ideas and to engage open source contributors. [Projects](https://github.com/coderplex/coderplex/projects) are used to keep track of everything and is our project management tool. We maintain [Wiki](https://github.com/coderplex/coderplex/wiki) for structuring our long term thoughts. Both core team members and contributors sends a pull request which goes through the same review process. Whole process is as transparent as it can be and we strive to keep it that way.
@@ -83,19 +83,20 @@ We welcome pull requests from beginners and seasoned javaScript developers alike
 
 #### Running Locally
 
-1. Clone repository
+1. Fork the [repository](https://github.com/coderplex/coderplex).
+1. Then clone your forked repository
     ```bash
-    $ git clone https://github.com/coderplex/coderplex.git
+    $ git clone <your forked repository url>
     ```
-2. Move to the repository root folder
+1. Move to the repository root folder
     ```bash
     $ cd coderplex
     ```  
-3. Install dependencies
+1. Install dependencies
     ```bash
     $ yarn
     ```
-4. Start the development server
+1. Start the development server
     ```bash
     $ yarn dev
     ```
@@ -103,22 +104,21 @@ We welcome pull requests from beginners and seasoned javaScript developers alike
     > You may get this [error]() if any other app is already running the above port.
 
 #### Before submitting:
-1. Fork the [repository](https://github.com/coderplex/coderplex).
-2. From your fork, create a [branch](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/) and name it. eg. `typo-in-readme`
-3. If you’ve fixed a bug or added code that should be tested, add tests!
-4. Ensure that all test pass
+1. From your fork, create a [branch](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/) and name it. eg. `typo-in-readme`
+1. If you’ve fixed a bug or added code that should be tested, add tests!
+1. Ensure that all test pass
     ```bash
     $ yarn test
     ```
-5. Run code formatters
+1. Run code formatters
     ```bash
     $ yarn lint
     ```
-6. Add and commit your code. Please give meaning full commit messages.
-7. Pull latest code from [upstream repository's ](https://help.github.com/articles/merging-an-upstream-repository-into-your-fork/)`develop`, if in case anything new were merged while you were working on your fork.
-8. Push the code to your fork.
-9. Raise the pull request from your created branch to `develop` branch of coderplex. [why develop instead of master branch?]()
-10. Take some time to give a brief description of the work you have done.
+1. Add and commit your code. Please give meaning full commit messages.
+1. Pull latest code from [upstream repository's ](https://help.github.com/articles/merging-an-upstream-repository-into-your-fork/)`develop`, if in case anything new were merged while you were working on your fork.
+1. Push the code to your fork.
+1. Raise the pull request from your created branch to `develop` branch of coderplex. [why develop instead of master branch?]()
+1. Take some time to give a brief description of the work you have done.
 
 #### After submitting
 1. Wait for all checks to pass in below section.
