@@ -9,13 +9,14 @@ import Hide, { Container, Button, Title, SubTitle, breakpoints } from '../utils/
 import { listOfSubjects } from '../utils/mock-data';
 import Layout from '../components/common/layout';
 import SubjectCard from '../components/learn/subject-card';
+import { heroPatternURL, heroBannerURL, spaceCoverURL, eventsCoverURL } from '../utils/urls';
 
 const HeroSection = styled.section`
   ${space};
   background-color: #fff;
   position: relative;
   text-align: center;
-  background-image: url('https://res.cloudinary.com/coderplex/image/upload/v1510788480/website__assets/pattern.png');
+  background-image: url(${heroPatternURL});
   & h1 {
     font-size: 2.5rem;
     font-weight: 300;
@@ -126,10 +127,7 @@ export default () => (
       <Container>
         <Flex justify="center" align="center" direction="column">
           <Box width={1}>
-            <img
-              src="https://res.cloudinary.com/coderplex/image/upload/c_scale,w_1024/v1510788480/website__assets/banner1280x370.png"
-              alt="words"
-            />
+            <img src={heroBannerURL} alt="words" />
             <h1>On a mission to improve the state of tech across India</h1>
           </Box>
         </Flex>
@@ -179,8 +177,7 @@ export default () => (
               className="box"
               width={[1]}
               pt={[2, 3]}
-              pb={[4, 4, 0]}
-            >
+              pb={[4, 4, 0]}>
               <Link href={'/space'}>
                 <Button href={'/space'} medium>
                   LEARN MORE ABOUT HACKERSPACE
@@ -189,11 +186,7 @@ export default () => (
             </Box>
           </Box>
           <Box order={1} className="box" width={[1, 1, 1 / 2]} pt={4} pb={[0, 1, 4]} px={[3, 4, 3]}>
-            <img
-              className="space__img"
-              alt="sapce__img"
-              src="https://res.cloudinary.com/coderplex/image/upload/c_scale,w_450/v1510788480/website__assets/space.png"
-            />
+            <img className="space__img" alt="sapce__img" src={spaceCoverURL} />
           </Box>
         </Flex>
       </Container>
@@ -204,10 +197,7 @@ export default () => (
         <Flex align="center" justify="center" wrap>
           <Box order={[2, 2, 1]} width={[1, 1, 1 / 2]} px={[4, 4, 3]}>
             <Hide sm xs>
-              <img
-                src="https://res.cloudinary.com/coderplex/image/upload/c_scale,w_348/v1510788480/website__assets/events.png"
-                alt="events__pic"
-              />
+              <img src={eventsCoverURL} alt="events__pic" />
             </Hide>
           </Box>
           <Box order={1} width={[1, 1, 1 / 2]} px={[2, 3]} pt={[3, 4, 0]} pb={[4, 4, 0]}>
@@ -219,10 +209,7 @@ export default () => (
             </SubTitle>
             <Box className="box" width={[1]} pt={[2]} px={[3, 0]}>
               <Hide md lg>
-                <img
-                  src="https://res.cloudinary.com/coderplex/image/upload/c_scale,w_316/v1510788480/website__assets/events.png"
-                  alt="events__pic"
-                />
+                <img src={eventsCoverURL} alt="events__pic" />
               </Hide>
               <Link href={'/events'}>
                 <Button href={'/events'} medium>
@@ -246,8 +233,7 @@ export default () => (
               rel="noopener noreferrer"
               target="_blank"
               inverted
-              large
-            >
+              large>
               Join Discord
             </Button>
           </Box>

@@ -1,5 +1,11 @@
 import styled, { css } from 'react-emotion';
 
+export const purplePrimary = '#7657fb';
+export const purpleSecondary = '#6f19ed';
+export const whiteFull = '#ffffff';
+export const blackPure = '#000000';
+export const graySecondary = '#ddd';
+
 export const breakpoints = {
   xs: '@media screen and (max-width: 40em)',
   sm: '@media screen and (min-width: 40em) and (max-width: 52em)',
@@ -37,6 +43,7 @@ export const baseButton = css`
   padding: 0.2rem 1rem;
   color: #fff;
   text-decoration: none;
+  transition: all 0.25s;
   &:hover {
     background: #6f19ed;
     font-weight: normal;
@@ -45,15 +52,20 @@ export const baseButton = css`
 
 export const Button = styled.a`
   ${baseButton};
-  background: ${props => (props.inverted ? '#7657fb' : '#fff')}
-  color: ${props => (props.inverted ? '#fff' : '#222')}
-  padding: ${props => (props.large ? '0.8rem 2.25rem' : props.medium ? '0.6rem 1.2rem' : '0.2rem 1rem')};
-  font-size: ${props => (props.large ? '1.8rem' : props.medium ? '1rem' : '1rem')}
+  background: ${props => (props.inverted ? '#7657fb' : props.ghost ? '#fff' : '#fff')}
+  color: ${props => (props.inverted ? '#fff' : props.ghost ? purpleSecondary : '#222')}
+  padding: ${props =>
+    props.large ? '0.8rem 2.25rem' : props.medium ? '0.6rem 1.2rem' : props.small ? '0.3rem 1.1rem' : '0.2rem 1rem'};
+  font-size: ${props => (props.large ? '1.8rem' : props.medium ? '1rem' : '0.8rem')};
+  font-weight: ${props => (props.ghost ? 600 : 300)};
+  border: ${props => (props.ghost ? `2px solid ${purpleSecondary}` : 'none')};
   cursor: pointer;
   user-select: none;
   -webkit-touch-callout: none;
   &:hover {
-    background: ${props => (props.inverted ? '#6f19ed' : '#eee')};
+    font-weight: ${props => (props.ghost ? 600 : 300)};
+    background: ${props => (props.inverted ? purpleSecondary : props.ghost ? purpleSecondary : '#eee')};
+    color: ${props => (props.inverted ? '#fff' : props.ghost ? whiteFull : '#222')}
   }
 `;
 
