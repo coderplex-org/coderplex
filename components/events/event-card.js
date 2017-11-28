@@ -17,6 +17,7 @@ const Card = styled(Flex)`
   background: #fff;
   border: 1px solid ${graySecondary};
   min-height: 120px;
+  color: #8393a7;
   & .eventPhoto {
     height: 120px;
     width: 100%;
@@ -34,12 +35,12 @@ const Card = styled(Flex)`
   }
   & .secondaryText {
     ${fontSize};
-    color: #36434d;
+    color: #8393a7;
   }
   & .icons {
     font-size: 1.2rem;
     margin-right: 0.25rem;
-    color: #36434d;
+    color: #8393a7;
   }
   & .rsvp {
     text-align: right;
@@ -66,7 +67,8 @@ const Card = styled(Flex)`
 
 const CardTitle = styled.h3`
   ${space};
-  font-weight: 650;
+  color: #374355;
+  font-weight: 400;
   border-bottom: 1px solid ${graySecondary};
 `;
 

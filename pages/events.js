@@ -6,7 +6,7 @@ import { space } from 'styled-system';
 
 import Layout from '../components/common/layout';
 import BannerSection from '../components/common/banner';
-import { Container, Title, SubTitle, Button } from '../utils/base.styles';
+import { Container, SubTitle, Button } from '../utils/base.styles';
 import { baseEventsURL, futureEventsURL, pastEventsURL, imagePlaceholderURL } from '../utils/urls';
 import EventCard from '../components/events/event-card';
 
@@ -16,6 +16,12 @@ const EventsSection = styled.section`
   position: relative;
   & .loadmore_div {
     text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+  }
+  & .event_type_title {
+    color: #374355;
+    font-weight: bold;
   }
 `;
 
@@ -107,7 +113,7 @@ export default class Events extends React.Component {
 
   renderLoadMoreButton(eventsTotalLength, loadLimit, isPastEvent) {
     return loadLimit >= eventsTotalLength ? null : (
-      <div className="loadmore_div">
+      <div className="loadmore_div" mb={[5, 5]}>
         <Button inverted medium onClick={event => this.loadMore(event, isPastEvent)}>
           Load more
         </Button>
@@ -133,18 +139,18 @@ export default class Events extends React.Component {
           <Container>
             <Flex pb={[2, 4]} direction="column" align="center" justify="center">
               <Box width={[1, 0.75]}>
-                <Title inverted color="#222">
+                <h3 className="event_type_title" inverted color="#222">
                   Upcoming Events
-                </Title>
+                </h3>
                 {this.renderEvents(this.state.futureEvents, this.state.futureEventsLoadLimit)}
                 {this.renderLoadMoreButton(this.state.futureEvents.length, this.state.futureEventsLoadLimit, false)}
               </Box>
             </Flex>
             <Flex direction="column" align="center" justify="center">
               <Box width={[1, 0.75]}>
-                <Title inverted color="#222">
+                <h3 className="event_type_title" inverted color="#222">
                   Recent Events
-                </Title>
+                </h3>
                 {this.renderEvents(this.state.pastEvents, this.state.pastEventsLoadLimit)}
                 {this.renderLoadMoreButton(this.state.pastEvents.length, this.state.pastEventsLoadLimit, true)}
               </Box>
