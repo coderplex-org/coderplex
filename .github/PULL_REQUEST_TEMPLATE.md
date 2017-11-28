@@ -32,13 +32,13 @@ merge of your pull request!
 
 * [ ] I have read [contributing guidelines](https://github.com/coderplex/coderplex/blob/develop/.github/CONTRIBUTING.md).
 * [ ] I executed `yarn lint` locally to format my code.
+* [ ] I added revelant Tests to verify my code.
 * [ ] All tests `yarn test` ran successfully.
 * [ ] Pull request is towards `develop` branch.
 * [ ] I have tested responsiveness of the UI by checking on devices using [ScreenFly](http://quirktools.com/screenfly/) <!--If change is related to UI then tick this checkbox otherwise mention N/A-->
-* [ ] Documentation
-* [ ] Tests
-* [ ] Ready to be merged <!-- In your opinion, is this ready to be merged as soon as it's reviewed? -->
 * [ ] Added myself to contributors table <!-- this is optional, see the contributing guidelines for instructions -->
+* [ ] Documentation
+* [ ] Ready to be merged <!-- In your opinion, is this ready to be merged as soon as it's reviewed? -->
 
 <!-- feel free to add additional comments -->
 

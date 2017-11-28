@@ -21,7 +21,7 @@
     },
     {
       "login": "M-ZubairAhmed",
-      "name": "Zubair Ahmed",
+      "name": "Md_ZubairAhmed",
       "avatar_url": "https://avatars2.githubusercontent.com/u/17708702?v=4",
       "profile": "https://in.linkedin.com/in/mzubairahmed",
       "contributions": [
@@ -32,7 +32,8 @@
         "ideas",
         "plugin",
         "review",
-        "test"
+        "test",
+        "question"
       ]
     },
     {
@@ -75,7 +76,8 @@
       "avatar_url": "https://avatars0.githubusercontent.com/u/15874356?v=4",
       "profile": "https://github.com/shivakrishna9",
       "contributions": [
-        "code"
+        "code",
+        "doc"
       ]
     },
     {
@@ -84,7 +86,7 @@
       "avatar_url": "https://avatars2.githubusercontent.com/u/14841940?v=4",
       "profile": "https://github.com/VineethKanaparthi",
       "contributions": [
-        "code"
+        "doc"
       ]
     },
     {
@@ -129,7 +131,7 @@
       "avatar_url": "https://avatars0.githubusercontent.com/u/13974570?v=4",
       "profile": "https://github.com/rkaranam",
       "contributions": [
-        "code"
+        "doc"
       ]
     },
     {
@@ -156,7 +158,7 @@
       "avatar_url": "https://avatars0.githubusercontent.com/u/32811957?v=4",
       "profile": "https://github.com/majidmazin",
       "contributions": [
-        "code"
+        "doc"
       ]
     },
     {
@@ -191,6 +193,25 @@
       "name": "Alicia Perez",
       "avatar_url": "https://avatars1.githubusercontent.com/u/5432702?v=4",
       "profile": "http://www.linkedin.com/in/aliciapr",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "abiduzz420",
+      "name": "abiduzz420",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/18336304?v=4",
+      "profile": "https://medium.com/@abiduzair420",
+      "contributions": [
+        "code",
+        "talk"
+      ]
+    },
+    {
+      "login": "thepriefy",
+      "name": "thepriefy",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/10849586?v=4",
+      "profile": "https://github.com/thepriefy",
       "contributions": [
         "code"
       ]

@@ -14,7 +14,8 @@
     "build": "next build",
     "export": "cross-env NODE_ENV=production yarn build && next export",
     "add-contributor": "all-contributors add",
-    "generate": "all-contributors generate"
+    "contributors-generate": "all-contributors generate",
+    "contributors-check":"all-contributors check"
   },
   "xo": {
     "parser": "babel-eslint",
