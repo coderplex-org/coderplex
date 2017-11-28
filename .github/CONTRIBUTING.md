@@ -10,7 +10,7 @@ Coderplex web application comprises of two repositories :
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<!-- DON'T EDIT THIS SECTION, WE AUTOMATICALLY GENERATE TOC USING GIT PRE-COMMIT HOOK WHEN SOMETHING GETS CHANGED IN THIS FILE -->
 
 - [Code of Conduct](#code-of-conduct)
 - [Open Development](#open-development)
@@ -177,16 +177,16 @@ Follow the prompt and commit `.all-contributorsrc` and `README.md` in the PR.
 #### [nvm](https://github.com/creationix/nvm) for Linux & macOS
 
 ```bash
-Installation
+  # Installation
  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
 
-Install latest node lts
+  # Install latest node lts
  nvm install --lts
 
-Use installed version
+  # Use installed version
  nvm use --lts
 
-Run the app in the same terminal session
+  # Run the app in the same terminal session
 ```
 
 _Make sure you have [curl](https://curl.haxx.se/) installed_
@@ -196,10 +196,10 @@ _Make sure you have [curl](https://curl.haxx.se/) installed_
 It comes with an [installer](https://github.com/coreybutler/nvm-windows#installation--upgrades).
 
 ```bash
-Install particular version
+  # Install particular version
  nvm install 8.9.1
 
-Use installed version
+  # Use installed version
  nvm use 8.9.1
 ```
 
@@ -207,7 +207,7 @@ Still facing problem this [article](https://medium.com/appseed-io/how-to-run-mul
 
 ### 2. Local host occupied
 
-```bash
+```js
 Error: listen EADDRINUSE :::3000
     at Object._errnoException (util.js:1024:11)
     at _exceptionWithHostPort (util.js:1046:20)
