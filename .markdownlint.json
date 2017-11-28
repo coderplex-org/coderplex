@@ -1,5 +1,6 @@
 {
   "first-line-h1": false,
   "line-length": false,
-  "ul-style": false
+  "ul-style": false,
+  "no-emphasis-as-header": false
 }
