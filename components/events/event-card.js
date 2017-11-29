@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'react-emotion';
 import { space, fontSize } from 'styled-system';
 import { Flex, Box } from 'grid-emotion';
-import TimeIcon from 'react-icons/lib/md/access-time';
+import TimeIcon from 'react-icons/lib/fa/calendar';
 import format from 'date-fns/format';
 import LocationIcon from 'react-icons/lib/md/location-on';
 import AttendeesIcon from 'react-icons/lib/md/people';

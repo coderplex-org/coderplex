@@ -52,6 +52,7 @@ export const baseButton = css`
 
 export const Button = styled.a`
   ${baseButton};
+  width: ${props => (props.fluid ? '100%' : 'auto')}
   background: ${props => (props.inverted ? '#7657fb' : props.ghost ? '#fff' : '#fff')}
   color: ${props => (props.inverted ? '#fff' : props.ghost ? purpleSecondary : '#222')}
   padding: ${props =>
