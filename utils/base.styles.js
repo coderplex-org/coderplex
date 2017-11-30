@@ -58,13 +58,13 @@ export const Button = styled.a`
   padding: ${props =>
     props.large ? '0.8rem 2.25rem' : props.medium ? '0.6rem 1.2rem' : props.small ? '0.3rem 1.1rem' : '0.2rem 1rem'};
   font-size: ${props => (props.large ? '1.8rem' : props.medium ? '1rem' : '0.8rem')};
-  font-weight: ${props => (props.ghost ? 600 : 300)};
+  font-weight: ${props => (props.ghost ? 600 : 500)};
   border: ${props => (props.ghost ? `2px solid ${purpleSecondary}` : 'none')};
   cursor: pointer;
   user-select: none;
   -webkit-touch-callout: none;
   &:hover {
-    font-weight: ${props => (props.ghost ? 600 : 300)};
+    font-weight: ${props => (props.ghost ? 600 : 500)};
     background: ${props => (props.inverted ? purpleSecondary : props.ghost ? purpleSecondary : '#eee')};
     color: ${props => (props.inverted ? '#fff' : props.ghost ? whiteFull : '#222')}
   }

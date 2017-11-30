@@ -131,10 +131,11 @@ module.exports = {
     for (const subject of listOfSubjects) {
       routes[subject.url] = {
         page: '/learn/subject',
-        query: { id: subject.subjectId },
+        query: {
+          id: subject.subjectId,
+        },
       };
     }
-    console.log(routes);
     return routes;
   },
 };

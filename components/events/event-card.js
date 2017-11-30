@@ -111,7 +111,7 @@ export default props => (
               <span>{props.online ? 'Free session' : 'Free entry'}</span>
             </Box>
             <Box fontSize={[12, 14, 16]} width={[1, 1, 0.17]} mt={[1, 1, 0]} className="rsvp">
-              <Button href={props.link} ghost small>
+              <Button href={props.link} inverted medium>
                 {props.tense === 'past' ? 'View' : 'RSVP'}
               </Button>
             </Box>

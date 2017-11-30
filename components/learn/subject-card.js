@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'react-emotion';
 import { Flex, Box } from 'grid-emotion';
+import { space } from 'styled-system';
 import Link from 'next/link';
 import LearningIcon from 'react-icons/lib/fa/book';
 import EstimateIcon from 'react-icons/lib/md/access-time';
@@ -8,15 +9,17 @@ import EstimateIcon from 'react-icons/lib/md/access-time';
 import { breakpoints, Button } from '../../utils/base.styles';
 
 const SubjectCard = styled.div`
+  ${space};
   text-decoration: none;
   width: calc(25% - 40px);
   margin-top: 20px;
+  margin-bottom: 20px;
   display: inline-block;
   min-height: 200px;
-  background: #fafafa;
   border: 1px solid #b9b9b9;
   transition: all 0.25s;
   & .logo {
+    background: #fafafa;
     text-align: center;
     padding: 10px 15px;
     font-size: 10rem;
@@ -31,10 +34,10 @@ const SubjectCard = styled.div`
     text-align: left;
   }
   & .title {
-    font-size: 1.5rem;
-    font-size: 600;
-    color: #222;
-    padding-bottom: 0.4rem;
+    font-size: 500;
+    color: #374355;
+    margin-bottom: 0px;
+    margin-top: 0px;
     ${breakpoints.xs} {
       font-size: 1.2rem;
     }
@@ -42,12 +45,12 @@ const SubjectCard = styled.div`
   & .subtitle {
     font-size: 0.8rem;
     color: #8393a7;
-    padding-bottom: 0.4rem;
+    margin-top: 0px;
+    margin-bottom: 10px;
   }
   & .stats {
     color: #8393a7;
     font-size: 0.8rem;
-    padding-bottom: 0.4rem;
   }
   & .icons {
     font-size: 1.1rem;
@@ -56,7 +59,7 @@ const SubjectCard = styled.div`
   }
   & .view {
     width: 100%;
-    display: flex;
+    display: block;
     text-align: center;
   }
   ${breakpoints.md} {
@@ -78,10 +81,10 @@ export default ({ subject }) => (
       <i className={subject.icon} />
     </div>
     <div className="content">
-      <div className="title">{subject.title}</div>
-      <div className="subtitle">{subject.domain}</div>
-      <Flex className="stats">
-        <Box pr={1}>
+      <h3 className="title">{subject.title}</h3>
+      <p className="subtitle">{subject.domain}</p>
+      <Flex className="stats" wrap>
+        <Box pr={[1]} pb={[1]}>
           <LearningIcon className="icons" />
           20 learning
         </Box>
@@ -90,13 +93,11 @@ export default ({ subject }) => (
           20 hours
         </Box>
       </Flex>
-    </div>
-    <Link href={`/learn/subject?id=${subject.subjectId}`} as={subject.url}>
-      <div className="view">
-        <Button inverted small fluid href={subject.url}>
+      <Link href={`/learn/subject?id=${subject.subjectId}`} as={subject.url}>
+        <Button inverted medium fluid href={subject.url} className="view">
           VIEW GUIDE
         </Button>
-      </div>
-    </Link>
+      </Link>
+    </div>
   </SubjectCard>
 );
