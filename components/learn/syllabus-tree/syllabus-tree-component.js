@@ -2,9 +2,7 @@ import React from 'react';
 import styled from 'react-emotion';
 
 export default class TreeView extends React.PureComponent {
-  state = {
-    collapsed: this.props.defaultCollapsed,
-  };
+  state = {};
 
   handleNodeClick = (...args) => {
     this.setState({ collapsed: !this.state.collapsed });
@@ -21,7 +19,6 @@ export default class TreeView extends React.PureComponent {
       treeViewClassName = '',
       childrenClassName = '',
       children,
-      defaultCollapsed,
     } = this.props;
 
     const Container = styled.div`
