@@ -4,7 +4,7 @@ import fetch from 'isomorphic-unfetch';
 import Layout from '../../components/common/layout';
 import BannerSection from '../../components/learn/subject-banner';
 import SyllabusTree from '../../components/learn/syllabus-tree/syllabus-tree-container';
-// import MarkedJS from '../../components/common/markedjs';
+import MarkedJS from '../../components/common/markedjs';
 
 import { laravelSyllabus } from '../../utils/mock-data';
 
@@ -14,19 +14,30 @@ export default class Subject extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      viewingChapter: defaultChapter,
+      chapterContent: '',
+      loading: true,
     };
   }
 
-  componentDidMount() {}
-
-  async getChapterContent(chapter) {
-    const responce = await fetch(chapter);
+  componentDidMount() {
+    this.getChapterContent(defaultChapter);
   }
 
   changeChapter = selectedChapter => {
-    this.setState({ viewingChapter: selectedChapter });
+    this.setState({
+      loading: true,
+    });
+    this.getChapterContent(selectedChapter);
   };
+
+  async getChapterContent(chapter) {
+    const chapterContentPromise = await fetch(chapter);
+    const chapterContent = await chapterContentPromise.text();
+    await this.setState({
+      chapterContent,
+      loading: false,
+    });
+  }
 
   render() {
     return (
@@ -38,6 +49,7 @@ export default class Subject extends React.Component {
           icon="devicon-laravel-plain colored"
         />
         <SyllabusTree data={laravelSyllabus} changeChapter={this.changeChapter} />
+        <MarkedJS loading={this.state.loading} markdown={this.state.chapterContent} />
       </Layout>
     );
   }
