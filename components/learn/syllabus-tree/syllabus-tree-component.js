@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 
 export default class TreeView extends React.PureComponent {
@@ -7,7 +6,7 @@ export default class TreeView extends React.PureComponent {
     collapsed: this.props.defaultCollapsed,
   };
 
-  handleClick = (...args) => {
+  handleNodeClick = (...args) => {
     this.setState({ collapsed: !this.state.collapsed });
     if (this.props.onClick) {
       this.props.onClick(...args);
@@ -21,10 +20,8 @@ export default class TreeView extends React.PureComponent {
       itemClassName = '',
       treeViewClassName = '',
       childrenClassName = '',
-      nodeLabel,
       children,
       defaultCollapsed,
-      ...rest
     } = this.props;
 
     const Container = styled.div`
@@ -76,28 +73,18 @@ export default class TreeView extends React.PureComponent {
       containerClassName += ' tree-view_children-collapsed';
     }
 
-    const arrow = <div {...rest} className={className + ' ' + arrowClassName} onClick={this.handleClick} />;
+    const arrow = <div className={`${className} ${arrowClassName}`} onClick={this.handleNodeClick} />;
 
     return (
       <Container>
-        <div className={'tree-view ' + treeViewClassName}>
-          <div className={'tree-view_item ' + itemClassName}>
+        <div className={`tree-view ${treeViewClassName}`}>
+          <div className={`tree-view_item ${itemClassName}`}>
             {arrow}
-            {nodeLabel}
+            {this.props.nodeLabel}
           </div>
-          <div className={containerClassName + ' ' + childrenClassName}>{collapsed ? null : children}</div>
+          <div className={`${containerClassName} ${childrenClassName}`}>{collapsed ? null : children}</div>
         </div>
       </Container>
     );
   }
 }
-
-TreeView.propTypes = {
-  collapsed: PropTypes.bool,
-  defaultCollapsed: PropTypes.bool,
-  nodeLabel: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  itemClassName: PropTypes.string,
-  childrenClassName: PropTypes.string,
-  treeViewClassName: PropTypes.string,
-};

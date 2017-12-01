@@ -20,28 +20,29 @@ export default class SyllabusTree extends React.Component {
 
   render() {
     const Container = styled.div`
-      .node {
+      & .node {
         transition: all 0.5s;
         border-radius: 3px;
       }
 
-      .node:hover {
+      & .node:hover,
+      & .info:hover {
         background-color: rgb(220, 245, 243);
         cursor: pointer;
       }
 
-      .info,
-      .node {
+      & .info,
+      & .node {
         padding: 2px 10px 2px 5px;
         font: 14px Helvetica, Arial, sans-serif;
         user-select: none;
       }
 
-      .tree-view_arrow {
+      & .tree-view_arrow {
         transition: all 0.1s;
       }
 
-      .tree-view_arrow-empty {
+      & .tree-view_arrow-empty {
         color: yellow;
       }
     `;
@@ -49,20 +50,20 @@ export default class SyllabusTree extends React.Component {
     return (
       <Container>
         {this.props.data.map((node, i) => {
-          const ChapterTitle = (
-            <span className="node" onClick={() => this.handleClick(i)}>
-              Type {i}
+          const UnitTitle = (
+            <span className="node" key={node.unit.num} onClick={() => this.handleClick(i)}>
+              {node.unit.name}
             </span>
           );
           return (
             <TreeView
               key={i}
-              nodeLabel={ChapterTitle}
+              nodeLabel={UnitTitle}
               collapsed={this.state.nodeStateTracker[i]}
               onClick={() => this.handleClick(i)}>
-              {node.map(entry => (
-                <div className="info" key={entry.id} onClick={() => console.log(entry.url)}>
-                  {entry.id}
+              {node.chapters.map(chapter => (
+                <div className="info" key={chapter.url} onClick={() => this.props.changeChapter(chapter.url)}>
+                  {chapter.name}
                 </div>
               ))}
             </TreeView>

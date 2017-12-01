@@ -11,9 +11,8 @@ import { breakpoints, Button } from '../../utils/base.styles';
 const SubjectCard = styled.div`
   ${space};
   text-decoration: none;
-  width: calc(25% - 40px);
-  margin-top: 20px;
-  margin-bottom: 20px;
+  width: calc(25% - 24px);
+  margin-top: 24px;
   display: inline-block;
   min-height: 200px;
   border: 1px solid #b9b9b9;
@@ -63,10 +62,10 @@ const SubjectCard = styled.div`
     text-align: center;
   }
   ${breakpoints.md} {
-    width: calc(50% - 40px);
+    width: calc(33% - 30px);
   }
   ${breakpoints.sm} {
-    width: calc(50% - 40px);
+    width: calc(50% - 50px);
     margin: 20px auto;
   }
   ${breakpoints.xs} {
