@@ -8,7 +8,7 @@ import { baseContainer } from '../../utils/base.styles';
 import Layout from '../../components/common/layout';
 import BannerSection from '../../components/learn/subject-banner';
 import SyllabusTree from '../../components/learn/syllabus-tree/syllabus-tree-container';
-import MarkedJS from '../../components/common/markedjs';
+import SubjectMarkdown from '../../components/learn/subject-marked';
 
 import { laravelSyllabus } from '../../utils/mock-data';
 
@@ -19,7 +19,16 @@ const Container = styled.section`
   ${space};
   border: 1px solid #b9b9b9;
   min-height: 80vh;
+  background-color: #fff;
+  & .tableOfContent {
+    background-color: #374355;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 5px;
+  }
 `;
+
 export default class Subject extends React.Component {
   constructor(props) {
     super(props);
@@ -59,13 +68,13 @@ export default class Subject extends React.Component {
           icon="devicon-laravel-plain colored"
         />
         <Container my={[2, 4]}>
-          <Flex column={false} px={[2, 2, 2, 0]}>
+          <Flex column={false}>
             <Box width={[0.2]}>
-              <div>Table of content</div>
+              <div className="tableOfContent">Table of content</div>
               <SyllabusTree data={laravelSyllabus} changeChapter={this.changeChapter} />
             </Box>
-            <Box width={[0.8]}>
-              <MarkedJS loading={this.state.loading} markdown={this.state.chapterContent} />
+            <Box width={[0.8]} px={2}>
+              <SubjectMarkdown loading={this.state.loading} markdown={this.state.chapterContent} />
             </Box>
           </Flex>
         </Container>

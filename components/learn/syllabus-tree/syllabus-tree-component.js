@@ -2,7 +2,9 @@ import React from 'react';
 import styled from 'react-emotion';
 
 export default class TreeView extends React.PureComponent {
-  state = {};
+  state = {
+    collapsed: this.props.defaultCollapsed,
+  };
 
   handleNodeClick = (...args) => {
     this.setState({ collapsed: !this.state.collapsed });
@@ -25,6 +27,10 @@ export default class TreeView extends React.PureComponent {
       /* the tree node's style */
       .tree-view {
         overflow-y: hidden;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
       }
 
       .tree-view_item {
