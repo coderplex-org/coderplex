@@ -6,6 +6,8 @@ import TreeView from './syllabus-tree-component';
 export default class SyllabusTree extends React.Component {
   state = {
     nodeStateTracker: this.props.data.map(() => true),
+    activeUnit: this.props.data[0].unit.name,
+    activeChapter: this.props.data[0].chapters[0].url,
   };
 
   handleClick = i => {
@@ -18,51 +20,66 @@ export default class SyllabusTree extends React.Component {
     });
   };
 
+  clickOnChapter(chapterUrl, unitName) {
+    if (chapterUrl !== this.state.activeChapter) {
+      this.setState({ activeChapter: chapterUrl, activeUnit: unitName });
+      this.props.changeChapter(chapterUrl);
+    }
+  }
+
   render() {
     const Container = styled.div`
-      & .node {
-        transition: all 0.5s;
-      }
-
-      & .node:hover,
-      & .info:hover {
-        background-color: #f5f5f5;
-        border-left: 1px solid #374355;
-        cursor: pointer;
-      }
-
-      & .info,
-      & .node {
-        padding: 5px 10px 5px 5px;
-        font: 14px Helvetica, Arial, sans-serif;
+      & .chapter {
+        padding: 5px;
+        font-size: 0.85rem;
         user-select: none;
+        border-left: 2px solid #fff;
+        :hover {
+          background-color: #f5f5f5;
+          border-left: 2px solid #374355;
+          cursor: pointer;
+        }
       }
 
-      & .tree-view_arrow {
-        transition: all 0.1s;
+      & .chapter-active {
+        color: #374355;
+        background-color: #f5f5f5;
+        border-left: 2px solid #374355;
+        :hover {
+          cursor: default;
+        }
       }
 
-      & .tree-view_arrow-empty {
-        color: yellow;
+      & .unit_name {
+        order: 1;
+        flex: 1 1 auto;
+        align-self: auto;
       }
     `;
 
     return (
       <Container>
         {this.props.data.map((node, i) => {
-          const UnitTitle = (
-            <span className="node" key={node.unit.num} onClick={() => this.handleClick(i)}>
+          const UnitTitleComponent = (
+            <div className="unit_name" key={node.unit.name} onClick={() => this.handleClick(i)}>
               {node.unit.name}
-            </span>
+            </div>
           );
           return (
             <TreeView
               key={i}
-              nodeLabel={UnitTitle}
+              unitTitle={node.unit.name}
+              UnitTitleComponent={UnitTitleComponent}
+              activeUnit={this.state.activeUnit}
               collapsed={this.state.nodeStateTracker[i]}
               onClick={() => this.handleClick(i)}>
               {node.chapters.map(chapter => (
-                <div className="info" key={chapter.url} onClick={() => this.props.changeChapter(chapter.url)}>
+                <div
+                  className={`chapter ${
+                    this.state.activeChapter === chapter.url ? 'chapter-active' : 'chapter-inactive'
+                  }`}
+                  key={chapter.url}
+                  onClick={() => this.clickOnChapter(chapter.url, node.unit.name)}>
                   {chapter.name}
                 </div>
               ))}

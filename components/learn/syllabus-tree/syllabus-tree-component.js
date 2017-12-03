@@ -2,11 +2,14 @@ import React from 'react';
 import styled from 'react-emotion';
 
 export default class TreeView extends React.PureComponent {
-  state = {
-    collapsed: this.props.defaultCollapsed,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      collapsed: this.props.collapsed,
+    };
+  }
 
-  handleNodeClick = (...args) => {
+  unitClick = (...args) => {
     this.setState({ collapsed: !this.state.collapsed });
     if (this.props.onClick) {
       this.props.onClick(...args);
@@ -14,78 +17,68 @@ export default class TreeView extends React.PureComponent {
   };
 
   render() {
-    const {
-      collapsed = this.state.collapsed,
-      className = '',
-      itemClassName = '',
-      treeViewClassName = '',
-      childrenClassName = '',
-      children,
-    } = this.props;
-
     const Container = styled.div`
-      /* the tree node's style */
-      .tree-view {
-        overflow-y: hidden;
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-top: 5px;
-        padding-bottom: 5px;
+      overflow-y: hidden;
+
+      .unit {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: stretch;
+        align-items: center;
+        padding: 0.5rem;
+        border-left: 2px solid #fff;
+        :hover {
+          background-color: #f5f5f5;
+          border-left: 2px solid #374355;
+          cursor: pointer;
+        }
       }
 
-      .tree-view_item {
-        /* immediate child of .tree-view, for styling convenience */
+      .unit-active {
+        background-color: #f5f5f5;
+        border-left: 2px solid #f5f5f5;
+        :hover {
+        }
       }
 
-      /* style for the children nodes container */
-      .tree-view_children {
-        margin-left: 16px;
+      .chapters {
+        padding-left: 0.4rem;
       }
 
-      .tree-view_children-collapsed {
+      .chapters-collapsed {
         height: 0px;
       }
 
-      .tree-view_arrow {
+      .pointer {
         cursor: pointer;
-        margin-right: 6px;
-        display: inline-block;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
         user-select: none;
+        transition: all 0.1s;
+        order: 2;
+        flex: 0 1 auto;
+        align-self: auto;
+        color: #b9c3d2;
+        :after {
+          content: '▾';
+        }
       }
 
-      .tree-view_arrow:after {
-        content: '▾';
-      }
-
-      /* rotate the triangle to close it */
-      .tree-view_arrow-collapsed {
-        -webkit-transform: rotate(-90deg);
-        -moz-transform: rotate(-90deg);
-        -ms-transform: rotate(-90deg);
+      .pointer-collapsed {
         transform: rotate(-90deg);
+        color: #374355;
       }
     `;
 
-    let arrowClassName = 'tree-view_arrow';
-    let containerClassName = 'tree-view_children';
-    if (collapsed) {
-      arrowClassName += ' tree-view_arrow-collapsed';
-      containerClassName += ' tree-view_children-collapsed';
-    }
-
-    const arrow = <div className={`${className} ${arrowClassName}`} onClick={this.handleNodeClick} />;
-
     return (
       <Container>
-        <div className={`tree-view ${treeViewClassName}`}>
-          <div className={`tree-view_item ${itemClassName}`}>
-            {arrow}
-            {this.props.nodeLabel}
-          </div>
-          <div className={`${containerClassName} ${childrenClassName}`}>{collapsed ? null : children}</div>
+        <div
+          className={this.props.unitTitle === this.props.activeUnit ? 'unit unit-active' : 'unit'}
+          onClick={this.unitClick}>
+          {this.props.UnitTitleComponent}
+          <div className={this.state.collapsed ? 'pointer pointer-collapsed' : 'pointer'} />
+        </div>
+        <div className={this.state.collapsed ? 'chapters chapters-collapsed' : 'chapters'}>
+          {this.state.collapsed ? null : this.props.children}
         </div>
       </Container>
     );
