@@ -22,18 +22,18 @@ export default class SyllabusTree extends React.Component {
     const Container = styled.div`
       & .node {
         transition: all 0.5s;
-        border-radius: 3px;
       }
 
       & .node:hover,
       & .info:hover {
-        background-color: rgb(220, 245, 243);
+        background-color: #f5f5f5;
+        border-left: 1px solid #374355;
         cursor: pointer;
       }
 
       & .info,
       & .node {
-        padding: 2px 10px 2px 5px;
+        padding: 5px 10px 5px 5px;
         font: 14px Helvetica, Arial, sans-serif;
         user-select: none;
       }
