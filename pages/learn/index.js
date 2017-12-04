@@ -29,14 +29,13 @@ const FilterContainer = styled.div`
 export default () => (
   <Layout>
     <BannerSection
-      textInverted
       title="Open Source Learning Guides"
       subTitle="Open Source Learning Guides to master your favorite technology"
     />
     <LearnSection py={[2, 3]} px={[2, 1]}>
       <FilterContainer my={[1, 2]}>
-        <h3 className="title_filter">Available Guides</h3>
-        <h4 className="title_fitler_by">Filter by domain :</h4>
+        <h2 className="title_filter">Available Guides</h2>
+        {/* <h4 className="title_fitler_by">Filter by domain :</h4> */}
       </FilterContainer>
       <Flex justify="space-between" align="center" wrap>
         {listOfSubjects.map(subject => {

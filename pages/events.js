@@ -130,11 +130,7 @@ export default class Events extends React.Component {
   render() {
     return (
       <Layout>
-        <BannerSection
-          textInverted
-          title="Online & Offline Events"
-          subTitle="Because you cannot change the world alone"
-        />
+        <BannerSection title="Online & Offline Events" subTitle="Because you cannot change the world alone" />
         <EventsSection py={[2, 2]} px={[2, 1]}>
           <Container>
             <Flex pb={[2, 2]} direction="column" align="center" justify="center">

@@ -18,23 +18,23 @@ const SubjectCard = styled.div`
   border: 1px solid #b9b9b9;
   transition: all 0.25s;
   & .logo {
-    background: #fafafa;
+    background: #fff;
     text-align: center;
-    padding: 10px 15px;
-    font-size: 10rem;
+    padding: 1.5rem 0 1.5rem 0;
+    font-size: 7rem;
     ${breakpoints.xs} {
-      font-size: 8rem;
+      font-size: 5rem;
     }
   }
   & .content {
     padding: 10px;
     color: #444;
-    background: #fff;
+    background: #fafafa;
     text-align: left;
   }
   & .title {
-    font-size: 500;
     color: #374355;
+    font-weight: 500;
     margin-bottom: 0px;
     margin-top: 0px;
     ${breakpoints.xs} {
