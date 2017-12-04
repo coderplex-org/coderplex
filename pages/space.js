@@ -103,7 +103,7 @@ export default () => (
     <BannerSection
       textInverted
       title="Offline Co-Learning Spaces"
-      subTitle="Physical spaces for collaboration, peer-learning and self-learning"
+      subTitle="Physical spaces for peer-learning and collaboration"
     />
     <ForWhomSection py={[2, 4]} px={[2, 1]}>
       <Container>
