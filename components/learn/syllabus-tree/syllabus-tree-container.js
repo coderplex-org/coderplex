@@ -20,10 +20,10 @@ export default class SyllabusTree extends React.Component {
     });
   };
 
-  clickOnChapter(chapterUrl, unitName) {
-    if (chapterUrl !== this.state.activeChapter) {
-      this.setState({ activeChapter: chapterUrl, activeUnit: unitName });
-      this.props.changeChapter(chapterUrl);
+  clickOnChapter(chapter, unitName) {
+    if (chapter.url !== this.state.activeChapter) {
+      this.setState({ activeChapter: chapter.url, activeUnit: unitName });
+      this.props.changeChapter(chapter);
     }
   }
 
@@ -79,7 +79,7 @@ export default class SyllabusTree extends React.Component {
                     this.state.activeChapter === chapter.url ? 'chapter-active' : 'chapter-inactive'
                   }`}
                   key={chapter.url}
-                  onClick={() => this.clickOnChapter(chapter.url, node.unit.name)}>
+                  onClick={() => this.clickOnChapter(chapter)}>
                   {chapter.name}
                 </div>
               ))}

@@ -12,20 +12,25 @@ import SubjectMarkdown from '../../components/learn/subject-marked';
 
 import { laravelSyllabus } from '../../utils/mock-data';
 
-const defaultChapter = laravelSyllabus[0].chapters[0].url;
+const defaultChapter = laravelSyllabus[0].chapters[0];
 
 const CurriculumSection = styled.section`
   ${baseContainer};
   ${space};
-  border: 1px solid #b9b9b9;
+  border: 1px solid #f5f5f5;
   min-height: 80vh;
   background-color: #fff;
-  & .tableOfContent {
+  & .box_toc {
+    border-right: 1px solid #f5f5f5;
+  }
+  & .toc_title {
     background-color: #374355;
     color: #fff;
-    font-weight: bold;
+    font-weight: 500;
     padding: 10px;
-    margin-bottom: 5px;
+  }
+  & .chapter_name {
+    font-weight: 500;
   }
 `;
 
@@ -33,8 +38,8 @@ export default class Subject extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      chapterContent: '',
-      activeChaper: '',
+      activeChapterContent: '',
+      activeChapterName: '',
       loading: true,
     };
   }
@@ -46,15 +51,16 @@ export default class Subject extends React.Component {
   changeChapter = selectedChapter => {
     this.setState({
       loading: true,
+      activeChapterName: selectedChapter.name,
     });
     this.getChapterContent(selectedChapter);
   };
 
   async getChapterContent(chapter) {
-    const chapterContentPromise = await fetch(chapter);
-    const chapterContent = await chapterContentPromise.text();
+    const activeChapterContentPromise = await fetch(chapter.url);
+    const activeChapterContent = await activeChapterContentPromise.text();
     await this.setState({
-      chapterContent,
+      activeChapterContent,
       loading: false,
     });
   }
@@ -70,12 +76,13 @@ export default class Subject extends React.Component {
         />
         <CurriculumSection my={[2, 4]}>
           <Flex column={false}>
-            <Box width={[0, 0.2]}>
-              <div className="tableOfContent">Table of content</div>
+            <Box width={[0, 0.2]} className="box_toc">
+              <div className="toc_title">Table of content</div>
               <SyllabusTree data={laravelSyllabus} changeChapter={this.changeChapter} />
             </Box>
             <Box width={[0.8]} px={2}>
-              <SubjectMarkdown loading={this.state.loading} markdown={this.state.chapterContent} />
+              <h2 className="chapter_name">{this.state.activeChapterName}</h2>
+              <SubjectMarkdown loading={this.state.loading} markdown={this.state.activeChapterContent} />
             </Box>
           </Flex>
         </CurriculumSection>

@@ -19,7 +19,6 @@ export default class TreeView extends React.PureComponent {
   render() {
     const Container = styled.div`
       overflow-y: hidden;
-
       .unit {
         display: flex;
         flex-wrap: nowrap;
