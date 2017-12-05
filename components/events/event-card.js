@@ -40,6 +40,7 @@ const Card = styled(Flex)`
   & .icons {
     font-size: 1.2rem;
     margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
     color: #8393a7;
   }
   & .rsvp {
