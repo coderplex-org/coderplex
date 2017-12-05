@@ -12,8 +12,6 @@ import SubjectMarkdown from '../../components/learn/subject-marked';
 
 import { laravelSyllabus } from '../../utils/mock-data';
 
-const defaultChapter = laravelSyllabus[0].chapters[0];
-
 const CurriculumSection = styled.section`
   ${baseContainer};
   ${space};
@@ -34,12 +32,14 @@ const CurriculumSection = styled.section`
   }
 `;
 
+const defaultChapter = laravelSyllabus[0].chapters[0];
+
 export default class Subject extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       activeChapterContent: '',
-      activeChapterName: '',
+      activeChapterName: defaultChapter.name,
       loading: true,
     };
   }

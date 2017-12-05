@@ -59,27 +59,27 @@ export default class SyllabusTree extends React.Component {
 
     return (
       <Container>
-        {this.props.data.map((node, i) => {
-          const UnitTitleComponent = (
-            <div className="unit_name" key={node.unit.name} onClick={() => this.handleClick(i)}>
-              {node.unit.name}
+        {this.props.data.map((unitNode, i) => {
+          const UnitNameComponent = (
+            <div className="unit_name" key={unitNode.unit.name} onClick={() => this.handleClick(i)}>
+              {unitNode.unit.name}
             </div>
           );
           return (
             <TreeView
               key={i}
-              unitTitle={node.unit.name}
-              UnitTitleComponent={UnitTitleComponent}
+              unitName={unitNode.unit.name}
+              UnitNameComponent={UnitNameComponent}
               activeUnit={this.state.activeUnit}
               collapsed={this.state.nodeStateTracker[i]}
               onClick={() => this.handleClick(i)}>
-              {node.chapters.map(chapter => (
+              {unitNode.chapters.map(chapter => (
                 <div
                   className={`chapter ${
                     this.state.activeChapter === chapter.url ? 'chapter-active' : 'chapter-inactive'
                   }`}
                   key={chapter.url}
-                  onClick={() => this.clickOnChapter(chapter)}>
+                  onClick={() => this.clickOnChapter(chapter, unitNode.unit.name)}>
                   {chapter.name}
                 </div>
               ))}

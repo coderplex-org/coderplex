@@ -42,7 +42,7 @@ export default class TreeView extends React.PureComponent {
       }
 
       .chapters {
-        padding-left: 0.4rem;
+        padding-left: 0.8rem;
       }
 
       .chapters-collapsed {
@@ -71,9 +71,9 @@ export default class TreeView extends React.PureComponent {
     return (
       <Container>
         <div
-          className={this.props.unitTitle === this.props.activeUnit ? 'unit unit-active' : 'unit'}
+          className={this.props.unitName === this.props.activeUnit ? 'unit unit-active' : 'unit'}
           onClick={this.unitClick}>
-          {this.props.UnitTitleComponent}
+          {this.props.UnitNameComponent}
           <div className={this.state.collapsed ? 'pointer pointer-collapsed' : 'pointer'} />
         </div>
         <div className={this.state.collapsed ? 'chapters chapters-collapsed' : 'chapters'}>
