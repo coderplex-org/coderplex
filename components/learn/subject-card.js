@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'react-emotion';
 import { Flex, Box } from 'grid-emotion';
-import { space } from 'styled-system';
+import { space, fontSize } from 'styled-system';
 import Link from 'next/link';
 import LearningIcon from 'react-icons/lib/fa/book';
 import EstimateIcon from 'react-icons/lib/md/access-time';
@@ -42,18 +42,19 @@ const SubjectCard = styled.div`
     }
   }
   & .subtitle {
-    font-size: 0.8rem;
+    ${fontSize};
     color: #8393a7;
     margin-top: 0px;
     margin-bottom: 10px;
   }
   & .stats {
+    ${fontSize};
     color: #8393a7;
-    font-size: 0.8rem;
   }
   & .icons {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
     color: #8393a7;
   }
   & .view {
@@ -81,15 +82,17 @@ export default ({ subject }) => (
     </div>
     <div className="content">
       <h3 className="title">{subject.title}</h3>
-      <p className="subtitle">{subject.domain}</p>
+      <p className="subtitle" fontSize={[12, 14, 16]}>
+        {subject.domain}
+      </p>
       <Flex className="stats" wrap>
-        <Box pr={[1]} pb={[1]}>
+        <Box pr={[1]} pb={[1]} fontSize={[12, 14, 16]}>
           <LearningIcon className="icons" />
-          20 learning
+          <span>20 learning</span>
         </Box>
-        <Box>
+        <Box fontSize={[12, 14, 16]}>
           <EstimateIcon className="icons" />
-          20 hours
+          <span>20 hours</span>
         </Box>
       </Flex>
       <Link href={`/learn/subject?id=${subject.subjectId}`} as={subject.url}>

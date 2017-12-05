@@ -76,7 +76,7 @@ export default class Subject extends React.Component {
         />
         <CurriculumSection my={[2, 4]}>
           <Flex column={false}>
-            <Box width={[0, 0.2]} className="box_toc">
+            <Box width={[0.2]} className="box_toc">
               <div className="toc_title">Table of content</div>
               <SyllabusTree data={laravelSyllabus} changeChapter={this.changeChapter} />
             </Box>
