@@ -15,10 +15,10 @@ const SubjectCard = styled.div`
   margin-top: 24px;
   display: inline-block;
   min-height: 200px;
-  border: 1px solid #b9b9b9;
+  border: 1px solid #d3d3d3;
   transition: all 0.25s;
   & .logo {
-    background: #fff;
+    background: #ebeff3;
     text-align: center;
     padding: 1.5rem 0 1.5rem 0;
     font-size: 7rem;
@@ -29,7 +29,7 @@ const SubjectCard = styled.div`
   & .content {
     padding: 10px;
     color: #444;
-    background: #fafafa;
+    background: #fff;
     text-align: left;
   }
   & .title {

@@ -143,7 +143,7 @@ export default () => (
             </SubTitle>
           </Box>
           <Box width={1}>
-            <Flex justify="space-between" align="center" wrap>
+            <Flex justify="space-around" align="center" wrap>
               {take(listOfSubjects, 4).map(subject => {
                 return <SubjectCard key={subject.url} subject={subject} />;
               })}
