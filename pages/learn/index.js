@@ -6,7 +6,7 @@ import { space } from 'styled-system';
 import Layout from '../../components/common/layout';
 import BannerSection from '../../components/common/banner';
 import SubjectCard from '../../components/learn/subject-card';
-import { baseContainer, graySecondary } from '../../utils/base.styles';
+import { baseContainer } from '../../utils/base.styles';
 import { listOfSubjects } from '../../utils/mock-data';
 
 const LearnSection = styled.section`
@@ -17,7 +17,6 @@ const LearnSection = styled.section`
 
 const FilterContainer = styled.div`
   ${space};
-  border-bottom: 1px solid ${graySecondary};
   & .title_filter {
     text-align: center;
   }

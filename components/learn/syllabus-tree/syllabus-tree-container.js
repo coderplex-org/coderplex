@@ -34,6 +34,7 @@ export default class SyllabusTree extends React.Component {
         font-size: 0.85rem;
         user-select: none;
         border-left: 2px solid #fff;
+        color: #888;
         :hover {
           background-color: #f5f5f5;
           border-left: 2px solid #374355;
@@ -41,7 +42,7 @@ export default class SyllabusTree extends React.Component {
         }
       }
 
-      & .chapter-active {
+      & .active {
         color: #374355;
         background-color: #f5f5f5;
         border-left: 2px solid #374355;
@@ -75,9 +76,7 @@ export default class SyllabusTree extends React.Component {
               onClick={() => this.handleClick(i)}>
               {unitNode.chapters.map(chapter => (
                 <div
-                  className={`chapter ${
-                    this.state.activeChapter === chapter.url ? 'chapter-active' : 'chapter-inactive'
-                  }`}
+                  className={`chapter ${this.state.activeChapter === chapter.url ? 'active' : ''}`}
                   key={chapter.url}
                   onClick={() => this.clickOnChapter(chapter, unitNode.unit.name)}>
                   {chapter.name}
