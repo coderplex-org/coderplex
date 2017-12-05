@@ -28,10 +28,7 @@ const FilterContainer = styled.div`
 
 export default () => (
   <Layout>
-    <BannerSection
-      title="Open Source Learning Guides"
-      subTitle="Open Source Learning Guides to master your favorite technology"
-    />
+    <BannerSection title="Open Source Learning Guides" subTitle="To master your favorite technology" />
     <LearnSection py={[2, 3]} px={[2, 1]}>
       <FilterContainer my={[1, 2]}>
         <h2 className="title_filter">Available Guides</h2>
