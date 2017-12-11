@@ -1,15 +1,16 @@
 import React from 'react';
 import fetch from 'isomorphic-unfetch';
+import styled from 'react-emotion';
 import { space } from 'styled-system';
 import { Flex, Box } from 'grid-emotion';
-import styled from 'react-emotion';
+import ExpandTOC from 'react-icons/lib/fa/angle-double-right';
+import CollapseTOC from 'react-icons/lib/fa/angle-double-left';
 
 import { baseContainer, Title, breakpoints } from '../../utils/base.styles';
 import Layout from '../../components/common/layout';
 import BannerSection from '../../components/learn/subject-banner';
 import SyllabusTree from '../../components/learn/syllabus-tree/syllabus-tree-container';
 import SubjectMarkdown from '../../components/learn/subject-marked';
-import FloatingSyllabus from '../../components/learn/floating-syllabus';
 
 import { laravelSyllabus } from '../../utils/mock-data';
 
@@ -21,9 +22,7 @@ const CurriculumSection = styled.section`
   background-color: #fff;
   & .box_toc {
     border-right: 1px solid #f5f5f5;
-    ${breakpoints.xs} {
-      display: none;
-    }
+    min-width: 250px;
   }
   & .toc_title {
     background-color: #374355;
@@ -36,6 +35,28 @@ const CurriculumSection = styled.section`
   }
 `;
 
+const Fab = styled.div`
+  position: sticky;
+  top: 0.5rem;
+  z-index: 3;
+  left: 0;
+  margin-top: 0.5rem;
+  top: 3rem;
+  display: none;
+  & .fab_symbol {
+    opacity: 0.5;
+    padding: 0.05rem;
+    border-radius: 0 5px 5px 0;
+    background: #fff;
+    border: 0.5px solid #555;
+    width: 1.2rem;
+    height: 2rem;
+  }
+  ${breakpoints.xs} {
+    display: inherit;
+  }
+`;
+
 const defaultChapter = laravelSyllabus[0].chapters[0];
 
 export default class Subject extends React.Component {
@@ -45,6 +66,7 @@ export default class Subject extends React.Component {
       activeChapterContent: '',
       activeChapterName: defaultChapter.name,
       loading: true,
+      isSidebarOpen: true,
     };
   }
 
@@ -78,14 +100,22 @@ export default class Subject extends React.Component {
           subTitle="Web Development"
           icon="devicon-laravel-plain colored"
         />
-        <FloatingSyllabus />
         <CurriculumSection my={[0, 4]}>
           <Flex column={false}>
-            <Box width={[0, 0.2]} className="box_toc">
-              <div className="toc_title">Table of content</div>
-              <SyllabusTree data={laravelSyllabus} changeChapter={this.changeChapter} />
-            </Box>
-            <Box width={[1, 0.8]} px={[1, 2]}>
+            {this.state.isSidebarOpen ? (
+              <Box width={[0, 0.2]} flex={'1 1 auto'} className="box_toc">
+                <div className="toc_title">Table of content</div>
+                <SyllabusTree data={laravelSyllabus} changeChapter={this.changeChapter} />
+              </Box>
+            ) : null}
+            <Box width={[1, 0.8]} flex={'1 1 auto'} px={[1, 2]} className="box_content">
+              <Fab onClick={() => this.setState({ isSidebarOpen: !this.state.isSidebarOpen })}>
+                {this.state.isSidebarOpen ? (
+                  <CollapseTOC className="fab_symbol" />
+                ) : (
+                  <ExpandTOC className="fab_symbol" />
+                )}
+              </Fab>
               <h2 className="chapter_name">{this.state.activeChapterName}</h2>
               <SubjectMarkdown loading={this.state.loading} markdown={this.state.activeChapterContent} />
             </Box>

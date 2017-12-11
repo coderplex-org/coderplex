@@ -4,5 +4,5 @@
   "trailingComma": "es5",
   "singleQuote": true,
   "jsxBracketSameLine": true,
-  "proseWrap": false
+  "proseWrap": never
 }
