@@ -107,6 +107,7 @@ export const SubTitle = styled.h3`
   ${breakpoints.xs} {
     font-size: 0.9rem;
     text-align: center;
+    font-weight: 600;
     line-height: ${props => (props.small ? '1.4rem' : '1.8rem')};
   }
 `;

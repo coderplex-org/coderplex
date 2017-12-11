@@ -21,7 +21,8 @@ const Container = styled.section`
     font-size: 10rem;
     background: #fff;
     ${breakpoints.xs} {
-      font-size: 8rem;
+      text-align: left;
+      font-size: 4.5rem;
     }
   }
   & .titles {
@@ -34,13 +35,16 @@ const Container = styled.section`
   }
   & .edit {
     display: block;
+    ${breakpoints.xs} {
+      display: none;
+    }
   }
 `;
 
 export default ({ title, subTitle, icon }) => (
-  <BannerSection py={[2, 3]} px={[2, 1]}>
+  <BannerSection py={[1, 3]} px={[2, 1]}>
     <Container>
-      <Flex wrap align={'flex-end'}>
+      <Flex wrap={false} align={'flex-end'}>
         <Box flex={'0 1 auto'}>
           <div className="logo">
             <i className={icon} />
@@ -50,8 +54,9 @@ export default ({ title, subTitle, icon }) => (
           <Title>{title}</Title>
           <SubTitle className="domain">{subTitle}</SubTitle>
         </Box>
-        <Box flex={['1 1 auto', '0 1 auto']}>
-          <Button inverted medium className="edit">
+        <Box flex={['0 1 auto']}>
+          <Button inverted medium className="edit
+            }">
             EDIT
           </Button>
         </Box>

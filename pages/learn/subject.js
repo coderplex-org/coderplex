@@ -4,11 +4,12 @@ import { space } from 'styled-system';
 import { Flex, Box } from 'grid-emotion';
 import styled from 'react-emotion';
 
-import { baseContainer, Title } from '../../utils/base.styles';
+import { baseContainer, Title, breakpoints } from '../../utils/base.styles';
 import Layout from '../../components/common/layout';
 import BannerSection from '../../components/learn/subject-banner';
 import SyllabusTree from '../../components/learn/syllabus-tree/syllabus-tree-container';
 import SubjectMarkdown from '../../components/learn/subject-marked';
+import FloatingSyllabus from '../../components/learn/floating-syllabus';
 
 import { laravelSyllabus } from '../../utils/mock-data';
 
@@ -20,6 +21,9 @@ const CurriculumSection = styled.section`
   background-color: #fff;
   & .box_toc {
     border-right: 1px solid #f5f5f5;
+    ${breakpoints.xs} {
+      display: none;
+    }
   }
   & .toc_title {
     background-color: #374355;
@@ -74,13 +78,14 @@ export default class Subject extends React.Component {
           subTitle="Web Development"
           icon="devicon-laravel-plain colored"
         />
-        <CurriculumSection my={[2, 4]}>
+        <FloatingSyllabus />
+        <CurriculumSection my={[0, 4]}>
           <Flex column={false}>
-            <Box width={[0.2]} className="box_toc">
+            <Box width={[0, 0.2]} className="box_toc">
               <div className="toc_title">Table of content</div>
               <SyllabusTree data={laravelSyllabus} changeChapter={this.changeChapter} />
             </Box>
-            <Box width={[0.8]} px={2}>
+            <Box width={[1, 0.8]} px={[1, 2]}>
               <h2 className="chapter_name">{this.state.activeChapterName}</h2>
               <SubjectMarkdown loading={this.state.loading} markdown={this.state.activeChapterContent} />
             </Box>
