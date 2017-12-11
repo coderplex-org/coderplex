@@ -24,15 +24,6 @@ const CurriculumSection = styled.section`
     border-right: 1px solid #f5f5f5;
     min-width: 250px;
   }
-  & .toc_sticky {
-    ${breakpoints.xs} {
-      position: sticky;
-      z-index: 3;
-      left: 0;
-      margin-top: 0.5rem;
-      top: 10rem;
-    }
-  }
   & .toc_title {
     background-color: #374355;
     color: #fff;
@@ -112,10 +103,8 @@ export default class Subject extends React.Component {
           <Flex column={false}>
             {this.state.isSidebarOpen ? (
               <Box width={[0, 0.2]} flex={'1 1 auto'} className="box_toc">
-                <div className="toc_sticky">
-                  <div className="toc_title">Table of content</div>
-                  <SyllabusTree data={laravelSyllabus} changeChapter={this.changeChapter} />
-                </div>
+                <div className="toc_title">Table of content</div>
+                <SyllabusTree data={laravelSyllabus} changeChapter={this.changeChapter} />
               </Box>
             ) : null}
             <Box width={[1, 0.8]} flex={'1 1 auto'} px={[1, 2]} className="box_content">
