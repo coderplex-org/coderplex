@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'react-emotion';
 import { space, fontSize } from 'styled-system';
 import { Flex, Box } from 'grid-emotion';
-import TimeIcon from 'react-icons/lib/md/access-time';
+import TimeIcon from 'react-icons/lib/fa/calendar';
 import format from 'date-fns/format';
 import LocationIcon from 'react-icons/lib/md/location-on';
 import AttendeesIcon from 'react-icons/lib/md/people';
@@ -112,7 +112,7 @@ export default props => (
               <span>{props.online ? 'Free session' : 'Free entry'}</span>
             </Box>
             <Box fontSize={[12, 14, 16]} width={[1, 1, 0.17]} mt={[1, 1, 0]} className="rsvp">
-              <Button href={props.link} ghost small>
+              <Button href={props.link} inverted medium>
                 {props.tense === 'past' ? 'View' : 'RSVP'}
               </Button>
             </Box>

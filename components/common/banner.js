@@ -5,8 +5,7 @@ import { space } from 'styled-system';
 import { Container, Title, SubTitle } from '../../utils/base.styles';
 
 const BannerSection = styled.section`
-  background: #fbfbfb;
-  background-image: url('https://res.cloudinary.com/coderplex/image/upload/v1510788480/website__assets/pattern.png');
+  background-color: #374355;
   min-height: 150px;
   text-align: center;
   ${space};

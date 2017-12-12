@@ -175,7 +175,10 @@ export default class FooterBar extends React.Component {
         <Container>
           <Flex wrap py={[0, 3]}>
             <Flex align="center" direction="column" justify="center" width={[1, 1, 1 / 2]} px={[2, 3]} py={[3, 0]}>
-              <Title>We are constantly updating our platform. Do subscribe to stay informed.</Title>
+              <Title>
+                We are constantly updating our platform.
+                <br />Do subscribe to stay informed.
+              </Title>
               {this.state.subscriberEmailPosted ? (
                 <h3>Thank you, we will keep you posted</h3>
               ) : (
