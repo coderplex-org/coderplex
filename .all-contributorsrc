@@ -224,6 +224,18 @@
       "contributions": [
         "review"
       ]
+    },
+    {
+      "login": "chotuaashiq",
+      "name": "Akshat Maheshwari",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/33116648?v=4",
+      "profile": "https://github.com/chotuaashiq",
+      "contributions": [
+        "code",
+        "design",
+        "doc",
+        "tool"
+      ]
     }
   ]
 }
