@@ -30,7 +30,7 @@ export default class Events extends React.Component {
     pastEvents: [],
     pastEventsLoadLimit: 2,
     futureEvents: [],
-    futureEventsLoadLimit: 2,
+    futureEventsLoadLimit: 1,
     fetchError: null,
     loading: true,
   };
