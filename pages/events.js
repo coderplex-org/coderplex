@@ -51,7 +51,7 @@ export default class Events extends React.Component {
       } else {
         throw new Error('Failed to retieve future events');
       }
-      await this.setState({
+      this.setState({
         pastEvents,
         futureEvents,
         fetchError: null,
@@ -59,7 +59,7 @@ export default class Events extends React.Component {
       });
     } catch (err) {
       console.log(err);
-      await this.setState({
+      this.setState({
         pastEvents: null,
         futureEvents: null,
         fetchError: err.message,
@@ -91,12 +91,16 @@ export default class Events extends React.Component {
     return (
       <div>
         {events.slice(0, loadLimit).map(event => {
+          console.log(event);
           const regexForImageSrc = /<img.*?src="([^">]*\/([^">]*?))".*?>/g;
-          const imageSrc = regexForImageSrc.exec(event.description);
+          const imgs = regexForImageSrc.exec(event.description);
+          const imageSrc = imgs
+            ? imgs[1]
+            : event.featured_photo ? event.featured_photo.photo_link : imagePlaceholderURL;
           return (
             <EventCard
               key={event.id}
-              image={imageSrc ? imageSrc[1] : imagePlaceholderURL}
+              image={imageSrc}
               name={event.name}
               location={event.venue ? event.venue.name : 'Online'}
               online={!event.venue}
@@ -114,7 +118,7 @@ export default class Events extends React.Component {
   renderLoadMoreButton(eventsTotalLength, loadLimit, isPastEvent) {
     return loadLimit >= eventsTotalLength ? null : (
       <div className="loadmore_div" mb={[5, 5]}>
-        <Button inverted medium onClick={event => this.loadMore(event, isPastEvent)}>
+        <Button inverted medium onClick={() => this.loadMore(isPastEvent)}>
           Load more
         </Button>
       </div>
