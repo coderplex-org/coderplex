@@ -95,6 +95,7 @@ export default class Events extends React.Component {
           const imageSrc = regexForImageSrc.exec(event.description);
           return (
             <EventCard
+              showImg
               key={event.id}
               image={imageSrc ? imageSrc[1] : imagePlaceholderURL}
               name={event.name}
