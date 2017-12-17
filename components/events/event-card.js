@@ -97,11 +97,7 @@ export default props => (
           <Flex wrap>
             <Box fontSize={[12, 14, 16]} width={[1, 1, 0.38]} className="secondaryText" pr={1} mr={[0]} my={[1, 1, 0]}>
               <TimeIcon className="icons" />
-              <span>
-                {props.tense === 'past'
-                  ? format(props.time, "ddd MMM Do 'YY")
-                  : format(props.time, "ddd MMM Do 'YY, h:mm A")}
-              </span>
+              <span>{format(props.time, "ddd MMM Do 'YY, h:mm A")}</span>
             </Box>
             <Box fontSize={[12, 14, 16]} width={[1, 1, 0.24]} className="secondaryText" pr={1} mx={[0]} my={[1, 1, 0]}>
               <AttendeesIcon className="icons" />
