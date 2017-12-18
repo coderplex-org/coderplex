@@ -98,6 +98,7 @@ export default class Events extends React.Component {
             : event.featured_photo ? event.featured_photo.photo_link : imagePlaceholderURL;
           return (
             <EventCard
+              showImg
               key={event.id}
               image={imageSrc}
               name={event.name}

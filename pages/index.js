@@ -9,7 +9,17 @@ import Hide, { Container, Button, Title, SubTitle, breakpoints } from '../utils/
 import { listOfSubjects } from '../utils/mock-data';
 import Layout from '../components/common/layout';
 import SubjectCard from '../components/learn/subject-card';
-import { heroPatternURL, heroBannerURL, spaceCoverURL, eventsCoverURL } from '../utils/urls';
+import EventCard from '../components/events/event-card';
+
+import {
+  baseEventsURL,
+  indexPageEventURL,
+  heroPatternURL,
+  heroBannerURL,
+  spaceCoverURL,
+  eventsCoverURL,
+  imagePlaceholderURL,
+} from '../utils/urls';
 
 const HeroSection = styled.section`
   ${space};
@@ -72,6 +82,7 @@ const EventsSection = styled.section`
   color: #fff;
   position: relative;
   text-align: left;
+  padding-bottom: 30px;
   & img {
     width: 100%;
     min-height: 427px;
@@ -120,6 +131,72 @@ const SpaceOverlay = styled.div`
     display: none;
   }
 `;
+
+class UpcomingEvent extends React.Component {
+  state = {
+    events: null,
+    loading: true,
+    fetchError: null,
+  };
+  async componentDidMount() {
+    try {
+      let events;
+      const eventsResponse = await fetch(`${baseEventsURL}${indexPageEventURL}`);
+      if (eventsResponse.ok) {
+        events = await eventsResponse.json();
+      } else {
+        throw new Error('Failed to Retrieve past events');
+      }
+      await this.setState({
+        events,
+        fetchError: null,
+        loading: false,
+      });
+    } catch (err) {
+      console.log(err);
+      await this.setState({
+        event: null,
+        fetchError: err.message,
+        loading: false,
+      });
+    }
+  }
+  render() {
+    const { loading, events } = this.state;
+    if (loading) {
+      return (
+        <SubTitle inverted color="#222">
+          Loading..
+        </SubTitle>
+      );
+    } else if (events.length === 0) {
+      return <img src={eventsCoverURL} alt="events__pic" />;
+    } else if (events === null) {
+      return <img src={eventsCoverURL} alt="events__pic" />;
+    }
+    return (
+      <div>
+        {events.slice(0, 1).map(event => {
+          const regexForImageSrc = /<img.*?src="([^">]*\/([^">]*?))".*?>/g;
+          const imageSrc = regexForImageSrc.exec(event.description);
+          return (
+            <EventCard
+              key={event.id}
+              image={imageSrc ? imageSrc[1] : imagePlaceholderURL}
+              name={event.name}
+              location={event.venue ? event.venue.name : 'Online'}
+              online={!event.venue}
+              time={event.time}
+              attendees={event.yes_rsvp_count}
+              tense={event.status}
+              link={event.link}
+            />
+          );
+        })}
+      </div>
+    );
+  }
+}
 
 export default () => (
   <Layout>
@@ -197,7 +274,7 @@ export default () => (
         <Flex align="center" justify="center" wrap>
           <Box order={[2, 2, 1]} width={[1, 1, 1 / 2]} px={[4, 4, 3]}>
             <Hide sm xs>
-              <img src={eventsCoverURL} alt="events__pic" />
+              <UpcomingEvent />
             </Hide>
           </Box>
           <Box order={1} width={[1, 1, 1 / 2]} px={[2, 3]} pt={[3, 4, 0]} pb={[4, 4, 0]}>
@@ -209,7 +286,7 @@ export default () => (
             </SubTitle>
             <Box className="box" width={[1]} pt={[2]} px={[3, 0]}>
               <Hide md lg>
-                <img src={eventsCoverURL} alt="events__pic" />
+                <UpcomingEvent />
               </Hide>
               <Link href={'/events'}>
                 <Button href={'/events'} medium>

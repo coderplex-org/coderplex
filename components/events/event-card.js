@@ -18,6 +18,7 @@ const Card = styled(Flex)`
   border: 1px solid ${graySecondary};
   min-height: 120px;
   color: #8393a7;
+  text-align: left;
   & .eventPhoto {
     height: 120px;
     width: 100%;
@@ -75,39 +76,63 @@ const CardTitle = styled.h3`
 
 export default props => (
   <Card my={[3]} wrap>
-    <Flex align="streach" width={[1, 1, 1 / 4]}>
-      <img
-        className="eventPhoto"
-        src={`https://res.cloudinary.com/coderplex/image/fetch/w_200,h_150/${props.image}`}
-        srcSet={`https://res.cloudinary.com/coderplex/image/fetch/w_300,h_200/${
-          props.image
-        } 720w, https://res.cloudinary.com/coderplex/image/fetch/w_200,h_150/${props.image} 1024w`}
-      />
-    </Flex>
-    <Box className="eventDetails" width={[1, 1, 3 / 4]}>
+    {props.showImg && (
+      <Flex align="streach" width={[1, 1, 1 / 4]}>
+        <img
+          className="eventPhoto"
+          src={`https://res.cloudinary.com/coderplex/image/fetch/w_200,h_150/${props.image}`}
+          srcSet={`https://res.cloudinary.com/coderplex/image/fetch/w_300,h_200/${
+            props.image
+          } 720w, https://res.cloudinary.com/coderplex/image/fetch/w_200,h_150/${props.image} 1024w`}
+        />
+      </Flex>
+    )}
+    <Box className="eventDetails" width={props.showImg ? [1, 1, 3 / 4] : [1, 1, 1]}>
       <Flex className="eventDetails" column justify="space-between">
         <CardTitle inverted color="#222" px={[2]} py={[1]} m={0}>
           {truncateString(props.name, 64)}
         </CardTitle>
-        <Box fontSize={[12, 14, 16]} className="secondaryText" px={[2]} my={[1, 1, 0]}>
+        <Box fontSize={[12, 14, 16]} className="secondaryText" px={[2]} my={props.showImg ? [1, 1, 0] : [1, 1, 1]}>
           <LocationIcon className="icons" />
           <span>{truncateString(props.location, 55)}</span>
         </Box>
         <Box px={2} pb={[2, 1]}>
           <Flex wrap>
-            <Box fontSize={[12, 14, 16]} width={[1, 1, 0.38]} className="secondaryText" pr={1} mr={[0]} my={[1, 1, 0]}>
+            <Box
+              fontSize={[12, 14, 16]}
+              width={props.showImg ? [1, 1, 0.38] : [1, 1, 1 / 2]}
+              className="secondaryText"
+              pr={1}
+              mr={[0]}
+              my={props.showImg ? [1, 1, 0] : [1, 1, 1]}>
               <TimeIcon className="icons" />
               <span>{format(props.time, "ddd MMM Do 'YY, h:mm A")}</span>
             </Box>
-            <Box fontSize={[12, 14, 16]} width={[1, 1, 0.24]} className="secondaryText" pr={1} mx={[0]} my={[1, 1, 0]}>
+            <Box
+              fontSize={[12, 14, 16]}
+              width={props.showImg ? [1, 1, 0.24] : [1, 1, 1 / 2]}
+              className="secondaryText"
+              pr={1}
+              mx={[0]}
+              my={props.showImg ? [1, 1, 0] : [1, 1, 1]}>
               <AttendeesIcon className="icons" />
               <span>{props.tense === 'past' ? `${props.attendees} attended` : `${props.attendees} attending`}</span>
             </Box>
-            <Box fontSize={[12, 14, 16]} width={[1, 1, 0.21]} className="secondaryText" pr={1} mx={[0]} my={[1, 1, 0]}>
+            <Box
+              fontSize={[12, 14, 16]}
+              width={props.showImg ? [1, 1, 0.21] : [1, 1, 1 / 2]}
+              className="secondaryText"
+              pr={1}
+              mx={[0]}
+              my={props.showImg ? [1, 1, 0] : [1, 1, 1]}>
               {props.online ? <StreamIcon className="icons" /> : <TicketIcon className="icons" />}
               <span>{props.online ? 'Free session' : 'Free entry'}</span>
             </Box>
-            <Box fontSize={[12, 14, 16]} width={[1, 1, 0.17]} mt={[1, 1, 0]} className="rsvp">
+            <Box
+              fontSize={[12, 14, 16]}
+              width={props.showImg ? [1, 1, 0.17] : [1, 1, 1 / 2]}
+              mt={props.showImg ? [1, 1, 0] : [1, 1, 1]}
+              className="rsvp">
               <Button href={props.link} inverted medium>
                 {props.tense === 'past' ? 'View' : 'RSVP'}
               </Button>
