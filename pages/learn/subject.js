@@ -12,7 +12,7 @@ import BannerSection from '../../components/learn/subject-banner';
 import SyllabusTree from '../../components/learn/syllabus-tree/syllabus-tree-container';
 import SubjectMarkdown from '../../components/learn/subject-marked';
 
-import { laravelSyllabus } from '../../utils/mock-data';
+import { laravelSyllabus, reactSyllabus } from '../../utils/mock-data';
 
 const CurriculumSection = styled.section`
   ${baseContainer};
@@ -56,21 +56,37 @@ const Fab = styled.div`
   }
 `;
 
-const defaultChapter = laravelSyllabus[0].chapters[0];
-
 export default class Subject extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      activeSubject: this.selectSubject(this.props.url.query.id),
       activeChapterContent: '',
-      activeChapterName: defaultChapter.name,
+      activeChapterName:
+        this.selectSubject(this.props.url.query.id) === null
+          ? ''
+          : this.selectSubject(this.props.url.query.id)[0].chapters[0].name,
       loading: true,
       isSidebarOpen: true,
     };
   }
 
+  selectSubject(openedGuide) {
+    switch (openedGuide) {
+      case 'laravel':
+        return laravelSyllabus;
+      case 'reactjs':
+        return reactSyllabus;
+      default:
+        return null;
+    }
+  }
+
   componentDidMount() {
-    this.getChapterContent(defaultChapter);
+    if (this.state.activeSubject !== null) {
+      const defaultChapter = this.state.activeSubject[0].chapters[0];
+      this.getChapterContent(defaultChapter);
+    }
   }
 
   changeChapter = selectedChapter => {
@@ -91,7 +107,11 @@ export default class Subject extends React.Component {
   }
 
   render() {
-    return this.props.url.query.id === 'laravel' ? (
+    return this.state.activeSubject === null ? (
+      <Layout>
+        <Title inverted>Curriculum for {this.props.url.query.id} and others Coming soon!!</Title>
+      </Layout>
+    ) : (
       <Layout>
         <BannerSection
           textInverted
@@ -104,7 +124,7 @@ export default class Subject extends React.Component {
             {this.state.isSidebarOpen ? (
               <Box width={[0, 0.2]} flex={'1 1 auto'} className="box_toc">
                 <div className="toc_title">Table of content</div>
-                <SyllabusTree data={laravelSyllabus} changeChapter={this.changeChapter} />
+                <SyllabusTree data={this.state.activeSubject} changeChapter={this.changeChapter} />
               </Box>
             ) : null}
             <Box width={[1, 0.8]} flex={'1 1 auto'} px={[1, 2]} className="box_content">
@@ -120,10 +140,6 @@ export default class Subject extends React.Component {
             </Box>
           </Flex>
         </CurriculumSection>
-      </Layout>
-    ) : (
-      <Layout>
-        <Title inverted>Curriculum for {this.props.url.query.id} and others Coming soon!!</Title>
       </Layout>
     );
   }
