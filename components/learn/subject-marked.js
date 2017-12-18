@@ -1,6 +1,8 @@
 import React from 'react';
 import marked from 'marked';
 import styled from 'react-emotion';
+import ContentLoader from 'react-content-loader';
+
 import { breakpoints } from '../../utils/base.styles';
 
 const Marked = styled.div`
@@ -101,7 +103,17 @@ export default class MarkedJS extends React.Component {
     return (
       <div>
         {this.props.loading ? (
-          <div>Loading...</div>
+          <div>
+            <ContentLoader height={200} width={600} speed={2} primaryColor={'#f3f3f3'} secondaryColor={'#ecebeb'}>
+              <rect x="0" y="0" rx="3" ry="3" width="600" height="10" />
+              <rect x="0" y="20" rx="3" ry="3" width="500" height="10" />
+              <rect x="0" y="40" rx="3" ry="3" width="600" height="10" />
+              <rect x="0" y="60" rx="3" ry="3" width="500" height="10" />
+              <rect x="0" y="80" rx="3" ry="3" width="600" height="10" />
+              <rect x="0" y="100" rx="3" ry="3" width="500" height="10" />
+              <rect x="0" y="120" rx="3" ry="3" width="500" height="10" />
+            </ContentLoader>
+          </div>
         ) : (
           <Marked
             dangerouslySetInnerHTML={{

@@ -9,7 +9,7 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 const route = pathMatch();
-const match = route('/learn/:id');
+const match = route('/learn/:subject/:chapter');
 
 getPort({ port: 3000 }).then(port => {
   app.prepare().then(() => {

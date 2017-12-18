@@ -1,4 +1,5 @@
 import React from 'react';
+import Router from 'next/router';
 import fetch from 'isomorphic-unfetch';
 import styled from 'react-emotion';
 import { space } from 'styled-system';
@@ -6,13 +7,13 @@ import { Flex, Box } from 'grid-emotion';
 import ExpandTOC from 'react-icons/lib/fa/angle-double-right';
 import CollapseTOC from 'react-icons/lib/fa/angle-double-left';
 
-import { baseContainer, Title, breakpoints } from '../../utils/base.styles';
+import { baseContainer, breakpoints } from '../../utils/base.styles';
 import Layout from '../../components/common/layout';
 import BannerSection from '../../components/learn/subject-banner';
 import SyllabusTree from '../../components/learn/syllabus-tree/syllabus-tree-container';
 import SubjectMarkdown from '../../components/learn/subject-marked';
 
-import { laravelSyllabus, reactSyllabus } from '../../utils/mock-data';
+import { laravelSyllabus, reactSyllabus, listOfSubjects } from '../../utils/mock-data';
 
 const CurriculumSection = styled.section`
   ${baseContainer};
@@ -60,12 +61,9 @@ export default class Subject extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeSubject: this.selectSubject(this.props.url.query.id),
+      activeSubject: this.selectSubject(this.props.url.query.subject),
       activeChapterContent: '',
-      activeChapterName:
-        this.selectSubject(this.props.url.query.id) === null
-          ? ''
-          : this.selectSubject(this.props.url.query.id)[0].chapters[0].name,
+      activeChapterName: '',
       loading: true,
       isSidebarOpen: true,
     };
@@ -81,24 +79,49 @@ export default class Subject extends React.Component {
         return null;
     }
   }
+  selectChapter(syllabus, chapterName) {
+    return syllabus
+      .map(item => {
+        return item.chapters.find(chapter => chapter.name === chapterName);
+      })
+      .filter(Boolean)[0];
+  }
 
-  componentDidMount() {
-    if (this.state.activeSubject !== null) {
-      const defaultChapter = this.state.activeSubject[0].chapters[0];
-      this.getChapterContent(defaultChapter);
+  getChapter(subject, chapter) {
+    const activeSubject = this.selectSubject(subject);
+    const activeChapterName = chapter.replace('-', ' ');
+    if (activeSubject !== null) {
+      this.setState({
+        activeChapterName,
+        activeSubject,
+      });
+      const activeChapterUrl = this.selectChapter(activeSubject, activeChapterName).cdnUrl;
+      this.getChapterContent(activeChapterUrl);
     }
   }
 
+  componentDidMount() {
+    const { subject, chapter } = this.props.url.query;
+    this.getChapter(subject, chapter);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { subject, chapter } = nextProps.url.query;
+    this.getChapter(subject, chapter);
+  }
+
   changeChapter = selectedChapter => {
-    this.setState({
-      loading: true,
-      activeChapterName: selectedChapter.name,
-    });
-    this.getChapterContent(selectedChapter);
+    const subjectName = this.props.url.query.subject;
+    const chapterName = selectedChapter.name.replace(' ', '-');
+    Router.push(`/learn/subject?subject=${subjectName}&chapter=${chapterName}`, `/learn/${subjectName}/${chapterName}`);
   };
 
-  async getChapterContent(chapter) {
-    const activeChapterContentPromise = await fetch(chapter.url);
+  async getChapterContent(chapterUrl) {
+    this.setState({
+      activeChapterContent: '',
+      loading: true,
+    });
+    const activeChapterContentPromise = await fetch(chapterUrl);
     const activeChapterContent = await activeChapterContentPromise.text();
     await this.setState({
       activeChapterContent,
@@ -107,17 +130,23 @@ export default class Subject extends React.Component {
   }
 
   render() {
+    const subjectIcon = listOfSubjects.find(item => item.subjectId === this.props.url.query.subject).icon;
     return this.state.activeSubject === null ? (
       <Layout>
-        <Title inverted>Curriculum for {this.props.url.query.id} and others Coming soon!!</Title>
+        <BannerSection
+          textInverted
+          title={this.props.url.query.subject.toUpperCase()}
+          subTitle={`Curriculum for ${this.props.url.query.subject.toUpperCase()} and others Coming soon!!`}
+          icon={subjectIcon}
+        />
       </Layout>
     ) : (
       <Layout>
         <BannerSection
           textInverted
-          title={this.props.url.query.id.toUpperCase()}
+          title={this.props.url.query.subject.toUpperCase()}
           subTitle="Web Development"
-          icon="devicon-laravel-plain colored"
+          icon={subjectIcon}
         />
         <CurriculumSection my={[0, 4]}>
           <Flex column={false}>
