@@ -106,11 +106,7 @@ export default props => (
               mr={[0]}
               my={props.showImg ? [1, 1, 0] : [1, 1, 1]}>
               <TimeIcon className="icons" />
-              <span>
-                {props.tense === 'past'
-                  ? format(props.time, "ddd MMM Do 'YY")
-                  : format(props.time, "ddd MMM Do 'YY, h:mm A")}
-              </span>
+              <span>{format(props.time, "ddd MMM Do 'YY, h:mm A")}</span>
             </Box>
             <Box
               fontSize={[12, 14, 16]}
