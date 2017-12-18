@@ -9,6 +9,7 @@ import BannerSection from '../components/common/banner';
 import { Container, SubTitle, Button } from '../utils/base.styles';
 import { baseEventsURL, futureEventsURL, pastEventsURL, imagePlaceholderURL } from '../utils/urls';
 import EventCard from '../components/events/event-card';
+import EventLoader from '../components/events/event-content-loader';
 
 const EventsSection = styled.section`
   ${space};
@@ -70,11 +71,9 @@ export default class Events extends React.Component {
 
   renderEvents(events, loadLimit) {
     if (this.state.loading) {
-      return (
-        <SubTitle inverted color="#222">
-          Loading..
-        </SubTitle>
-      );
+      return [1, 2].map(i => {
+        return <EventLoader key={i} />;
+      });
     } else if (events.length === 0) {
       return (
         <SubTitle inverted color="#222">
@@ -132,6 +131,7 @@ export default class Events extends React.Component {
   }
 
   render() {
+    const { loading } = this.state;
     return (
       <Layout>
         <BannerSection title="Online & Offline Events" subTitle="Because you cannot change the world alone" />
@@ -143,7 +143,8 @@ export default class Events extends React.Component {
                   Upcoming Events
                 </h3>
                 {this.renderEvents(this.state.futureEvents, this.state.futureEventsLoadLimit)}
-                {this.renderLoadMoreButton(this.state.futureEvents.length, this.state.futureEventsLoadLimit, false)}
+                {!loading &&
+                  this.renderLoadMoreButton(this.state.futureEvents.length, this.state.futureEventsLoadLimit, false)}
               </Box>
             </Flex>
             <Flex direction="column" align="center" justify="center">
@@ -152,7 +153,8 @@ export default class Events extends React.Component {
                   Recent Events
                 </h3>
                 {this.renderEvents(this.state.pastEvents, this.state.pastEventsLoadLimit)}
-                {this.renderLoadMoreButton(this.state.pastEvents.length, this.state.pastEventsLoadLimit, true)}
+                {!loading &&
+                  this.renderLoadMoreButton(this.state.pastEvents.length, this.state.pastEventsLoadLimit, true)}
               </Box>
             </Flex>
           </Container>
