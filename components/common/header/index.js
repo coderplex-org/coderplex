@@ -63,7 +63,11 @@ class NavBar extends React.Component {
   render() {
     const pathName = this.props.router.pathname;
     const metaData = MetaInfo[pathName === '/' ? 'home' : pathName.split('/')[1]];
-    const title = metaData.title;
+    const title =
+      pathName.split('/')[1] === 'learn'
+        ? `Learn ${this.props.router.query.subject[0].toUpperCase() +
+            this.props.router.query.subject.slice(1)} | Coderplex`
+        : metaData.title;
     const description = metaData.description;
     const image = metaData.image;
     return (
