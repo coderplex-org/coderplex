@@ -7,7 +7,7 @@ export const listOfSubjects = [
     subjectId: 'laravel',
     icon: 'devicon-laravel-plain colored',
     learningCount: '20',
-    learnGuideStatus: true,
+    isGuideCompleted: true,
   },
   {
     id: '213',
@@ -17,7 +17,7 @@ export const listOfSubjects = [
     subjectId: 'reactjs',
     icon: 'devicon-react-original colored',
     learningCount: '28',
-    learnGuideStatus: false,
+    isGuideCompleted: true,
   },
   {
     id: '2131',
@@ -27,7 +27,7 @@ export const listOfSubjects = [
     subjectId: 'go',
     icon: 'devicon-go-plain colored',
     learningCount: '7',
-    learnGuideStatus: false,
+    isGuideCompleted: false,
   },
   {
     id: '21fa3',
@@ -37,7 +37,7 @@ export const listOfSubjects = [
     subjectId: 'android',
     icon: 'devicon-android-plain colored',
     learningCount: '9',
-    learnGuideStatus: false,
+    isGuideCompleted: false,
   },
   {
     id: '21afasda3',
@@ -47,7 +47,7 @@ export const listOfSubjects = [
     subjectId: 'rails',
     icon: 'devicon-rails-plain colored',
     learningCount: '14',
-    learnGuideStatus: false,
+    isGuideCompleted: false,
   },
   {
     id: '21wqerwqe3',
@@ -57,7 +57,7 @@ export const listOfSubjects = [
     subjectId: 'python',
     icon: 'devicon-python-plain colored',
     learningCount: '32',
-    learnGuideStatus: false,
+    isGuideCompleted: false,
   },
   {
     id: '2bxcvbx13',
@@ -67,7 +67,7 @@ export const listOfSubjects = [
     subjectId: 'ios',
     icon: 'devicon-swift-plain colored',
     learningCount: '45',
-    learnGuideStatus: false,
+    isGuideCompleted: false,
   },
   {
     id: '2bxczzxcvbx13',
@@ -77,7 +77,7 @@ export const listOfSubjects = [
     subjectId: 'javascript',
     icon: 'devicon-javascript-plain colored',
     learningCount: '31',
-    learnGuideStatus: false,
+    isGuideCompleted: false,
   },
   {
     id: '2bxdfasczzxcvbx13',
@@ -87,149 +87,9 @@ export const listOfSubjects = [
     subjectId: 'angular',
     icon: 'devicon-angularjs-plain colored',
     learningCount: '3',
-    learnGuideStatus: false,
+    isGuideCompleted: false,
   },
 ];
-
-export const indexPageLearns = [
-  {
-    link: 'https://github.com/coderplex/learn/blob/master/web-dev/Frontend/Libraries%20%26%20Frameworks/Learn-React.md',
-    title: 'ReactJS',
-    subject: 'Frontend Web Development',
-    image: '',
-  },
-  {
-    link: 'https://github.com/coderplex/learn/blob/master/web-dev/Backend/Learn-Laravel.md',
-    title: 'Laravel',
-    subject: 'Backend Web Development',
-    image: '',
-  },
-  {
-    link: 'https://github.com/coderplex/learn/blob/master/programming-languages/Go/learn-go.md',
-    title: 'Go',
-    subject: 'Programming Language',
-    image: '',
-  },
-  {
-    link: 'https://github.com/coderplex/learn/blob/master/computer-science/Learn-CS.md',
-    title: 'Introduction to C.S',
-    subject: 'Computer Science',
-    image: '',
-  },
-  {
-    link: 'https://github.com/coderplex/learn/blob/master/Blockchain/blockchain-basics.md',
-    title: 'Blockchain',
-    subject: 'Decentralized Systems',
-    image: '',
-  },
-  {
-    link: 'https://github.com/coderplex/learn/blob/master/mobile-dev/Android/learn-android.md',
-    title: 'Android',
-    subject: 'Mobile Development',
-    image: '',
-  },
-];
-
-export const listOfDomains = [
-  'All',
-  'Computer Science',
-  'Programming Language',
-  'Web Development',
-  'Mobile Technology',
-  'Data Science',
-  'Artificial Intelligence',
-  'BlockChain',
-];
-
-export const contentsOfLaravel = {
-  overview: 'https://cdn.rawgit.com/coderplex/learn/cdn/cdn/laravel/overview.md',
-  guides: [
-    {
-      name: 'Prerequisites',
-      url: 'https://cdn.rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/0.md',
-    },
-    {
-      name: 'Introduction to MVC architecture',
-      url: 'https://cdn.rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/1.md',
-    },
-    {
-      name: 'Models,Views,Controllers and Routes',
-      url: 'https://cdn.rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/2.md',
-    },
-    {
-      name: 'FrontEnd',
-      url: 'https://cdn.rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/3.md',
-    },
-    {
-      name: 'Relationships',
-      url: 'https://cdn.rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/4.md',
-    },
-    {
-      name: 'Authentication',
-      url: 'https://cdn.rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/5.md',
-    },
-    {
-      name: 'View Composers and Archives',
-      url: 'https://cdn.rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/6.md',
-    },
-    {
-      name: 'Testing & Seeding',
-      url: 'https://cdn.rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/7.md',
-    },
-    {
-      name: 'Final Project',
-      url: 'https://cdn.rawgit.com/coderplex/learn/cdn/cdn/laravel/guide/8.md',
-    },
-  ],
-  contributors: [
-    {
-      userName: 'P Bhanu Teja',
-      userPage: 'https://github.com/pbteja1998',
-      userImage: 'https://avatars0.githubusercontent.com/u/17903466?s=400&v=4',
-      contributions: [
-        {
-          type: 'topic',
-          count: '20',
-        },
-        {
-          type: 'article',
-          count: '30',
-        },
-        {
-          type: 'video',
-          count: '25',
-        },
-      ],
-    },
-    {
-      userName: 'M Zubair Ahmed',
-      userPage: 'https://github.com/M-ZubairAhmed',
-      userImage:
-        'https://avatars0.githubusercontent.com/u/17708702?s=400&u=032075b378bf6d82da48725b9ce5f31c7a6469fa&v=4',
-      contributions: [
-        {
-          type: 'topic',
-          count: '2',
-        },
-      ],
-    },
-    {
-      userName: 'Vinay Puppal',
-      userPage: 'https://www.vinaypuppal.com/',
-      userImage: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/214440/profile/profile-512.jpg?2',
-      contributions: [
-        {
-          type: 'topic',
-          count: '4',
-        },
-        {
-          type: 'article',
-          count: '2',
-        },
-      ],
-    },
-  ],
-};
 
 export const laravelSyllabus = [
   {
@@ -382,6 +242,158 @@ export const laravelSyllabus = [
       {
         name: 'Seeding',
         url: 'https://rawgit.com/coderplex/learn/cdn/laravel/seeding.md',
+      },
+    ],
+  },
+];
+
+export const reactSyllabus = [
+  {
+    unit: {
+      name: 'Preface',
+    },
+    chapters: [
+      {
+        name: 'Choosing ReactJS',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/choosing-reactjs.md',
+      },
+      {
+        name: 'Prerequisites',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/prerequisites.md',
+      },
+      {
+        name: 'Philosophy',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/philosophy.md',
+      },
+    ],
+  },
+  {
+    unit: {
+      name: 'Getting Started',
+    },
+    chapters: [
+      {
+        name: 'Trying React',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/trying-react.md',
+      },
+      {
+        name: 'Create React App',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/create-react-app.md',
+      },
+      {
+        name: 'JavaScript XML Syntax',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/javascript-xml-syntax.md',
+      },
+    ],
+  },
+  {
+    unit: {
+      name: 'Components',
+    },
+    chapters: [
+      {
+        name: 'Custom Components',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/custom-components.md',
+      },
+      {
+        name: 'Rendering',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/rendering.md',
+      },
+      {
+        name: 'Conditional Rendering',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/conditional-rendering.md',
+      },
+      {
+        name: 'Data Flow',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/data-flow.md',
+      },
+      {
+        name: 'Lifecycle',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/lifecycle.md',
+      },
+      {
+        name: 'Events',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/events.md',
+      },
+    ],
+  },
+  {
+    unit: {
+      name: 'Forms',
+    },
+    chapters: [
+      {
+        name: 'Controlled Components',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/controlled-components.md',
+      },
+      {
+        name: 'Uncontrolled Components',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/uncontrolled-components.md',
+      },
+    ],
+  },
+  {
+    unit: {
+      name: 'Composition',
+    },
+    chapters: [
+      {
+        name: 'Lifting State Up',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/lifting-state-up.md',
+      },
+      {
+        name: 'Composition vs Inheritance',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/composition-vs-inheritance.md',
+      },
+      {
+        name: 'Context',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/context.md',
+      },
+    ],
+  },
+  {
+    unit: {
+      name: 'Tools',
+    },
+    chapters: [
+      {
+        name: 'Developer Tools',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/developer-tools.md',
+      },
+      {
+        name: 'Proptypes',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/proptypes.md',
+      },
+      {
+        name: 'Error Boundaries',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/error-boundaries.md',
+      },
+    ],
+  },
+  {
+    unit: {
+      name: 'In depth discussions',
+    },
+    chapters: [
+      {
+        name: 'JSX In Depth',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/jsx-in-depth.md',
+      },
+      {
+        name: 'Synthetic Events',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/synthetic-events.md',
+      },
+      {
+        name: 'React Without JSX',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/react-without-jsx.md',
+      },
+      {
+        name: 'React without ES6',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/react-without-es6.md',
+      },
+      {
+        name: 'Reconcilation - Diff Algorithm',
+        url: 'https://rawgit.com/coderplex/learn/cdn/react/reconcilation---diff-algorithm.md',
       },
     ],
   },
