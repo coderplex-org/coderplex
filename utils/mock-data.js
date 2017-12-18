@@ -375,7 +375,7 @@ export const reactSyllabus = [
         cdnUrl: 'https://rawgit.com/coderplex/learn/cdn/react/react-without-es6.md',
       },
       {
-        name: 'Reconcilation - Diff Algorithm',
+        name: 'Reconcilation Diff Algorithm',
         cdnUrl: 'https://rawgit.com/coderplex/learn/cdn/react/reconcilation---diff-algorithm.md',
       },
     ],

@@ -89,7 +89,7 @@ export default class Subject extends React.Component {
 
   getChapter(subject, chapter) {
     const activeSubject = this.selectSubject(subject);
-    const activeChapterName = chapter.replace('-', ' ');
+    const activeChapterName = chapter.replace(/-/gi, ' ');
     if (activeSubject !== null) {
       this.setState({
         activeChapterName,
@@ -112,7 +112,7 @@ export default class Subject extends React.Component {
 
   changeChapter = selectedChapter => {
     const subjectName = this.props.url.query.subject;
-    const chapterName = selectedChapter.name.replace(' ', '-');
+    const chapterName = selectedChapter.name.replace(/\s/gi, '-');
     Router.push(`/learn/subject?subject=${subjectName}&chapter=${chapterName}`, `/learn/${subjectName}/${chapterName}`);
   };
 
