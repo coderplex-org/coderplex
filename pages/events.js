@@ -118,7 +118,7 @@ export default class Events extends React.Component {
   renderLoadMoreButton(eventsTotalLength, loadLimit, isPastEvent) {
     return loadLimit >= eventsTotalLength ? null : (
       <div className="loadmore_div" mb={[5, 5]}>
-        <Button inverted medium onClick={event => this.loadMore(event, isPastEvent)}>
+        <Button inverted medium onClick={() => this.loadMore(isPastEvent)}>
           Load more
         </Button>
       </div>
