@@ -81,7 +81,7 @@ export default ({ subject }) => (
       <i className={subject.icon} />
     </div>
     <div className="content">
-      <h3 className="title">{subject.title}</h3>
+      <h3 className="title">Learn {subject.title}</h3>
       <p className="subtitle" fontSize={[12, 14, 16]}>
         {subject.domain}
       </p>

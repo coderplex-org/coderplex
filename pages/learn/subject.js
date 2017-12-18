@@ -130,24 +130,19 @@ export default class Subject extends React.Component {
   }
 
   render() {
-    const subjectIcon = listOfSubjects.find(item => item.subjectId === this.props.url.query.subject).icon;
+    const subject = listOfSubjects.find(item => item.subjectId === this.props.url.query.subject);
     return this.state.activeSubject === null ? (
       <Layout>
         <BannerSection
           textInverted
-          title={this.props.url.query.subject.toUpperCase()}
+          title={`Learn ${subject.title}`}
           subTitle={`Curriculum for ${this.props.url.query.subject.toUpperCase()} and others Coming soon!!`}
-          icon={subjectIcon}
+          icon={subject.icon}
         />
       </Layout>
     ) : (
       <Layout>
-        <BannerSection
-          textInverted
-          title={this.props.url.query.subject.toUpperCase()}
-          subTitle="Web Development"
-          icon={subjectIcon}
-        />
+        <BannerSection textInverted title={`Learn ${subject.title}`} subTitle={subject.domain} icon={subject.icon} />
         <CurriculumSection my={[0, 4]}>
           <Flex column={false}>
             {this.state.isSidebarOpen ? (
