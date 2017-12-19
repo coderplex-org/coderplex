@@ -5,8 +5,6 @@ import { Flex, Box } from 'grid-emotion';
 
 import { baseContainer, Title, SubTitle, Button, breakpoints } from '../../utils/base.styles';
 
-// For changing background of banner
-// background-image: url('https://res.cloudinary.com/coderplex/image/upload/v1510788480/website__assets/pattern.png');
 const BannerSection = styled.section`
   ${space};
   background: #374355;
@@ -16,7 +14,6 @@ const BannerSection = styled.section`
 const Container = styled.section`
   ${baseContainer};
   & .logo {
-    text-align: center;
     padding: 10px 15px;
     font-size: 10rem;
     background: #fff;
@@ -25,13 +22,14 @@ const Container = styled.section`
       font-size: 4.5rem;
     }
   }
-  & .titles {
+  & .title {
     text-align: left;
-    & .domain {
-      margin-left: 0px;
-      margin-right: 0px;
-      margin-bottom: 0px;
-    }
+  }
+  & .subtitle {
+    text-align: left;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
   }
   & .edit {
     display: block;
@@ -50,13 +48,12 @@ export default ({ title, subTitle, icon }) => (
             <i className={icon} />
           </div>
         </Box>
-        <Box flex={'1 1 auto'} className="titles" px={[2]}>
-          <Title>{title}</Title>
-          <SubTitle className="domain">{subTitle}</SubTitle>
+        <Box flex={'1 1 auto'} px={[2, 2, 3]}>
+          <Title className="title">{title}</Title>
+          <SubTitle className="subtitle">{subTitle}</SubTitle>
         </Box>
         <Box flex={['0 1 auto']}>
-          <Button inverted medium className="edit
-            }">
+          <Button inverted medium className="edit">
             EDIT
           </Button>
         </Box>
