@@ -12,9 +12,9 @@
   },
   "plugins": [
     [
-      "lodash",
+      "emotion",
       {
-        "id": ["lodash", "semantic-ui-react"]
+        "inline": true
       }
     ]
   ]

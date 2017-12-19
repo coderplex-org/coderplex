@@ -1,157 +1,43 @@
 import React from 'react';
-import {
-  Card,
-  Icon,
-  Label,
-  Popup,
-  Grid,
-  Button,
-  Search,
-  Header,
-} from 'semantic-ui-react';
-import Link from 'next/link';
+import { Flex } from 'grid-emotion';
+import styled from 'react-emotion';
+import { space } from 'styled-system';
 
-import publicPage from '../../hocs/public-page';
-import CommonBanner from '../../components/common-banner';
+import Layout from '../../components/common/layout';
+import BannerSection from '../../components/common/banner';
+import SubjectCard from '../../components/learn/subject-card';
+import { baseContainer } from '../../utils/base.styles';
+import { listOfSubjects } from '../../utils/mock-data';
 
-import { listOfSubjects, listOfDomains } from '../../utils/mock-data';
+const LearnSection = styled.section`
+  ${space};
+  ${baseContainer};
+  position: relative;
+`;
 
-let numOfFilteredSubjects;
-class Learn extends React.Component {
-  state = {
-    filter: 'All',
-    filteredSubjects: listOfSubjects,
-  };
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.filter !== this.state.filter) {
-      const filteredSubjects = listOfSubjects.filter(subject => {
-        if (this.state.filter === 'All') {
-          return true;
-        }
-        return subject.domain === this.state.filter;
-      });
-      numOfFilteredSubjects = filteredSubjects.length;
-      this.setState({
-        filteredSubjects,
-      });
-    }
+const FilterContainer = styled.div`
+  ${space};
+  & .title_filter {
+    text-align: center;
   }
-
-  render() {
-    return (
-      <div>
-        <CommonBanner
-          pageTitle="Learn"
-          pageSubTitle="Open Source Learning Guides to master your favorite technology"
-        />
-        <main>
-          <section>
-            <div className="filters">
-              {listOfDomains.map(domain => (
-                <Button
-                  key={domain}
-                  style={{ marginBottom: '10px' }}
-                  className="filter_button"
-                  basic
-                  color="pink"
-                  onClick={() => this.setState({ filter: domain })}
-                >
-                  {domain}
-                </Button>
-              ))}
-            </div>
-            <Search placeholder="Search topics" />
-            <Header
-              as="h3"
-              dividing
-              style={{ marginBottom: '40px', textAlign: 'center' }}
-            >
-              {this.state.filter === 'All'
-                ? 'Showing all courses'
-                : numOfFilteredSubjects === 0
-                  ? `Currenlty we dont have any subjects under ${this.state
-                      .filter}`
-                  : `Showing ${numOfFilteredSubjects} courses under ${this.state
-                      .filter}`}
-            </Header>
-            <Grid stackable columns={3}>
-              {this.state.filteredSubjects.map(subject => (
-                <Grid.Column
-                  style={{ paddingBottom: '4.5rem' }}
-                  key={subject.id}
-                >
-                  <Link
-                    as={subject.url}
-                    href={`/learn/subject?id=${subject.subjectId}`}
-                  >
-                    <Card href={subject.url} raised>
-                      <Label attached="bottom right">
-                        <Popup
-                          trigger={
-                            <Icon
-                              style={{ marginRight: '0px' }}
-                              name={
-                                subject.learnGuideStatus ? 'checkmark' : 'info'
-                              }
-                            />
-                          }
-                          position="top center"
-                        >
-                          {subject.learnGuideStatus
-                            ? 'Complete guide'
-                            : 'Guide underconstruction'}
-                        </Popup>
-                      </Label>
-                      <logo className={subject.icon} />
-                      <Card.Content>
-                        <Card.Header>{subject.title}</Card.Header>
-                        <Card.Meta>{subject.domain}</Card.Meta>
-                      </Card.Content>
-                      <Card.Content extra>
-                        <Icon name="student" />
-                        {`${subject.learningCount} learning`}
-                      </Card.Content>
-                    </Card>
-                  </Link>
-                </Grid.Column>
-              ))}
-            </Grid>
-          </section>
-        </main>
-        <style jsx>{`
-          .root {
-            background-color: #ffffff;
-          }
-          main {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-content: flex-start;
-            align-items: flex-start;
-            background-color: #ffffff;
-            padding: 20px;
-            min-height: calc(100vh - 70px);
-            margin: 0 auto;
-          }
-          section {
-            margin: 50px 0;
-            max-width: 800px;
-          }
-          .filters {
-            margin-bottom: 20px;
-          }
-          logo {
-            font-size: 12em;
-            text-align: center;
-            padding-top: 10px;
-            padding-bottom: 10px;
-          }
-        `}</style>
-      </div>
-    );
+  & .title_fitler_by {
+    font-weight: 400;
   }
-}
+`;
 
-export default publicPage(Learn);
+export default () => (
+  <Layout>
+    <BannerSection title="Open Source Learning Guides" subTitle="To master your favorite technology" />
+    <LearnSection py={[2, 3]} px={[2, 1]}>
+      <FilterContainer my={[1, 2]}>
+        <h2 className="title_filter">Available Guides</h2>
+        {/* <h4 className="title_fitler_by">Filter by domain :</h4> */}
+      </FilterContainer>
+      <Flex justify="space-between" align="center" wrap>
+        {listOfSubjects.map(subject => {
+          return <SubjectCard key={subject.url} subject={subject} />;
+        })}
+      </Flex>
+    </LearnSection>
+  </Layout>
+);

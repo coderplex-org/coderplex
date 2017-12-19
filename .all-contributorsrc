@@ -1,0 +1,229 @@
+{
+  "projectName": "coderplex",
+  "projectOwner": "coderplex",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "vinaypuppal",
+      "name": "Vinay Puppal",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/8843216?v=4",
+      "profile": "https://www.vinaypuppal.com/",
+      "contributions": [
+        "bug",
+        "code",
+        "ideas",
+        "review"
+      ]
+    },
+    {
+      "login": "M-ZubairAhmed",
+      "name": "Md_ZubairAhmed",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/17708702?v=4",
+      "profile": "https://in.linkedin.com/in/mzubairahmed",
+      "contributions": [
+        "bug",
+        "code",
+        "doc",
+        "example",
+        "ideas",
+        "plugin",
+        "review",
+        "test",
+        "question"
+      ]
+    },
+    {
+      "login": "pbteja1998",
+      "name": "P Bhanu Teja",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/17903466?v=4",
+      "profile": "https://github.com/pbteja1998",
+      "contributions": [
+        "question",
+        "bug",
+        "code",
+        "ideas"
+      ]
+    },
+    {
+      "login": "saiabhijitht",
+      "name": "Sai Abhijith",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/23223985?v=4",
+      "profile": "https://github.com/saiabhijitht",
+      "contributions": [
+        "design",
+        "ideas",
+        "review"
+      ]
+    },
+    {
+      "login": "duttakapil",
+      "name": "Kapil Dutta",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6577624?v=4",
+      "profile": "http://duttakapil.github.io/",
+      "contributions": [
+        "bug",
+        "ideas",
+        "review"
+      ]
+    },
+    {
+      "login": "shivakrishna9",
+      "name": "Shiva Krishna Yadav",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/15874356?v=4",
+      "profile": "https://github.com/shivakrishna9",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "VineethKanaparthi",
+      "name": "Vineeth Kanaparthi",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/14841940?v=4",
+      "profile": "https://github.com/VineethKanaparthi",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "buoyantair",
+      "name": "buoyantair",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5159834?v=4",
+      "profile": "https://github.com/buoyantair",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "jberry93",
+      "name": "Jeffrey Berry",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5133505?v=4",
+      "profile": "https://github.com/jberry93",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "HerrVoennchen",
+      "name": "Sebastian",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/6535023?v=4",
+      "profile": "https://github.com/HerrVoennchen",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "hafiz703",
+      "name": "Hafiz T",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/15249170?v=4",
+      "profile": "https://github.com/hafiz703",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "rkaranam",
+      "name": "Raja Sekhar Karanam",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/13974570?v=4",
+      "profile": "https://github.com/rkaranam",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "cg-cnu",
+      "name": "sreenivas alapati",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2767425?v=4",
+      "profile": "https://twitter.com/CgCnu",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "luixlacrux",
+      "name": "Luis Lacruz",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/11747818?v=4",
+      "profile": "https://about.me/luislacruz",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "majidmazin",
+      "name": "Mazin Majid",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/32811957?v=4",
+      "profile": "https://github.com/majidmazin",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "loangelak",
+      "name": "loangelak",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/22547780?v=4",
+      "profile": "https://github.com/loangelak",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "hur",
+      "name": "Atte Niemi",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4998544?v=4",
+      "profile": "http://twitter.com/HursCode",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "tdeschryver",
+      "name": "tdeschryver",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/28659384?v=4",
+      "profile": "https://github.com/tdeschryver",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "aliciaphes",
+      "name": "Alicia Perez",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/5432702?v=4",
+      "profile": "http://www.linkedin.com/in/aliciapr",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "abiduzz420",
+      "name": "abiduzz420",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/18336304?v=4",
+      "profile": "https://medium.com/@abiduzair420",
+      "contributions": [
+        "code",
+        "talk"
+      ]
+    },
+    {
+      "login": "thepriefy",
+      "name": "thepriefy",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/10849586?v=4",
+      "profile": "https://github.com/thepriefy",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "aravindballa",
+      "name": "Aravind Balla",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/8036315?v=4",
+      "profile": "http://aravindballa.com",
+      "contributions": [
+        "review"
+      ]
+    }
+  ]
+}

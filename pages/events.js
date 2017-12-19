@@ -1,39 +1,58 @@
 import React from 'react';
 import fetch from 'isomorphic-unfetch';
-import { Card, Divider } from 'semantic-ui-react';
+import { Flex, Box } from 'grid-emotion';
+import styled from 'react-emotion';
+import { space } from 'styled-system';
 
-import publicPage from '../hocs/public-page';
-import CommonBanner from '../components/common-banner';
-import { baseEventsURL, futureEventsURL, pastEventsURL } from '../utils/urls';
-import RowEvent from '../components/row-events';
-import {
-  TextContentLoader,
-  CardContentLoader,
-} from '../components/content-loaders';
+import Layout from '../components/common/layout';
+import BannerSection from '../components/common/banner';
+import { Container, SubTitle, Button } from '../utils/base.styles';
+import { baseEventsURL, futureEventsURL, pastEventsURL, imagePlaceholderURL } from '../utils/urls';
+import EventCard from '../components/events/event-card';
+import EventLoader from '../components/events/event-content-loader';
 
-class Events extends React.Component {
+const EventsSection = styled.section`
+  ${space};
+  background: #fff;
+  position: relative;
+  & .loadmore_div {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+  }
+  & .event_type_title {
+    color: #374355;
+    font-weight: bold;
+  }
+`;
+
+export default class Events extends React.Component {
   state = {
-    pastEvents: null,
-    futureEvents: null,
+    pastEvents: [],
+    pastEventsLoadLimit: 2,
+    futureEvents: [],
+    futureEventsLoadLimit: 2,
     fetchError: null,
     loading: true,
   };
 
   async componentDidMount() {
     try {
-      const pastEvents = await fetch(
-        `${baseEventsURL}${pastEventsURL}`,
-      ).then(res => {
-        if (res.ok) return res.json();
-        throw new Error('Failed to Retrieve Events');
-      });
-      const futureEvents = await fetch(
-        `${baseEventsURL}${futureEventsURL}`,
-      ).then(res => {
-        if (res.ok) return res.json();
-        throw new Error('Failed to Retrieve Events');
-      });
-      await this.setState({
+      let pastEvents;
+      let futureEvents;
+      const pastEventsResponse = await fetch(`${baseEventsURL}${pastEventsURL}`);
+      if (pastEventsResponse.ok) {
+        pastEvents = await pastEventsResponse.json();
+      } else {
+        throw new Error('Failed to Retrieve past events');
+      }
+      const futureEventsResponse = await fetch(`${baseEventsURL}${futureEventsURL}`);
+      if (futureEventsResponse.ok) {
+        futureEvents = await futureEventsResponse.json();
+      } else {
+        throw new Error('Failed to retieve future events');
+      }
+      this.setState({
         pastEvents,
         futureEvents,
         fetchError: null,
@@ -41,7 +60,7 @@ class Events extends React.Component {
       });
     } catch (err) {
       console.log(err);
-      await this.setState({
+      this.setState({
         pastEvents: null,
         futureEvents: null,
         fetchError: err.message,
@@ -50,95 +69,98 @@ class Events extends React.Component {
     }
   }
 
-  renderEvents() {
-    if (this.state.fetchError) {
-      return <div>{this.state.fetchError}</div>;
+  renderEvents(events, loadLimit) {
+    if (this.state.loading) {
+      return [1, 2].map(i => {
+        return <EventLoader key={i} />;
+      });
+    } else if (events.length === 0) {
+      return (
+        <SubTitle inverted color="#222">
+          No upcoming events yet, check back later
+        </SubTitle>
+      );
+    } else if (events === null) {
+      return (
+        <SubTitle inverted color="#222">
+          Oops! somethings went wrong while fetching the events
+        </SubTitle>
+      );
     }
     return (
       <div>
-        <section>
-          <h2>Upcoming events</h2>
-          <div>
-            {this.state.futureEvents.map(event => (
-              <Card.Group key={event.id}>
-                <RowEvent
-                  name={event.name}
-                  yesCount={event.yes_rsvp_count}
-                  time={event.time}
-                  venue={event.venue}
-                  link={event.link}
-                  status={event.status}
-                  fluid={true}
-                />
-              </Card.Group>
-            ))}
-          </div>
-        </section>
-        <Divider />
-        <section>
-          <h2>Recent events</h2>
-          <div>
-            {this.state.pastEvents.map(event => (
-              <Card.Group key={event.id}>
-                <RowEvent
-                  key={event.id}
-                  name={event.name}
-                  yesCount={event.yes_rsvp_count}
-                  time={event.time}
-                  venue={event.venue}
-                  link={event.link}
-                  status={event.status}
-                  fluid={true}
-                />
-              </Card.Group>
-            ))}
-          </div>
-        </section>
-        <style jsx>{`
-          section {
-            margin: 50px 0;
-          }
-        `}</style>
+        {events.slice(0, loadLimit).map(event => {
+          console.log(event);
+          const regexForImageSrc = /<img.*?src="([^">]*\/([^">]*?))".*?>/g;
+          const imgs = regexForImageSrc.exec(event.description);
+          const imageSrc = imgs
+            ? imgs[1]
+            : event.featured_photo ? event.featured_photo.photo_link : imagePlaceholderURL;
+          return (
+            <EventCard
+              showImg
+              key={event.id}
+              image={imageSrc}
+              name={event.name}
+              location={event.venue ? event.venue.name : 'Online'}
+              online={!event.venue}
+              time={event.time}
+              attendees={event.yes_rsvp_count}
+              tense={event.status}
+              link={event.link}
+            />
+          );
+        })}
       </div>
     );
+  }
+
+  renderLoadMoreButton(eventsTotalLength, loadLimit, isPastEvent) {
+    return loadLimit >= eventsTotalLength ? null : (
+      <div className="loadmore_div" mb={[5, 5]}>
+        <Button inverted medium onClick={() => this.loadMore(isPastEvent)}>
+          Load more
+        </Button>
+      </div>
+    );
+  }
+
+  loadMore(isPastEvent) {
+    return isPastEvent
+      ? this.setState({ pastEventsLoadLimit: this.state.pastEventsLoadLimit + 5 })
+      : this.setState({ futureEventsLoadLimit: this.state.futureEventsLoadLimit + 5 });
   }
 
   render() {
+    const { loading } = this.state;
     return (
-      <div>
-        <CommonBanner
-          pageTitle="Events"
-          pageSubTitle="Because you cannot change the world alone"
-        />
-        <div>
-          {this.state.loading ? (
-            <div style={{ backgroundColor: '#FFF' }}>
-              <TextContentLoader topPadding="80px" />
-              <CardContentLoader />
-              <CardContentLoader />
-              <CardContentLoader />
-            </div>
-          ) : (
-            <main>{this.renderEvents()}</main>
-          )}
-        </div>
-        <style jsx>{`
-          main {
-            background-color: #ffffff;
-            padding-top: 30px;
-            padding-bottom: 30px;
-            padding-left: 30px;
-            padding-right: 30px;
-            min-height: calc(100vh - 70px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-          }
-        `}</style>
-      </div>
+      <Layout>
+        <BannerSection title="Online & Offline Events" subTitle="Because you cannot change the world alone" />
+        <EventsSection py={[2, 2]} px={[2, 1]}>
+          <Container>
+            <Flex pb={[2, 2]} direction="column" align="center" justify="center">
+              <Box width={[1, 0.75]}>
+                <h3 className="event_type_title" inverted color="#222">
+                  Upcoming Events
+                </h3>
+                {this.renderEvents(this.state.futureEvents, this.state.futureEventsLoadLimit)}
+                {!loading &&
+                  this.renderLoadMoreButton(this.state.futureEvents.length, this.state.futureEventsLoadLimit, false)}
+              </Box>
+            </Flex>
+            <Flex direction="column" align="center" justify="center">
+              <Box width={[1, 0.75]}>
+                <h3 className="event_type_title" inverted color="#222">
+                  Recent Events
+                </h3>
+                {this.renderEvents(this.state.pastEvents, this.state.pastEventsLoadLimit)}
+                {!loading &&
+                  this.renderLoadMoreButton(this.state.pastEvents.length, this.state.pastEventsLoadLimit, true)}
+              </Box>
+            </Flex>
+          </Container>
+        </EventsSection>
+      </Layout>
     );
   }
 }
-
-export default publicPage(Events);
