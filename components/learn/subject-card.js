@@ -81,7 +81,7 @@ export default ({ subject }) => (
       <i className={subject.icon} />
     </div>
     <div className="content">
-      <h3 className="title">{subject.title}</h3>
+      <h3 className="title">Learn {subject.title}</h3>
       <p className="subtitle" fontSize={[12, 14, 16]}>
         {subject.domain}
       </p>
@@ -95,11 +95,26 @@ export default ({ subject }) => (
           <span>20 hours</span>
         </Box>
       </Flex>
-      <Link href={`/learn/subject?id=${subject.subjectId}`} as={subject.url}>
-        <Button inverted medium fluid href={subject.url} className="view">
+      {subject.isGuideCompleted ? (
+        <Link
+          href={`/learn/subject?subject=${subject.subjectId}&chapter=${subject.path.split('/').reverse()[0]}`}
+          as={subject.path}>
+          <Button inverted medium fluid href={subject.path} className="view">
+            VIEW GUIDE
+          </Button>
+        </Link>
+      ) : (
+        <Button
+          inverted
+          medium
+          fluid
+          href={subject.githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="view">
           VIEW GUIDE
         </Button>
-      </Link>
+      )}
     </div>
   </SubjectCard>
 );

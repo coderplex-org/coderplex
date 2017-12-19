@@ -222,7 +222,7 @@ export default () => (
           <Box width={1}>
             <Flex justify="space-around" align="center" wrap>
               {take(listOfSubjects, 4).map(subject => {
-                return <SubjectCard key={subject.url} subject={subject} />;
+                return <SubjectCard key={subject.path} subject={subject} />;
               })}
             </Flex>
           </Box>
