@@ -1,6 +1,6 @@
 {
   "name": "coderplex-app",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "We are on a mission to improve the state of tech in India",
   "main": "index.js",
   "scripts": {
