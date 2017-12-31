@@ -4743,19 +4743,19 @@ markdown-to-ast@~3.4.0:
     structured-source "^3.0.2"
     traverse "^0.6.6"
 
-markdownlint-cli@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/markdownlint-cli/-/markdownlint-cli-0.5.0.tgz#5c9562667efbf3298cfedb66d50c0a891b62cb39"
+markdownlint-cli@0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/markdownlint-cli/-/markdownlint-cli-0.6.0.tgz#f712e814d2909ea757724a31ccd96dabc21554ef"
   dependencies:
     commander "~2.9.0"
     deep-extend "~0.4.1"
     glob "~7.0.3"
     lodash.flatten "~4.3.0"
     lodash.values "~4.2.0"
-    markdownlint "~0.6.1"
+    markdownlint "~0.6.4"
     rc "~1.1.6"
 
-markdownlint@~0.6.1:
+markdownlint@~0.6.4:
   version "0.6.4"
   resolved "https://registry.yarnpkg.com/markdownlint/-/markdownlint-0.6.4.tgz#7fa77e0d8c1b1c3ed7978761ce664bd23e7328ef"
   dependencies:
