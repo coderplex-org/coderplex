@@ -4743,7 +4743,7 @@ markdown-to-ast@~3.4.0:
     structured-source "^3.0.2"
     traverse "^0.6.6"
 
-markdownlint-cli@0.6.0:
+markdownlint-cli@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/markdownlint-cli/-/markdownlint-cli-0.6.0.tgz#f712e814d2909ea757724a31ccd96dabc21554ef"
   dependencies:
@@ -7219,17 +7219,17 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typescript-styled-plugin@^0.2.0:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/typescript-styled-plugin/-/typescript-styled-plugin-0.2.2.tgz#155b17df98d88b595a1e03cc859a545df840c634"
+typescript-styled-plugin@0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/typescript-styled-plugin/-/typescript-styled-plugin-0.3.0.tgz#3374fd7769264810459c4fd3a530719f2984440a"
   dependencies:
-    typescript-template-language-service-decorator "^1.0.3"
+    typescript-template-language-service-decorator "^1.1.0"
     vscode-css-languageservice "^2.1.10"
     vscode-languageserver-types "^3.4.0"
 
-typescript-template-language-service-decorator@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/typescript-template-language-service-decorator/-/typescript-template-language-service-decorator-1.0.3.tgz#d3f28393d3dc0b21d4e969feefd8a73af7ca2375"
+typescript-template-language-service-decorator@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/typescript-template-language-service-decorator/-/typescript-template-language-service-decorator-1.1.0.tgz#0b3dacebc1442fea1e8288b0952ec01ba6bfa595"
 
 typescript@^2.6.1:
   version "2.6.2"

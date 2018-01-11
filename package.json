@@ -90,7 +90,7 @@
     "raf": "^3.4.0",
     "react-test-renderer": "^16.0.0",
     "typescript": "^2.6.1",
-    "typescript-styled-plugin": "^0.2.0",
+    "typescript-styled-plugin": "^0.3.0",
     "webpack-bundle-analyzer": "^2.8.3",
     "xo": "^0.18.2"
   },
