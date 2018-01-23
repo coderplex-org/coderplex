@@ -7219,9 +7219,9 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typescript-styled-plugin@0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/typescript-styled-plugin/-/typescript-styled-plugin-0.3.0.tgz#3374fd7769264810459c4fd3a530719f2984440a"
+typescript-styled-plugin@0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/typescript-styled-plugin/-/typescript-styled-plugin-0.4.0.tgz#c97e9d243d3f9ced21d613954ce7d93631ad79a7"
   dependencies:
     typescript-template-language-service-decorator "^1.1.0"
     vscode-css-languageservice "^2.1.10"
