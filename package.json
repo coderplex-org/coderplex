@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "xo && jest",
-    "lint":
-      "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' '*.json' --write && xo && markdownlint .",
+    "lint": "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' '*.json' --write && xo && markdownlint .",
     "precommit": "lint-staged",
     "analyze": "cross-env ANALYZE=1 next build",
     "dev": "cross-env NODE_ENV=development node server.js",
@@ -18,19 +17,32 @@
   },
   "xo": {
     "parser": "babel-eslint",
-    "extends": ["prettier", "prettier/react", "plugin:react/recommended"],
-    "env": ["browser", "node"],
+    "extends": [
+      "prettier",
+      "prettier/react",
+      "plugin:react/recommended"
+    ],
+    "env": [
+      "browser",
+      "node"
+    ],
     "rules": {
       "linebreak-style": 0,
       "react/display-name": 0,
       "react/prop-types": 0
     },
     "space:": 2,
-    "ignores": ["next.config.js"],
+    "ignores": [
+      "next.config.js"
+    ],
     "overrides": [
       {
         "files": "**/__tests__/*.test.js",
-        "globals": ["describe", "it", "expect"]
+        "globals": [
+          "describe",
+          "it",
+          "expect"
+        ]
       }
     ]
   },
@@ -41,8 +53,16 @@
       "jest --findRelatedTests",
       "git add"
     ],
-    "**/*.md": ["prettier", "markdownlint", "git add"],
-    ".github/CONTRIBUTING.md": ["doctoc", "prettier", "git add"]
+    "**/*.md": [
+      "prettier",
+      "markdownlint",
+      "git add"
+    ],
+    ".github/CONTRIBUTING.md": [
+      "doctoc",
+      "prettier",
+      "git add"
+    ]
   },
   "dependencies": {
     "babel-plugin-emotion": "^8.0.10",
@@ -54,12 +74,9 @@
     "isomorphic-unfetch": "2.0.0",
     "lodash.take": "^4.1.1",
     "marked": "^0.3.6",
-    "next": "^4.1.0",
+    "next": "^4.2.3",
     "nprogress": "^0.2.0",
     "path-match": "1.2.4",
-    "preact": "^8.2.6",
-    "preact-compat": "^3.17.0",
-    "preact-emotion": "^8.0.10",
     "prop-types": "^15.5.10",
     "react": "^16.0.0",
     "react-content-loader": "^1.7.1",
@@ -72,7 +89,7 @@
   },
   "devDependencies": {
     "all-contributors-cli": "^4.10.0",
-    "babel-eslint": "^8.0.1",
+    "babel-eslint": "7.2.3",
     "babel-plugin-lodash": "^3.2.11",
     "cross-env": "^5.0.2",
     "doctoc": "^1.3.0",
@@ -84,13 +101,13 @@
     "husky": "^0.14.3",
     "jest": "^22.0.0",
     "lint-staged": "^6.0.0",
-    "markdownlint-cli": "^0.5.0",
+    "markdownlint-cli": "^0.6.0",
     "opn": "^5.1.0",
     "prettier": "^1.7.0",
     "raf": "^3.4.0",
     "react-test-renderer": "^16.0.0",
     "typescript": "^2.6.1",
-    "typescript-styled-plugin": "^0.2.0",
+    "typescript-styled-plugin": "^0.4.0",
     "webpack-bundle-analyzer": "^2.8.3",
     "xo": "^0.18.2"
   },
