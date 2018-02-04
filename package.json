@@ -101,7 +101,7 @@
     "husky": "0.14.3",
     "jest": "22.1.4",
     "lint-staged": "6.1.0",
-    "markdownlint-cli": "0.6.0",
+    "markdownlint-cli": "0.7.0",
     "opn": "5.2.0",
     "prettier": "1.10.2",
     "raf": "3.4.0",
