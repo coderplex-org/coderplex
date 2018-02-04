@@ -1012,7 +1012,7 @@ babel-register@^6.26.0:
     mkdirp "^0.5.1"
     source-map-support "^0.4.15"
 
-babel-runtime@6.26.0, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.26.0, babel-runtime@^6.6.1:
+babel-runtime@6.26.0, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   dependencies:
@@ -6050,11 +6050,9 @@ rc@~1.1.6:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-content-loader@^1.7.1:
-  version "1.7.3"
-  resolved "https://registry.yarnpkg.com/react-content-loader/-/react-content-loader-1.7.3.tgz#aadef5e86947387981c3920af3152a79aeae7f6e"
-  dependencies:
-    babel-runtime "^6.6.1"
+react-content-loader@^3.0.0:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/react-content-loader/-/react-content-loader-3.0.2.tgz#b1014e44e7a0281abd42cfe66a953ba21d89cf6c"
 
 react-deep-force-update@^2.1.1:
   version "2.1.1"
