@@ -4686,9 +4686,9 @@ lodash.cond@^4.3.0:
   version "4.5.2"
   resolved "https://registry.yarnpkg.com/lodash.cond/-/lodash.cond-4.5.2.tgz#f471a1da486be60f6ab955d17115523dd1d255d5"
 
-lodash.difference@~4.5.0:
+lodash.differencewith@~4.5.0:
   version "4.5.0"
-  resolved "https://registry.yarnpkg.com/lodash.difference/-/lodash.difference-4.5.0.tgz#9ccb4e505d486b91651345772885a2df27fd017c"
+  resolved "https://registry.yarnpkg.com/lodash.differencewith/-/lodash.differencewith-4.5.0.tgz#bafafbc918b55154e179176a00bb0aefaac854b7"
 
 lodash.flatten@~4.4.0:
   version "4.4.0"
@@ -4849,14 +4849,14 @@ markdown-to-ast@~3.4.0:
     structured-source "^3.0.2"
     traverse "^0.6.6"
 
-markdownlint-cli@0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/markdownlint-cli/-/markdownlint-cli-0.7.0.tgz#7c50be2366f91b56cddfcb6dbcea6ab886a757d4"
+markdownlint-cli@0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/markdownlint-cli/-/markdownlint-cli-0.7.1.tgz#8eaa805a51f252765b4294f82cde0fc79375d574"
   dependencies:
     commander "~2.9.0"
     deep-extend "~0.4.1"
     glob "~7.0.3"
-    lodash.difference "~4.5.0"
+    lodash.differencewith "~4.5.0"
     lodash.flatten "~4.4.0"
     markdownlint "~0.7.0"
     rc "~1.1.6"
