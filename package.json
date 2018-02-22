@@ -68,7 +68,7 @@
     "babel-plugin-emotion": "^8.0.10",
     "date-fns": "^1.29.0",
     "emotion": "^8.0.10",
-    "emotion-server": "^8.0.10",
+    "emotion-server": "^9.0.0",
     "get-port": "^3.2.0",
     "grid-emotion": "^2.1.0",
     "isomorphic-unfetch": "2.0.0",
