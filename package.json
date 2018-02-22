@@ -85,7 +85,7 @@
     "react-event-timeline": "^1.4.0",
     "react-headroom": "^2.1.6",
     "react-icons": "^2.2.5",
-    "styled-system": "^1.0.8"
+    "styled-system": "^2.0.0"
   },
   "devDependencies": {
     "all-contributors-cli": "4.10.1",
