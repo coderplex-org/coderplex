@@ -65,7 +65,7 @@
     ]
   },
   "dependencies": {
-    "babel-plugin-emotion": "^8.0.10",
+    "babel-plugin-emotion": "^9.0.0",
     "date-fns": "^1.29.0",
     "emotion": "^8.0.10",
     "emotion-server": "^8.0.10",
