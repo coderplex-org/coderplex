@@ -88,7 +88,7 @@
     "styled-system": "^1.0.8"
   },
   "devDependencies": {
-    "all-contributors-cli": "4.10.1",
+    "all-contributors-cli": "4.11.0",
     "babel-eslint": "7.2.3",
     "babel-plugin-lodash": "3.3.2",
     "cross-env": "5.1.3",
