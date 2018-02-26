@@ -22,3 +22,6 @@ export const spaceCoverURL =
 
 export const eventsCoverURL =
   'https://res.cloudinary.com/coderplex/image/upload/c_scale,w_348/v1510788480/website__assets/events.png';
+
+export const spaceMapUrl =
+  'https://www.google.com/maps/embed/v1/place?key= AIzaSyBZTOBlstzoENwMkLzldHXXrrTeKDGU7do&q=Swecha+Office,Hyderabad,Telangana';

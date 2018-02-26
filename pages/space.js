@@ -7,6 +7,7 @@ import { Timeline, TimelineEvent } from 'react-event-timeline'; // eslint-disabl
 import Layout from '../components/common/layout';
 import BannerSection from '../components/common/banner';
 import { Container, Title, breakpoints, SubTitle } from '../utils/base.styles';
+import { spaceMapUrl } from '../utils/urls';
 
 const ForWhomSection = styled.section`
   ${space};
@@ -57,6 +58,13 @@ const ActiviteEvent = styled(TimelineEvent)`
 const PricingSection = styled.section`
   ${space};
   background: #fff;
+  text-align: center;
+  position: relative;
+`;
+
+const MapSection = styled.section`
+  ${space};
+  background: #fbfbfb;
   text-align: center;
   position: relative;
 `;
@@ -132,10 +140,19 @@ export default () => (
         <Title inverted color="#222">
           Pricing
         </Title>
-        <SubTitle inverted>
-          INR 1000/- per month. For membership mail us at <a href="mailto:space@codeplex.org">space@coderplex.org</a>
-        </SubTitle>
+        <SubTitle inverted>Free to enter - No fee</SubTitle>
       </Container>
     </PricingSection>
+    <MapSection py={[2, 4]} px={[2, 1]}>
+      <Container>
+        <Title inverted color="#222">
+          Location
+        </Title>
+        <SubTitle inverted>
+          <a href="http://swecha.business.site/">Swecha</a>, Gachibowli<br />Hyderbad, India
+        </SubTitle>
+      </Container>
+      <iframe width="1000" height="450" frameBorder="0" src={spaceMapUrl} allowFullScreen />
+    </MapSection>
   </Layout>
 );
