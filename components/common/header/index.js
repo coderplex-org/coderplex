@@ -52,6 +52,11 @@ class NavBar extends React.Component {
         path: 'https://coderplex.org/blog',
         external: true,
       },
+      {
+        title: 'Login / Signup',
+        path: 'https://coderplex.org/join',
+        external: true,
+      },
     ],
   };
   toggleMenu = e => {
@@ -107,13 +112,6 @@ class NavBar extends React.Component {
                     </a>
                   </NavLink>
                 ))}
-                <NavLink>
-                  <Link href="/login">
-                    <a className={pathName === '/login' ? 'btn active' : 'btn'}>
-                      <span>Login / Signup</span>
-                    </a>
-                  </Link>
-                </NavLink>
               </NavLinks>
             </Nav>
           </Container>
