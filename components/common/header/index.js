@@ -53,7 +53,7 @@ class NavBar extends React.Component {
         external: true,
       },
       {
-        title: 'Login / Signup',
+        title: 'Join',
         path: 'https://coderplex.org/join',
         external: true,
       },
