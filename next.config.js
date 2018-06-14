@@ -417,7 +417,7 @@ module.exports = {
       '/events': { page: '/events' },
       '/learn': { page: '/learn' },
       '/space': { page: '/space' },
-      '/login': { page: '/login' },
+      '/join': { page: '/join' },
     };
     const getSubject = subjectId => {
       switch (subjectId) {
