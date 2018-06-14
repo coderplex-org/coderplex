@@ -25,5 +25,10 @@
     "title": "Join the Coderplex Community",
     "description": "Join the biggest and most active developer community in Hyderabad!",
     "image": ""
+  },
+  "members": {
+    "title": "Our community member | Coderplex",
+    "description": "List of all our community members",
+    "image": ""
   }
 }
