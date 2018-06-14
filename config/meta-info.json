@@ -21,9 +21,9 @@
     "description": "We host frequent online and offline events, from sessions to competitions",
     "image": ""
   },
-  "login": {
-    "title": "Login Or Register | Coderplex",
-    "description": "Join our community",
+  "join": {
+    "title": "Join the Coderplex Community",
+    "description": "Join the biggest and most active developer community in Hyderabad!",
     "image": ""
   }
 }

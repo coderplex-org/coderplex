@@ -48,13 +48,12 @@ class NavBar extends React.Component {
         external: false,
       },
       {
-        title: 'Blog',
-        path: 'https://coderplex.org/blog',
-        external: true,
+        title: 'Join',
+        path: '/join',
       },
       {
-        title: 'Join',
-        path: 'https://coderplex.org/join',
+        title: 'Blog',
+        path: 'https://coderplex.org/blog',
         external: true,
       },
     ],

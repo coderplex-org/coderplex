@@ -417,7 +417,7 @@ module.exports = {
       '/events': { page: '/events' },
       '/learn': { page: '/learn' },
       '/space': { page: '/space' },
-      '/login': { page: '/login' },
+      '/join': { page: '/join' },
     };
     const getSubject = subjectId => {
       switch (subjectId) {
@@ -434,7 +434,7 @@ module.exports = {
         const chapters = unit.chapters;
         for (const chapter of chapters) {
           const chapterSlug = chapter.name.replace(/\s/gi, '-');
-          const route = `learn/${subject.subjectId}/${chapterSlug}`;
+          const route = `/learn/${subject.subjectId}/${chapterSlug}`;
           routes[route] = {
             page: '/learn/subject',
             query: {
