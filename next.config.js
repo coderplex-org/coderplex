@@ -434,7 +434,7 @@ module.exports = {
         const chapters = unit.chapters;
         for (const chapter of chapters) {
           const chapterSlug = chapter.name.replace(/\s/gi, '-');
-          const route = `learn/${subject.subjectId}/${chapterSlug}`;
+          const route = `/learn/${subject.subjectId}/${chapterSlug}`;
           routes[route] = {
             page: '/learn/subject',
             query: {
