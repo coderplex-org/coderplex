@@ -48,10 +48,6 @@ class NavBar extends React.Component {
         external: false,
       },
       {
-        title: 'Members',
-        path: '/members',
-      },
-      {
         title: 'Join',
         path: '/join',
       },
