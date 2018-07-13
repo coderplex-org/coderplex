@@ -56,6 +56,11 @@ class NavBar extends React.Component {
         path: 'https://coderplex.org/blog',
         external: true,
       },
+      {
+        title: 'Jobs',
+        path: 'https://coderplex.org/jobs',
+        external: true,
+      },
     ],
   };
   toggleMenu = e => {
