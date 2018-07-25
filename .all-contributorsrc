@@ -224,6 +224,16 @@
       "contributions": [
         "review"
       ]
+    },
+    {
+      "login": "charan1922",
+      "name": "Charan Teja",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/23609292?v=4",
+      "profile": "http://charan1922.github.io/myportfolio",
+      "contributions": [
+        "code"
+      ]
     }
-  ]
+  ],
+  "repoType": "github"
 }
