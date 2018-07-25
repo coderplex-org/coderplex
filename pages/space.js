@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'react-emotion';
 import { space } from 'styled-system';
 import FaCalender from 'react-icons/lib/fa/calendar';
+import { Box } from 'grid-emotion';
 import { Timeline, TimelineEvent } from 'react-event-timeline'; // eslint-disable-line import/no-unresolved
-
 import Layout from '../components/common/layout';
 import BannerSection from '../components/common/banner';
-import { Container, Title, breakpoints, SubTitle } from '../utils/base.styles';
+import { Container, Title, breakpoints, SubTitle, Button } from '../utils/base.styles';
 import { spaceMapUrl } from '../utils/urls';
 
 const ForWhomSection = styled.section`
@@ -140,16 +140,27 @@ export default () => (
         <Title inverted color="#222">
           Pricing
         </Title>
-        <SubTitle inverted>Free to enter - No fee</SubTitle>
+        <SubTitle inverted>₹1000 or More Per Month</SubTitle>
+        <Box pt={[3]} pb={[3]}>
+          <Button
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfTV7VcaZuc9a1XH3I2hXNWVr1ILOl8TRNE8Rz7Qc9Pxdca7w/viewform"
+            rel="noopener noreferrer"
+            target="_blank"
+            inverted
+            large>
+            Apply for Membership
+          </Button>
+        </Box>
       </Container>
     </PricingSection>
+
     <MapSection py={[2, 4]} px={[2, 1]}>
       <Container>
         <Title inverted color="#222">
           Location
         </Title>
         <SubTitle inverted>
-          <a href="http://swecha.business.site/">Swecha</a>, Gachibowli<br />Hyderbad, India
+          <a href="http://www.91springboard.com">91SpringBoard</a>, Kavuri Hills<br />Hyderbad, India
         </SubTitle>
       </Container>
       <iframe width="1000" height="450" frameBorder="0" src={spaceMapUrl} allowFullScreen />
