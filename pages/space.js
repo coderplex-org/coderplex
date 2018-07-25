@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'react-emotion';
 import { space } from 'styled-system';
 import FaCalender from 'react-icons/lib/fa/calendar';
-import { Box } from 'grid-styled';
+import { Box } from 'grid-styled/emotion';
 import { Timeline, TimelineEvent } from 'react-event-timeline'; // eslint-disable-line import/no-unresolved
 import Layout from '../components/common/layout';
 import BannerSection from '../components/common/banner';
