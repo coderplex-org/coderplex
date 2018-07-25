@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'react-emotion';
 import { space } from 'styled-system';
-import { Flex, Box } from 'grid-emotion';
+import { Flex, Box } from 'grid-styled/emotion';
 import take from 'lodash.take';
 import Link from 'next/link';
 
@@ -138,6 +138,7 @@ class UpcomingEvent extends React.Component {
     loading: true,
     fetchError: null,
   };
+
   async componentDidMount() {
     try {
       let events;
@@ -161,6 +162,7 @@ class UpcomingEvent extends React.Component {
       });
     }
   }
+
   render() {
     const { loading, events } = this.state;
     if (loading) {
@@ -169,9 +171,11 @@ class UpcomingEvent extends React.Component {
           Loading..
         </SubTitle>
       );
-    } else if (events.length === 0) {
+    }
+    if (events.length === 0) {
       return <img src={eventsCoverURL} alt="events__pic" />;
-    } else if (events === null) {
+    }
+    if (events === null) {
       return <img src={eventsCoverURL} alt="events__pic" />;
     }
     return (
@@ -200,9 +204,9 @@ class UpcomingEvent extends React.Component {
 
 export default () => (
   <Layout>
-    <HeroSection pb={[2, 4]} px={[2, 1]}>
+    <HeroSection pb={[3, 5]} px={[3, 2]}>
       <Container>
-        <Flex justify="center" align="center" direction="column">
+        <Flex flexDirection="column" alignItems="center" justifyContent="center">
           <Box width={1}>
             <img src={heroBannerURL} alt="words" />
             <h1>On a mission to improve the state of tech across India</h1>
@@ -210,9 +214,9 @@ export default () => (
         </Flex>
       </Container>
     </HeroSection>
-    <LearnSection pb={[3, 4]} pt={[2, 3]} px={[2, 1]}>
+    <LearnSection pb={[4, 5]} pt={[3, 4]} px={[3, 2]}>
       <Container>
-        <Flex justify="center" align="center" direction="column">
+        <Flex flexDirection="column" alignItems="center" justifyContent="center">
           <Box width={1}>
             <Title inverted>Open Source Learning Guides</Title>
             <SubTitle inverted>
@@ -220,13 +224,13 @@ export default () => (
             </SubTitle>
           </Box>
           <Box width={1}>
-            <Flex justify="space-around" align="center" wrap>
+            <Flex justifyContent="space-around" alignItems="center" flexWrap="wrap">
               {take(listOfSubjects, 4).map(subject => {
                 return <SubjectCard key={subject.path} subject={subject} />;
               })}
             </Flex>
           </Box>
-          <Flex justify="center" width={[1]} pt={[2, 3]}>
+          <Flex justifyContent="center" width={[1]} pt={[3, 4]}>
             <Link href={'/learn'}>
               <Button href={'/learn'} inverted medium>
                 SEE ALL AVAILABLE GUIDES
@@ -238,8 +242,8 @@ export default () => (
     </LearnSection>
     <SpaceSection>
       <Container>
-        <Flex justify="center" wrap>
-          <Box order={[2, 2, 1]} className="box" width={[1, 1, 1 / 2]} py={[0, 2, 3]} px={[2, 4, 3]}>
+        <Flex justifyContent="center" flexWrap="wrap">
+          <Box order={[2, 2, 1]} className="box" width={[1, 1, 1 / 2]} py={[0, 3, 4]} px={[3, 5, 4]}>
             <Title>Offline Co-Learning Spaces</Title>
             <SubTitle small>
               Physical spaces where you can come down to engage in self learning, peer-learning and collaboration.
@@ -253,8 +257,8 @@ export default () => (
               my={['auto', 'auto', 0]}
               className="box"
               width={[1]}
-              pt={[2, 3]}
-              pb={[4, 4, 0]}>
+              pt={[3, 4]}
+              pb={[5, 5, 0]}>
               <Link href={'/space'}>
                 <Button href={'/space'} medium>
                   LEARN MORE ABOUT HACKERSPACE
@@ -262,7 +266,7 @@ export default () => (
               </Link>
             </Box>
           </Box>
-          <Box order={1} className="box" width={[1, 1, 1 / 2]} pt={4} pb={[0, 1, 4]} px={[3, 4, 3]}>
+          <Box order={1} className="box" width={[1, 1, 1 / 2]} pt={5} pb={[0, 2, 5]} px={[4, 5, 4]}>
             <img className="space__img" alt="sapce__img" src={spaceCoverURL} />
           </Box>
         </Flex>
@@ -271,20 +275,20 @@ export default () => (
     </SpaceSection>
     <EventsSection>
       <Container>
-        <Flex align="center" justify="center" wrap>
-          <Box order={[2, 2, 1]} width={[1, 1, 1 / 2]} px={[4, 4, 3]}>
+        <Flex alignItems="center" justifyContent="center" flexWrap="wrap">
+          <Box order={[2, 2, 1]} width={[1, 1, 1 / 2]} px={[5, 5, 4]}>
             <Hide sm xs>
               <UpcomingEvent />
             </Hide>
           </Box>
-          <Box order={1} width={[1, 1, 1 / 2]} px={[2, 3]} pt={[3, 4, 0]} pb={[4, 4, 0]}>
+          <Box order={1} width={[1, 1, 1 / 2]} px={[3, 4]} pt={[4, 5, 0]} pb={[5, 5, 0]}>
             <Title>Online & Offline Events</Title>
             <SubTitle small>
               We do frequent online and offline events, covering broad range of topics, from Web Development to Data
               Science. The goal of these events are to share knowledge, connect with people and enable collaboration. We
               also partner with local comunities to help them reach a wider audience.
             </SubTitle>
-            <Box className="box" width={[1]} pt={[2]} px={[3, 0]}>
+            <Box className="box" width={[1]} pt={[3]} px={[4, 0]}>
               <Hide md lg>
                 <UpcomingEvent />
               </Hide>
@@ -300,11 +304,11 @@ export default () => (
     </EventsSection>
     <DiscordSection>
       <Container>
-        <Box py={[4]} px={[2]}>
+        <Box py={[5]} px={[3]}>
           <Title inverted color="#222">
             Join our Discord Server, and say &#34;Hello, world!&#34;
           </Title>
-          <Box pt={[4]} pb={[3]}>
+          <Box pt={[5]} pb={[4]}>
             <Button
               href="https://discordapp.com/invite/dVnQ2Gf"
               rel="noopener noreferrer"

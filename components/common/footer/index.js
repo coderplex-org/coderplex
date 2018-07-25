@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'react-emotion';
-import { Flex, Box } from 'grid-emotion';
+import { Flex, Box } from 'grid-styled/emotion';
 import FaFacebook from 'react-icons/lib/fa/facebook';
 import FaYoutube from 'react-icons/lib/fa/youtube-play';
 import FaGithub from 'react-icons/lib/fa/github-alt';
@@ -121,6 +121,7 @@ export default class FooterBar extends React.Component {
     emailSubmittingError: '',
     subscriberEmailPosted: false,
   };
+
   handleChange = event => {
     this.setState({
       subscribersEmail: event.target.value,
@@ -132,7 +133,7 @@ export default class FooterBar extends React.Component {
     e.preventDefault();
     console.log('submitting....');
     this.setState({ emailSubmittingError: '' });
-    const emailRegx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const emailRegx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const email = this.state.subscribersEmail;
     if (!email) {
       this.setState({
@@ -169,12 +170,19 @@ export default class FooterBar extends React.Component {
       });
     }
   }
+
   render() {
     return (
       <Footer>
         <Container>
-          <Flex wrap py={[0, 3]}>
-            <Flex align="center" direction="column" justify="center" width={[1, 1, 1 / 2]} px={[2, 3]} py={[3, 0]}>
+          <Flex flexWrap="wrap" py={[0, 4]}>
+            <Flex
+              alignItems="center"
+              flexDirection="column"
+              justifyContent="center"
+              width={[1, 1, 1 / 2]}
+              px={[3, 4]}
+              py={[4, 0]}>
               <Title>
                 We are constantly updating our platform.
                 <br />Do subscribe to stay informed.
@@ -198,8 +206,8 @@ export default class FooterBar extends React.Component {
                 <p>{this.state.emailSubmittingError}</p>
               </Message>
             </Flex>
-            <Flex className="follow" align="center" justify="center" width={[1, 1, 1 / 2]}>
-              <Box p={[1, 2]}>
+            <Flex className="follow" alignItems="center" justifyContent="center" width={[1, 1, 1 / 2]}>
+              <Box p={[2, 3]}>
                 <Title>Follow Us</Title>
                 <SocialLinks>
                   <SocialLink>

@@ -109,7 +109,7 @@ const activities = [
 export default () => (
   <Layout>
     <BannerSection title="Offline Co-Learning Spaces" subTitle="Physical spaces for peer-learning and collaboration" />
-    <ForWhomSection py={[2, 4]} px={[2, 1]}>
+    <ForWhomSection py={[3, 5]} px={[3, 2]}>
       <Container>
         <Title inverted color="#222">
           Who Is This For?
@@ -117,7 +117,7 @@ export default () => (
         <ul>{forWhomPoints.map(point => <li key={point}>{point}</li>)}</ul>
       </Container>
     </ForWhomSection>
-    <ActivitySection py={[2, 4]} px={[2, 1]}>
+    <ActivitySection py={[3, 5]} px={[3, 2]}>
       <Container>
         <Title inverted color="#222">
           Activites and Schedule
@@ -135,7 +135,7 @@ export default () => (
         </ActivityTimeline>
       </Container>
     </ActivitySection>
-    <PricingSection py={[2, 4]} px={[2, 1]}>
+    <PricingSection py={[3, 5]} px={[3, 2]}>
       <Container>
         <Title inverted color="#222">
           Pricing
@@ -153,8 +153,7 @@ export default () => (
         </Box>
       </Container>
     </PricingSection>
-
-    <MapSection py={[2, 4]} px={[2, 1]}>
+    <MapSection py={[3, 5]} px={[3, 2]}>
       <Container>
         <Title inverted color="#222">
           Location

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'react-emotion';
 import { space } from 'styled-system';
-import { Flex, Box } from 'grid-emotion';
+import { Flex, Box } from 'grid-styled/emotion';
 
 import { baseContainer, Title, SubTitle, Button, breakpoints } from '../../utils/base.styles';
 
@@ -42,7 +42,7 @@ const Container = styled.section`
 export default ({ title, subTitle, icon }) => (
   <BannerSection py={[1, 3]} px={[2, 1]}>
     <Container>
-      <Flex wrap={false} align={'flex-end'}>
+      <Flex alignItems={'flex-end'}>
         <Box flex={'0 1 auto'}>
           <div className="logo">
             <i className={icon} />

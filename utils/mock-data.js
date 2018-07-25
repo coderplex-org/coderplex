@@ -1,4 +1,4 @@
-export const listOfSubjects = [
+exports.listOfSubjects = [
   {
     id: '2132',
     title: 'Laravel',
@@ -102,7 +102,7 @@ export const listOfSubjects = [
   },
 ];
 
-export const laravelSyllabus = [
+exports.laravelSyllabus = [
   {
     unit: 'Preface',
     chapters: [
@@ -244,7 +244,7 @@ export const laravelSyllabus = [
   },
 ];
 
-export const reactSyllabus = [
+exports.reactSyllabus = [
   {
     unit: 'Preface',
     chapters: [
