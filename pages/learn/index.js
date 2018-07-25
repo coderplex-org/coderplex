@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex } from 'grid-emotion';
+import { Flex } from 'grid-styled/emotion';
 import styled from 'react-emotion';
 import { space } from 'styled-system';
 
@@ -28,12 +28,12 @@ const FilterContainer = styled.div`
 export default () => (
   <Layout>
     <BannerSection title="Open Source Learning Guides" subTitle="To master your favorite technology" />
-    <LearnSection py={[2, 3]} px={[2, 1]}>
-      <FilterContainer my={[1, 2]}>
+    <LearnSection py={[3, 4]} px={[3, 2]}>
+      <FilterContainer my={[2, 3]}>
         <h2 className="title_filter">Available Guides</h2>
         {/* <h4 className="title_fitler_by">Filter by domain :</h4> */}
       </FilterContainer>
-      <Flex justify="space-between" align="center" wrap>
+      <Flex justifyContent="space-between" alignItems="center" flexWrap="wrap">
         {listOfSubjects.map(subject => {
           return <SubjectCard key={subject.url} subject={subject} />;
         })}

@@ -3,7 +3,7 @@ import Router from 'next/router';
 import fetch from 'isomorphic-unfetch';
 import styled from 'react-emotion';
 import { space } from 'styled-system';
-import { Flex, Box } from 'grid-emotion';
+import { Flex, Box } from 'grid-styled/emotion';
 import ExpandTOC from 'react-icons/lib/fa/angle-double-right';
 import CollapseTOC from 'react-icons/lib/fa/angle-double-left';
 
@@ -79,6 +79,7 @@ export default class Subject extends React.Component {
         return null;
     }
   }
+
   selectChapter(syllabus, chapterName) {
     return syllabus
       .map(item => {
@@ -105,7 +106,9 @@ export default class Subject extends React.Component {
     this.getChapter(subject, chapter);
   }
 
-  componentWillReceiveProps(nextProps) {
+  // Refactor to use https://reactjs.org/docs/react-component.html#static-getderivedstatefromprops
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const { subject, chapter } = nextProps.url.query;
     this.getChapter(subject, chapter);
   }
@@ -143,15 +146,15 @@ export default class Subject extends React.Component {
     ) : (
       <Layout>
         <BannerSection textInverted title={`Learn ${subject.title}`} subTitle={subject.domain} icon={subject.icon} />
-        <CurriculumSection my={[0, 4]}>
-          <Flex column={false}>
+        <CurriculumSection my={[0, 5]}>
+          <Flex flexDirection="row">
             {this.state.isSidebarOpen ? (
               <Box width={[0, 0.2]} flex={'1 1 auto'} className="box_toc">
                 <div className="toc_title">Table of content</div>
                 <SyllabusTree data={this.state.activeSubject} changeChapter={this.changeChapter} />
               </Box>
             ) : null}
-            <Box width={[1, 0.8]} flex={'1 1 auto'} px={[1, 2]} className="box_content">
+            <Box width={[1, 0.8]} flex={'1 1 auto'} px={[2, 3]} className="box_content">
               <Fab onClick={() => this.setState({ isSidebarOpen: !this.state.isSidebarOpen })}>
                 {this.state.isSidebarOpen ? (
                   <CollapseTOC className="fab_symbol" />

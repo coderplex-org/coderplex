@@ -2,7 +2,7 @@ import React from 'react';
 import ContentLoader from 'react-content-loader';
 import styled from 'react-emotion';
 import { space } from 'styled-system';
-import { Flex } from 'grid-emotion';
+import { Flex } from 'grid-styled/emotion';
 
 import { breakpoints, graySecondary } from '../../utils/base.styles';
 
@@ -23,7 +23,7 @@ const EventLoader = styled(Flex)`
 `;
 
 export default () => (
-  <EventLoader my={[3]} wrap>
+  <EventLoader my={[4]} flexWrap="wrap">
     <ContentLoader width="100%" speed={4} primaryColor={'#f3f3f3'} secondaryColor={'#ecebeb'}>
       <rect x="0" y="0" rx="5" ry="5" width="200" height="132" />
       <rect x="207" y="7" rx="4" ry="4" width="550" height="20" />
