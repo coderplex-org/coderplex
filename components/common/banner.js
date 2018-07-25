@@ -12,7 +12,7 @@ const BannerSection = styled.section`
 `;
 
 export default ({ title, subTitle, textInverted = false }) => (
-  <BannerSection py={[2, 3]} px={[2, 1]}>
+  <BannerSection py={[3, 4]} px={[3, 2]}>
     <Container>
       <Title inverted={textInverted}>{title}</Title>
       <SubTitle inverted={textInverted}>{subTitle}</SubTitle>

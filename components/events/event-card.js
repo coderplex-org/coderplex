@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'react-emotion';
 import { space, fontSize } from 'styled-system';
-import { Flex, Box } from 'grid-emotion';
+import { Flex, Box } from 'grid-styled/emotion';
 import TimeIcon from 'react-icons/lib/fa/calendar';
 import format from 'date-fns/format';
 import LocationIcon from 'react-icons/lib/md/location-on';
@@ -75,7 +75,7 @@ const CardTitle = styled.h3`
 `;
 
 export default props => (
-  <Card my={[3]} wrap>
+  <Card my={[4]} flexWrap="wrap">
     {props.showImg && (
       <Flex align="streach" width={[1, 1, 1 / 4]}>
         <img
@@ -88,50 +88,50 @@ export default props => (
       </Flex>
     )}
     <Box className="eventDetails" width={props.showImg ? [1, 1, 3 / 4] : [1, 1, 1]}>
-      <Flex className="eventDetails" column justify="space-between">
+      <Flex className="eventDetails" flexDirection="column" justifyContent="space-between">
         <CardTitle inverted color="#222" px={[2]} py={[1]} m={0}>
           {truncateString(props.name, 64)}
         </CardTitle>
-        <Box fontSize={[12, 14, 16]} className="secondaryText" px={[2]} my={props.showImg ? [1, 1, 0] : [1, 1, 1]}>
+        <Box fontSize={[12, 14]} className="secondaryText" px={[3]} my={props.showImg ? [2, 2, 0] : [2, 2, 2]}>
           <LocationIcon className="icons" />
           <span>{truncateString(props.location, 55)}</span>
         </Box>
-        <Box px={2} pb={[2, 1]}>
-          <Flex wrap>
+        <Box px={3} pb={[3, 2]}>
+          <Flex flexWrap="wrap">
             <Box
-              fontSize={[12, 14, 16]}
+              fontSize={[12, 14]}
               width={props.showImg ? [1, 1, 0.38] : [1, 1, 1 / 2]}
               className="secondaryText"
-              pr={1}
+              pr={2}
               mr={[0]}
-              my={props.showImg ? [1, 1, 0] : [1, 1, 1]}>
+              my={props.showImg ? [2, 2, 0] : [2, 2, 2]}>
               <TimeIcon className="icons" />
               <span>{format(props.time, "ddd MMM Do 'YY, h:mm A")}</span>
             </Box>
             <Box
-              fontSize={[12, 14, 16]}
+              fontSize={[12, 14]}
               width={props.showImg ? [1, 1, 0.24] : [1, 1, 1 / 2]}
               className="secondaryText"
-              pr={1}
+              pr={2}
               mx={[0]}
-              my={props.showImg ? [1, 1, 0] : [1, 1, 1]}>
+              my={props.showImg ? [2, 2, 0] : [2, 2, 2]}>
               <AttendeesIcon className="icons" />
               <span>{props.tense === 'past' ? `${props.attendees} attended` : `${props.attendees} attending`}</span>
             </Box>
             <Box
-              fontSize={[12, 14, 16]}
+              fontSize={[12, 14]}
               width={props.showImg ? [1, 1, 0.21] : [1, 1, 1 / 2]}
               className="secondaryText"
-              pr={1}
+              pr={2}
               mx={[0]}
-              my={props.showImg ? [1, 1, 0] : [1, 1, 1]}>
+              my={props.showImg ? [2, 2, 0] : [2, 2, 2]}>
               {props.online ? <StreamIcon className="icons" /> : <TicketIcon className="icons" />}
               <span>{props.online ? 'Free session' : 'Free entry'}</span>
             </Box>
             <Box
-              fontSize={[12, 14, 16]}
+              fontSize={[12, 14]}
               width={props.showImg ? [1, 1, 0.17] : [1, 1, 1 / 2]}
-              mt={props.showImg ? [1, 1, 0] : [1, 1, 1]}
+              mt={props.showImg ? [2, 2, 0] : [2, 2, 2]}
               className="rsvp">
               <Button href={props.link} inverted medium>
                 {props.tense === 'past' ? 'View' : 'RSVP'}

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'react-emotion';
-import { Flex, Box } from 'grid-emotion';
+import { Flex, Box } from 'grid-styled/emotion';
 import { space, fontSize } from 'styled-system';
 import Link from 'next/link';
 import LearningIcon from 'react-icons/lib/fa/book';
@@ -85,12 +85,12 @@ export default ({ subject }) => (
       <p className="subtitle" fontSize={[12, 14, 16]}>
         {subject.domain}
       </p>
-      <Flex className="stats" wrap>
-        <Box pr={[1]} pb={[1]} fontSize={[12, 14, 16]}>
+      <Flex className="stats" flexWrap="wrap">
+        <Box pr={[1]} pb={[2]} fontSize={[12, 14]}>
           <LearningIcon className="icons" />
           <span>20 learning</span>
         </Box>
-        <Box fontSize={[12, 14, 16]}>
+        <Box fontSize={[12, 14]}>
           <EstimateIcon className="icons" />
           <span>20 hours</span>
         </Box>

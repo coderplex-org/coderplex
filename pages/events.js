@@ -1,6 +1,6 @@
 import React from 'react';
 import fetch from 'isomorphic-unfetch';
-import { Flex, Box } from 'grid-emotion';
+import { Flex, Box } from 'grid-styled/emotion';
 import styled from 'react-emotion';
 import { space } from 'styled-system';
 
@@ -74,13 +74,15 @@ export default class Events extends React.Component {
       return [1, 2].map(i => {
         return <EventLoader key={i} />;
       });
-    } else if (events.length === 0) {
+    }
+    if (events.length === 0) {
       return (
         <SubTitle inverted color="#222">
           No upcoming events yet, check back later
         </SubTitle>
       );
-    } else if (events === null) {
+    }
+    if (events === null) {
       return (
         <SubTitle inverted color="#222">
           Oops! somethings went wrong while fetching the events
@@ -90,12 +92,13 @@ export default class Events extends React.Component {
     return (
       <div>
         {events.slice(0, loadLimit).map(event => {
-          console.log(event);
           const regexForImageSrc = /<img.*?src="([^">]*\/([^">]*?))".*?>/g;
           const imgs = regexForImageSrc.exec(event.description);
           const imageSrc = imgs
             ? imgs[1]
-            : event.featured_photo ? event.featured_photo.photo_link : imagePlaceholderURL;
+            : event.featured_photo
+              ? event.featured_photo.photo_link
+              : imagePlaceholderURL;
           return (
             <EventCard
               showImg
@@ -136,11 +139,11 @@ export default class Events extends React.Component {
     return (
       <Layout>
         <BannerSection title="Online & Offline Events" subTitle="Because you cannot change the world alone" />
-        <EventsSection py={[2, 2]} px={[2, 1]}>
+        <EventsSection py={[3, 3]} px={[3, 2]}>
           <Container>
-            <Flex pb={[2, 2]} direction="column" align="center" justify="center">
+            <Flex pb={[2, 2]} flexDirection="column" alignItems="center" justifyContent="center">
               <Box width={[1, 0.75]}>
-                <h3 className="event_type_title" inverted color="#222">
+                <h3 className="event_type_title" color="#222">
                   Upcoming Events
                 </h3>
                 {this.renderEvents(this.state.futureEvents, this.state.futureEventsLoadLimit)}
@@ -148,9 +151,9 @@ export default class Events extends React.Component {
                   this.renderLoadMoreButton(this.state.futureEvents.length, this.state.futureEventsLoadLimit, false)}
               </Box>
             </Flex>
-            <Flex direction="column" align="center" justify="center">
+            <Flex flexDirection="column" alignItems="center" justifyContent="center">
               <Box width={[1, 0.75]}>
-                <h3 className="event_type_title" inverted color="#222">
+                <h3 className="event_type_title" color="#222">
                   Recent Events
                 </h3>
                 {this.renderEvents(this.state.pastEvents, this.state.pastEventsLoadLimit)}

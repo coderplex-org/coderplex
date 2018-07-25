@@ -63,12 +63,14 @@ class NavBar extends React.Component {
       },
     ],
   };
+
   toggleMenu = e => {
     e.preventDefault();
     this.setState(state => {
       return { menuOpen: !state.menuOpen };
     });
   };
+
   render() {
     const pathName = this.props.router.pathname;
     const metaData = MetaInfo[pathName === '/' ? 'home' : pathName.split('/')[1]];
@@ -80,8 +82,7 @@ class NavBar extends React.Component {
           )} | Learn ${this.props.router.query.subject[0].toUpperCase() +
             this.props.router.query.subject.slice(1)} | Coderplex`
         : metaData.title;
-    const description = metaData.description;
-    const image = metaData.image;
+    const { description, image } = metaData;
     return (
       <Headroom>
         <Header>
