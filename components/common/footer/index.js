@@ -129,7 +129,7 @@ const FooterLinks = styled.ul`
 `;
 
 const FooterLink = styled.li`
-  margin: 10px;
+  margin: 20px 10px;
   @media (min-width: 48em) {
     margin: 0 10px;
   }
@@ -279,7 +279,7 @@ export default class FooterBar extends React.Component {
               </Box>
             </Flex>
           </Flex>
-          <Flex py={[3, 3]} px={[3, 0]} flexWrap="wrap" alignItems="center" justifyContent="space-between">
+          <Flex py={[4, 3]} px={[3, 0]} flexWrap="wrap" alignItems="center" justifyContent="space-between">
             <Box width={[1, 1 / 2]}>&copy; Copyright {new Date().getFullYear()} - Coderplex - All Rights Reserved.</Box>
             <FooterLinks>
               {footerLinks.map(item => (
