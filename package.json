@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "xo",
-    "lint":
-      "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' '*.json' --write && xo && markdownlint .",
+    "lint": "prettier 'utils/**/*.js' 'components/**/*.js' 'pages/**/*.js' 'lib/**/*.js' 'hocs/**/*.js' '*.js' '*.json' --write && xo && markdownlint .",
     "precommit": "lint-staged",
     "analyze": "cross-env ANALYZE=1 next build",
     "dev": "cross-env NODE_ENV=development node server.js",
@@ -18,19 +17,33 @@
   },
   "xo": {
     "parser": "babel-eslint",
-    "extends": ["prettier", "prettier/react", "plugin:react/recommended"],
-    "env": ["browser", "node"],
+    "extends": [
+      "prettier",
+      "prettier/react",
+      "plugin:react/recommended"
+    ],
+    "env": [
+      "browser",
+      "node"
+    ],
     "rules": {
       "linebreak-style": 0,
       "react/display-name": 0,
-      "react/prop-types": 0
+      "react/prop-types": 0,
+      "react/no-unescaped-entities": 0
     },
     "space:": 2,
-    "ignores": ["next.config.js"],
+    "ignores": [
+      "next.config.js"
+    ],
     "overrides": [
       {
         "files": "**/__tests__/*.test.js",
-        "globals": ["describe", "it", "expect"]
+        "globals": [
+          "describe",
+          "it",
+          "expect"
+        ]
       }
     ]
   },
@@ -41,8 +54,16 @@
       "jest --findRelatedTests",
       "git add"
     ],
-    "**/*.md": ["prettier", "markdownlint", "git add"],
-    ".github/CONTRIBUTING.md": ["doctoc", "prettier", "git add"]
+    "**/*.md": [
+      "prettier",
+      "markdownlint",
+      "git add"
+    ],
+    ".github/CONTRIBUTING.md": [
+      "doctoc",
+      "prettier",
+      "git add"
+    ]
   },
   "dependencies": {
     "babel-plugin-emotion": "^9.2.6",

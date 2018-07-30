@@ -32,6 +32,8 @@ module.exports = {
       '/learn': { page: '/learn' },
       '/space': { page: '/space' },
       '/join': { page: '/join' },
+      '/terms': { page: '/terms' },
+      '/privacy': { page: '/privacy' },
     };
     const getSubject = subjectId => {
       switch (subjectId) {
