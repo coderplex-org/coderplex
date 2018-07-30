@@ -1,6 +1,7 @@
 {
-  "enabled": false,
-  "extends": [
-    "config:base"
-  ]
+  "extends": ["config:base", "docker:disable", ":skipStatusChecks", ":pinAllExceptPeerDependencies"],
+  "automerge": true,
+  "major": {
+    "automerge": false
+  }
 }
