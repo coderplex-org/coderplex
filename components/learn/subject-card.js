@@ -16,6 +16,7 @@ const SubjectCard = styled.div`
   display: inline-block;
   min-height: 200px;
   border: 1px solid #d3d3d3;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   transition: all 0.25s;
   & .logo {
     background: #ebeff3;
