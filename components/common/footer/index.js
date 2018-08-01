@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'react-emotion';
+import Link from 'next/link';
 import { Flex, Box } from 'grid-styled/emotion';
 import FaFacebook from 'react-icons/lib/fa/facebook';
 import FaYoutube from 'react-icons/lib/fa/youtube-play';
@@ -12,7 +13,8 @@ import { baseEventsURL, subscribeURL } from '../../../utils/urls';
 
 const Footer = styled.footer`
   background: #222;
-  color: #fff;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
   @media (max-width: 480px) {
     .follow {
       background: #111;
@@ -114,6 +116,44 @@ const Message = styled.div`
   }
 `;
 
+const FooterLinks = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  @media (min-width: 48em) {
+    width: 50%;
+  }
+`;
+
+const FooterLink = styled.li`
+  margin: 20px 10px;
+  @media (min-width: 48em) {
+    margin: 0 10px;
+  }
+  & a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.2s;
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+`;
+
+const footerLinks = [
+  {
+    title: 'Terms & Conditions',
+    path: '/terms',
+  },
+  {
+    title: 'Privacy Policy',
+    path: '/privacy',
+  },
+];
+
 export default class FooterBar extends React.Component {
   state = {
     subscribersEmail: '',
@@ -175,7 +215,7 @@ export default class FooterBar extends React.Component {
     return (
       <Footer>
         <Container>
-          <Flex flexWrap="wrap" py={[0, 4]}>
+          <Flex flexWrap="wrap" py={[0, 2]}>
             <Flex
               alignItems="center"
               flexDirection="column"
@@ -238,6 +278,20 @@ export default class FooterBar extends React.Component {
                 </SocialLinks>
               </Box>
             </Flex>
+          </Flex>
+          <Flex py={[4, 3]} px={[3, 0]} flexWrap="wrap" alignItems="center" justifyContent="space-between">
+            <Box width={[1, 1 / 2]}>&copy; Copyright {new Date().getFullYear()} - Coderplex - All Rights Reserved.</Box>
+            <FooterLinks>
+              {footerLinks.map(item => (
+                <FooterLink key={item.path}>
+                  <Link href={item.path}>
+                    <a>
+                      <span>{item.title}</span>
+                    </a>
+                  </Link>
+                </FooterLink>
+              ))}
+            </FooterLinks>
           </Flex>
         </Container>
       </Footer>

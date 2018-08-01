@@ -30,5 +30,17 @@
     "title": "Our community member | Coderplex",
     "description": "List of all our community members",
     "image": ""
+  },
+  "privacy": {
+    "title": "Privacy Policy of Coderplex Foundation",
+    "description":
+      "This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service, the Coderplex website.",
+    "image": ""
+  },
+  "terms": {
+    "title": "Privacy Policy of Coderplex Foundation",
+    "description":
+      "This page is used to inform website visitors regarding our terms and conditions which outline the rules and regulations for the use of Coderplex Foundation's Website.",
+    "image": ""
   }
 }
