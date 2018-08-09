@@ -104,7 +104,7 @@
     "lint-staged": "7.2.0",
     "markdownlint-cli": "0.12.0",
     "opn": "5.3.0",
-    "prettier": "1.14.1",
+    "prettier": "1.14.2",
     "raf": "3.4.0",
     "react-test-renderer": "16.4.2",
     "typescript": "3.0.1",
