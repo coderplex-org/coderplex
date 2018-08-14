@@ -97,7 +97,7 @@
     "enzyme": "3.4.1",
     "enzyme-adapter-react-16": "1.2.0",
     "enzyme-to-json": "3.3.4",
-    "eslint-config-prettier": "2.10.0",
+    "eslint-config-prettier": "3.0.1",
     "eslint-plugin-react": "7.11.0",
     "husky": "0.14.3",
     "jest": "23.5.0",
