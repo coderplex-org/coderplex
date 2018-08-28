@@ -66,10 +66,10 @@
     ]
   },
   "dependencies": {
-    "babel-plugin-emotion": "9.2.6",
+    "babel-plugin-emotion": "9.2.8",
     "date-fns": "1.29.0",
-    "emotion": "9.2.6",
-    "emotion-server": "9.2.6",
+    "emotion": "9.2.8",
+    "emotion-server": "9.2.8",
     "get-port": "4.0.0",
     "grid-styled": "5.0.2",
     "isomorphic-unfetch": "2.1.1",
@@ -82,7 +82,7 @@
     "react": "16.4.2",
     "react-content-loader": "3.1.2",
     "react-dom": "16.4.2",
-    "react-emotion": "9.2.6",
+    "react-emotion": "9.2.8",
     "react-event-timeline": "1.5.4",
     "react-headroom": "2.2.2",
     "react-icons": "2.2.7",
