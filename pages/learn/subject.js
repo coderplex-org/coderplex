@@ -141,11 +141,18 @@ export default class Subject extends React.Component {
           title={`Learn ${subject.title}`}
           subTitle={`Curriculum for ${this.props.url.query.subject.toUpperCase()} and others Coming soon!!`}
           icon={subject.icon}
+          githubUrl={subject.githubUrl}
         />
       </Layout>
     ) : (
       <Layout>
-        <BannerSection textInverted title={`Learn ${subject.title}`} subTitle={subject.domain} icon={subject.icon} />
+        <BannerSection
+          textInverted
+          title={`Learn ${subject.title}`}
+          subTitle={subject.domain}
+          icon={subject.icon}
+          githubUrl={subject.githubUrl}
+        />
         <CurriculumSection my={[0, 5]}>
           <Flex flexDirection="row">
             {this.state.isSidebarOpen ? (
