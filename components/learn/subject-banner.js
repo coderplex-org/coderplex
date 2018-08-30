@@ -39,7 +39,7 @@ const Container = styled.section`
   }
 `;
 
-export default ({ title, subTitle, icon }) => (
+export default ({ title, subTitle, icon, githubUrl }) => (
   <BannerSection py={[1, 3]} px={[2, 1]}>
     <Container>
       <Flex alignItems={'flex-end'}>
@@ -53,7 +53,7 @@ export default ({ title, subTitle, icon }) => (
           <SubTitle className="subtitle">{subTitle}</SubTitle>
         </Box>
         <Box flex={['0 1 auto']}>
-          <Button inverted medium className="edit">
+          <Button inverted medium target="_blank" href={githubUrl} className="edit">
             EDIT
           </Button>
         </Box>
