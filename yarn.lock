@@ -7608,7 +7608,13 @@ styled-jsx@2.2.6:
     stylis "3.4.10"
     stylis-rule-sheet "0.0.8"
 
-styled-system@3.0.2, styled-system@^3.0.1:
+styled-system@3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-3.0.3.tgz#8ca3938fa382564e059f181d37d563b753cc9f41"
+  dependencies:
+    prop-types "^15.6.2"
+
+styled-system@^3.0.1:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-3.0.2.tgz#2189a6d829117d212fb6ac8ebc4260fdb75d1109"
   dependencies:
