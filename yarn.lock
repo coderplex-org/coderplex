@@ -8110,9 +8110,9 @@ styled-jsx@3.0.3-canary.0:
     stylis "3.5.3"
     stylis-rule-sheet "0.0.10"
 
-styled-system@3.1.4:
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-3.1.4.tgz#d3cc0cfea91273c39f06af5eaaaa2decf84506c0"
+styled-system@3.1.6:
+  version "3.1.6"
+  resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-3.1.6.tgz#286448a62932b1f7ed98075d1a520afd52da97d1"
   dependencies:
     prop-types "^15.6.2"
 
