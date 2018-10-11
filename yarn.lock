@@ -8016,9 +8016,9 @@ styled-jsx@3.1.0:
     stylis "3.5.3"
     stylis-rule-sheet "0.0.10"
 
-styled-system@3.1.10:
-  version "3.1.10"
-  resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-3.1.10.tgz#47e8cc2f526d1fa99995dad373dd87afe534237b"
+styled-system@3.1.11:
+  version "3.1.11"
+  resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-3.1.11.tgz#a91a38cf7a0f0e625b897a04fdd506a359a3629f"
   dependencies:
     "@babel/runtime" "^7.1.2"
     prop-types "^15.6.2"
