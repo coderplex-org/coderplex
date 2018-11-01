@@ -8377,9 +8377,9 @@ typescript-template-language-service-decorator@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/typescript-template-language-service-decorator/-/typescript-template-language-service-decorator-2.0.0.tgz#7433fdc464f07034d951dea9a5e76fab6e558f57"
 
-typescript@3.1.5:
-  version "3.1.5"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.1.5.tgz#93d8b6864375325a91177372cb370ae0ae3a0703"
+typescript@3.1.6:
+  version "3.1.6"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.1.6.tgz#b6543a83cfc8c2befb3f4c8fba6896f5b0c9be68"
 
 ua-parser-js@^0.7.9:
   version "0.7.17"
