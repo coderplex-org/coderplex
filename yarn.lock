@@ -2946,9 +2946,9 @@ eslint-ast-utils@^1.0.0:
     lodash.get "^4.4.2"
     lodash.zip "^4.2.0"
 
-eslint-config-prettier@3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-3.2.0.tgz#5540c46af6be4701353d86a31b3fb77d03e0168e"
+eslint-config-prettier@3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-3.3.0.tgz#41afc8d3b852e757f06274ed6c44ca16f939a57d"
   dependencies:
     get-stdin "^6.0.0"
 
