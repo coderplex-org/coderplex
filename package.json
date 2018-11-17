@@ -110,7 +110,7 @@
     "typescript": "3.1.6",
     "typescript-styled-plugin": "0.13.0",
     "webpack-bundle-analyzer": "3.0.3",
-    "xo": "0.21.1"
+    "xo": "0.23.0"
   },
   "keywords": [],
   "contributors": [
