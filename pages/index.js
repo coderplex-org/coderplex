@@ -28,19 +28,15 @@ const HeroSection = styled.section`
   text-align: center;
   background-image: url(${heroPatternURL});
   & h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 300;
     color: #36434d;
-    ${breakpoints.lg} {
-      line-height: 3rem;
-    }
     ${breakpoints.md} {
-      font-size: 2.3rem;
-      line-height: 3rem;
+      font-size: 1.5rem;
     }
     ${breakpoints.sm} {
-      font-size: 1.8rem;
-      line-height: 2.5rem;
+      font-size: 1.5rem;
+      line-height: 1.8rem;
     }
     ${breakpoints.xs} {
       font-size: 1.5rem;
