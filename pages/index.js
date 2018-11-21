@@ -31,11 +31,16 @@ const HeroSection = styled.section`
     font-size: 2.5rem;
     font-weight: 300;
     color: #36434d;
+    ${breakpoints.lg} {
+      line-height: 3rem;
+    }
     ${breakpoints.md} {
       font-size: 2.3rem;
+      line-height: 3rem;
     }
     ${breakpoints.sm} {
       font-size: 1.8rem;
+      line-height: 2.5rem;
     }
     ${breakpoints.xs} {
       font-size: 1.5rem;
@@ -209,7 +214,7 @@ export default () => (
         <Flex flexDirection="column" alignItems="center" justifyContent="center">
           <Box width={1}>
             <img src={heroBannerURL} alt="words" />
-            <h1>On a mission to improve the state of tech across India</h1>
+            <h1>On a mission to improve the state of Tech Education across India</h1>
           </Box>
         </Flex>
       </Container>
