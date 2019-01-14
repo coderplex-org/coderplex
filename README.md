@@ -1,6 +1,6 @@
 # Coderplex Website
 
-[![Build Status](https://travis-ci.org/coderplex/coderplex.svg?branch=master)](https://travis-ci.org/coderplex/coderplex) [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo) [![Greenkeeper badge](https://badges.greenkeeper.io/coderplex/coderplex.svg)](https://greenkeeper.io/) [![All Contributors](https://img.shields.io/badge/all_contributors-25-orange.svg?style=flat-square)](#contributors) [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://github.com/coderplex/coderplex/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/coderplex/coderplex.svg?branch=master)](https://travis-ci.org/coderplex/coderplex) [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo) ![coderplex](https://david-dm.org/coderplex/coderplex.svg) [![All Contributors](https://img.shields.io/badge/all_contributors-25-orange.svg?style=flat-square)](#contributors) [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://github.com/coderplex/coderplex/blob/master/LICENSE)
 
 ## Follow our community here at [https://www.coderplex.org](https://www.coderplex.org)
 
