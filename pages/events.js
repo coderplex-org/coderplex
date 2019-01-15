@@ -1,7 +1,7 @@
 import React from 'react';
 import fetch from 'isomorphic-unfetch';
 import { Flex, Box } from 'grid-styled/emotion';
-import styled from 'react-emotion';
+import styled, { css } from 'react-emotion';
 import { space } from 'styled-system';
 
 import Layout from '../components/common/layout';
@@ -34,6 +34,7 @@ export default class Events extends React.Component {
     futureEventsLoadLimit: 2,
     fetchError: null,
     loading: true,
+    showFutureEvents: true,
   };
 
   async componentDidMount() {
@@ -97,8 +98,8 @@ export default class Events extends React.Component {
           const imageSrc = imgs
             ? imgs[1]
             : event.featured_photo
-              ? event.featured_photo.photo_link
-              : imagePlaceholderURL;
+            ? event.featured_photo.photo_link
+            : imagePlaceholderURL;
           return (
             <EventCard
               showImg
@@ -134,6 +135,12 @@ export default class Events extends React.Component {
       : this.setState({ futureEventsLoadLimit: this.state.futureEventsLoadLimit + 5 });
   }
 
+  loadEventsOfThisCategory(category) {
+    this.setState({
+      showFutureEvents: category === 'upcomingEvents',
+    });
+  }
+
   render() {
     const { loading } = this.state;
     return (
@@ -143,21 +150,39 @@ export default class Events extends React.Component {
           <Container>
             <Flex pb={[2, 2]} flexDirection="column" alignItems="center" justifyContent="center">
               <Box width={[1, 0.75]}>
-                <h3 className="event_type_title" color="#222">
-                  Upcoming Events
-                </h3>
-                {this.renderEvents(this.state.futureEvents, this.state.futureEventsLoadLimit)}
-                {!loading &&
-                  this.renderLoadMoreButton(this.state.futureEvents.length, this.state.futureEventsLoadLimit, false)}
+                <div
+                  className={css`
+                    text-align: center;
+                  `}>
+                  <Button
+                    medium
+                    ghost={this.state.showFutureEvents}
+                    onClick={() => this.loadEventsOfThisCategory('upcomingEvents')}>
+                    Upcoming Events
+                  </Button>
+                  <Button
+                    medium
+                    ghost={!this.state.showFutureEvents}
+                    onClick={() => this.loadEventsOfThisCategory('recentEvents')}>
+                    Recent Events
+                  </Button>
+                </div>
               </Box>
             </Flex>
-            <Flex flexDirection="column" alignItems="center" justifyContent="center">
+            <Flex pb={[2, 2]} flexDirection="column" alignItems="center" justifyContent="center">
               <Box width={[1, 0.75]}>
                 <h3 className="event_type_title" color="#222">
-                  Recent Events
+                  {this.state.showFutureEvents ? 'Upcoming Events' : 'Recent Events'}
                 </h3>
-                {this.renderEvents(this.state.pastEvents, this.state.pastEventsLoadLimit)}
-                {!loading &&
+                {this.state.showFutureEvents &&
+                  this.renderEvents(this.state.futureEvents, this.state.futureEventsLoadLimit)}
+                {this.state.showFutureEvents &&
+                  !loading &&
+                  this.renderLoadMoreButton(this.state.futureEvents.length, this.state.futureEventsLoadLimit, false)}
+                {!this.state.showFutureEvents &&
+                  this.renderEvents(this.state.pastEvents, this.state.pastEventsLoadLimit)}
+                {!this.state.showFutureEvents &&
+                  !loading &&
                   this.renderLoadMoreButton(this.state.pastEvents.length, this.state.pastEventsLoadLimit, true)}
               </Box>
             </Flex>
