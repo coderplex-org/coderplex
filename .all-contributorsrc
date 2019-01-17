@@ -251,6 +251,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "addictd",
+      "name": "deep",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/23260049?v=4",
+      "profile": "https://github.com/addictd",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "repoType": "github"
