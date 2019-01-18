@@ -66,10 +66,10 @@
     ]
   },
   "dependencies": {
-    "babel-plugin-emotion": "9.2.11",
+    "babel-plugin-emotion": "10.0.6",
     "date-fns": "1.29.0",
-    "emotion": "9.2.12",
-    "emotion-server": "9.2.12",
+    "emotion": "10.0.6",
+    "emotion-server": "10.0.6",
     "get-port": "4.0.0",
     "grid-styled": "5.0.2",
     "isomorphic-unfetch": "3.0.0",
