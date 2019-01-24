@@ -8211,10 +8211,10 @@ rc@^1.2.7, rc@~1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-content-loader@3.4.2:
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/react-content-loader/-/react-content-loader-3.4.2.tgz#187fbec2aa389635e4613faa046713f196173f40"
-  integrity sha512-UsL3uyPUBZbaPXr52E+MMIOjs7qr6QpcCiF9Xt7we0ACEMAFYp6rWNxVwJbk4/1Peqe9Deajs0PRW5ymvyF5SA==
+react-content-loader@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/react-content-loader/-/react-content-loader-4.0.0.tgz#29e100eb2eaa082800eea86ed8f80ef9a4b8c474"
+  integrity sha512-Wtoqju+DTscmflFaicu8riVFBAJ4AymI3zqJjgdys/fcl6Q6jl6eWBuwc8m1dIJajGt5VGCMFj2F1HENlg1bEQ==
 
 react-dom@16.7.0:
   version "16.7.0"
