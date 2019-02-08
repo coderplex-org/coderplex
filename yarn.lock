@@ -1211,10 +1211,10 @@ ajv@^6.1.0:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.1"
 
-all-contributors-cli@6.1.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/all-contributors-cli/-/all-contributors-cli-6.1.0.tgz#b5e0113864f975ebf6ea643bc8142601cf8fca3b"
-  integrity sha512-loydHCtTtSOFlMY2qvbfmRDkXJ0K617yaqi6C9ePbIquIljHNoM117dQFNfoGC7XJO3AErWQc6bgmqxJoj+o/Q==
+all-contributors-cli@6.1.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/all-contributors-cli/-/all-contributors-cli-6.1.1.tgz#6c0cc6318d6f5d19c2c4cca35d2306ff25f993d3"
+  integrity sha512-4Bzx/dphSydqnOostzVCxYStkfaz0AsXq3Spyuw3vAEOckr/jgHmwIXWZ6/Vjqdmc/TA5Ue2P2UlqknA/Ewq4A==
   dependencies:
     "@babel/runtime" "^7.2.0"
     async "^2.0.0-rc.1"
