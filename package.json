@@ -78,7 +78,7 @@
     "next": "7.0.3",
     "nprogress": "0.2.0",
     "path-match": "1.2.4",
-    "prop-types": "15.7.0",
+    "prop-types": "15.7.1",
     "react": "16.8.1",
     "react-content-loader": "4.0.1",
     "react-dom": "16.8.1",
