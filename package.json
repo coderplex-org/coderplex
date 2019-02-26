@@ -108,7 +108,7 @@
     "raf": "3.4.1",
     "react-test-renderer": "16.8.3",
     "typescript": "3.3.3333",
-    "typescript-styled-plugin": "0.13.0",
+    "typescript-styled-plugin": "0.14.0",
     "webpack-bundle-analyzer": "3.0.4",
     "xo": "0.21.1"
   },
