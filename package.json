@@ -109,7 +109,7 @@
     "react-test-renderer": "16.8.3",
     "typescript": "3.3.3333",
     "typescript-styled-plugin": "0.14.0",
-    "webpack-bundle-analyzer": "3.0.4",
+    "webpack-bundle-analyzer": "3.1.0",
     "xo": "0.21.1"
   },
   "keywords": [],
