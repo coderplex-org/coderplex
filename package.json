@@ -80,7 +80,7 @@
     "path-match": "1.2.4",
     "prop-types": "15.7.2",
     "react": "16.8.4",
-    "react-content-loader": "4.2.0",
+    "react-content-loader": "4.2.1",
     "react-dom": "16.8.4",
     "react-emotion": "9.2.12",
     "react-event-timeline": "1.6.3",
