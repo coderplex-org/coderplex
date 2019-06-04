@@ -94,7 +94,7 @@
     "babel-plugin-lodash": "3.3.4",
     "cross-env": "5.2.0",
     "doctoc": "1.4.0",
-    "enzyme": "3.9.0",
+    "enzyme": "3.10.0",
     "enzyme-adapter-react-16": "1.14.0",
     "enzyme-to-json": "3.3.5",
     "eslint-config-prettier": "4.3.0",
