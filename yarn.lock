@@ -10247,10 +10247,10 @@ typescript-template-language-service-decorator@^2.2.0:
   resolved "https://registry.yarnpkg.com/typescript-template-language-service-decorator/-/typescript-template-language-service-decorator-2.2.0.tgz#4ee6d580f307fb9239978e69626f2775b8a59b2a"
   integrity sha512-xiolqt1i7e22rpqMaprPgSFVgU64u3b9n6EJlAaUYE61jumipKAdI1+O5khPlWslpTUj80YzjUKjJ2jxT0D74w==
 
-typescript@3.5.2:
-  version "3.5.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.5.2.tgz#a09e1dc69bc9551cadf17dba10ee42cf55e5d56c"
-  integrity sha512-7KxJovlYhTX5RaRbUdkAXN1KUZ8PwWlTzQdHV6xNqvuFOs7+WBo10TQUqT19Q/Jz2hk5v9TQDIhyLhhJY4p5AA==
+typescript@3.5.3:
+  version "3.5.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.5.3.tgz#c830f657f93f1ea846819e929092f5fe5983e977"
+  integrity sha512-ACzBtm/PhXBDId6a6sDJfroT2pOWt/oOnk4/dElG5G33ZL776N3Y6/6bKZJBFpd+b05F3Ct9qDjMeJmRWtE2/g==
 
 ua-parser-js@^0.7.9:
   version "0.7.17"
