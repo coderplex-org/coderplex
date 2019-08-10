@@ -61,6 +61,11 @@ class NavBar extends React.Component {
         path: 'https://coderplex.org/jobs',
         external: true,
       },
+      {
+        title: 'Donate',
+        path: 'https://donate.coderplex.org',
+        external: true,
+      },
     ],
   };
 
@@ -101,22 +106,32 @@ class NavBar extends React.Component {
                 </Link>
               </NavLogo>
               <NavLinks className={this.state.menuOpen ? 'open' : ''}>
-                {this.state.navItems.filter(item => !item.external).map(item => (
-                  <NavLink key={item.path}>
-                    <Link href={item.path}>
-                      <a className={pathName === item.path ? 'active' : ''}>
+                {this.state.navItems
+                  .filter(item => !item.external)
+                  .map(item => (
+                    <NavLink key={item.path}>
+                      <Link href={item.path}>
+                        <a className={pathName === item.path ? 'active' : ''}>
+                          <span>{item.title}</span>
+                        </a>
+                      </Link>
+                    </NavLink>
+                  ))}
+                {this.state.navItems
+                  .filter(item => item.external)
+                  .map(item => (
+                    <NavLink key={item.path}>
+                      <a
+                        href={item.path}
+                        rel="noopener noreferrer"
+                        className={[
+                          pathName === item.path ? 'active' : '',
+                          item.title === 'Donate' ? 'donate_btn' : '',
+                        ].join(' ')}>
                         <span>{item.title}</span>
                       </a>
-                    </Link>
-                  </NavLink>
-                ))}
-                {this.state.navItems.filter(item => item.external).map(item => (
-                  <NavLink key={item.path}>
-                    <a href={item.path} rel="noopener noreferrer" className={pathName === item.path ? 'active' : ''}>
-                      <span>{item.title}</span>
-                    </a>
-                  </NavLink>
-                ))}
+                    </NavLink>
+                  ))}
               </NavLinks>
             </Nav>
           </Container>

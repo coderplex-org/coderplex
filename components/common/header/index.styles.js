@@ -107,6 +107,11 @@ export const NavLink = styled.li`
         }
       }
     }
+    &.donate_btn {
+      background: #e91e63;
+      color: white;
+      border-radius: 10px;
+    }
     @media(max-width: 885px) {
       width: 100%;
       font-size: 14px;
