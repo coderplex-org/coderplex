@@ -124,6 +124,7 @@ class NavBar extends React.Component {
                       <a
                         href={item.path}
                         rel="noopener noreferrer"
+                        target={item.title === 'Donate' ? '_blank' : ''}
                         className={[
                           pathName === item.path ? 'active' : '',
                           item.title === 'Donate' ? 'donate_btn' : '',
