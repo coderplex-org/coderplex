@@ -108,9 +108,15 @@ export const NavLink = styled.li`
       }
     }
     &.donate_btn {
-      background: #e91e63;
+      background: #c201b9;
       color: white;
-      border-radius: 10px;
+      border-radius: 6px;
+      font-weight: bold;
+      line-height: inherit;
+      margin: 5px;
+      &:hover {
+        background:#9c27b0;
+      }
     }
     @media(max-width: 885px) {
       width: 100%;
