@@ -261,7 +261,18 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "VickyAbishek",
+      "name": "VickyAbishek",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/9305700?v=4",
+      "profile": "https://github.com/VickyAbishek",
+      "contributions": [
+        "code"
+      ]
     }
   ],
-  "repoType": "github"
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "contributorsPerLine": 7
 }
