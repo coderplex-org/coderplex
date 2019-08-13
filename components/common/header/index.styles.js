@@ -113,9 +113,13 @@ export const NavLink = styled.li`
       border-radius: 6px;
       font-weight: bold;
       line-height: inherit;
-      margin: 5px;
+      text-align: center;
       &:hover {
-        background:#9c27b0;
+        background: #9c27b0;
+      }
+      @media(max-width: 885px) {
+        margin: 5px;
+        border-radius: 0;
       }
     }
     @media(max-width: 885px) {
