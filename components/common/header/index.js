@@ -52,6 +52,10 @@ class NavBar extends React.Component {
         path: '/join',
       },
       {
+        title: 'Feedback',
+        path: '/feedback',
+      },
+      {
         title: 'Blog',
         path: 'https://coderplex.org/blog',
         external: true,

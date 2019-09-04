@@ -32,6 +32,7 @@ module.exports = {
       '/learn': { page: '/learn' },
       '/space': { page: '/space' },
       '/join': { page: '/join' },
+      '/feedback': { page: '/feedback' },
       '/terms': { page: '/terms' },
       '/privacy': { page: '/privacy' },
     };

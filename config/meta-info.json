@@ -6,14 +6,12 @@
   },
   "learn": {
     "title": "Free and Open Source Learning Guides | Coderplex",
-    "description":
-      "Curated guides with crowd-sourced recommendations of the best free online resources to learn various modern technologies",
+    "description": "Curated guides with crowd-sourced recommendations of the best free online resources to learn various modern technologies",
     "image": ""
   },
   "space": {
     "title": "Offline Co-learning Spaces | Coderplex",
-    "description":
-      "A network of off-learning spaces for autodidacts to come and engage in peer-learning and collaboration",
+    "description": "A network of off-learning spaces for autodidacts to come and engage in peer-learning and collaboration",
     "image": ""
   },
   "events": {
@@ -26,6 +24,11 @@
     "description": "Join the biggest and most active developer community in Hyderabad!",
     "image": ""
   },
+  "feedback": {
+    "title": "Coderplex - Feedback",
+    "description": "Help in shaping Coderplex to it's best by providing your views and thoughts with us.",
+    "image": ""
+  },
   "members": {
     "title": "Our community member | Coderplex",
     "description": "List of all our community members",
@@ -33,14 +36,12 @@
   },
   "privacy": {
     "title": "Privacy Policy of Coderplex Foundation",
-    "description":
-      "This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service, the Coderplex website.",
+    "description": "This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service, the Coderplex website.",
     "image": ""
   },
   "terms": {
     "title": "Privacy Policy of Coderplex Foundation",
-    "description":
-      "This page is used to inform website visitors regarding our terms and conditions which outline the rules and regulations for the use of Coderplex Foundation's Website.",
+    "description": "This page is used to inform website visitors regarding our terms and conditions which outline the rules and regulations for the use of Coderplex Foundation's Website.",
     "image": ""
   }
 }
