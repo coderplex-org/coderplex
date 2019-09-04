@@ -1,6 +1,6 @@
 # Coderplex Website
 
-[![Build Status](https://travis-ci.org/coderplex/coderplex.svg?branch=master)](https://travis-ci.org/coderplex/coderplex) [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo) ![coderplex](https://david-dm.org/coderplex/coderplex.svg) [![All Contributors](https://img.shields.io/badge/all_contributors-27-orange.svg?style=flat-square)](#contributors) [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://github.com/coderplex/coderplex/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/coderplex/coderplex.svg?branch=master)](https://travis-ci.org/coderplex/coderplex) [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo) ![coderplex](https://david-dm.org/coderplex/coderplex.svg) [![All Contributors](https://img.shields.io/badge/all_contributors-28-orange.svg?style=flat-square)](#contributors-) [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://github.com/coderplex/coderplex/blob/master/LICENSE)
 
 ## Follow our community here at [https://www.coderplex.org](https://www.coderplex.org)
 
@@ -23,7 +23,8 @@ We welcome pull requests from beginners and seasoned javaScript developers alike
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 <table>
   <tr>
     <td align="center"><a href="https://www.vinaypuppal.com/"><img src="https://avatars1.githubusercontent.com/u/8843216?v=4" width="100px;" alt="Vinay Puppal"/><br /><sub><b>Vinay Puppal</b></sub></a><br /><a href="https://github.com/coderplex/coderplex/issues?q=author%3Avinaypuppal" title="Bug reports">🐛</a> <a href="https://github.com/coderplex/coderplex/commits?author=vinaypuppal" title="Code">💻</a> <a href="#ideas-vinaypuppal" title="Ideas, Planning, & Feedback">🤔</a> <a href="#review-vinaypuppal" title="Reviewed Pull Requests">👀</a></td>
@@ -59,7 +60,10 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
     <td align="center"><a href="https://shahednasser.herokuapp.com"><img src="https://avatars1.githubusercontent.com/u/27354907?v=4" width="100px;" alt="Shahed Nasser"/><br /><sub><b>Shahed Nasser</b></sub></a><br /><a href="https://github.com/coderplex/coderplex/commits?author=shahednasser" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/addictd"><img src="https://avatars2.githubusercontent.com/u/23260049?v=4" width="100px;" alt="deep"/><br /><sub><b>deep</b></sub></a><br /><a href="https://github.com/coderplex/coderplex/commits?author=addictd" title="Code">💻</a> <a href="https://github.com/coderplex/coderplex/commits?author=addictd" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/VickyAbishek"><img src="https://avatars3.githubusercontent.com/u/9305700?v=4" width="100px;" alt="VickyAbishek"/><br /><sub><b>VickyAbishek</b></sub></a><br /><a href="https://github.com/coderplex/coderplex/commits?author=VickyAbishek" title="Code">💻</a></td>
+    <td align="center"><a href="http://krushiraj.github.io"><img src="https://avatars0.githubusercontent.com/u/19507241?v=4" width="100px;" alt="Krushi Raj Tula"/><br /><sub><b>Krushi Raj Tula</b></sub></a><br /><a href="https://github.com/coderplex/coderplex/commits?author=krushiraj" title="Code">💻</a></td>
   </tr>
 </table>
 
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
