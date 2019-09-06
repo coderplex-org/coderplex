@@ -48,7 +48,6 @@ export const NavLinks = styled.ul`
     width: 100%;
     position: fixed;
     z-index: -1;
-    top: -600%;
     left: 0;
     background: #fbfbfb;
     border-bottom: 1px solid #eee;
