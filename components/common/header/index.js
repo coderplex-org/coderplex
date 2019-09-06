@@ -52,6 +52,10 @@ class NavBar extends React.Component {
         path: '/join',
       },
       {
+        title: 'Feedback',
+        path: '/feedback',
+      },
+      {
         title: 'Blog',
         path: 'https://coderplex.org/blog',
         external: true,
@@ -88,6 +92,7 @@ class NavBar extends React.Component {
             this.props.router.query.subject.slice(1)} | Coderplex`
         : metaData.title;
     const { description, image } = metaData;
+    const navCollapseStyle = { top: `-${(this.state.navItems.length - 1) * 100}%` };
     return (
       <Headroom>
         <Header>
@@ -105,7 +110,9 @@ class NavBar extends React.Component {
                   />
                 </Link>
               </NavLogo>
-              <NavLinks className={this.state.menuOpen ? 'open' : ''}>
+              <NavLinks
+                className={this.state.menuOpen ? 'open' : ''}
+                style={this.state.menuOpen ? {} : navCollapseStyle}>
                 {this.state.navItems
                   .filter(item => !item.external)
                   .map(item => (
