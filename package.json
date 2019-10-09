@@ -107,7 +107,7 @@
     "prettier": "1.18.2",
     "raf": "3.4.1",
     "react-test-renderer": "16.10.2",
-    "typescript": "3.6.3",
+    "typescript": "3.6.4",
     "typescript-styled-plugin": "0.14.0",
     "webpack-bundle-analyzer": "3.5.2",
     "xo": "0.21.1"
