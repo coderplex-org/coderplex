@@ -4,7 +4,9 @@ import { space } from 'styled-system';
 import { Flex, Box } from 'grid-styled/emotion';
 import take from 'lodash.take';
 import Link from 'next/link';
+import { useQuery } from '@apollo/react-hooks';
 
+import { GET_USERS } from '../graphql/users.query';
 import Hide, { Container, Button, Title, SubTitle, breakpoints } from '../utils/base.styles';
 import { listOfSubjects } from '../utils/mock-data';
 import Layout from '../components/common/layout';
@@ -203,6 +205,26 @@ class UpcomingEvent extends React.Component {
   }
 }
 
+const TestGraphQL = () => {
+  const { data, loading, error } = useQuery(GET_USERS);
+  if (error) return <div>There was an error fetching data!</div>;
+  if (loading) return <div>We are fetching data, please wait for a while.</div>;
+  return (
+    <div>
+      Users:
+      <ul>
+        {data.allUsers.map(({ email, firstName, lastName }, key) => (
+          <li key={key}>
+            <p>
+              Email: {email}, First Name: {firstName}, Last Name: {lastName}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
 export default () => (
   <Layout>
     <HeroSection pb={[3, 5]} px={[3, 2]}>
@@ -217,6 +239,7 @@ export default () => (
     </HeroSection>
     <LearnSection pb={[4, 5]} pt={[3, 4]} px={[3, 2]}>
       <Container>
+        <TestGraphQL />
         <Flex flexDirection="column" alignItems="center" justifyContent="center">
           <Box width={1}>
             <Title inverted>Open Source Learning Guides</Title>
