@@ -6,10 +6,10 @@ import withData from '../utils/apollo-client';
 
 class MyApp extends App {
   render() {
-    const { Component, pageProps, apollo } = this.props;
+    const { Component, pageProps, router, apollo } = this.props;
     return (
       <ApolloProvider client={apollo}>
-        <Component {...pageProps} />
+        <Component {...pageProps} url={router} />
       </ApolloProvider>
     );
   }
