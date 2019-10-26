@@ -82,7 +82,7 @@
     "react": "16.11.0",
     "react-content-loader": "4.3.2",
     "react-dom": "16.11.0",
-    "react-emotion": "9.2.12",
+    "react-emotion": "10.0.0",
     "react-event-timeline": "1.6.3",
     "react-headroom": "2.2.8",
     "react-icons": "2.2.7",
