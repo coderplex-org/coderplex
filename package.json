@@ -84,7 +84,7 @@
     "react-dom": "16.11.0",
     "react-emotion": "9.2.12",
     "react-event-timeline": "1.6.3",
-    "react-headroom": "2.2.8",
+    "react-headroom": "3.0.0",
     "react-icons": "2.2.7",
     "styled-system": "3.2.1"
   },
