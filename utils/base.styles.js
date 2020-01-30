@@ -57,7 +57,15 @@ export const Button = styled.a`
   color: ${props => (props.inverted ? '#fff' : props.ghost ? purpleSecondary : '#222')};
   padding: ${props =>
     props.large ? '0.8rem 2.25rem' : props.medium ? '0.6rem 1.2rem' : props.small ? '0.3rem 1.1rem' : '0.2rem 1rem'};
-  font-size: ${props => (props.large ? '1.8rem' : props.medium ? '1rem' : '0.8rem')};
+  ${breakpoints.lg} {
+    font-size: 1.8rem;
+  }
+  ${breakpoints.md} {
+    font-size: 1rem;
+  }
+  ${breakpoints.sm} {
+    font-size: 0.8rem;
+  }
   font-weight: ${props => (props.ghost ? 600 : 500)};
   border: ${props => (props.ghost ? `2px solid ${purpleSecondary}` : 'none')};
   cursor: pointer;
