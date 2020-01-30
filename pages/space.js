@@ -114,7 +114,11 @@ export default () => (
         <Title inverted color="#222">
           Who Is This For?
         </Title>
-        <ul>{forWhomPoints.map(point => <li key={point}>{point}</li>)}</ul>
+        <ul>
+          {forWhomPoints.map(point => (
+            <li key={point}>{point}</li>
+          ))}
+        </ul>
       </Container>
     </ForWhomSection>
     <ActivitySection py={[3, 5]} px={[3, 2]}>
@@ -140,10 +144,11 @@ export default () => (
         <Title inverted color="#222">
           Pricing
         </Title>
-        <SubTitle inverted>₹1000 or More Per Month</SubTitle>
+        <SubTitle inverted>{`Rs.50 / hour (for < 3 hours)`}</SubTitle>
+        <SubTitle inverted>{`Rs.30 / hour (for > 3 hours)`}</SubTitle>
         <Box pt={[3]} pb={[3]}>
           <Button
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfTV7VcaZuc9a1XH3I2hXNWVr1ILOl8TRNE8Rz7Qc9Pxdca7w/viewform"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfZS8hP7nGS0sPOXrr9JaujNkiiuzcGH7zVv_MxLSCtFkxVVA/viewform"
             rel="noopener noreferrer"
             target="_blank"
             inverted
@@ -159,7 +164,8 @@ export default () => (
           Location
         </Title>
         <SubTitle inverted>
-          <a href="http://www.91springboard.com">91SpringBoard</a>, Kavuri Hills<br />Hyderbad, India
+          <a href="https://innovationhq.in">InnovationHQ</a>, Banjara Hills, <br />
+          Hyderbad, India
         </SubTitle>
       </Container>
       <iframe width="1000" height="450" frameBorder="0" src={spaceMapUrl} allowFullScreen />
