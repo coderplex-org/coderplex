@@ -124,7 +124,7 @@ export default () => (
     <ActivitySection py={[3, 5]} px={[3, 2]}>
       <Container>
         <Title inverted color="#222">
-          Activites and Schedule
+          Activities and Schedule
         </Title>
         <SubTitle inverted>
           We will help you pick a technology and provide you with learning guides to learn and build something on a

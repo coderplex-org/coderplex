@@ -45,7 +45,7 @@ All work related to the application takes place on Github itself. We use [Issues
 
 ## Branching Model
 
-The `master` branch of coderplex is relatively stable branch which we update for every release. We also have auto deployment in place for that particular branch i.e any changes in that branch gets reflected in [https://coderplex.org](https://coderplex.org). It is highly recommended for both maintainers and contributors to raise a pull request to `develop` branch. Before every release we throughly test develop branch and merge into master.
+The `master` branch of coderplex is relatively stable branch which we update for every release. We also have auto deployment in place for that particular branch i.e any changes in that branch gets reflected in [https://coderplex.org](https://coderplex.org). It is highly recommended for both maintainers and contributors to raise a pull request to `develop` branch. Before every release we thoroughly test develop branch and merge into master.
 
 ![Imgur](https://i.imgur.com/KPO2dLul.png)
 
