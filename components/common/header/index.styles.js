@@ -83,10 +83,16 @@ export const NavLink = styled.li`
     letter-spacing: 1px;
     will-change: color, background, box-shadow;
     &:hover {
-      color: #222;
-      text-shadow:0.8px 0px 0px #222
+
+      background: #c201b9;
+      border-radius: 6px;
+      font-weight: bold;
+      line-height: inherit;
+      text-align: center;     
+      color: #fff;
+      text-shadow:0.8px 0px 0px #fff
       @media(max-width: 885px) {
-        color: #222;
+        color: #fff;
       }
     }
     &.active {
