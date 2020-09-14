@@ -64,6 +64,7 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
   </tr>
   <tr>
     <td align="center"><a href="https://kirankumarambati.me"><img src="https://avatars1.githubusercontent.com/u/9110567?v=4" width="100px;" alt="Kirankumar Ambati"/><br /><sub><b>Kirankumar Ambati</b></sub></a><br /><a href="https://github.com/coderplex/coderplex/commits?author=KirankumarAmbati" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/kirit01"><img src="https://avatars3.githubusercontent.com/u/30437721?v=4" width="100px;" alt="kirit01"/><br /><sub><b>kirit01</b></sub></a><br /><a href="https://github.com/coderplex/coderplex/commits?author=kirit01" title="Code">💻</a></td>
   </tr>
 </table>
 
