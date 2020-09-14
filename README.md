@@ -62,6 +62,10 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
     <td align="center"><a href="https://github.com/VickyAbishek"><img src="https://avatars3.githubusercontent.com/u/9305700?v=4" width="100px;" alt="VickyAbishek"/><br /><sub><b>VickyAbishek</b></sub></a><br /><a href="https://github.com/coderplex/coderplex/commits?author=VickyAbishek" title="Code">💻</a></td>
     <td align="center"><a href="http://krushiraj.github.io"><img src="https://avatars0.githubusercontent.com/u/19507241?v=4" width="100px;" alt="Krushi Raj Tula"/><br /><sub><b>Krushi Raj Tula</b></sub></a><br /><a href="https://github.com/coderplex/coderplex/commits?author=krushiraj" title="Code">💻</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://kirankumarambati.me"><img src="https://avatars1.githubusercontent.com/u/9110567?v=4" width="100px;" alt="Kirankumar Ambati"/><br /><sub><b>Kirankumar Ambati</b></sub></a><br /><a href="https://github.com/coderplex/coderplex/commits?author=KirankumarAmbati" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/kirit01"><img src="https://avatars3.githubusercontent.com/u/30437721?v=4" width="100px;" alt="kirit01"/><br /><sub><b>kirit01</b></sub></a><br /><a href="https://github.com/coderplex/coderplex/commits?author=kirit01" title="Code">💻</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-enable -->

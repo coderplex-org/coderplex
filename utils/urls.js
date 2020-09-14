@@ -24,4 +24,4 @@ export const eventsCoverURL =
   'https://res.cloudinary.com/coderplex/image/upload/c_scale,w_348/v1510788480/website__assets/events.png';
 
 export const spaceMapUrl =
-  'https://www.google.com/maps/embed/v1/place?key= AIzaSyBZTOBlstzoENwMkLzldHXXrrTeKDGU7do&q=91springboard,Hyderabad,Telangana';
+  'https://www.google.com/maps/embed/v1/place?key= AIzaSyBZTOBlstzoENwMkLzldHXXrrTeKDGU7do&q=Innovationhq+Co-Working+Space,Hyderabad,Telangana';
