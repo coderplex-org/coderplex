@@ -72,7 +72,7 @@
     "emotion-server": "9.2.12",
     "get-port": "5.1.1",
     "grid-styled": "5.0.2",
-    "isomorphic-unfetch": "3.0.0",
+    "isomorphic-unfetch": "3.1.0",
     "lodash.take": "4.1.1",
     "marked": "0.8.2",
     "next": "8.1.0",
